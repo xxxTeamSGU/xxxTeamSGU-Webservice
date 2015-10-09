@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBGiayDepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="khachhang">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenkh" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="matkhau" Type="varchar" MaxLength="50" />
+    <Property Name="sdt" Type="varchar" MaxLength="12" />
+    <Property Name="diachi" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sanpham">
+    <Key>
+      <PropertyRef Name="masp" />
+    </Key>
+    <Property Name="masp" Type="int" Nullable="false" />
+    <Property Name="tensp" Type="varchar" MaxLength="100" />
+    <Property Name="loaisp" Type="varchar" MaxLength="50" />
+    <Property Name="motasp" Type="varchar" MaxLength="200" />
+    <Property Name="giasp" Type="int" />
+    <Property Name="hinhanh" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="DBGiayDepModelStoreContainer">
+    <EntitySet Name="khachhang" EntityType="Self.khachhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sanpham" EntityType="Self.sanpham" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

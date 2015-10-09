@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBGiayDepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id_admin" />
+    </Key>
+    <Property Name="id_admin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="taikhoan" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="matkhau" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="hoten" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="id_dh" />
+    </Key>
+    <Property Name="id_gd" Type="int" Nullable="false" />
+    <Property Name="id_dh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_sp" Type="int" Nullable="false" />
+    <Property Name="soluong" Type="int" Nullable="false" />
+    <Property Name="tongtien" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+    <Property Name="trangthai" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="giaodich">
+    <Key>
+      <PropertyRef Name="id_gd" />
+    </Key>
+    <Property Name="id_gd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="trangthai" Type="int" Nullable="false" />
+    <Property Name="id_kh" Type="int" Nullable="false" />
+    <Property Name="hoten_kh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email_kh" Type="varchar" MaxLength="50" />
+    <Property Name="sdt_kh" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="tongtien" Type="decimal" Precision="15" Scale="4" Nullable="false" />
+    <Property Name="congthanhtoan" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="khachhang">
+    <Key>
+      <PropertyRef Name="id_kh" />
+    </Key>
+    <Property Name="id_kh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hoten" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="sdt" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="diachi" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="cap_khachhang" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ngaytao" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="loaisp">
+    <Key>
+      <PropertyRef Name="id_loai" />
+    </Key>
+    <Property Name="id_loai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="loaisp" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="nhanvien">
+    <Key>
+      <PropertyRef Name="id_nv" />
+    </Key>
+    <Property Name="id_nv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hoten" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sdt" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="diachi" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sanpham">
+    <Key>
+      <PropertyRef Name="id_sp" />
+    </Key>
+    <Property Name="id_sp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tensp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_loai" Type="int" Nullable="false" />
+    <Property Name="size" Type="int" Nullable="false" />
+    <Property Name="mausac" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="motasp" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="giasp" Type="int" Nullable="false" />
+    <Property Name="ngaydang" Type="date" Nullable="false" />
+    <Property Name="hinhanh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hinhanh1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hinhanh2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hinhanh3" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_donhang_giaodich">
+    <End Role="giaodich" Type="Self.giaodich" Multiplicity="1" />
+    <End Role="donhang" Type="Self.donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giaodich">
+        <PropertyRef Name="id_gd" />
+      </Principal>
+      <Dependent Role="donhang">
+        <PropertyRef Name="id_gd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_donhang_sanpham">
+    <End Role="sanpham" Type="Self.sanpham" Multiplicity="1" />
+    <End Role="donhang" Type="Self.donhang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="sanpham">
+        <PropertyRef Name="id_sp" />
+      </Principal>
+      <Dependent Role="donhang">
+        <PropertyRef Name="id_dh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_giaodich_khachhang">
+    <End Role="khachhang" Type="Self.khachhang" Multiplicity="1" />
+    <End Role="giaodich" Type="Self.giaodich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khachhang">
+        <PropertyRef Name="id_kh" />
+      </Principal>
+      <Dependent Role="giaodich">
+        <PropertyRef Name="trangthai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBGiayDepModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="donhang" EntityType="Self.donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="giaodich" EntityType="Self.giaodich" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="khachhang" EntityType="Self.khachhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loaisp" EntityType="Self.loaisp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nhanvien" EntityType="Self.nhanvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sanpham" EntityType="Self.sanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_donhang_giaodich" Association="Self.FK_donhang_giaodich">
+      <End Role="giaodich" EntitySet="giaodich" />
+      <End Role="donhang" EntitySet="donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_donhang_sanpham" Association="Self.FK_donhang_sanpham">
+      <End Role="sanpham" EntitySet="sanpham" />
+      <End Role="donhang" EntitySet="donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_giaodich_khachhang" Association="Self.FK_giaodich_khachhang">
+      <End Role="khachhang" EntitySet="khachhang" />
+      <End Role="giaodich" EntitySet="giaodich" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

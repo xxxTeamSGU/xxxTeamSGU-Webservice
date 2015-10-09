@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8dda9338fa7c40e2bf23c01f23be341e" Name="Diagram1">
+        <EntityTypeShape EntityType="DBGiayDepModel.CTDH" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.CTHoaDonNhap" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.DonHang" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.HoaDonNhap" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.KhachHang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.Loai" Width="1.5" PointX="7.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.NhaCungCap" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.NhanVien" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.SanPham" Width="1.5" PointX="10" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="DBGiayDepModel.FK_CTDH_DonHang1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGiayDepModel.FK_CTHoaDonNhap_HoaDonNhap" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGiayDepModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGiayDepModel.FK_DonHang_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGiayDepModel.FK_HoaDonNhap_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGiayDepModel.FK_HoaDonNhap_NhanVien1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGiayDepModel.FK_SanPham_Loai" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

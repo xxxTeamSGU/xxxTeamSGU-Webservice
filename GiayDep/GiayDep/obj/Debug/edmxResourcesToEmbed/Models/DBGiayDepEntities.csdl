@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBGiayDepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id_admin" />
+    </Key>
+    <Property Name="id_admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="taikhoan" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="matkhau" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hoten" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="id_dh" />
+    </Key>
+    <Property Name="id_gd" Type="Int32" Nullable="false" />
+    <Property Name="id_dh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_sp" Type="Int32" Nullable="false" />
+    <Property Name="soluong" Type="Int32" Nullable="false" />
+    <Property Name="tongtien" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+    <Property Name="trangthai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="giaodich" Relationship="Self.FK_donhang_giaodich" FromRole="donhang" ToRole="giaodich" />
+    <NavigationProperty Name="sanpham" Relationship="Self.FK_donhang_sanpham" FromRole="donhang" ToRole="sanpham" />
+  </EntityType>
+  <EntityType Name="giaodich">
+    <Key>
+      <PropertyRef Name="id_gd" />
+    </Key>
+    <Property Name="id_gd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="trangthai" Type="Int32" Nullable="false" />
+    <Property Name="id_kh" Type="Int32" Nullable="false" />
+    <Property Name="hoten_kh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email_kh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sdt_kh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tongtien" Type="Decimal" Precision="15" Scale="4" Nullable="false" />
+    <Property Name="congthanhtoan" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="donhangs" Relationship="Self.FK_donhang_giaodich" FromRole="giaodich" ToRole="donhang" />
+    <NavigationProperty Name="khachhang" Relationship="Self.FK_giaodich_khachhang" FromRole="giaodich" ToRole="khachhang" />
+  </EntityType>
+  <EntityType Name="khachhang">
+    <Key>
+      <PropertyRef Name="id_kh" />
+    </Key>
+    <Property Name="id_kh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hoten" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sdt" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="diachi" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cap_khachhang" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ngaytao" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="giaodiches" Relationship="Self.FK_giaodich_khachhang" FromRole="khachhang" ToRole="giaodich" />
+  </EntityType>
+  <EntityType Name="loaisp">
+    <Key>
+      <PropertyRef Name="id_loai" />
+    </Key>
+    <Property Name="id_loai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="loaisp1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="nhanvien">
+    <Key>
+      <PropertyRef Name="id_nv" />
+    </Key>
+    <Property Name="id_nv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sdt" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="diachi" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sanpham">
+    <Key>
+      <PropertyRef Name="id_sp" />
+    </Key>
+    <Property Name="id_sp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tensp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_loai" Type="Int32" Nullable="false" />
+    <Property Name="size" Type="Int32" Nullable="false" />
+    <Property Name="mausac" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="motasp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="giasp" Type="Int32" Nullable="false" />
+    <Property Name="ngaydang" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="hinhanh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hinhanh1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hinhanh2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hinhanh3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="donhang" Relationship="Self.FK_donhang_sanpham" FromRole="sanpham" ToRole="donhang" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_donhang_giaodich">
+    <End Role="giaodich" Type="Self.giaodich" Multiplicity="1" />
+    <End Role="donhang" Type="Self.donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giaodich">
+        <PropertyRef Name="id_gd" />
+      </Principal>
+      <Dependent Role="donhang">
+        <PropertyRef Name="id_gd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_donhang_sanpham">
+    <End Role="sanpham" Type="Self.sanpham" Multiplicity="1" />
+    <End Role="donhang" Type="Self.donhang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="sanpham">
+        <PropertyRef Name="id_sp" />
+      </Principal>
+      <Dependent Role="donhang">
+        <PropertyRef Name="id_dh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_giaodich_khachhang">
+    <End Role="khachhang" Type="Self.khachhang" Multiplicity="1" />
+    <End Role="giaodich" Type="Self.giaodich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khachhang">
+        <PropertyRef Name="id_kh" />
+      </Principal>
+      <Dependent Role="giaodich">
+        <PropertyRef Name="trangthai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBGiayDepEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admins" EntityType="Self.admin" />
+    <EntitySet Name="donhangs" EntityType="Self.donhang" />
+    <EntitySet Name="giaodiches" EntityType="Self.giaodich" />
+    <EntitySet Name="khachhangs" EntityType="Self.khachhang" />
+    <EntitySet Name="loaisps" EntityType="Self.loaisp" />
+    <EntitySet Name="nhanviens" EntityType="Self.nhanvien" />
+    <EntitySet Name="sanphams" EntityType="Self.sanpham" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_donhang_giaodich" Association="Self.FK_donhang_giaodich">
+      <End Role="giaodich" EntitySet="giaodiches" />
+      <End Role="donhang" EntitySet="donhangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_donhang_sanpham" Association="Self.FK_donhang_sanpham">
+      <End Role="sanpham" EntitySet="sanphams" />
+      <End Role="donhang" EntitySet="donhangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_giaodich_khachhang" Association="Self.FK_giaodich_khachhang">
+      <End Role="khachhang" EntitySet="khachhangs" />
+      <End Role="giaodich" EntitySet="giaodiches" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
