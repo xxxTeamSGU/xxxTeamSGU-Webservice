@@ -8,6 +8,7 @@ namespace GiayDep.Models
     public class giohang
     {
         DBGiayDepEntities db = new DBGiayDepEntities();
+        public int ID { get; set; }
         public int imasp{ get; set;}
         public string stensp { get; set; }
         public string anhbia { get; set; }
@@ -20,6 +21,7 @@ namespace GiayDep.Models
         }
         public giohang(int masp)
         {
+            ID = 1;
             imasp = masp;
             SanPham sp = db.SanPhams.Single(n=>n.MaSP == imasp);
             stensp = sp.TenSP;

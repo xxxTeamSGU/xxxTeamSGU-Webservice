@@ -41,7 +41,6 @@ namespace GiayDep.Controllers
                 listgiohang.Add(gh);
                 ViewBag.Tb = " Đã thêm thành công vào giỏ hàng.";
                 return Redirect(strUrl);
-               
             }
             else
             {

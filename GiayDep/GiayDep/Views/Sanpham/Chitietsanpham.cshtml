@@ -3,7 +3,7 @@
 @model SanPham
 @{
     ViewBag.Title = "Chi tiết sản phẩm";
-    Layout = "~/Views/GiayDep/Trangchu.cshtml";
+    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
     
 }
 
@@ -52,28 +52,29 @@
     <div class="product-details">
         <!--product-details-->
         <div class="col-sm-5">
-            <div class="view-product">
-                <img src="@Url.Content("~/images/home/"+ Model.HinhAnh)" alt="" />
-                ><h3>ZOOM</h3>
+
+            <div class="view-product img-hover">
+                <img src="@Url.Content("~/images/home/"+ Model.HinhAnh)"  />
+               
             </div>
             <div id="similar-product" class="carousel slide" data-ride="carousel">
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
-                        <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
-                        <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh1)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh2)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh3)" alt=""></a>
                     </div>
                     <div class="item">
-                        <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
-                        <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
-                        <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh1)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh2)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh3)" alt=""></a>
                     </div>
                     <div class="item">
-                        <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
-                        <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
-                        <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh1)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh2)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh3)" alt=""></a>
                     </div>
 
                 </div>
@@ -90,26 +91,34 @@
         </div>
         <div class="col-sm-7">
             <div class="product-information">
-                <!--/product-information-->
-                <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
-                <h2>@Model.TenSP</h2>
-                <p>Web ID: 1089772</p>
-                <img src="~/images/product-details/rating.png" alt="" />
-                <span>
-                    <span> @Model.GiaSP.000đ</span>
-                    <label>Quantity:</label>
-                    <input type="text" value="1" />
-                    @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = Model.MaSP, @strUrl = Request.Url.ToString() }))
-                    {
-                    <button type="submit" class="btn btn-fefault cart">
-                        <i class="fa fa-shopping-cart"></i>
-                        Thêm vào giỏ hàng
-                    </button>}
-              </span>
-                <p><b>Availability:</b> In Stock</p>
-                <p><b>Condition:</b> New</p>
-                <p><b>Brand:</b> E-SHOPPER</p>
-                <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                
+                    <!--/product-information-->
+                    <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
+                    <h2>@Model.TenSP</h2>
+                    <!--<p>Web ID: 1089772</p>-->
+                    <!--<img src="~/images/product-details/rating.png" alt="" />-->
+                    <span>
+                        <span style="color:red;">Giá :  @Model.GiaSP.000đ</span>
+                        <br />
+                        <span>
+                           Size :
+                            <select style="width:100px; height:50px;">
+                                <option>@Model.Size</option>
+                                <option>43</option>
+                            </select>
+                        </span>
+                        @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = Model.MaSP, @strUrl = Request.Url.ToString() }))
+                        {
+                            <button type="submit" class="btn btn-fefault cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                Thêm vào giỏ hàng
+                            </button>}
+                    </span>
+                    <p><b>Xuất xứ :</b> In Stock</p>
+                    <p><b>Sản phẩm :</b> New</p>
+                    <p><b>Cửa hàng :</b> E-SHOPPER</p>
+                    <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+        
             </div><!--/product-information-->
         </div>
     </div><!--/product-details-->
