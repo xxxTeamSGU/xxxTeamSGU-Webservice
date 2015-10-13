@@ -1,0 +1,36 @@
+﻿@using GiayDep.Models;
+@using PagedList.Mvc;
+@using PagedList;
+
+@model IPagedList<SanPham>
+
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
+}
+
+<h2>KetQuaTimKiem</h2>
+@foreach (var item in Model)
+{
+<div class="col-sm-4">
+    <div class="product-image-wrapper">
+        <div class="single-products">
+            <div class="productinfo text-center">
+
+                <a href="@Url.Action("Chitietsanpham", new { @masp = item.MaSP })"><img src="@Url.Content("~/images/home/"+ item.HinhAnh)" alt="" /></a>
+                <h2>@item.GiaSP.000đ</h2>
+                <p>@item.TenSP</p>
+                @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = item.MaSP, @strUrl = Request.Url.ToString() }))
+                {
+                    //<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                    <button type="submit" class="btn btn-fefault cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        Thêm vào giỏ hàng
+                    </button>
+                }
+            </div>
+        </div>
+        <img src="images/home/new.png" class="new" alt="">
+    </div>
+</div>
+    }

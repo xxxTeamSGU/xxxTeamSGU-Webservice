@@ -19,6 +19,8 @@
         </div>
     </div><!--/header_top-->
 
+
+
     <div class="header-middle">
         <!--header-middle-->
         <div class="container">
@@ -69,10 +71,15 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="search_box pull-right">
-                        <input type="text" placeholder="Tìm kiếm" />
+                        @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                        { 
+                        @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class="textboxTimKiem", @placeholder="Tìm kiếm" });
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </div><!--/header-bottom-->
+
+
 

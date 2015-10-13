@@ -170,6 +170,8 @@
     <Compile Include="Controllers\giohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\sliderController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -305,6 +307,9 @@
     <Content Include="Views\giohang\giohangpartial.cshtml" />
     <Content Include="Views\giohang\addslpartial.cshtml" />
     <Content Include="Views\DanhMuc\DanhMucGiayNamPartial.cshtml" />
+    <Content Include="Views\slider\sliderPartial.cshtml" />
+    <Content Include="Views\GiayDep\Trangkethua.cshtml" />
+    <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
