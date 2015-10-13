@@ -1,0 +1,11 @@
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\bin\Debug\Admin_QuanLyShop.exe.config
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\bin\Debug\Admin_QuanLyShop.exe
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\bin\Debug\Admin_QuanLyShop.pdb
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.csprojResolveAssemblyReference.cache
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.FormDangNhap.resources
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.Properties.Resources.resources
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.csproj.GenerateResource.Cache
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.exe
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.pdb
+c:\users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.Form_QuanLySanPham.resources
+C:\Users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.Form_NhanVien.resources
