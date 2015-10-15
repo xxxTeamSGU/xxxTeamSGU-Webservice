@@ -7,6 +7,7 @@ using GiayDep.Models;
 using System.Data.Entity;
 using System.Data;
 
+
 namespace GiayDep.Controllers
 {
     public class UserController : Controller
@@ -47,16 +48,30 @@ namespace GiayDep.Controllers
         {
             String s_email = f["email"].ToString();
             String s_password = f["password"].ToString();
-            //KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.email == s_email && n.password == s_password);
-          //  if(kh != null)
-           // {
-           //     ViewBag.Thongbao = "Chúc mừng bạn đã đăng nhập thành công !";
-          //      Session["email"] = kh;
-          //      return View();
+            KhachHang kh = db.KhachHangs.SingleOrDefault(n => n.Email == s_email && n.MatKhau == s_password);
+           if(kh != null)
+           {
+                ViewBag.Thongbao = "Chúc mừng bạn đã đăng nhập thành công !";
+             Session["email"] = kh;
+             return RedirectToAction("Index", "Home");
                 
-          //  }
-          //  ViewBag.Thongbao = "Email hoặc mật khẩu không đúng !";
+            }
+            ViewBag.Thongbao = "Email hoặc mật khẩu không đúng !";
             return View();
+        }
+        public ActionResult LoginPartial()
+        {
+            if (Session["email"] == null)
+            {
+                return PartialView("LoginPartial", "User");
+            }
+
+            return PartialView("LogoutPartial", "User");
+        }
+        public ActionResult LogoutPartial()
+        {
+            Session["email"] = null;
+           return PartialView("LoginPartial", "User");
         }
 	}
 }

@@ -169,4 +169,3 @@ C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDe
 C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDep\obj\Debug\GiayDep.dll
 C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDep\obj\Debug\GiayDep.pdb
-C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDep\obj\Debug\GiayDep.csprojResolveAssemblyReference.cache

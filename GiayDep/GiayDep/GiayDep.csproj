@@ -310,6 +310,8 @@
     <Content Include="Views\slider\sliderPartial.cshtml" />
     <Content Include="Views\GiayDep\Trangkethua.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
+    <Content Include="Views\User\LoginPartial.cshtml" />
+    <Content Include="Views\User\LogoutPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,7 +17,7 @@
 				<table class="table table-condensed">
 					<thead>
                             <tr class="cart_menu">
-                                <td>STT</td>
+                               
                                  <td class="image"><center>Sản phẩm</center></td>
                                 <td class="description"><center>Mô tả</center></td>
                                 <td class="price"><center>Giá</center></td>
@@ -30,7 +30,7 @@
 					@foreach (var item in Model){
                         <tbody>
 						<tr>
-                            <td>@item.ID</td>
+                            
 							<td class="cart_product"><center><a href=""><img src="@Url.Content("~/images/home/"+ item.anhbia)" alt="" width="110" height="110"></a></center></td>
 							<td class="cart_description"><h4><a href="">@item.stensp</a></h4></td>
 							<td class="cart_price"><p><center>@item.dongia.000đ</center></p></td>
@@ -51,7 +51,7 @@
                             <td></td>
                             <td></td>
                             <td>Cập nhật</td>
-                            <td>Thanh toán</td>
+                            <td><a href="/User/Login"><i class="fa fa-lock"></i>Xem đơn hàng</a></td>
                         </tr>
                  
 				</table>

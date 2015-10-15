@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="DBGiayDepModel.CTHoaDonNhap" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBGiayDepModel.DonHang" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBGiayDepModel.HoaDonNhap" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.KhachHang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.KhachHang" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DBGiayDepModel.Loai" Width="1.5" PointX="7.75" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="DBGiayDepModel.NhaCungCap" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DBGiayDepModel.NhanVien" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
