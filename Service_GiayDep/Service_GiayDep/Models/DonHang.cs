@@ -12,17 +12,15 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
     [KnownType(typeof(CTDH))]
-    
     public partial class DonHang
     {
         public DonHang()
         {
             this.CTDHs = new List<CTDH>();
         }
-    
+
         [DataMember]
         public int MaDH { get; set; }
         [DataMember]
@@ -35,7 +33,7 @@ namespace Service_GiayDep.Models
         public Nullable<decimal> TongTien { get; set; }
         [DataMember]
         public string TinhTrang { get; set; }
-    
+
         [DataMember]
         public virtual List<CTDH> CTDHs { get; set; }
         [DataMember]

@@ -12,22 +12,20 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
     [KnownType(typeof(SanPham))]
-
     public partial class Loai
     {
         public Loai()
         {
             this.SanPhams = new List<SanPham>();
         }
-    
+
         [DataMember]
         public int MaLoai { get; set; }
         [DataMember]
         public string TenLoai { get; set; }
-    
+
         [DataMember]
         public virtual List<SanPham> SanPhams { get; set; }
     }
