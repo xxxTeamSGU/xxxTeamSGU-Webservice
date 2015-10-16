@@ -12,19 +12,17 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
     [KnownType(typeof(DonHang))]
     [KnownType(typeof(HoaDonNhap))]
-    
     public partial class NhanVien
     {
         public NhanVien()
         {
             this.DonHangs = new List<DonHang>();
             this.HoaDonNhaps = new List<HoaDonNhap>();
+           // this.HoaDonNhaps1 = new List<HoaDonNhap>();
         }
-    
         [DataMember]
         public int MaNV { get; set; }
         [DataMember]
@@ -39,10 +37,11 @@ namespace Service_GiayDep.Models
         public string DiaChi { get; set; }
         [DataMember]
         public string MatKhau { get; set; }
-    
-        [DataMember]
+        [DataMember]        
         public virtual List<DonHang> DonHangs { get; set; }
         [DataMember]
         public virtual List<HoaDonNhap> HoaDonNhaps { get; set; }
+        [DataMember]
+        public virtual List<HoaDonNhap> HoaDonNhaps1 { get; set; }
     }
 }

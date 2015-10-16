@@ -12,7 +12,8 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
+    
     public partial class CTDH
     {
         [DataMember]
@@ -23,7 +24,7 @@ namespace Service_GiayDep.Models
         public Nullable<int> SoLuong { get; set; }
         [DataMember]
         public Nullable<decimal> DonGia { get; set; }
-        
+
         [DataMember]
         public virtual DonHang DonHang { get; set; }
         [DataMember]

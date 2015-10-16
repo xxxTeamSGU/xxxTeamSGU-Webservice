@@ -54,8 +54,8 @@ namespace Service_GiayDep
             sanpham.HinhAnh3 = HinhAnh3;
             sanpham.SoLuong = (int)SoLuong;
             sanpham.MoTa = MoTa;
-            sanpham.KM = (int)KM;
-            sanpham.NgayCapNhat = DateTime.Parse(NgayCapNhat);
+            //sanpham.KM = (int)KM;
+            //sanpham.NgayCapNhat = DateTime.Parse(NgayCapNhat);
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
@@ -96,7 +96,7 @@ namespace Service_GiayDep
                         item.HinhAnh3 = HinhAnh3;
                         item.SoLuong = (int)SoLuong;
                         item.MoTa = MoTa;
-                        item.KM = (int)KM;
+                        //item.KM = (int)KM;
                         db.SaveChanges();
                         return true;
                     }

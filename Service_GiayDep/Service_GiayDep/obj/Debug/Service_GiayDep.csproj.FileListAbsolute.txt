@@ -6,3 +6,10 @@ C:\Users\huy\documents\visual studio 2013\Projects\Service_GiayDep\Service_GiayD
 C:\Users\huy\documents\visual studio 2013\Projects\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
 C:\Users\huy\documents\visual studio 2013\Projects\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.dll
 C:\Users\huy\documents\visual studio 2013\Projects\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll.config
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.pdb
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.dll
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.xml
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.dll
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb

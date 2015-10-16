@@ -12,18 +12,15 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
     [KnownType(typeof(HoaDonNhap))]
-    
     public partial class NhaCungCap
     {
         public NhaCungCap()
         {
             this.HoaDonNhaps = new List<HoaDonNhap>();
         }
-    
-        [DataMember]
+        [DataMember]        
         public int MaNCC { get; set; }
         [DataMember]
         public string TenNCC { get; set; }
@@ -33,8 +30,7 @@ namespace Service_GiayDep.Models
         public string SoDT { get; set; }
         [DataMember]
         public string SoTK { get; set; }
-    
-        [DataMember]
+        [DataMember]        
         public virtual List<HoaDonNhap> HoaDonNhaps { get; set; }
     }
 }
