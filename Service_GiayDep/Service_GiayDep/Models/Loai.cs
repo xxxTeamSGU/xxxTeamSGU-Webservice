@@ -12,8 +12,10 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
+
     [DataContract(IsReference = true)]
     [KnownType(typeof(SanPham))]
+
     public partial class Loai
     {
         public Loai()

@@ -12,8 +12,10 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
+
     [DataContract(IsReference = true)]
     [KnownType(typeof(CTDH))]
+
     public partial class DonHang
     {
         public DonHang()

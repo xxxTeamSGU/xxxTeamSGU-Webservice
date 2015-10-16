@@ -22,5 +22,15 @@ namespace GiayDep.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_SanPham.asmx")]
+        public string GiayDep_Service_SanPham_Service_SanPham {
+            get {
+                return ((string)(this["GiayDep_Service_SanPham_Service_SanPham"]));
+            }
+        }
     }
 }

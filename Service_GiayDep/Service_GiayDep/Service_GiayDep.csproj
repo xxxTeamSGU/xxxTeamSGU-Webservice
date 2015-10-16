@@ -113,6 +113,9 @@
     <Compile Include="Models\Loai.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Mau.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\NhaCungCap.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
@@ -161,6 +164,7 @@
       <DependentUpon>DBGiayDep.edmx</DependentUpon>
       <LastGenOutput>DBGiayDep.cs</LastGenOutput>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -51,9 +51,11 @@
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="SoDT" ColumnName="SoDT" />
-          <ScalarProperty Name="SoTK" ColumnName="SoTK" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -62,6 +64,15 @@
         <MappingFragment StoreEntitySet="Loai">
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maus">
+      <EntityTypeMapping TypeName="DBGiayDepModel.Mau">
+        <MappingFragment StoreEntitySet="Mau">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -86,6 +97,7 @@
           <ScalarProperty Name="CMND" ColumnName="CMND" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="QuyenAdmin" ColumnName="QuyenAdmin" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -96,8 +108,6 @@
           <ScalarProperty Name="TenSP" ColumnName="TenSP" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="ThuongHieu" ColumnName="ThuongHieu" />
-          <ScalarProperty Name="Size" ColumnName="Size" />
-          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
           <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
           <ScalarProperty Name="HinhAnh1" ColumnName="HinhAnh1" />
@@ -105,6 +115,9 @@
           <ScalarProperty Name="HinhAnh3" ColumnName="HinhAnh3" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="KM" ColumnName="KM" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="GiaKM" ColumnName="GiaKM" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

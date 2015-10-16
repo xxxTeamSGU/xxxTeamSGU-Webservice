@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GiayDep.Service_SanPham;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,7 +8,7 @@ namespace GiayDep.Models
 {
     public class giohang
     {
-        DBGiayDepEntities db = new DBGiayDepEntities();
+        Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
         public int ID { get; set; }
         public int imasp{ get; set;}
         public string stensp { get; set; }
@@ -23,7 +24,7 @@ namespace GiayDep.Models
         {
             ID = 1;
             imasp = masp;
-            SanPham sp = db.SanPhams.Single(n=>n.MaSP == imasp);
+            SanPham sp = db.LaySanPham(imasp);
             stensp = sp.TenSP;
             anhbia = sp.HinhAnh;
             dongia = double.Parse(sp.GiaSP.ToString());

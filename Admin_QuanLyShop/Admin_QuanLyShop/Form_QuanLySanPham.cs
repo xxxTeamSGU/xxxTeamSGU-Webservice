@@ -129,8 +129,6 @@ namespace Admin_QuanLyShop
 
             }
             txtThuongHieu.Text = tableSanPham.CurrentRow.Cells[3].Value.ToString();
-            txtSize.Text = tableSanPham.CurrentRow.Cells[4].Value.ToString();
-            txtMau.Text = tableSanPham.CurrentRow.Cells[5].Value.ToString();
             txtGiaSP.Text = tableSanPham.CurrentRow.Cells[6].Value.ToString();
             txtSoLuong.Text = tableSanPham.CurrentRow.Cells[11].Value.ToString();
          
@@ -186,31 +184,34 @@ namespace Admin_QuanLyShop
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            string TenSP = txtTenSP.Text + "";
-            int Loai = 0 + int.Parse(txtMaLoai.Text);
-            string ThuongHieu = txtThuongHieu.Text + "";
-            string Size = txtSize.Text + "";
-            string Mau = txtMau.Text + "";
-            decimal GiaSP = (decimal)(int.Parse(txtGiaSP.Text.ToString()));
-            string Hinh1 = "" + TenAnh[0] ;
-            string Hinh2 = "" + TenAnh[1];
-            string Hinh3 = "" + TenAnh[2];
-            string Hinh4 = "" + TenAnh[3];
-            int SoLuong = 0 + int.Parse(txtSoLuong.Text);
-            string MoTa = txtMoTa.Text + "";
-            int KM = 0;
-            if (ckKhuyenMai.Checked == true)
-                KM = 1;
-            string ngay = dateTimePicker1.Value.ToString("yyyy-MM-dd") + " 00:00:00.000";
-
-            bool x = sv.ThemSanPham(TenSP, Loai, ThuongHieu, Size, Mau, GiaSP, Hinh1, Hinh2, Hinh3, Hinh4, SoLuong, MoTa, KM, ngay);
-            if (x == true)
+            if (!txtTenSP.Text.Equals(""))
             {
-                MessageBox.Show("Thêm thành công");
-                tableSanPham.DataSource = sv.LayTatCaSanPham().ToList();
+                string TenSP = txtTenSP.Text + "";
+                int Loai = 0 + int.Parse(txtMaLoai.Text);
+                string ThuongHieu = txtThuongHieu.Text + "";
+                decimal GiaSP = (decimal)(int.Parse(txtGiaSP.Text.ToString()));
+                string Hinh1 = "" + TenAnh[0];
+                string Hinh2 = "" + TenAnh[1];
+                string Hinh3 = "" + TenAnh[2];
+                string Hinh4 = "" + TenAnh[3];
+                int SoLuong = 0 + int.Parse(txtSoLuong.Text);
+                string MoTa = txtMoTa.Text + "";
+                int KM = 0;
+                if (ckKhuyenMai.Checked == true)
+                    KM = 1;
+                string ngay = dateTimePicker1.Value.ToString("yyyy-MM-dd") + " 00:00:00.000";
+
+                bool x = sv.ThemSanPham(TenSP, Loai, ThuongHieu, GiaSP, Hinh1, Hinh2, Hinh3, Hinh4, SoLuong, MoTa, KM, ngay);
+                if (x == true)
+                {
+                    MessageBox.Show("Thêm thành công");
+                    tableSanPham.DataSource = sv.LayTatCaSanPham().ToList();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra, không thêm được");
             }
             else
-                MessageBox.Show("Có lỗi xảy ra, không thêm được");
+                MessageBox.Show("Chưa nhập tên sản phẩm");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -313,7 +314,7 @@ namespace Admin_QuanLyShop
                }
            }
           
-       }
+       }    
 
        private void btNhapmoi_Click(object sender, EventArgs e)
        {
@@ -321,9 +322,7 @@ namespace Admin_QuanLyShop
            txtTenSP.Text = "";
            txtMaLoai.Text = "";
            txtGiaSP.Text = "";
-           txtMau.Text = "";
            txtMoTa.Text = "";
-           txtSize.Text = "";
            txtSoLuong.Text = "";
            txtThuongHieu.Text = "";
            rdHinh1.Checked = false;
@@ -345,8 +344,7 @@ namespace Admin_QuanLyShop
            string TenSP = txtTenSP.Text + "";
            int Loai = 0 + int.Parse(txtMaLoai.Text);
            string ThuongHieu = txtThuongHieu.Text + "";
-           string Size = txtSize.Text + "";
-           string Mau = txtMau.Text + "";
+
            decimal GiaSP = (decimal)(int.Parse(txtGiaSP.Text.ToString()));
            string Hinh1 = "" + TenAnh[0];
            string Hinh2 = "" + TenAnh[1];
@@ -360,7 +358,7 @@ namespace Admin_QuanLyShop
            string ngay = dateTimePicker1.Value.ToString("yyyy-MM-dd") + " 00:00:00.000";
 
            
-           bool y = sv.SuaSanPham(MaSP, TenSP, Loai, ThuongHieu, Size, Mau, GiaSP, Hinh1, Hinh2, Hinh3, Hinh4, SoLuong, MoTa, KM, ngay);
+           bool y = sv.SuaSanPham(MaSP, TenSP, Loai, ThuongHieu, GiaSP, Hinh1, Hinh2, Hinh3, Hinh4, SoLuong, MoTa, KM, ngay);
            if (y == true)
            {
                MessageBox.Show("Sửa sản phẩm thành công");
@@ -378,6 +376,16 @@ namespace Admin_QuanLyShop
                 string tim = txtTim.Text;
                 tableSanPham.DataSource = sv.TimKiemSanPham(tim).ToList();
             }
+       }
+
+       private void panel1_Paint(object sender, PaintEventArgs e)
+       {
+
+       }
+
+       private void label16_Click(object sender, EventArgs e)
+       {
+
        }
 
       

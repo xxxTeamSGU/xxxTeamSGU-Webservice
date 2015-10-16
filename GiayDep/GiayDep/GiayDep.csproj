@@ -176,52 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CTDH.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CTHoaDonNhap.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBGiayDep.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBGiayDep.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBGiayDep.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBGiayDep.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBGiayDep.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DonHang.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\giohang.cs" />
-    <Compile Include="Models\HoaDonNhap.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Loai.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NhaCungCap.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NhanVien.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SanPham.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -229,6 +184,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Web References\Service_SanPham\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -240,23 +200,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DBGiayDep.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBGiayDep.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DBGiayDep.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBGiayDep.edmx</DependentUpon>
-      <LastGenOutput>DBGiayDep.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DBGiayDep.edmx.diagram">
-      <DependentUpon>DBGiayDep.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\DBGiayDep.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBGiayDep.edmx</DependentUpon>
-      <LastGenOutput>DBGiayDep.cs</LastGenOutput>
-    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -273,6 +216,14 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <None Include="Web References\Service_SanPham\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\Service_SanPham\SanPham.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Service_SanPham\Service_SanPham.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -310,8 +261,7 @@
     <Content Include="Views\slider\sliderPartial.cshtml" />
     <Content Include="Views\GiayDep\Trangkethua.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
-    <Content Include="Views\User\LoginPartial.cshtml" />
-    <Content Include="Views\User\LogoutPartial.cshtml" />
+    <None Include="Web References\Service_SanPham\Service_SanPham.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +275,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:61817/Service_SanPham.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Service_SanPham\</RelPath>
+      <UpdateFromURL>http://localhost:61817/Service_SanPham.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>GiayDep_Service_SanPham_Service_SanPham</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

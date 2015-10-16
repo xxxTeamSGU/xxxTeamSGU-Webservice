@@ -1,4 +1,4 @@
-﻿@using GiayDep.Models;
+﻿@using GiayDep.Service_SanPham;
 
 @model SanPham
 @{
@@ -62,19 +62,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh1)" alt=""></a>
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh2)" alt=""></a>
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh3)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh1)" alt="" height="100" width="20"></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh2)" alt="" height="23" width="20"></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh3)" alt="" height="23" width="20"></a>
                     </div>
                     <div class="item">
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh1)" alt=""></a>
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh2)" alt=""></a>
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh3)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh1)" alt="" height="23" width="20"></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh2)" alt="" height="23" width="20"></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh3)" alt="" height="23" width="20"></a>
                     </div>
                     <div class="item">
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh1)" alt=""></a>
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh2)" alt=""></a>
-                        <a href=""><img src="@Url.Content("~/images/product-details/" + Model.HinhAnh3)" alt=""></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh1)" alt="" height="23" width="20"></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh2)" alt=""  height="23" width="20"></a>
+                        <a href=""><img src="@Url.Content("~/images/home/" + Model.HinhAnh3)" alt="" height="23" width="20"></a>
                     </div>
 
                 </div>
@@ -103,7 +103,7 @@
                         <span>
                            Size :
                             <select style="width:100px; height:50px;">
-                                <option>@Model.Size</option>
+                                <option>Size</option>
                                 <option>43</option>
                             </select>
                         </span>

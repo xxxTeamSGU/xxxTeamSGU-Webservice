@@ -61,13 +61,30 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public List<KhachHang> TimKiemKhachHang(string HoTen, string SoDT, string SoTK, string Email)
+        public List<KhachHang> TimKiemKhachHang_GioiTinh(string HoTen, string SoDT, string Email, int GioiTinh)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.KhachHangs.Where(c => c.HoTen.Contains(HoTen) && c.Email.Contains(Email) && c.SoDT.Contains(SoDT) && c.SoTK.Contains(SoTK)).ToList();
+                    var list = db.KhachHangs.Where(c => c.HoTen.Contains(HoTen) && c.SoDT.Contains(SoDT) && c.Email.Contains(Email) && c.GioiTinh == GioiTinh).ToList();
+                    return list;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
+        [WebMethod]
+        public List<KhachHang> TimKiemKhachHang(string HoTen, string SoDT, string Email)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var list = db.KhachHangs.Where(c => c.HoTen.Contains(HoTen) && c.SoDT.Contains(SoDT) && c.Email.Contains(Email)).ToList();
                     return list;
                 }
             }

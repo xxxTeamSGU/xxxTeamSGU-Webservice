@@ -11,7 +11,7 @@ namespace GiayDep.Controllers
     {
         //
         // GET: /DanhMuc/
-        DBGiayDepEntities db = new DBGiayDepEntities();
+       Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
        
 	}
 }

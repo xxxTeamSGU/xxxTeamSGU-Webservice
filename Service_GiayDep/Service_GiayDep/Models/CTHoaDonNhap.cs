@@ -13,6 +13,7 @@ namespace Service_GiayDep.Models
     using System.Collections.Generic;
     using System.Runtime.Serialization;
     [DataContract(IsReference = true)]
+
     public partial class CTHoaDonNhap
     {
         [DataMember]
@@ -23,8 +24,8 @@ namespace Service_GiayDep.Models
         public Nullable<int> SoLuong { get; set; }
         [DataMember]
         public string DonGia { get; set; }
+
         [DataMember]
-    
         public virtual HoaDonNhap HoaDonNhap { get; set; }
         [DataMember]
         public virtual SanPham SanPham { get; set; }

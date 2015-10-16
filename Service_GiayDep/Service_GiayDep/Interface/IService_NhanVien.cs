@@ -13,13 +13,13 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         List<NhanVien> LayTatCaNhaNhanVien();
         [OperationContract]
-        bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi , string MatKhau);
+        bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi , string MatKhau, int QuyenAdmin);
         [OperationContract]
-        bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau);
+        bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin);
         [OperationContract]
         bool XoaNhanVien(int MaNV);
         [OperationContract]
-        List<NhanVien> TimKiemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi);
+        List<NhanVien> TimKiemNhanVien(string x);
         [OperationContract]
         bool KiemTraNhanVien(string Email, string MatKhau);
         [OperationContract]

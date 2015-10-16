@@ -11,26 +11,21 @@ namespace GiayDep.Controllers
     {
         //
         // GET: /SanPham/
-        DBGiayDepEntities db = new DBGiayDepEntities();
+        Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
         public PartialViewResult SanphammoiPartial()
         {
-            var listSanphammoi = db.SanPhams.Take(6).ToList();
-            return PartialView(listSanphammoi);
+            var listsanphammoi = db.SanphammoiPartial().ToList();
+            return PartialView(listsanphammoi);
         }
         public PartialViewResult SanphamkhuyenmaiPartial()
         {
-            var listkhuyenmai = db.SanPhams.Take(6).ToList();
+            var listkhuyenmai = db.SanphamkhuyenmaiPartial().ToList();
             return PartialView(listkhuyenmai);
-        }
+       }
         public ViewResult Chitietsanpham(int masp)
         {
-            SanPham sanpham = db.SanPhams.SingleOrDefault(n=>n.MaSP == masp);
-            if (sanpham == null)
-            {
-                Response.StatusCode = 404;
-                return null;
-            }
-            return View(sanpham);
+            var chitiet = db.Chitietsanpham(masp);
+            return View(chitiet);
         }
        
 	}

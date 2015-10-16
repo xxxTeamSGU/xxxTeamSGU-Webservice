@@ -42,6 +42,8 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MatKhauField;
         
+        private System.Nullable<int> QuyenAdminField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Admin_QuanLyShop.Service_NhanVien.DonHang[] DonHangsField;
         
@@ -149,7 +151,20 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.Nullable<int> QuyenAdmin {
+            get {
+                return this.QuyenAdminField;
+            }
+            set {
+                if ((this.QuyenAdminField.Equals(value) != true)) {
+                    this.QuyenAdminField = value;
+                    this.RaisePropertyChanged("QuyenAdmin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public Admin_QuanLyShop.Service_NhanVien.DonHang[] DonHangs {
             get {
                 return this.DonHangsField;
@@ -162,7 +177,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public Admin_QuanLyShop.Service_NhanVien.HoaDonNhap[] HoaDonNhaps {
             get {
                 return this.HoaDonNhapsField;
@@ -538,13 +553,17 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         private string SoDTField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SoTKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MatKhauField;
+        
+        private System.Nullable<System.DateTime> NgaySinhField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DiaChiField;
+        
+        private System.Nullable<int> GioiTinhField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Admin_QuanLyShop.Service_NhanVien.DonHang[] DonHangsField;
@@ -599,19 +618,6 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string SoTK {
-            get {
-                return this.SoTKField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SoTKField, value) != true)) {
-                    this.SoTKField = value;
-                    this.RaisePropertyChanged("SoTK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string Email {
             get {
                 return this.EmailField;
@@ -624,7 +630,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string MatKhau {
             get {
                 return this.MatKhauField;
@@ -637,7 +643,46 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.Nullable<System.DateTime> NgaySinh {
+            get {
+                return this.NgaySinhField;
+            }
+            set {
+                if ((this.NgaySinhField.Equals(value) != true)) {
+                    this.NgaySinhField = value;
+                    this.RaisePropertyChanged("NgaySinh");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string DiaChi {
+            get {
+                return this.DiaChiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DiaChiField, value) != true)) {
+                    this.DiaChiField = value;
+                    this.RaisePropertyChanged("DiaChi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.Nullable<int> GioiTinh {
+            get {
+                return this.GioiTinhField;
+            }
+            set {
+                if ((this.GioiTinhField.Equals(value) != true)) {
+                    this.GioiTinhField = value;
+                    this.RaisePropertyChanged("GioiTinh");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public Admin_QuanLyShop.Service_NhanVien.DonHang[] DonHangs {
             get {
                 return this.DonHangsField;
@@ -800,12 +845,6 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ThuongHieuField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MauSacField;
-        
         private System.Nullable<decimal> GiaSPField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -829,6 +868,8 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         
         private System.Nullable<System.DateTime> NgayCapNhatField;
         
+        private System.Nullable<int> GiaKMField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Admin_QuanLyShop.Service_NhanVien.CTDH[] CTDHsField;
         
@@ -837,6 +878,9 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Admin_QuanLyShop.Service_NhanVien.Loai LoaiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Admin_QuanLyShop.Service_NhanVien.Mau MauField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -900,33 +944,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Size {
-            get {
-                return this.SizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SizeField, value) != true)) {
-                    this.SizeField = value;
-                    this.RaisePropertyChanged("Size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string MauSac {
-            get {
-                return this.MauSacField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MauSacField, value) != true)) {
-                    this.MauSacField = value;
-                    this.RaisePropertyChanged("MauSac");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public System.Nullable<decimal> GiaSP {
             get {
                 return this.GiaSPField;
@@ -939,7 +957,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string HinhAnh {
             get {
                 return this.HinhAnhField;
@@ -952,7 +970,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string HinhAnh1 {
             get {
                 return this.HinhAnh1Field;
@@ -965,7 +983,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string HinhAnh2 {
             get {
                 return this.HinhAnh2Field;
@@ -978,7 +996,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string HinhAnh3 {
             get {
                 return this.HinhAnh3Field;
@@ -991,7 +1009,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public System.Nullable<int> SoLuong {
             get {
                 return this.SoLuongField;
@@ -1004,7 +1022,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string MoTa {
             get {
                 return this.MoTaField;
@@ -1017,7 +1035,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public System.Nullable<int> KM {
             get {
                 return this.KMField;
@@ -1030,7 +1048,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
         public System.Nullable<System.DateTime> NgayCapNhat {
             get {
                 return this.NgayCapNhatField;
@@ -1043,7 +1061,20 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        public System.Nullable<int> GiaKM {
+            get {
+                return this.GiaKMField;
+            }
+            set {
+                if ((this.GiaKMField.Equals(value) != true)) {
+                    this.GiaKMField = value;
+                    this.RaisePropertyChanged("GiaKM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
         public Admin_QuanLyShop.Service_NhanVien.CTDH[] CTDHs {
             get {
                 return this.CTDHsField;
@@ -1056,7 +1087,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=15)]
         public Admin_QuanLyShop.Service_NhanVien.CTHoaDonNhap[] CTHoaDonNhaps {
             get {
                 return this.CTHoaDonNhapsField;
@@ -1069,7 +1100,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=16)]
         public Admin_QuanLyShop.Service_NhanVien.Loai Loai {
             get {
                 return this.LoaiField;
@@ -1078,6 +1109,19 @@ namespace Admin_QuanLyShop.Service_NhanVien {
                 if ((object.ReferenceEquals(this.LoaiField, value) != true)) {
                     this.LoaiField = value;
                     this.RaisePropertyChanged("Loai");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=17)]
+        public Admin_QuanLyShop.Service_NhanVien.Mau Mau {
+            get {
+                return this.MauField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MauField, value) != true)) {
+                    this.MauField = value;
+                    this.RaisePropertyChanged("Mau");
                 }
             }
         }
@@ -1154,6 +1198,96 @@ namespace Admin_QuanLyShop.Service_NhanVien {
                 if ((object.ReferenceEquals(this.SanPhamsField, value) != true)) {
                     this.SanPhamsField = value;
                     this.RaisePropertyChanged("SanPhams");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Mau", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Mau : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int MaSPField;
+        
+        private System.Nullable<int> SizeField;
+        
+        private System.Nullable<int> SoLuongField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Admin_QuanLyShop.Service_NhanVien.SanPham SanPhamField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int MaSP {
+            get {
+                return this.MaSPField;
+            }
+            set {
+                if ((this.MaSPField.Equals(value) != true)) {
+                    this.MaSPField = value;
+                    this.RaisePropertyChanged("MaSP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> Size {
+            get {
+                return this.SizeField;
+            }
+            set {
+                if ((this.SizeField.Equals(value) != true)) {
+                    this.SizeField = value;
+                    this.RaisePropertyChanged("Size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<int> SoLuong {
+            get {
+                return this.SoLuongField;
+            }
+            set {
+                if ((this.SoLuongField.Equals(value) != true)) {
+                    this.SoLuongField = value;
+                    this.RaisePropertyChanged("SoLuong");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public Admin_QuanLyShop.Service_NhanVien.SanPham SanPham {
+            get {
+                return this.SanPhamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SanPhamField, value) != true)) {
+                    this.SanPhamField = value;
+                    this.RaisePropertyChanged("SanPham");
                 }
             }
         }
@@ -1445,7 +1579,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/XoaNhanVien", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> XoaNhanVienAsync(int MaNV);
         
-        // CODEGEN: Generating message contract since element name HoTen from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name x from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TimKiemNhanVien", ReplyAction="*")]
         Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienResponse TimKiemNhanVien(Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienRequest request);
         
@@ -1569,16 +1703,20 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string MatKhau;
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int QuyenAdmin;
+        
         public ThemNhanVienRequestBody() {
         }
         
-        public ThemNhanVienRequestBody(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau) {
+        public ThemNhanVienRequestBody(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin) {
             this.HoTen = HoTen;
             this.Email = Email;
             this.SoDT = SoDT;
             this.CMND = CMND;
             this.DiaChi = DiaChi;
             this.MatKhau = MatKhau;
+            this.QuyenAdmin = QuyenAdmin;
         }
     }
     
@@ -1660,10 +1798,13 @@ namespace Admin_QuanLyShop.Service_NhanVien {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string MatKhau;
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int QuyenAdmin;
+        
         public SuaNhanVienRequestBody() {
         }
         
-        public SuaNhanVienRequestBody(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau) {
+        public SuaNhanVienRequestBody(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin) {
             this.MaNV = MaNV;
             this.HoTen = HoTen;
             this.Email = Email;
@@ -1671,6 +1812,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             this.CMND = CMND;
             this.DiaChi = DiaChi;
             this.MatKhau = MatKhau;
+            this.QuyenAdmin = QuyenAdmin;
         }
     }
     
@@ -1732,29 +1874,13 @@ namespace Admin_QuanLyShop.Service_NhanVien {
     public partial class TimKiemNhanVienRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HoTen;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Email;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string SoDT;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string CMND;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string DiaChi;
+        public string x;
         
         public TimKiemNhanVienRequestBody() {
         }
         
-        public TimKiemNhanVienRequestBody(string HoTen, string Email, string SoDT, string CMND, string DiaChi) {
-            this.HoTen = HoTen;
-            this.Email = Email;
-            this.SoDT = SoDT;
-            this.CMND = CMND;
-            this.DiaChi = DiaChi;
+        public TimKiemNhanVienRequestBody(string x) {
+            this.x = x;
         }
     }
     
@@ -1991,7 +2117,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             return base.Channel.ThemNhanVien(request);
         }
         
-        public bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau) {
+        public bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin) {
             Admin_QuanLyShop.Service_NhanVien.ThemNhanVienRequest inValue = new Admin_QuanLyShop.Service_NhanVien.ThemNhanVienRequest();
             inValue.Body = new Admin_QuanLyShop.Service_NhanVien.ThemNhanVienRequestBody();
             inValue.Body.HoTen = HoTen;
@@ -2000,6 +2126,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             inValue.Body.CMND = CMND;
             inValue.Body.DiaChi = DiaChi;
             inValue.Body.MatKhau = MatKhau;
+            inValue.Body.QuyenAdmin = QuyenAdmin;
             Admin_QuanLyShop.Service_NhanVien.ThemNhanVienResponse retVal = ((Admin_QuanLyShop.Service_NhanVien.Service_NhanVienSoap)(this)).ThemNhanVien(inValue);
             return retVal.Body.ThemNhanVienResult;
         }
@@ -2009,7 +2136,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             return base.Channel.ThemNhanVienAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Admin_QuanLyShop.Service_NhanVien.ThemNhanVienResponse> ThemNhanVienAsync(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau) {
+        public System.Threading.Tasks.Task<Admin_QuanLyShop.Service_NhanVien.ThemNhanVienResponse> ThemNhanVienAsync(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin) {
             Admin_QuanLyShop.Service_NhanVien.ThemNhanVienRequest inValue = new Admin_QuanLyShop.Service_NhanVien.ThemNhanVienRequest();
             inValue.Body = new Admin_QuanLyShop.Service_NhanVien.ThemNhanVienRequestBody();
             inValue.Body.HoTen = HoTen;
@@ -2018,6 +2145,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             inValue.Body.CMND = CMND;
             inValue.Body.DiaChi = DiaChi;
             inValue.Body.MatKhau = MatKhau;
+            inValue.Body.QuyenAdmin = QuyenAdmin;
             return ((Admin_QuanLyShop.Service_NhanVien.Service_NhanVienSoap)(this)).ThemNhanVienAsync(inValue);
         }
         
@@ -2026,7 +2154,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             return base.Channel.SuaNhanVien(request);
         }
         
-        public bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau) {
+        public bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin) {
             Admin_QuanLyShop.Service_NhanVien.SuaNhanVienRequest inValue = new Admin_QuanLyShop.Service_NhanVien.SuaNhanVienRequest();
             inValue.Body = new Admin_QuanLyShop.Service_NhanVien.SuaNhanVienRequestBody();
             inValue.Body.MaNV = MaNV;
@@ -2036,6 +2164,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             inValue.Body.CMND = CMND;
             inValue.Body.DiaChi = DiaChi;
             inValue.Body.MatKhau = MatKhau;
+            inValue.Body.QuyenAdmin = QuyenAdmin;
             Admin_QuanLyShop.Service_NhanVien.SuaNhanVienResponse retVal = ((Admin_QuanLyShop.Service_NhanVien.Service_NhanVienSoap)(this)).SuaNhanVien(inValue);
             return retVal.Body.SuaNhanVienResult;
         }
@@ -2045,7 +2174,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             return base.Channel.SuaNhanVienAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Admin_QuanLyShop.Service_NhanVien.SuaNhanVienResponse> SuaNhanVienAsync(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau) {
+        public System.Threading.Tasks.Task<Admin_QuanLyShop.Service_NhanVien.SuaNhanVienResponse> SuaNhanVienAsync(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin) {
             Admin_QuanLyShop.Service_NhanVien.SuaNhanVienRequest inValue = new Admin_QuanLyShop.Service_NhanVien.SuaNhanVienRequest();
             inValue.Body = new Admin_QuanLyShop.Service_NhanVien.SuaNhanVienRequestBody();
             inValue.Body.MaNV = MaNV;
@@ -2055,6 +2184,7 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             inValue.Body.CMND = CMND;
             inValue.Body.DiaChi = DiaChi;
             inValue.Body.MatKhau = MatKhau;
+            inValue.Body.QuyenAdmin = QuyenAdmin;
             return ((Admin_QuanLyShop.Service_NhanVien.Service_NhanVienSoap)(this)).SuaNhanVienAsync(inValue);
         }
         
@@ -2071,14 +2201,10 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             return base.Channel.TimKiemNhanVien(request);
         }
         
-        public Admin_QuanLyShop.Service_NhanVien.NhanVien[] TimKiemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi) {
+        public Admin_QuanLyShop.Service_NhanVien.NhanVien[] TimKiemNhanVien(string x) {
             Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienRequest inValue = new Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienRequest();
             inValue.Body = new Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienRequestBody();
-            inValue.Body.HoTen = HoTen;
-            inValue.Body.Email = Email;
-            inValue.Body.SoDT = SoDT;
-            inValue.Body.CMND = CMND;
-            inValue.Body.DiaChi = DiaChi;
+            inValue.Body.x = x;
             Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienResponse retVal = ((Admin_QuanLyShop.Service_NhanVien.Service_NhanVienSoap)(this)).TimKiemNhanVien(inValue);
             return retVal.Body.TimKiemNhanVienResult;
         }
@@ -2088,14 +2214,10 @@ namespace Admin_QuanLyShop.Service_NhanVien {
             return base.Channel.TimKiemNhanVienAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienResponse> TimKiemNhanVienAsync(string HoTen, string Email, string SoDT, string CMND, string DiaChi) {
+        public System.Threading.Tasks.Task<Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienResponse> TimKiemNhanVienAsync(string x) {
             Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienRequest inValue = new Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienRequest();
             inValue.Body = new Admin_QuanLyShop.Service_NhanVien.TimKiemNhanVienRequestBody();
-            inValue.Body.HoTen = HoTen;
-            inValue.Body.Email = Email;
-            inValue.Body.SoDT = SoDT;
-            inValue.Body.CMND = CMND;
-            inValue.Body.DiaChi = DiaChi;
+            inValue.Body.x = x;
             return ((Admin_QuanLyShop.Service_NhanVien.Service_NhanVienSoap)(this)).TimKiemNhanVienAsync(inValue);
         }
         

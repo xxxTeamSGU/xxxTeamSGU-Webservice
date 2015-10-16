@@ -32,6 +32,7 @@ namespace Service_GiayDep.Models
         public DbSet<HoaDonNhap> HoaDonNhaps { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<Loai> Loais { get; set; }
+        public DbSet<Mau> Maus { get; set; }
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<SanPham> SanPhams { get; set; }

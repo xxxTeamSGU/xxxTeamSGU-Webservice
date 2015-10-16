@@ -1,4 +1,6 @@
-﻿@using GiayDep.Models;
+﻿@using GiayDep.Service_SanPham;
+
+
 @model List<SanPham>
 
 @{
@@ -9,7 +11,7 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
                         
-                        <a href="@Url.Action("Chitietsanpham", new { @masp = item.MaSP })"><img src="@Url.Content("~/images/home/"+ item.HinhAnh)" alt="" /></a>
+                        <a href="@Url.Action("Chitietsanpham", new { @masp = item.MaSP })"><img src="@Url.Content("~/images/home/"+ item.HinhAnh)" alt="" height="237" width="255" /></a>
                         <h2>@item.GiaSP.000đ</h2>
                         <p>@item.TenSP</p>
                 @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = item.MaSP, @strUrl = Request.Url.ToString() }))
@@ -22,8 +24,9 @@
                     }
                     </div>
                 </div>
-                <img src="images/home/new.png" class="new" alt="">
+                <img src="images/home/new.png" class="new" alt="">;
             </div>
         </div>
     }
+
 }

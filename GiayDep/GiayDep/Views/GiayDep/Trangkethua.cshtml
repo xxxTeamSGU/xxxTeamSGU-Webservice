@@ -13,6 +13,9 @@
     <link href="~/css/responsive.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="~/js/jsChitiet.js"></script>
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/images/ico/apple-touch-icon-114-precomposed.png">
@@ -26,12 +29,14 @@
         <!--header-->
         @RenderPage("~/Views/GiayDep/header.cshtml");
     </header><!--/header-->
-    
-    
+ 
+    <section>
+        <div class="container">
             @RenderSection("Noidungbenphai", false)
             @RenderBody()
 
-       
+        </div>
+    </section>
     <footer id="footer">
         <!--Footer-->
         @RenderPage("~/Views/GiayDep/footer.cshtml");
@@ -46,3 +51,4 @@
 </body>
 
 </html>
+

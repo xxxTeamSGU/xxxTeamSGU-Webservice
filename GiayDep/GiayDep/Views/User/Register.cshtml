@@ -1,64 +1,80 @@
-﻿@using GiayDep.Models;
-@model KhachHang 
+﻿@model GiayDep.Models.khachhang
 
 @{
-    ViewBag.Title = "Đăng kí";
-    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
+    ViewBag.Title = "Register";
+    Layout = "~/Views/GiayDep/Trangchu.cshtml";
 }
-
+<section id="form">
+    <!--form-->
     <div class="container">
-        <div class="col-lg-3"></div>
-        <div class="row">
-            <!--form-->
-            <div class="col-sm-5">
-                <div class="signup-form">
-                    <!--sign up form-->
-                    <center><h2>Đăng kí tài khoản</h2></center>
+            <div class="row">
+                @*<div class="col-sm-4 col-sm-offset-1">
+                    <div class="login-form">
+                        <!--login form-->
+                        <h2>Login to your account</h2>
+                        <form action="#">
+                            <input type="text" placeholder="Name" />
+                            <input type="email" placeholder="Email Address" />
+                            <span>
+                                <input type="checkbox" class="checkbox">
+                                Keep me signed in
+                            </span>
+                            <button type="submit" class="btn btn-default">Login</button>
+                        </form>
+                    </div><!--/login form-->
+                </div>
+                <div class="col-sm-1">
+                    <h2 class="or">OR</h2>
+                </div>*@
+                <div class="col-sm-5">
+                    <div class="signup-form">
+                        <!--sign up form-->
+                        <center><h2>Đăng kí tài khoản</h2></center>
                         @using (Html.BeginForm())
                         {
                             @Html.AntiForgeryToken()
 
                             <div class="form-horizontal">
                                 <hr />
-                                @Html.ValidationSummary(true)
+                                @Html.ValidationSummary(false)
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.HoTen, new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.tenkh, new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.HoTen)
-                                        @Html.ValidationMessageFor(model => model.HoTen)
+                                        @Html.EditorFor(model => model.tenkh)
+                                        @Html.ValidationMessageFor(model => model.tenkh)
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.email, new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Email)
-                                        @Html.ValidationMessageFor(model => model.Email)
+                                        @Html.EditorFor(model => model.email)
+                                        @Html.ValidationMessageFor(model => model.email)
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.MatKhau, new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.matkhau, new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.PasswordFor(model => model.MatKhau)
-                                        @Html.ValidationMessageFor(model => model.MatKhau)
+                                        @Html.EditorFor(model => model.matkhau)
+                                        @Html.ValidationMessageFor(model => model.matkhau)
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.SoDT, new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.sdt, new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.SoDT)
-                                        @Html.ValidationMessageFor(model => model.SoDT)
+                                        @Html.EditorFor(model => model.sdt)
+                                        @Html.ValidationMessageFor(model => model.sdt)
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.DiaChi, new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.diachi, new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.DiaChi)
-                                        @Html.ValidationMessageFor(model => model.DiaChi)
+                                        @Html.EditorFor(model => model.diachi)
+                                        @Html.ValidationMessageFor(model => model.diachi)
                                     </div>
                                 </div>
 
@@ -70,11 +86,16 @@
                                 </div>
                             </div>
                         }
-</div><!--/sign up form-->
+
+                    </div><!--/sign up form-->
+                </div>
             </div>
-        </div>
     </div>
+</section><!--/form-->
 
 
 
 
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

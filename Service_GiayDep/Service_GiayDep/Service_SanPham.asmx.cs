@@ -19,7 +19,7 @@ namespace Service_GiayDep
     // [System.Web.Script.Services.ScriptService]
     public class Service_SanPham : IService_SanPham
     {
-
+        DBGiayDepEntities db = new DBGiayDepEntities();
         [WebMethod]
         public List<SanPham> LayTatCaSanPham()
         {
@@ -38,15 +38,13 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,string Size,string MauSac,decimal GiaSP,
+        public bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,decimal GiaSP,
             string HinhAnh,string HinhAnh1,string HinhAnh2,string HinhAnh3, int SoLuong, string MoTa,int KM,string NgayCapNhat)
         {
             SanPham sanpham = new SanPham();
             sanpham.TenSP = TenSP;
             sanpham.MaLoai = (int)MaLoai;
             sanpham.ThuongHieu = ThuongHieu;
-            sanpham.Size = Size;
-            sanpham.MauSac = MauSac;
             sanpham.GiaSP = (decimal)GiaSP;
             sanpham.HinhAnh = HinhAnh;
             sanpham.HinhAnh1 = HinhAnh1;
@@ -54,8 +52,8 @@ namespace Service_GiayDep
             sanpham.HinhAnh3 = HinhAnh3;
             sanpham.SoLuong = (int)SoLuong;
             sanpham.MoTa = MoTa;
-            //sanpham.KM = (int)KM;
-            //sanpham.NgayCapNhat = DateTime.Parse(NgayCapNhat);
+            sanpham.KM = (int)KM;
+            sanpham.NgayCapNhat = DateTime.Parse(NgayCapNhat);
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
@@ -72,8 +70,7 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, string Size,
-       string MauSac, decimal GiaSP, string HinhAnh, string HinhAnh1,
+        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1,
        string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat)
         {
            
@@ -87,8 +84,6 @@ namespace Service_GiayDep
                         item.TenSP = TenSP;
                         item.MaLoai = (int)MaLoai;
                         item.ThuongHieu = ThuongHieu;
-                        item.Size = Size;
-                        item.MauSac = MauSac;
                         item.GiaSP = GiaSP;
                         item.HinhAnh = HinhAnh;
                         item.HinhAnh1 = HinhAnh1;
@@ -96,7 +91,7 @@ namespace Service_GiayDep
                         item.HinhAnh3 = HinhAnh3;
                         item.SoLuong = (int)SoLuong;
                         item.MoTa = MoTa;
-                        //item.KM = (int)KM;
+                        item.KM = (int)KM;
                         db.SaveChanges();
                         return true;
                     }
@@ -151,5 +146,37 @@ namespace Service_GiayDep
             }
         }
     
+        [WebMethod]
+        public List<SanPham> SanphammoiPartial()
+        {
+            var listSanphammoi = db.SanPhams.Take(6).ToList();
+            return listSanphammoi;
+        }
+        [WebMethod]
+        public List<SanPham> SanphamkhuyenmaiPartial()
+        {
+            var listSanphammoi = db.SanPhams.Where(n => n.KM ==1).Take(6).ToList();
+            return listSanphammoi;
+        }
+        [WebMethod]
+        public SanPham Chitietsanpham(int masp)
+        {
+            try
+            {
+                SanPham chitiet = db.SanPhams.SingleOrDefault(n => n.MaSP == masp);
+
+                return chitiet;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        [WebMethod]
+        public SanPham LaySanPham(int imasp)
+        {
+            SanPham laymasp = db.SanPhams.SingleOrDefault(n => n.MaSP == imasp);
+            return laymasp;
+        }
     }
 }

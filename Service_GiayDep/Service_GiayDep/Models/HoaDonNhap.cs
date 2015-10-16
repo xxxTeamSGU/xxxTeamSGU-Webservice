@@ -12,8 +12,10 @@ namespace Service_GiayDep.Models
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
+
     [DataContract(IsReference = true)]
     [KnownType(typeof(CTHoaDonNhap))]
+
     public partial class HoaDonNhap
     {
         public HoaDonNhap()
@@ -33,14 +35,12 @@ namespace Service_GiayDep.Models
         public Nullable<decimal> TongTien { get; set; }
         [DataMember]
         public Nullable<int> TinhTrang { get; set; }
+
         [DataMember]
-    
         public virtual List<CTHoaDonNhap> CTHoaDonNhaps { get; set; }
         [DataMember]
         public virtual NhaCungCap NhaCungCap { get; set; }
         [DataMember]
         public virtual NhanVien NhanVien { get; set; }
-        [DataMember]
-        public virtual NhanVien NhanVien1 { get; set; }
     }
 }

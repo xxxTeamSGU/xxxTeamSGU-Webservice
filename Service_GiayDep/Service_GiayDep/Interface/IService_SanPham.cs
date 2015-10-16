@@ -13,16 +13,22 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         List<SanPham> LayTatCaSanPham();
         [OperationContract]
-        bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,string Size,
-            string MauSac,decimal GiaSP,string HinhAnh,string HinhAnh1,
+        bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,decimal GiaSP,string HinhAnh,string HinhAnh1,
             string HinhAnh2,string HinhAnh3, int SoLuong, string MoTa,int KM,string NgayCapNhat);
         [OperationContract]
-        bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, string Size,
-            string MauSac, decimal GiaSP, string HinhAnh, string HinhAnh1,
+        bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu,decimal GiaSP, string HinhAnh, string HinhAnh1,
             string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat);
         [OperationContract]
         bool XoaSanPham(int MaSP);
         [OperationContract]
         List<SanPham> TimKiemSanPham(string Tim);
+        [OperationContract]
+        List<SanPham> SanphammoiPartial();
+        [OperationContract]
+        List<SanPham> SanphamkhuyenmaiPartial();
+        [OperationContract]
+        SanPham Chitietsanpham(int masp);
+        [OperationContract]
+        SanPham LaySanPham(int imasp);
     }
 }
