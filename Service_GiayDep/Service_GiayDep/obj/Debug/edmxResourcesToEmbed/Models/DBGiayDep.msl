@@ -51,9 +51,11 @@
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="SoDT" ColumnName="SoDT" />
-          <ScalarProperty Name="SoTK" ColumnName="SoTK" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -62,6 +64,15 @@
         <MappingFragment StoreEntitySet="Loai">
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maus">
+      <EntityTypeMapping TypeName="DBGiayDepModel.Mau">
+        <MappingFragment StoreEntitySet="Mau">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -86,6 +97,7 @@
           <ScalarProperty Name="CMND" ColumnName="CMND" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="QuyenAdmin" ColumnName="QuyenAdmin" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -96,8 +108,6 @@
           <ScalarProperty Name="TenSP" ColumnName="TenSP" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="ThuongHieu" ColumnName="ThuongHieu" />
-          <ScalarProperty Name="Size" ColumnName="Size" />
-          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
           <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
           <ScalarProperty Name="HinhAnh1" ColumnName="HinhAnh1" />
@@ -107,6 +117,7 @@
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="KM" ColumnName="KM" />
           <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="GiaKM" ColumnName="GiaKM" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -121,29 +132,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBGiayDepModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBGiayDepModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBGiayDepModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBGiayDepModel.Store.sp_helpdiagramdefinition">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DBGiayDepModel.sp_helpdiagramdefinition_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBGiayDepModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DBGiayDepModel.sp_helpdiagrams_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBGiayDepModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBGiayDepModel.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

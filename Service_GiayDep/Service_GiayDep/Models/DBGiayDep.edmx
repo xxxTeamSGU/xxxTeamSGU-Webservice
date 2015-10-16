@@ -54,9 +54,11 @@
           <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
           <Property Name="SoDT" Type="nvarchar" MaxLength="50" />
-          <Property Name="SoTK" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="int" />
         </EntityType>
         <EntityType Name="Loai">
           <Key>
@@ -64,6 +66,14 @@
           </Key>
           <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenLoai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Mau">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="int" Nullable="false" />
+          <Property Name="Size" Type="int" />
+          <Property Name="SoLuong" Type="int" />
         </EntityType>
         <EntityType Name="NhaCungCap">
           <Key>
@@ -86,6 +96,7 @@
           <Property Name="CMND" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar(max)" />
           <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuyenAdmin" Type="int" />
         </EntityType>
         <EntityType Name="SanPham">
           <Key>
@@ -95,8 +106,6 @@
           <Property Name="TenSP" Type="nvarchar" MaxLength="50" />
           <Property Name="MaLoai" Type="int" />
           <Property Name="ThuongHieu" Type="nvarchar" MaxLength="50" />
-          <Property Name="Size" Type="nvarchar" MaxLength="50" />
-          <Property Name="MauSac" Type="nvarchar" MaxLength="50" />
           <Property Name="GiaSP" Type="decimal" Precision="18" Scale="0" />
           <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
           <Property Name="HinhAnh1" Type="nvarchar" MaxLength="50" />
@@ -106,6 +115,7 @@
           <Property Name="MoTa" Type="nvarchar" MaxLength="100" />
           <Property Name="KM" Type="int" />
           <Property Name="NgayCapNhat" Type="date" />
+          <Property Name="GiaKM" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -213,6 +223,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Mau_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+          <End Role="Mau" Type="Self.Mau" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="Mau">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SanPham_Loai">
           <End Role="Loai" Type="Self.Loai" Multiplicity="0..1" />
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
@@ -225,37 +247,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBGiayDepModelStoreContainer">
           <EntitySet Name="CTDH" EntityType="Self.CTDH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTHoaDonNhap" EntityType="Self.CTHoaDonNhap" Schema="dbo" store:Type="Tables" />
@@ -263,6 +254,7 @@
           <EntitySet Name="HoaDonNhap" EntityType="Self.HoaDonNhap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Loai" EntityType="Self.Loai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mau" EntityType="Self.Mau" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
@@ -298,6 +290,10 @@
           <AssociationSet Name="FK_HoaDonNhap_NhanVien2" Association="Self.FK_HoaDonNhap_NhanVien2">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="HoaDonNhap" EntitySet="HoaDonNhap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mau_SanPham" Association="Self.FK_Mau_SanPham">
+            <End Role="SanPham" EntitySet="SanPham" />
+            <End Role="Mau" EntitySet="Mau" />
           </AssociationSet>
           <AssociationSet Name="FK_SanPham_Loai" Association="Self.FK_SanPham_Loai">
             <End Role="Loai" EntitySet="Loai" />
@@ -368,9 +364,11 @@
           <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SoDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SoTK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="Int32" />
           <NavigationProperty Name="DonHangs" Relationship="Self.FK_DonHang_KhachHang" FromRole="KhachHang" ToRole="DonHang" />
         </EntityType>
         <EntityType Name="Loai">
@@ -380,6 +378,15 @@
           <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_Loai" FromRole="Loai" ToRole="SanPham" />
+        </EntityType>
+        <EntityType Name="Mau">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaSP" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="SoLuong" Type="Int32" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK_Mau_SanPham" FromRole="Mau" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="NhaCungCap">
           <Key>
@@ -403,6 +410,7 @@
           <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuyenAdmin" Type="Int32" />
           <NavigationProperty Name="DonHangs" Relationship="Self.FK_DonHang_NhanVien" FromRole="NhanVien" ToRole="DonHang" />
           <NavigationProperty Name="HoaDonNhaps" Relationship="Self.FK_HoaDonNhap_NhanVien2" FromRole="NhanVien" ToRole="HoaDonNhap" />
         </EntityType>
@@ -414,8 +422,6 @@
           <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MaLoai" Type="Int32" />
           <Property Name="ThuongHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MauSac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GiaSP" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HinhAnh1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -425,9 +431,11 @@
           <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="KM" Type="Int32" />
           <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
+          <Property Name="GiaKM" Type="Int32" />
           <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_SanPham1" FromRole="SanPham" ToRole="CTDH" />
           <NavigationProperty Name="CTHoaDonNhaps" Relationship="Self.FK_CTHoaDonNhap_SanPham1" FromRole="SanPham" ToRole="CTHoaDonNhap" />
           <NavigationProperty Name="Loai" Relationship="Self.FK_SanPham_Loai" FromRole="SanPham" ToRole="Loai" />
+          <NavigationProperty Name="Mau" Relationship="Self.FK_Mau_SanPham" FromRole="SanPham" ToRole="Mau" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -547,6 +555,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Mau_SanPham">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+          <End Role="Mau" Type="Self.Mau" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="Mau">
+              <PropertyRef Name="MaSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DBGiayDepEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CTDHs" EntityType="Self.CTDH" />
           <EntitySet Name="CTHoaDonNhaps" EntityType="Self.CTHoaDonNhap" />
@@ -554,6 +574,7 @@
           <EntitySet Name="HoaDonNhaps" EntityType="Self.HoaDonNhap" />
           <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
           <EntitySet Name="Loais" EntityType="Self.Loai" />
+          <EntitySet Name="Maus" EntityType="Self.Mau" />
           <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
@@ -594,48 +615,11 @@
             <End Role="Loai" EntitySet="Loais" />
             <End Role="SanPham" EntitySet="SanPhams" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBGiayDepModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBGiayDepModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
+          <AssociationSet Name="FK_Mau_SanPham" Association="Self.FK_Mau_SanPham">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="Mau" EntitySet="Maus" />
+          </AssociationSet>
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -692,9 +676,11 @@
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
                 <ScalarProperty Name="SoDT" ColumnName="SoDT" />
-                <ScalarProperty Name="SoTK" ColumnName="SoTK" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -703,6 +689,15 @@
               <MappingFragment StoreEntitySet="Loai">
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maus">
+            <EntityTypeMapping TypeName="DBGiayDepModel.Mau">
+              <MappingFragment StoreEntitySet="Mau">
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -727,6 +722,7 @@
                 <ScalarProperty Name="CMND" ColumnName="CMND" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="QuyenAdmin" ColumnName="QuyenAdmin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -737,8 +733,6 @@
                 <ScalarProperty Name="TenSP" ColumnName="TenSP" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="ThuongHieu" ColumnName="ThuongHieu" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="MauSac" ColumnName="MauSac" />
                 <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="HinhAnh1" ColumnName="HinhAnh1" />
@@ -748,6 +742,7 @@
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
                 <ScalarProperty Name="KM" ColumnName="KM" />
                 <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="GiaKM" ColumnName="GiaKM" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -762,30 +757,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBGiayDepModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBGiayDepModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBGiayDepModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBGiayDepModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBGiayDepModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBGiayDepModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBGiayDepModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBGiayDepModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBGiayDepModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -124,13 +124,13 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-      public  List<NhaCungCap> TimKiemNhaCungCap(string TenNCC, string DiaChi, string SoDT, string SoTK)
+      public  List<NhaCungCap> TimKiemNhaCungCap(string x)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.NhaCungCaps.Where(c => c.TenNCC.Contains(TenNCC) && c.DiaChi.Contains(DiaChi) && c.SoDT.Contains(SoDT) && c.SoTK.Contains(SoTK)).ToList();
+                    var list = db.NhaCungCaps.Where(c => c.TenNCC.Contains(x) || c.DiaChi.Contains(x) || c.SoDT.Contains(x) ||  c.SoTK.Contains(x)).ToList();
                     return list;
                 }
             }

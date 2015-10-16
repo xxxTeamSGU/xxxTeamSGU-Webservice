@@ -13,7 +13,7 @@ namespace Service_GiayDep.Models
     using System.Collections.Generic;
     using System.Runtime.Serialization;
 
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
     [KnownType(typeof(DonHang))]
     
     public partial class KhachHang
@@ -22,7 +22,7 @@ namespace Service_GiayDep.Models
         {
             this.DonHangs = new List<DonHang>();
         }
-    
+
         [DataMember]
         public int MaKH { get; set; }
         [DataMember]
@@ -30,11 +30,15 @@ namespace Service_GiayDep.Models
         [DataMember]
         public string SoDT { get; set; }
         [DataMember]
-        public string SoTK { get; set; }
-        [DataMember]
         public string Email { get; set; }
         [DataMember]
         public string MatKhau { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> NgaySinh { get; set; }
+        [DataMember]
+        public string DiaChi { get; set; }
+        [DataMember]
+        public Nullable<int> GioiTinh { get; set; }
     
         [DataMember]
         public virtual List<DonHang> DonHangs { get; set; }

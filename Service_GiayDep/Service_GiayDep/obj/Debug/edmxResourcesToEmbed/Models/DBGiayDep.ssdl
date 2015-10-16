@@ -49,9 +49,11 @@
     <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
     <Property Name="SoDT" Type="nvarchar" MaxLength="50" />
-    <Property Name="SoTK" Type="nvarchar" MaxLength="50" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="int" />
   </EntityType>
   <EntityType Name="Loai">
     <Key>
@@ -59,6 +61,14 @@
     </Key>
     <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLoai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Mau">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="Size" Type="int" />
+    <Property Name="SoLuong" Type="int" />
   </EntityType>
   <EntityType Name="NhaCungCap">
     <Key>
@@ -81,6 +91,7 @@
     <Property Name="CMND" Type="nvarchar" MaxLength="50" />
     <Property Name="DiaChi" Type="nvarchar(max)" />
     <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuyenAdmin" Type="int" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>
@@ -90,8 +101,6 @@
     <Property Name="TenSP" Type="nvarchar" MaxLength="50" />
     <Property Name="MaLoai" Type="int" />
     <Property Name="ThuongHieu" Type="nvarchar" MaxLength="50" />
-    <Property Name="Size" Type="nvarchar" MaxLength="50" />
-    <Property Name="MauSac" Type="nvarchar" MaxLength="50" />
     <Property Name="GiaSP" Type="decimal" Precision="18" Scale="0" />
     <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
     <Property Name="HinhAnh1" Type="nvarchar" MaxLength="50" />
@@ -101,6 +110,7 @@
     <Property Name="MoTa" Type="nvarchar" MaxLength="100" />
     <Property Name="KM" Type="int" />
     <Property Name="NgayCapNhat" Type="date" />
+    <Property Name="GiaKM" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -208,6 +218,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Mau_SanPham">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="Mau" Type="Self.Mau" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="Mau">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_SanPham_Loai">
     <End Role="Loai" Type="Self.Loai" Multiplicity="0..1" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
@@ -220,37 +242,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="DBGiayDepModelStoreContainer">
     <EntitySet Name="CTDH" EntityType="Self.CTDH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHoaDonNhap" EntityType="Self.CTHoaDonNhap" Schema="dbo" store:Type="Tables" />
@@ -258,6 +249,7 @@
     <EntitySet Name="HoaDonNhap" EntityType="Self.HoaDonNhap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Loai" EntityType="Self.Loai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mau" EntityType="Self.Mau" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
@@ -293,6 +285,10 @@
     <AssociationSet Name="FK_HoaDonNhap_NhanVien2" Association="Self.FK_HoaDonNhap_NhanVien2">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDonNhap" EntitySet="HoaDonNhap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mau_SanPham" Association="Self.FK_Mau_SanPham">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="Mau" EntitySet="Mau" />
     </AssociationSet>
     <AssociationSet Name="FK_SanPham_Loai" Association="Self.FK_SanPham_Loai">
       <End Role="Loai" EntitySet="Loai" />

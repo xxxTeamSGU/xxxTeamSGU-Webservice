@@ -13,16 +13,16 @@ namespace Service_GiayDep.Models
     using System.Collections.Generic;
     using System.Runtime.Serialization;
 
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
     [KnownType(typeof(CTHoaDonNhap))]
-    
+
     public partial class HoaDonNhap
     {
         public HoaDonNhap()
         {
             this.CTHoaDonNhaps = new List<CTHoaDonNhap>();
         }
-    
+
         [DataMember]
         public int MaHDN { get; set; }
         [DataMember]
@@ -35,7 +35,7 @@ namespace Service_GiayDep.Models
         public Nullable<decimal> TongTien { get; set; }
         [DataMember]
         public Nullable<int> TinhTrang { get; set; }
-    
+
         [DataMember]
         public virtual List<CTHoaDonNhap> CTHoaDonNhaps { get; set; }
         [DataMember]

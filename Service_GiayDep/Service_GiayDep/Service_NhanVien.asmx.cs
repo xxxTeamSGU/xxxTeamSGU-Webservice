@@ -38,7 +38,7 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau)
+        public bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin)
         {
             NhanVien nv = new NhanVien();
             nv.HoTen = HoTen;
@@ -47,6 +47,7 @@ namespace Service_GiayDep
             nv.CMND = CMND;
             nv.DiaChi = DiaChi;
             nv.MatKhau = MatKhau;
+            nv.QuyenAdmin = QuyenAdmin;
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
@@ -63,7 +64,7 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau)
+        public bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin)
         {
             try
             {
@@ -96,6 +97,7 @@ namespace Service_GiayDep
                         {
                             item.MatKhau = MatKhau;
                         }
+                        item.QuyenAdmin = QuyenAdmin;
                         db.SaveChanges();
                         return true;
                     }
@@ -133,13 +135,13 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public List<NhanVien> TimKiemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi)
+        public List<NhanVien> TimKiemNhanVien(string x)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.NhanViens.Where(c => c.HoTen.Contains(HoTen) && c.Email.Contains(Email) && c.SoDT.Contains(SoDT) && c.CMND.Contains(CMND) && c.DiaChi.Contains(DiaChi)).ToList();
+                    var list = db.NhanViens.Where(c => c.HoTen.Contains(x) || c.Email.Contains(x) || c.SoDT.Contains(x) || c.CMND.Contains(x) || c.DiaChi.Contains(x)).ToList();
                     return list;
                 }
             }

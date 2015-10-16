@@ -4,17 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3daa58e21ccc4aff8d2a32f35e358f36" Name="Diagram1" ZoomLevel="41">
-        <EntityTypeShape EntityType="DBGiayDepModel.CTDH" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.CTHoaDonNhap" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.DonHang" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.HoaDonNhap" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.KhachHang" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.Loai" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.NhanVien" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.SanPham" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBGiayDepModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+      <Diagram DiagramId="b2f2e3f0bfc646c5aca95f014ed5e368" Name="Diagram1">
+        <EntityTypeShape EntityType="DBGiayDepModel.CTDH" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.CTHoaDonNhap" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.DonHang" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.HoaDonNhap" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.KhachHang" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.Loai" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.Mau" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.NhanVien" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.SanPham" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGiayDepModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.875" IsExpanded="true" />
         <AssociationConnector Association="DBGiayDepModel.FK_CTDH_DonHang1" ManuallyRouted="false" />
         <AssociationConnector Association="DBGiayDepModel.FK_CTDH_SanPham1" ManuallyRouted="false" />
         <AssociationConnector Association="DBGiayDepModel.FK_CTHoaDonNhap_HoaDonNhap1" ManuallyRouted="false" />
@@ -24,6 +25,7 @@
         <AssociationConnector Association="DBGiayDepModel.FK_HoaDonNhap_NhaCungCap" ManuallyRouted="false" />
         <AssociationConnector Association="DBGiayDepModel.FK_HoaDonNhap_NhanVien2" ManuallyRouted="false" />
         <AssociationConnector Association="DBGiayDepModel.FK_SanPham_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGiayDepModel.FK_Mau_SanPham" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

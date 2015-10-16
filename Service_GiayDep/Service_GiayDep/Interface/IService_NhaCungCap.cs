@@ -19,6 +19,6 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         bool XoaNhaCungCap(int MaNCC);
         [OperationContract]
-        List<NhaCungCap> TimKiemNhaCungCap(string TenNCC, string DiaChi, string SoDT, string SoTK);
+        List<NhaCungCap> TimKiemNhaCungCap(string x);
     }
 }

@@ -59,9 +59,11 @@
     <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SoDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SoTK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="Int32" />
     <NavigationProperty Name="DonHangs" Relationship="Self.FK_DonHang_KhachHang" FromRole="KhachHang" ToRole="DonHang" />
   </EntityType>
   <EntityType Name="Loai">
@@ -71,6 +73,15 @@
     <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_Loai" FromRole="Loai" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="Mau">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <NavigationProperty Name="SanPham" Relationship="Self.FK_Mau_SanPham" FromRole="Mau" ToRole="SanPham" />
   </EntityType>
   <EntityType Name="NhaCungCap">
     <Key>
@@ -94,6 +105,7 @@
     <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QuyenAdmin" Type="Int32" />
     <NavigationProperty Name="DonHangs" Relationship="Self.FK_DonHang_NhanVien" FromRole="NhanVien" ToRole="DonHang" />
     <NavigationProperty Name="HoaDonNhaps" Relationship="Self.FK_HoaDonNhap_NhanVien2" FromRole="NhanVien" ToRole="HoaDonNhap" />
   </EntityType>
@@ -105,8 +117,6 @@
     <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaLoai" Type="Int32" />
     <Property Name="ThuongHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MauSac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GiaSP" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HinhAnh1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -116,9 +126,11 @@
     <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="KM" Type="Int32" />
     <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
+    <Property Name="GiaKM" Type="Int32" />
     <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_SanPham1" FromRole="SanPham" ToRole="CTDH" />
     <NavigationProperty Name="CTHoaDonNhaps" Relationship="Self.FK_CTHoaDonNhap_SanPham1" FromRole="SanPham" ToRole="CTHoaDonNhap" />
     <NavigationProperty Name="Loai" Relationship="Self.FK_SanPham_Loai" FromRole="SanPham" ToRole="Loai" />
+    <NavigationProperty Name="Mau" Relationship="Self.FK_Mau_SanPham" FromRole="SanPham" ToRole="Mau" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -238,6 +250,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Mau_SanPham">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="Mau" Type="Self.Mau" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="Mau">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DBGiayDepEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CTDHs" EntityType="Self.CTDH" />
     <EntitySet Name="CTHoaDonNhaps" EntityType="Self.CTHoaDonNhap" />
@@ -245,6 +269,7 @@
     <EntitySet Name="HoaDonNhaps" EntityType="Self.HoaDonNhap" />
     <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
     <EntitySet Name="Loais" EntityType="Self.Loai" />
+    <EntitySet Name="Maus" EntityType="Self.Mau" />
     <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
     <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
     <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
@@ -285,46 +310,9 @@
       <End Role="Loai" EntitySet="Loais" />
       <End Role="SanPham" EntitySet="SanPhams" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBGiayDepModel.sp_helpdiagramdefinition_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBGiayDepModel.sp_helpdiagrams_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK_Mau_SanPham" Association="Self.FK_Mau_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="Mau" EntitySet="Maus" />
+    </AssociationSet>
   </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
 </Schema>

@@ -38,15 +38,13 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,string Size,string MauSac,decimal GiaSP,
+        public bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,decimal GiaSP,
             string HinhAnh,string HinhAnh1,string HinhAnh2,string HinhAnh3, int SoLuong, string MoTa,int KM,string NgayCapNhat)
         {
             SanPham sanpham = new SanPham();
             sanpham.TenSP = TenSP;
             sanpham.MaLoai = (int)MaLoai;
             sanpham.ThuongHieu = ThuongHieu;
-            sanpham.Size = Size;
-            sanpham.MauSac = MauSac;
             sanpham.GiaSP = (decimal)GiaSP;
             sanpham.HinhAnh = HinhAnh;
             sanpham.HinhAnh1 = HinhAnh1;
@@ -72,8 +70,7 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, string Size,
-       string MauSac, decimal GiaSP, string HinhAnh, string HinhAnh1,
+        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1,
        string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat)
         {
            
@@ -87,8 +84,6 @@ namespace Service_GiayDep
                         item.TenSP = TenSP;
                         item.MaLoai = (int)MaLoai;
                         item.ThuongHieu = ThuongHieu;
-                        item.Size = Size;
-                        item.MauSac = MauSac;
                         item.GiaSP = GiaSP;
                         item.HinhAnh = HinhAnh;
                         item.HinhAnh1 = HinhAnh1;

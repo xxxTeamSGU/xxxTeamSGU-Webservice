@@ -113,6 +113,9 @@
     <Compile Include="Models\Loai.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Mau.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\NhaCungCap.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
@@ -120,12 +123,6 @@
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPham.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
@@ -152,6 +149,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <EntityDeploy Include="Models\DBGiayDep.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBGiayDep.Designer.cs</LastGenOutput>
@@ -169,7 +167,6 @@
       <DependentUpon>DBGiayDep.edmx</DependentUpon>
       <LastGenOutput>DBGiayDep.cs</LastGenOutput>
     </Content>
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

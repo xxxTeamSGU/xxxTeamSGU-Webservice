@@ -52,6 +52,13 @@ namespace Admin_QuanLyShop
             {
                 int MaLoai = int.Parse(txtMaLoai.Text);
                 bool x = sv.XoaLoai(MaLoai);
+                if (x == true)
+                {
+                    MessageBox.Show("Đã xóa loại");
+                    tableLoai.DataSource = sv.LayTatCaLoai().ToList();
+                }
+                else
+                    MessageBox.Show("Không xóa được");
 
             }
             else
