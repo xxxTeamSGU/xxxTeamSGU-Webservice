@@ -19,15 +19,20 @@ namespace Service_GiayDep
     // [System.Web.Script.Services.ScriptService]
     public class Service_SanPham : IService_SanPham
     {
+        //Connect tới Database Entity
         DBGiayDepEntities db = new DBGiayDepEntities();
+        //Tạo phương thức trong webrvice
         [WebMethod]
         public List<SanPham> LayTatCaSanPham()
         {
             try
             {
+                //Gọi tới Database
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
+                    //Chọn tất cả trong bảng sản phẩm trong CSDL
                     var list = (db.SanPhams.Select(p => p).ToList());
+                    //Xuất ra dang sách sản phẩm
                     return list;
                 }
             }
@@ -37,28 +42,27 @@ namespace Service_GiayDep
                 return null;
             }
         }
+        //Phương thức thêm 1 sản phẩm mới
         [WebMethod]
-        public bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,decimal GiaSP,
-            string HinhAnh,string HinhAnh1,string HinhAnh2,string HinhAnh3, int SoLuong, string MoTa,int KM,string NgayCapNhat)
+        public bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,
+            string HinhAnh, string MoTa,int MaKM,DateTime NgayDang, string MoTaCT)
         {
             SanPham sanpham = new SanPham();
             sanpham.TenSP = TenSP;
             sanpham.MaLoai = (int)MaLoai;
             sanpham.ThuongHieu = ThuongHieu;
-            sanpham.GiaSP = (decimal)GiaSP;
             sanpham.HinhAnh = HinhAnh;
-            sanpham.HinhAnh1 = HinhAnh1;
-            sanpham.HinhAnh2 = HinhAnh2;
-            sanpham.HinhAnh3 = HinhAnh3;
-            sanpham.SoLuong = (int)SoLuong;
             sanpham.MoTa = MoTa;
-            sanpham.KM = (int)KM;
-            sanpham.NgayCapNhat = DateTime.Parse(NgayCapNhat);
+            sanpham.MaKM = (int)MaKM;
+            sanpham.NgayDang = NgayDang;
+            sanpham.MoTaCT = MoTaCT;
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
+                    //Lưu add sản phẩm mới vào model
                     db.SanPhams.Add(sanpham);
+                    //Lưu vào CSDL
                     db.SaveChanges();
                     return true;
                 }
@@ -68,30 +72,31 @@ namespace Service_GiayDep
                 Debug.WriteLine(e);
                 return false;
             }
-        }
+        } 
+        //Phương thức sửa sản phẩm
         [WebMethod]
-        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1,
-       string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat)
+        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu,
+            string HinhAnh, string MoTa, int MaKM, DateTime NgayDang, string MoTaCT)
         {
            
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
-                {
+                { 
+                    //Tìm MaSP trong bảng SanPham trong DB
                     var item = db.SanPhams.Single(p => p.MaSP == MaSP);
+                    //Nếu có thì lấy các thông tin ra để sửa
                     if (item != null)
                     {
                         item.TenSP = TenSP;
                         item.MaLoai = (int)MaLoai;
                         item.ThuongHieu = ThuongHieu;
-                        item.GiaSP = GiaSP;
                         item.HinhAnh = HinhAnh;
-                        item.HinhAnh1 = HinhAnh1;
-                        item.HinhAnh2 = HinhAnh2;
-                        item.HinhAnh3 = HinhAnh3;
-                        item.SoLuong = (int)SoLuong;
                         item.MoTa = MoTa;
-                        item.KM = (int)KM;
+                        item.MaKM = (int)MaKM;
+                        item.NgayDang= NgayDang;
+                        item.MoTaCT=MoTaCT;
+
                         db.SaveChanges();
                         return true;
                     }
@@ -105,17 +110,22 @@ namespace Service_GiayDep
                 return false;
             }
         }
+        //Phương thức xóa sản phẩm
         [WebMethod]
         public bool XoaSanPham(int MaSP)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
-                {
+                { 
+                    //Tìm MaSP muốn xóa
                     var SpDelete = db.SanPhams.SingleOrDefault(p =>p.MaSP == MaSP);
+                    //Nếu có
                     if(SpDelete!=null)
                     {
+                        //Thực hiện xóa sản phẩm
                         db.SanPhams.Remove(SpDelete);
+                        //lưu lại thay đổi
                         db.SaveChanges();
                         return true;
                     }
@@ -128,6 +138,7 @@ namespace Service_GiayDep
                 return false;
             }
         }
+        //Phương thức tìm kiếm sản phẩm
         [WebMethod]
         public List<SanPham> TimKiemSanPham(string Tim)
         {
@@ -135,6 +146,7 @@ namespace Service_GiayDep
             {
                 using(DBGiayDepEntities db = new DBGiayDepEntities())
                 {
+                    //Tìm theo tên hoặc thươc hiệu và lấy ra list
                     var list = db.SanPhams.Where( c => c.TenSP.Contains(Tim) || c.ThuongHieu.Contains(Tim)).ToList();
                     return list;
                 }
@@ -145,20 +157,22 @@ namespace Service_GiayDep
                 return null;
             }
         }
-    
+        //Phương thức lấy ra sản phẩm mới theo ngày
         [WebMethod]
         public List<SanPham> SanphammoiPartial()
         {
             var listSanphammoi = db.SanPhams.Take(6).ToList();
             return listSanphammoi;
         }
+        //Phương thức lấy sản phẩm khuyến mãi khi thuộc tính KM =1
         [WebMethod]
         public List<SanPham> SanphamkhuyenmaiPartial()
         {
-            var listSanphammoi = db.SanPhams.Where(n => n.KM ==1).Take(6).ToList();
+            var listSanphammoi = db.SanPhams.Where(n => n.MaKM ==1).Take(6).ToList();
             return listSanphammoi;
         }
         [WebMethod]
+        //Phương thức lấy chi tiết sản phẩm
         public SanPham Chitietsanpham(int masp)
         {
             try
