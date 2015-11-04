@@ -1,0 +1,21 @@
+﻿
+@using GiayDep.Service_KhachHang;
+@model KhachHang
+
+    @{ 
+        var khachhang = Session["khachhang"] as KhachHang;
+    }
+    @if (khachhang != null)
+    {
+        @khachhang.HoTen;<br/>
+         <span class="glyphicon glyphicon-log-out">@Html.ActionLink("Đăng xuất","Logout","User")</span>
+    }
+    else 
+    {
+         @*@RenderPage("~/Views/User/LoginPartial.cshtml")*@
+        <a href="/User/Login"><i class="fa fa-lock"></i> Đăng nhập</a>
+    }
+
+
+    
+

@@ -33,10 +33,10 @@
           <s:element minOccurs="1" maxOccurs="1" name="KM" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="NgayCapNhat" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="GiaKM" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mau" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CTDHs" type="tns:ArrayOfCTDH" />
-          <s:element minOccurs="0" maxOccurs="1" name="CTHoaDonNhaps" type="tns:ArrayOfCTHoaDonNhap" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTHDNs" type="tns:ArrayOfCTHDN" />
           <s:element minOccurs="0" maxOccurs="1" name="Loai" type="tns:Loai" />
-          <s:element minOccurs="0" maxOccurs="1" name="Mau" type="tns:Mau" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfCTDH">
@@ -50,6 +50,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="MaSP" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="SoLuong" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="DonGia" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mau" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="DonHang" type="tns:DonHang" />
           <s:element minOccurs="0" maxOccurs="1" name="SanPham" type="tns:SanPham" />
         </s:sequence>
@@ -58,13 +60,11 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="MaDH" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="MaKH" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="MaNV" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="NgayLap" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="TongTien" nillable="true" type="s:decimal" />
-          <s:element minOccurs="0" maxOccurs="1" name="TinhTrang" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="CTDHs" type="tns:ArrayOfCTDH" />
           <s:element minOccurs="0" maxOccurs="1" name="KhachHang" type="tns:KhachHang" />
-          <s:element minOccurs="0" maxOccurs="1" name="NhanVien" type="tns:NhanVien" />
+          <s:element minOccurs="0" maxOccurs="1" name="TinhTrangs" type="tns:ArrayOfTinhTrang" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="KhachHang">
@@ -85,6 +85,20 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="DonHang" nillable="true" type="tns:DonHang" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfTinhTrang">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TinhTrang" nillable="true" type="tns:TinhTrang" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TinhTrang">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MaDH" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaNV" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TinhTrang1" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DonHang" type="tns:DonHang" />
+          <s:element minOccurs="0" maxOccurs="1" name="NhanVien" type="tns:NhanVien" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="NhanVien">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="MaNV" type="s:int" />
@@ -95,8 +109,8 @@
           <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MatKhau" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="QuyenAdmin" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="DonHangs" type="tns:ArrayOfDonHang" />
           <s:element minOccurs="0" maxOccurs="1" name="HoaDonNhaps" type="tns:ArrayOfHoaDonNhap" />
+          <s:element minOccurs="0" maxOccurs="1" name="TinhTrangs" type="tns:ArrayOfTinhTrang" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfHoaDonNhap">
@@ -112,22 +126,22 @@
           <s:element minOccurs="1" maxOccurs="1" name="NgayLap" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="TongTien" nillable="true" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="TinhTrang" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="CTHoaDonNhaps" type="tns:ArrayOfCTHoaDonNhap" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTHDNs" type="tns:ArrayOfCTHDN" />
           <s:element minOccurs="0" maxOccurs="1" name="NhaCungCap" type="tns:NhaCungCap" />
           <s:element minOccurs="0" maxOccurs="1" name="NhanVien" type="tns:NhanVien" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="ArrayOfCTHoaDonNhap">
+      <s:complexType name="ArrayOfCTHDN">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CTHoaDonNhap" nillable="true" type="tns:CTHoaDonNhap" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CTHDN" nillable="true" type="tns:CTHDN" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="CTHoaDonNhap">
+      <s:complexType name="CTHDN">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="MaHDN" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="MaSP" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="SoLuong" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="DonGia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DonGia" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="HoaDonNhap" type="tns:HoaDonNhap" />
           <s:element minOccurs="0" maxOccurs="1" name="SanPham" type="tns:SanPham" />
         </s:sequence>
@@ -149,14 +163,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="SanPhams" type="tns:ArrayOfSanPham" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="Mau">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="MaSP" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Size" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="SoLuong" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="SanPham" type="tns:SanPham" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="ThemSanPham">
         <s:complexType>
           <s:sequence>
@@ -172,6 +178,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="MoTa" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="KM" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="NgayCapNhat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GiaKM" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mau" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -198,6 +206,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="MoTa" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="KM" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="NgayCapNhat" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GiaKM" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mau" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>

@@ -28,15 +28,14 @@
     <header id="header">
         <!--header-->
         @RenderPage("~/Views/GiayDep/header.cshtml");
-    </header><!--/header-->
- 
-    <section>
-        <div class="container">
-            @RenderSection("Noidungbenphai", false)
-            @RenderBody()
 
-        </div>
-    </section>
+    </header><!--/header-->
+
+
+        @RenderSection("Noidungbenphai", false)
+        @RenderBody()
+
+      
     <footer id="footer">
         <!--Footer-->
         @RenderPage("~/Views/GiayDep/footer.cshtml");

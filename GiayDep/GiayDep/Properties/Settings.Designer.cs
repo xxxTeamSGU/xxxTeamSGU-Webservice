@@ -32,5 +32,15 @@ namespace GiayDep.Properties {
                 return ((string)(this["GiayDep_Service_SanPham_Service_SanPham"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_KhachHang.asmx")]
+        public string GiayDep_Service_KhachHang_Service_KhachHang {
+            get {
+                return ((string)(this["GiayDep_Service_KhachHang_Service_KhachHang"]));
+            }
+        }
     }
 }

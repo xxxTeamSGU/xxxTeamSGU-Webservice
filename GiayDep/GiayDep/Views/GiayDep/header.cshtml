@@ -1,4 +1,5 @@
 ﻿
+
     <div class="header_top">
         <!--header_top-->
         <div class="container">
@@ -35,8 +36,10 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li>@Html.Action("giohangpartial", "giohang")</li>
-                            <li><a href="/User/Register"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                            <li>@Html.Action("giohangpartial","giohang")</li>
+                            <li>
+                               @Html.Action("LoginPartial", "User")
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -80,6 +83,5 @@
             </div>
         </div>
     </div><!--/header-bottom-->
-
 
 

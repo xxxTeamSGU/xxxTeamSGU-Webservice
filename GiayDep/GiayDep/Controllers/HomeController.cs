@@ -15,6 +15,7 @@ namespace GiayDep.Controllers
         Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
         public ActionResult Index()
         {
+            
             return View();
         }
     

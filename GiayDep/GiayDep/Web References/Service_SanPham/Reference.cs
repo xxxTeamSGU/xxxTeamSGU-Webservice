@@ -141,7 +141,7 @@ namespace GiayDep.Service_SanPham {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemSanPham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ThemSanPham(string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat) {
+        public bool ThemSanPham(string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat, int GiaKM, string Mau) {
             object[] results = this.Invoke("ThemSanPham", new object[] {
                         TenSP,
                         MaLoai,
@@ -154,17 +154,19 @@ namespace GiayDep.Service_SanPham {
                         SoLuong,
                         MoTa,
                         KM,
-                        NgayCapNhat});
+                        NgayCapNhat,
+                        GiaKM,
+                        Mau});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void ThemSanPhamAsync(string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat) {
-            this.ThemSanPhamAsync(TenSP, MaLoai, ThuongHieu, GiaSP, HinhAnh, HinhAnh1, HinhAnh2, HinhAnh3, SoLuong, MoTa, KM, NgayCapNhat, null);
+        public void ThemSanPhamAsync(string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat, int GiaKM, string Mau) {
+            this.ThemSanPhamAsync(TenSP, MaLoai, ThuongHieu, GiaSP, HinhAnh, HinhAnh1, HinhAnh2, HinhAnh3, SoLuong, MoTa, KM, NgayCapNhat, GiaKM, Mau, null);
         }
         
         /// <remarks/>
-        public void ThemSanPhamAsync(string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat, object userState) {
+        public void ThemSanPhamAsync(string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat, int GiaKM, string Mau, object userState) {
             if ((this.ThemSanPhamOperationCompleted == null)) {
                 this.ThemSanPhamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThemSanPhamOperationCompleted);
             }
@@ -180,7 +182,9 @@ namespace GiayDep.Service_SanPham {
                         SoLuong,
                         MoTa,
                         KM,
-                        NgayCapNhat}, this.ThemSanPhamOperationCompleted, userState);
+                        NgayCapNhat,
+                        GiaKM,
+                        Mau}, this.ThemSanPhamOperationCompleted, userState);
         }
         
         private void OnThemSanPhamOperationCompleted(object arg) {
@@ -192,7 +196,7 @@ namespace GiayDep.Service_SanPham {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SuaSanPham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat) {
+        public bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat, int GiaKM, string Mau) {
             object[] results = this.Invoke("SuaSanPham", new object[] {
                         MaSP,
                         TenSP,
@@ -206,17 +210,35 @@ namespace GiayDep.Service_SanPham {
                         SoLuong,
                         MoTa,
                         KM,
-                        NgayCapNhat});
+                        NgayCapNhat,
+                        GiaKM,
+                        Mau});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void SuaSanPhamAsync(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat) {
-            this.SuaSanPhamAsync(MaSP, TenSP, MaLoai, ThuongHieu, GiaSP, HinhAnh, HinhAnh1, HinhAnh2, HinhAnh3, SoLuong, MoTa, KM, NgayCapNhat, null);
+        public void SuaSanPhamAsync(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat, int GiaKM, string Mau) {
+            this.SuaSanPhamAsync(MaSP, TenSP, MaLoai, ThuongHieu, GiaSP, HinhAnh, HinhAnh1, HinhAnh2, HinhAnh3, SoLuong, MoTa, KM, NgayCapNhat, GiaKM, Mau, null);
         }
         
         /// <remarks/>
-        public void SuaSanPhamAsync(int MaSP, string TenSP, int MaLoai, string ThuongHieu, decimal GiaSP, string HinhAnh, string HinhAnh1, string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat, object userState) {
+        public void SuaSanPhamAsync(
+                    int MaSP, 
+                    string TenSP, 
+                    int MaLoai, 
+                    string ThuongHieu, 
+                    decimal GiaSP, 
+                    string HinhAnh, 
+                    string HinhAnh1, 
+                    string HinhAnh2, 
+                    string HinhAnh3, 
+                    int SoLuong, 
+                    string MoTa, 
+                    int KM, 
+                    string NgayCapNhat, 
+                    int GiaKM, 
+                    string Mau, 
+                    object userState) {
             if ((this.SuaSanPhamOperationCompleted == null)) {
                 this.SuaSanPhamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSuaSanPhamOperationCompleted);
             }
@@ -233,7 +255,9 @@ namespace GiayDep.Service_SanPham {
                         SoLuong,
                         MoTa,
                         KM,
-                        NgayCapNhat}, this.SuaSanPhamOperationCompleted, userState);
+                        NgayCapNhat,
+                        GiaKM,
+                        Mau}, this.SuaSanPhamOperationCompleted, userState);
         }
         
         private void OnSuaSanPhamOperationCompleted(object arg) {
@@ -468,13 +492,13 @@ namespace GiayDep.Service_SanPham {
         
         private System.Nullable<int> giaKMField;
         
+        private string mauField;
+        
         private CTDH[] cTDHsField;
         
-        private CTHoaDonNhap[] cTHoaDonNhapsField;
+        private CTHDN[] cTHDNsField;
         
         private Loai loaiField;
-        
-        private Mau mauField;
         
         /// <remarks/>
         public int MaSP {
@@ -623,6 +647,16 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
+        public string Mau {
+            get {
+                return this.mauField;
+            }
+            set {
+                this.mauField = value;
+            }
+        }
+        
+        /// <remarks/>
         public CTDH[] CTDHs {
             get {
                 return this.cTDHsField;
@@ -633,12 +667,12 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
-        public CTHoaDonNhap[] CTHoaDonNhaps {
+        public CTHDN[] CTHDNs {
             get {
-                return this.cTHoaDonNhapsField;
+                return this.cTHDNsField;
             }
             set {
-                this.cTHoaDonNhapsField = value;
+                this.cTHDNsField = value;
             }
         }
         
@@ -649,16 +683,6 @@ namespace GiayDep.Service_SanPham {
             }
             set {
                 this.loaiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Mau Mau {
-            get {
-                return this.mauField;
-            }
-            set {
-                this.mauField = value;
             }
         }
     }
@@ -678,6 +702,10 @@ namespace GiayDep.Service_SanPham {
         private System.Nullable<int> soLuongField;
         
         private System.Nullable<decimal> donGiaField;
+        
+        private System.Nullable<int> sizeField;
+        
+        private string mauField;
         
         private DonHang donHangField;
         
@@ -726,6 +754,27 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Mau {
+            get {
+                return this.mauField;
+            }
+            set {
+                this.mauField = value;
+            }
+        }
+        
+        /// <remarks/>
         public DonHang DonHang {
             get {
                 return this.donHangField;
@@ -758,19 +807,15 @@ namespace GiayDep.Service_SanPham {
         
         private int maKHField;
         
-        private System.Nullable<int> maNVField;
-        
         private System.Nullable<System.DateTime> ngayLapField;
         
         private System.Nullable<decimal> tongTienField;
-        
-        private string tinhTrangField;
         
         private CTDH[] cTDHsField;
         
         private KhachHang khachHangField;
         
-        private NhanVien nhanVienField;
+        private TinhTrang[] tinhTrangsField;
         
         /// <remarks/>
         public int MaDH {
@@ -789,17 +834,6 @@ namespace GiayDep.Service_SanPham {
             }
             set {
                 this.maKHField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> MaNV {
-            get {
-                return this.maNVField;
-            }
-            set {
-                this.maNVField = value;
             }
         }
         
@@ -826,16 +860,6 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
-        public string TinhTrang {
-            get {
-                return this.tinhTrangField;
-            }
-            set {
-                this.tinhTrangField = value;
-            }
-        }
-        
-        /// <remarks/>
         public CTDH[] CTDHs {
             get {
                 return this.cTDHsField;
@@ -856,12 +880,12 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
-        public NhanVien NhanVien {
+        public TinhTrang[] TinhTrangs {
             get {
-                return this.nhanVienField;
+                return this.tinhTrangsField;
             }
             set {
-                this.nhanVienField = value;
+                this.tinhTrangsField = value;
             }
         }
     }
@@ -981,65 +1005,6 @@ namespace GiayDep.Service_SanPham {
             }
             set {
                 this.donHangsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Mau {
-        
-        private int maSPField;
-        
-        private System.Nullable<int> sizeField;
-        
-        private System.Nullable<int> soLuongField;
-        
-        private SanPham sanPhamField;
-        
-        /// <remarks/>
-        public int MaSP {
-            get {
-                return this.maSPField;
-            }
-            set {
-                this.maSPField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> Size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                this.sizeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> SoLuong {
-            get {
-                return this.soLuongField;
-            }
-            set {
-                this.soLuongField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public SanPham SanPham {
-            get {
-                return this.sanPhamField;
-            }
-            set {
-                this.sanPhamField = value;
             }
         }
     }
@@ -1190,7 +1155,7 @@ namespace GiayDep.Service_SanPham {
         
         private System.Nullable<int> tinhTrangField;
         
-        private CTHoaDonNhap[] cTHoaDonNhapsField;
+        private CTHDN[] cTHDNsField;
         
         private NhaCungCap nhaCungCapField;
         
@@ -1261,12 +1226,12 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
-        public CTHoaDonNhap[] CTHoaDonNhaps {
+        public CTHDN[] CTHDNs {
             get {
-                return this.cTHoaDonNhapsField;
+                return this.cTHDNsField;
             }
             set {
-                this.cTHoaDonNhapsField = value;
+                this.cTHDNsField = value;
             }
         }
         
@@ -1297,7 +1262,7 @@ namespace GiayDep.Service_SanPham {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class CTHoaDonNhap {
+    public partial class CTHDN {
         
         private int maHDNField;
         
@@ -1305,7 +1270,7 @@ namespace GiayDep.Service_SanPham {
         
         private System.Nullable<int> soLuongField;
         
-        private string donGiaField;
+        private System.Nullable<decimal> donGiaField;
         
         private HoaDonNhap hoaDonNhapField;
         
@@ -1343,7 +1308,8 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
-        public string DonGia {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<decimal> DonGia {
             get {
                 return this.donGiaField;
             }
@@ -1397,9 +1363,9 @@ namespace GiayDep.Service_SanPham {
         
         private System.Nullable<int> quyenAdminField;
         
-        private DonHang[] donHangsField;
-        
         private HoaDonNhap[] hoaDonNhapsField;
+        
+        private TinhTrang[] tinhTrangsField;
         
         /// <remarks/>
         public int MaNV {
@@ -1483,22 +1449,92 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
-        public DonHang[] DonHangs {
-            get {
-                return this.donHangsField;
-            }
-            set {
-                this.donHangsField = value;
-            }
-        }
-        
-        /// <remarks/>
         public HoaDonNhap[] HoaDonNhaps {
             get {
                 return this.hoaDonNhapsField;
             }
             set {
                 this.hoaDonNhapsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TinhTrang[] TinhTrangs {
+            get {
+                return this.tinhTrangsField;
+            }
+            set {
+                this.tinhTrangsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class TinhTrang {
+        
+        private int maDHField;
+        
+        private int maNVField;
+        
+        private System.Nullable<int> tinhTrang1Field;
+        
+        private DonHang donHangField;
+        
+        private NhanVien nhanVienField;
+        
+        /// <remarks/>
+        public int MaDH {
+            get {
+                return this.maDHField;
+            }
+            set {
+                this.maDHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MaNV {
+            get {
+                return this.maNVField;
+            }
+            set {
+                this.maNVField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> TinhTrang1 {
+            get {
+                return this.tinhTrang1Field;
+            }
+            set {
+                this.tinhTrang1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DonHang DonHang {
+            get {
+                return this.donHangField;
+            }
+            set {
+                this.donHangField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public NhanVien NhanVien {
+            get {
+                return this.nhanVienField;
+            }
+            set {
+                this.nhanVienField = value;
             }
         }
     }

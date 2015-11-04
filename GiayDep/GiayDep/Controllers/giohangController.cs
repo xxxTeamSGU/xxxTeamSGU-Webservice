@@ -48,22 +48,24 @@ namespace GiayDep.Controllers
               return Redirect(strUrl);
           }
       }
+        [HttpPost]
       public ActionResult capnhatgiohang(int imasp, FormCollection f)
       {
           var sp = db.LaySanPham(imasp);
+        
           if (sp == null)
           {
               Response.StatusCode = 404;
               return null;
           }
           List<giohang> listgiohang = laygiohang();
-          giohang gh = listgiohang.SingleOrDefault(n => n.imasp == imasp);
-          if (gh != null)
-          {
-              gh.soluong = int.Parse(f["txtSoluong"].ToString());
+          giohang gh = listgiohang.SingleOrDefault(n => n.imasp==imasp);
+        if (gh != null)
+        {
+            gh.soluong = 0 + int.Parse(f["txtsoluong"].ToString());
 
-          }
-          return View("giohang");
+         }
+          return View(listgiohang);
       }
 
       public ActionResult xoagiohang(int imasp)
@@ -137,5 +139,16 @@ namespace GiayDep.Controllers
           ViewBag.addsl = gh.soluong++;
           return View();
       }
+      public ActionResult DonHang()
+      {
+          if (Session["giohang"] == null)
+          {
+              RedirectToAction("Home", "Index");
+          }
+          List<giohang> listgiohang = laygiohang();
+          ViewBag.Tongtien = Tongtien();
+          return View(listgiohang);
+      }
+       
 	}
 }

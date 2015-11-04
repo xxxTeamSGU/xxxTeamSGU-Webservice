@@ -15,6 +15,8 @@ namespace GiayDep.Models
         public string anhbia { get; set; }
         public double dongia { get; set; }
         public int soluong { get; set; }
+        public string ship { get; set; }
+        public string htgh { get; set; }
         public double thanhtien {
             get {
                 return soluong * dongia;

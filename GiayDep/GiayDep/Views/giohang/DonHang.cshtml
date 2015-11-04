@@ -1,0 +1,215 @@
+﻿@using GiayDep.Service_SanPham;
+@using GiayDep.Models;
+
+@model List<giohang>
+@{
+    ViewBag.Title = "DonHang";
+    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
+}
+
+<section>
+
+
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <!-- detail Item -->
+                <div class="col-lg-12">
+                    <h1 class="tp-order-h1">Chi tiết đơn hàng </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tp-order-h2">Đơn hàng</h2>
+
+                    <div class="span7">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4>Chi tiết đơn hàng</h4>
+                            </div>
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-radio="true">ID</th>
+                                        <th data-field="id" data-align="right">Sản phẩm</th>
+                                        <th data-field="name" data-align="center">Số lượng</th>
+                                        <th data-field="price" data-align="left">Giá</th>
+                                        <th data-field="price" data-align="left">Tổng cộng</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>#@item.imasp</td>
+                                        <td>@item.stensp</td>
+                                        <td>@item.soluong</td>
+                                        <td>@item.dongia.000đ</td>
+                                        <td>
+                                           @item.thanhtien.000đ
+                                        </td>
+
+                                    </tr>
+                               }
+                                    <!-- calculator -->
+                                    <tr class="tr-cal">
+                                        <td colspan="3"></td>
+
+                                        <td>Tổng cộng</td>
+                                        <td>
+                                           @ViewBag.Tongtien.000đ
+                                        </td>
+
+                                    </tr>
+                                    <tr class="tr-cal">
+                                        <td colspan="3"></td>
+                                        <td>Phí giao hàng</td>
+                                        <td>
+                                            <a>MIỄN PHÍ</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="tr-cal">
+                                        <td colspan="3"></td>
+                                        <td>Hình thức thanh toán</td>
+                                        <td>
+                                        <input type="radio" name="ship" value="ARIBANK" checked="checked" /> Ngân hàng
+                                        <input type="radio" name="ship" value="Tiền mặt" />Tiền mặt
+                                        </td>
+                                    </tr>
+
+                                    <tr class="tr-cal">
+                                        <td colspan="3"></td>
+                                        <td>Tổng cộng đơn hàng</td>
+                                        <td>
+                                            @ViewBag.Tongtien.000đ
+                                        </td>
+
+                                    </tr>
+
+                                    <!-- end calculator -->
+
+                                </tbody>
+                             
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end detal Items -->
+            <!- detail customer-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tp-order-h2">Detail Customer</h2>
+
+                    <!-- begin panel -->
+                    <div class="span7">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4>Customer Information</h4>
+                            </div>
+
+                            <div class="panel-body">
+                                <ul>
+                                    <li><span>Name:</span><span>Tinh Pham</span></li>
+                                    <li><span>Email: </span><span>tinhphamsgu@gmail.com</span></li>
+                                    <li><span>Address: </span><span>1 Dong Khoi Street, District 1, HCM city</span></li>
+                                    <li><span>Phone:</span><span>01667798340</span></li>
+                                    <li><span>Date register: </span><span>10/12/2012</span></li>
+                                </ul>
+                                <!--  <p>
+                                     Email : you@example.com <br><br>
+                                     Mobile : +92123456789 <br> <br>
+                                     Twitter  : <a href="https://twitter.com/tahirtaous"></a> | SitePoint : <a href="http://www.sitepoint.com/author/ttaous/">http://www.sitepoint.com/author/ttaous/</a>
+                                 </p> -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+
+            </div>
+            <!- end detail Customer-->
+            <!-- detail Shiping and checkout -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tp-order-h2">Checkout and Shiping</h2>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- begin panel -->
+                            <div class="span7">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h4>Checkout Information</h4>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><span>Name:</span><span>Tinh Pham</span></li>
+                                            <li><span>Email: </span><span>tinhphamsgu@gmail.com</span></li>
+                                            <li><span>Address: </span><span>1 Dong Khoi Street, District 1, HCM city</span></li>
+                                            <li><span>Phone:</span><span>01667798340</span></li>
+                                            <li><span>Payment Mothod </span><span>Bank transfer</span></li>
+                                        </ul>
+                                        <!--  <p>
+                                             Email : you@example.com <br><br>
+                                             Mobile : +92123456789 <br> <br>
+                                             Twitter  : <a href="https://twitter.com/tahirtaous"></a> | SitePoint : <a href="http://www.sitepoint.com/author/ttaous/">http://www.sitepoint.com/author/ttaous/</a>
+                                         </p> -->
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end panel -->
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!-- begin panel -->
+                            <div class="span7">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h4>Shiping Information</h4>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><span>Name:</span><span>Tinh Pham</span></li>
+                                            <li><span>Email: </span><span>tinhphamsgu@gmail.com</span></li>
+                                            <li><span>Address: </span><span>1 Dong Khoi Street, District 1, HCM city</span></li>
+                                            <li><span>Phone:</span><span>01667798340</span></li>
+
+                                        </ul>
+                                        <!-- <p>
+                                            Email : you@example.com <br><br>
+                                            Mobile : +92123456789 <br> <br>
+                                            Twitter  : <a href="https://twitter.com/tahirtaous"></a> | SitePoint : <a href="http://www.sitepoint.com/author/ttaous/">http://www.sitepoint.com/author/ttaous/</a>
+                                        </p> -->
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end panel -->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- end detail cutomer -->
+
+
+        </div>
+
+    </div>
+
+</section>
