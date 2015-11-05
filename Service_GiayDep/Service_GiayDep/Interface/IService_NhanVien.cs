@@ -13,9 +13,9 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         List<NhanVien> LayTatCaNhaNhanVien();
         [OperationContract]
-        bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi , string MatKhau, int QuyenAdmin);
+        bool ThemNhanVien(string HoTen, string Email, string MatKhau, string DiaChi, string SDT, string CMND, int QuyenAdmin);
         [OperationContract]
-        bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin);
+        bool SuaNhanVien(int MaNV, string HoTen, string Email, string MatKhau, string DiaChi, string SDT, string CMND, int QuyenAdmin);
         [OperationContract]
         bool XoaNhanVien(int MaNV);
         [OperationContract]

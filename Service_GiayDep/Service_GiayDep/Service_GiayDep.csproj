@@ -39,12 +39,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -83,7 +86,7 @@
     <Compile Include="Models\CTDH.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CTHoaDonNhap.cs">
+    <Compile Include="Models\CTHDN.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DBGiayDep.Context.cs">
@@ -104,10 +107,16 @@
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HoaDonNhap.cs">
+    <Compile Include="Models\HDNhap.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kho.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhuyenMai.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Loai.cs">
@@ -123,6 +132,12 @@
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPham.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Size.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,7 +179,12 @@
       <DependentUpon>DBGiayDep.edmx</DependentUpon>
       <LastGenOutput>DBGiayDep.cs</LastGenOutput>
     </Content>
-    <Content Include="ClassDiagram1.cd" />
+    <None Include="nuspec.2010.7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="nuspec.2011.8.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

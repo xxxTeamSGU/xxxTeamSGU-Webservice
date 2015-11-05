@@ -39,12 +39,12 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-      public  bool ThemNhaCungCap(string TenNCC, string DiaChi, string SoDT, string SoTK)
+      public  bool ThemNhaCungCap(string TenNCC, string DiaChi, string SDT, string SoTK)
         {
             NhaCungCap ncc = new NhaCungCap();
             ncc.TenNCC = TenNCC;
             ncc.DiaChi = DiaChi;
-            ncc.SoDT = SoDT;
+            ncc.SDT = SDT;
             ncc.SoTK = SoTK;
             try
             {
@@ -62,7 +62,7 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-      public  bool SuaNhaCungCap(int MaNCC, string TenNCC, string DiaChi, string SoDT, string SoTK)
+      public  bool SuaNhaCungCap(int MaNCC, string TenNCC, string DiaChi, string SDT, string SoTK)
         {
             try
             {
@@ -79,9 +79,9 @@ namespace Service_GiayDep
                         {
                             item.DiaChi = DiaChi;
                         }
-                        if (!SoDT.Equals(""))
+                        if (!SDT.Equals(""))
                         {
-                            item.SoDT = SoDT;
+                            item.SDT = SDT;
                         }
                         if (!SoTK.Equals(""))
                         {
@@ -130,7 +130,7 @@ namespace Service_GiayDep
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.NhaCungCaps.Where(c => c.TenNCC.Contains(x) || c.DiaChi.Contains(x) || c.SoDT.Contains(x) ||  c.SoTK.Contains(x)).ToList();
+                    var list = db.NhaCungCaps.Where(c => c.TenNCC.Contains(x) || c.DiaChi.Contains(x) || c.SDT.Contains(x) ||  c.SoTK.Contains(x)).ToList();
                     return list;
                 }
             }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\Models\DBGiayDep.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\Models\DBGiayDep.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
