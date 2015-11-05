@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Web;
 using Service_GiayDep.Models;
+using System.ServiceModel.Web;
 
 namespace Service_GiayDep.Interface
 {

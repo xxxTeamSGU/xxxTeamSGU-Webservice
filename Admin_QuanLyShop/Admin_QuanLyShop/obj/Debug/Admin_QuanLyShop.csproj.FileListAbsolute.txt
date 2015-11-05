@@ -13,3 +13,6 @@ C:\Users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLy
 C:\Users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.Form_DanhSachKhachHang.resources
 C:\Users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.Form_NhaCungCap.resources
 C:\Users\huy\documents\visual studio 2013\Projects\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.Form_Loai.resources
+C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Admin_QuanLyShop\Admin_QuanLyShop\bin\Debug\Admin_QuanLyShop.exe.config
+C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.exe
+C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Admin_QuanLyShop\Admin_QuanLyShop\obj\Debug\Admin_QuanLyShop.pdb

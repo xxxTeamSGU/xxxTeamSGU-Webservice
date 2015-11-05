@@ -15,3 +15,4 @@ C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDe
 C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb
 C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.dll
 C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.xml
+C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
