@@ -8,15 +8,15 @@ using Service_GiayDep.Models;
 namespace Service_GiayDep.Interface
 {
     [ServiceContract]
-    interface IServive_Size
+    public interface IServive_Size
     {
 
         [OperationContract]
-        List<Loai> LayTatCaSize();
+        List<Size> LayTatCaSize();
         [OperationContract]
-        bool ThemSize(string Size);
+        bool ThemSize(int Size);
         [OperationContract]
-        bool SuaSize(int MaSize, string Size);
+        bool SuaSize(int MaSize, int Size);
         [OperationContract]
         bool XoaSize(int MaSize);
     }

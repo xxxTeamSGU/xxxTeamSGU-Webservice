@@ -11,10 +11,7 @@ namespace Service_GiayDep.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    [DataContract(IsReference = true)]
-    [KnownType(typeof(CTHDN))]
-
+    
     public partial class HDNhap
     {
         public HDNhap()
@@ -28,7 +25,7 @@ namespace Service_GiayDep.Models
         public Nullable<System.DateTime> NgayNhap { get; set; }
         public Nullable<decimal> TongTien { get; set; }
         public Nullable<int> TinhTrang { get; set; }
-
+    
         public virtual List<CTHDN> CTHDNs { get; set; }
         public virtual NhaCungCap NhaCungCap { get; set; }
         public virtual NhanVien NhanVien { get; set; }

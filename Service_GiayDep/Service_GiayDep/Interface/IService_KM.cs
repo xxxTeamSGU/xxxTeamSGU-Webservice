@@ -11,7 +11,7 @@ namespace Service_GiayDep.Interface
     interface IService_KM
     {
         [OperationContract]
-        List<Loai> LayTatCaKM();
+        List<KhuyenMai> LayTatCaKM();
         [OperationContract]
         bool ThemKM(string TenKM,DateTime NgayBD, DateTime NgayKT);
         [OperationContract]

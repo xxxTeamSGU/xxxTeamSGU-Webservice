@@ -16,3 +16,13 @@ C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDe
 C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.dll
 C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.xml
 C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.dll
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll.config
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.pdb
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\bin\EntityFramework.dll
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.dll
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\bin\EntityFramework.xml
+C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.xml

@@ -10,24 +10,23 @@ using System.Diagnostics;
 namespace Service_GiayDep
 {
     /// <summary>
-    /// Summary description for Service_Loai
+    /// Summary description for Service_Mau
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class Service_Loai : IService_Loai
+    public class Service_Mau : IService_Mau
     {
-
         [WebMethod]
-        public List<Loai> LayTatCaLoai()
+        public List<Mau> LayTatCaMau()
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.Loais.Select(p => p).ToList();
+                    var list = db.Maus.Select(p => p).ToList();
                     return list;
                 }
             }
@@ -37,17 +36,20 @@ namespace Service_GiayDep
                 return null;
             }
         }
+        
+      
+       
 
         [WebMethod]
-        public bool ThemLoai(string l)
+        public bool ThemMau(string Mau)
         {
-            Loai loai = new Loai();
-            loai.TenLoai = l;
+            Mau mau = new Mau();
+            mau.TenMau = Mau;
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    db.Loais.Add(loai);
+                    db.Maus.Add(mau);
                     db.SaveChanges();
                     return true;
                 }
@@ -58,17 +60,18 @@ namespace Service_GiayDep
                 return false;
             }
         }
+       
         [WebMethod]
-        public bool SuaLoai(int MaLoai, string TenLoai)
+        public bool SuaMau(int MaMau , string Mau)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var item = db.Loais.Single(p => p.MaLoai == MaLoai);
+                    var item = db.Maus.Single(p => p.MaMau == MaMau);
                     if (item != null)
                     {
-                        item.TenLoai = TenLoai;
+                        item.TenMau = Mau;
                         db.SaveChanges();
                         return true;
                     }
@@ -83,16 +86,16 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool XoaLoai(int MaLoai)
+        public bool XoaMau(int MaMau)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var SpDelete = db.Loais.SingleOrDefault(p => p.MaLoai == MaLoai);
+                    var SpDelete = db.Maus.SingleOrDefault(p => p.MaMau == MaMau);
                     if (SpDelete != null)
                     {
-                        db.Loais.Remove(SpDelete);
+                        db.Maus.Remove(SpDelete);
                         db.SaveChanges();
                         return true;
                     }

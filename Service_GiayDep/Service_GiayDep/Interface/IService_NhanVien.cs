@@ -23,6 +23,6 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         bool KiemTraNhanVien(string Email, string MatKhau);
         [OperationContract]
-        List<NhanVien> LayMotNhanVien(string Email, string MatKhau);
+        NhanVien LayMotNhanVien(string Email, string MatKhau);
     }
 }

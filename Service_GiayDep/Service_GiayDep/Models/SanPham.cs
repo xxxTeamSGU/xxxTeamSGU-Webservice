@@ -11,11 +11,7 @@ namespace Service_GiayDep.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    [DataContract(IsReference = true)]
-    [KnownType(typeof(CTHDN))]
-    [KnownType(typeof(CTDH))]
-    [KnownType(typeof(Kho))]
+    
     public partial class SanPham
     {
         public SanPham()
@@ -34,7 +30,7 @@ namespace Service_GiayDep.Models
         public Nullable<int> MaKM { get; set; }
         public Nullable<System.DateTime> NgayDang { get; set; }
         public string MoTaCT { get; set; }
-
+    
         public virtual List<CTDH> CTDHs { get; set; }
         public virtual List<CTHDN> CTHDNs { get; set; }
         public virtual List<Kho> Khoes { get; set; }

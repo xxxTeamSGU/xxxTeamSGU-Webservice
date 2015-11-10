@@ -10,24 +10,23 @@ using System.Diagnostics;
 namespace Service_GiayDep
 {
     /// <summary>
-    /// Summary description for Service_Loai
+    /// Summary description for Service_Size
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class Service_Loai : IService_Loai
-    {
-
+    public class Service_Size : IServive_Size
+    {      
         [WebMethod]
-        public List<Loai> LayTatCaLoai()
+        public List<Size> LayTatCaSize()
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.Loais.Select(p => p).ToList();
+                    var list = db.Sizes.Select(p => p).ToList();
                     return list;
                 }
             }
@@ -38,16 +37,19 @@ namespace Service_GiayDep
             }
         }
 
+
+
+
         [WebMethod]
-        public bool ThemLoai(string l)
+        public bool ThemSize(int TenSize)
         {
-            Loai loai = new Loai();
-            loai.TenLoai = l;
+            Size s = new Size();
+            s.Size1 = TenSize;
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    db.Loais.Add(loai);
+                    db.Sizes.Add(s);
                     db.SaveChanges();
                     return true;
                 }
@@ -58,17 +60,20 @@ namespace Service_GiayDep
                 return false;
             }
         }
+    
+      
+
         [WebMethod]
-        public bool SuaLoai(int MaLoai, string TenLoai)
+        public bool SuaSize(int MaSize, int TenSize)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var item = db.Loais.Single(p => p.MaLoai == MaLoai);
+                    var item = db.Sizes.SingleOrDefault(p => p.MaSize == MaSize);
                     if (item != null)
                     {
-                        item.TenLoai = TenLoai;
+                        item.Size1 = TenSize;
                         db.SaveChanges();
                         return true;
                     }
@@ -83,16 +88,16 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool XoaLoai(int MaLoai)
+        public bool XoaSize(int MaSize)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var SpDelete = db.Loais.SingleOrDefault(p => p.MaLoai == MaLoai);
+                    var SpDelete = db.Sizes.SingleOrDefault(p => p.MaSize == MaSize);
                     if (SpDelete != null)
                     {
-                        db.Loais.Remove(SpDelete);
+                        db.Sizes.Remove(SpDelete);
                         db.SaveChanges();
                         return true;
                     }
@@ -105,6 +110,5 @@ namespace Service_GiayDep
                 return false;
             }
         }
-
     }
 }

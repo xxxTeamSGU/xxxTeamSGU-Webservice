@@ -11,11 +11,7 @@ namespace Service_GiayDep.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    [DataContract(IsReference=true)]
-    [KnownType(typeof(CTHDN))]
-    [KnownType(typeof(CTDH))]
-    [KnownType(typeof(Kho))]
+    
     public partial class Size
     {
         public Size()
@@ -27,7 +23,7 @@ namespace Service_GiayDep.Models
     
         public int MaSize { get; set; }
         public Nullable<int> Size1 { get; set; }
-
+    
         public virtual List<CTDH> CTDHs { get; set; }
         public virtual List<CTHDN> CTHDNs { get; set; }
         public virtual List<Kho> Khoes { get; set; }

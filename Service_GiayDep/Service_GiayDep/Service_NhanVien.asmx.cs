@@ -172,13 +172,13 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public List<NhanVien> LayMotNhanVien(string Email, string MatKhau)
+        public NhanVien LayMotNhanVien(string Email, string MatKhau)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var nhanvien = db.NhanViens.Where(c => c.Email.Contains(Email) && c.MatKhau.Contains(MatKhau)).ToList();
+                    var nhanvien = db.NhanViens.SingleOrDefault(c => c.Email.Equals(Email) && c.MatKhau.Equals(MatKhau));
                     if (nhanvien != null)
                         return nhanvien;
                     return null;

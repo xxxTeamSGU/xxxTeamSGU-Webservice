@@ -6,28 +6,26 @@ using System.Web.Services;
 using Service_GiayDep.Interface;
 using Service_GiayDep.Models;
 using System.Diagnostics;
-
 namespace Service_GiayDep
 {
     /// <summary>
-    /// Summary description for Service_Loai
+    /// Summary description for Service_KhuyenMai
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-    public class Service_Loai : IService_Loai
+    public class Service_KhuyenMai : IService_KM
     {
-
         [WebMethod]
-        public List<Loai> LayTatCaLoai()
+        public List<KhuyenMai> LayTatCaKM()
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.Loais.Select(p => p).ToList();
+                    var list = db.KhuyenMais.Select(p => p).ToList();
                     return list;
                 }
             }
@@ -37,17 +35,18 @@ namespace Service_GiayDep
                 return null;
             }
         }
-
         [WebMethod]
-        public bool ThemLoai(string l)
+        public bool ThemKM(string TenKM, DateTime NgayBD, DateTime NgayKT)
         {
-            Loai loai = new Loai();
-            loai.TenLoai = l;
+            KhuyenMai km = new KhuyenMai();
+            km.TenKM = TenKM;
+            km.NgayBD = NgayBD;
+            km.NgayKT = NgayKT;
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    db.Loais.Add(loai);
+                    db.KhuyenMais.Add(km);
                     db.SaveChanges();
                     return true;
                 }
@@ -59,16 +58,18 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool SuaLoai(int MaLoai, string TenLoai)
+        public bool SuaKM(int MaKM, string TenKM, DateTime NgayBD, DateTime NgayKT)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var item = db.Loais.Single(p => p.MaLoai == MaLoai);
+                    var item = db.KhuyenMais.Single(p => p.MaKM == MaKM);
                     if (item != null)
                     {
-                        item.TenLoai = TenLoai;
+                        item.TenKM = TenKM;
+                        item.NgayBD = NgayBD;
+                        item.NgayKT = NgayKT;
                         db.SaveChanges();
                         return true;
                     }
@@ -83,16 +84,16 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool XoaLoai(int MaLoai)
+        public bool XoaKM(int MaKM)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var SpDelete = db.Loais.SingleOrDefault(p => p.MaLoai == MaLoai);
+                    var SpDelete = db.KhuyenMais.SingleOrDefault(p => p.MaKM == MaKM);
                     if (SpDelete != null)
                     {
-                        db.Loais.Remove(SpDelete);
+                        db.KhuyenMais.Remove(SpDelete);
                         db.SaveChanges();
                         return true;
                     }

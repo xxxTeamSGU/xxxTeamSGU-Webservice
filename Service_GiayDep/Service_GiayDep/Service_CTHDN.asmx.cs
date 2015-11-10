@@ -10,7 +10,7 @@ using System.Diagnostics;
 namespace Service_GiayDep
 {
     /// <summary>
-    /// Summary description for IService_CTHDN
+    /// Summary description for Service_CTHDN
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -20,7 +20,7 @@ namespace Service_GiayDep
     public class Service_CTHDN : IService_CTHDN
     {
 
-        [WebMethod]
+         [WebMethod]
         public List<CTHDN> LayCTHDN(int MaHDN)
         {
             try

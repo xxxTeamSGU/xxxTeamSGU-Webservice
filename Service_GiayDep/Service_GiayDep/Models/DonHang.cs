@@ -11,10 +11,7 @@ namespace Service_GiayDep.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    [DataContract(IsReference = true)]
-    [KnownType(typeof(CTDH))]
-
+    
     public partial class DonHang
     {
         public DonHang()
@@ -28,7 +25,7 @@ namespace Service_GiayDep.Models
         public Nullable<decimal> TongTien { get; set; }
         public Nullable<int> TinhTrang { get; set; }
         public string NVDuyet { get; set; }
-
+    
         public virtual List<CTDH> CTDHs { get; set; }
         public virtual KhachHang KhachHang { get; set; }
     }

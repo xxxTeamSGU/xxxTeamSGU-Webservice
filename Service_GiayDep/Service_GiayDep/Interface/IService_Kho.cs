@@ -10,15 +10,19 @@ namespace Service_GiayDep.Interface
     [ServiceContract]
     interface IService_Kho
     {
+       // [OperationContract]
+     //   List<Kho> LayTatCaKho();
         [OperationContract]
-        public List<Kho> LayTatCaKho();
+        List<SanPham_Price> LayKhoTheoSP(int MaSP);
+       // [OperationContract]
+      //  bool NhapKho(int MaSP, int MaMau, int MaSize, int Soluong, decimal GiaBan, decimal GiaNhap);
         [OperationContract]
-        public List<Kho> LayKhoTheoSP(int MaSP);
+        bool NhapMoi(int MaSP, int Mau, int MaSize, int Soluong, decimal Gianhap);
         [OperationContract]
-        public List<Kho> LayKhoTheoSize(int MaSize);
+        bool CapNhat(int MaSP, int Mau, int MaSize, int Soluong, decimal GiaNhap);
         [OperationContract]
-        public bool NhapKho(int MaSP, int MaMau, int MaSize, int Soluong, decimal GiaBan, decimal GiaNhap);
+        bool CheckKho(int MaSP, int Mau, int MaSize);
         [OperationContract]
-        public bool CapNhatKho(int MaSP, int MaMau, int MaSize, int Soluong, decimal GiaBan, decimal GiaNhap);
+        bool ThemKho(int MaHDN);
     }
 }

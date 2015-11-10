@@ -13,7 +13,7 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         List<Loai> LayTatCaLoai();
         [OperationContract]
-        bool ThemLoai( string TenLoai);
+        bool ThemLoai(string TenLoai);
         [OperationContract]
         bool SuaLoai(int MaLoai, string TenLoai);
         [OperationContract]

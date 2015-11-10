@@ -11,10 +11,7 @@ namespace Service_GiayDep.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    [DataContract(IsReference = true)]
-    [KnownType(typeof(HDNhap))]
-
+    
     public partial class NhaCungCap
     {
         public NhaCungCap()
@@ -27,7 +24,7 @@ namespace Service_GiayDep.Models
         public string DiaChi { get; set; }
         public string SDT { get; set; }
         public string SoTK { get; set; }
-
+    
         public virtual List<HDNhap> HDNhaps { get; set; }
     }
 }

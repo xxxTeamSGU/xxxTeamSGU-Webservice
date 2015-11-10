@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DBGiayDepModelStoreContainer" CdmEntityContainer="DBGiayDepEntities">
+  <EntityContainerMapping StorageEntityContainer="DBGiayDepModel1StoreContainer" CdmEntityContainer="DBGiayDepEntities1">
     <EntitySetMapping Name="CTDHs">
-      <EntityTypeMapping TypeName="DBGiayDepModel.CTDH">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.CTDH">
         <MappingFragment StoreEntitySet="CTDH">
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
@@ -14,7 +14,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CTHDNs">
-      <EntityTypeMapping TypeName="DBGiayDepModel.CTHDN">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.CTHDN">
         <MappingFragment StoreEntitySet="CTHDN">
           <ScalarProperty Name="MaHDN" ColumnName="MaHDN" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
@@ -26,7 +26,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DonHangs">
-      <EntityTypeMapping TypeName="DBGiayDepModel.DonHang">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
@@ -38,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="HDNhaps">
-      <EntityTypeMapping TypeName="DBGiayDepModel.HDNhap">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.HDNhap">
         <MappingFragment StoreEntitySet="HDNhap">
           <ScalarProperty Name="MaHDN" ColumnName="MaHDN" />
           <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
@@ -50,7 +50,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="KhachHangs">
-      <EntityTypeMapping TypeName="DBGiayDepModel.KhachHang">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.KhachHang">
         <MappingFragment StoreEntitySet="KhachHang">
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -65,7 +65,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Khoes">
-      <EntityTypeMapping TypeName="DBGiayDepModel.Kho">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.Kho">
         <MappingFragment StoreEntitySet="Kho">
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaMau" ColumnName="MaMau" />
@@ -77,7 +77,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="KhuyenMais">
-      <EntityTypeMapping TypeName="DBGiayDepModel.KhuyenMai">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.KhuyenMai">
         <MappingFragment StoreEntitySet="KhuyenMai">
           <ScalarProperty Name="MaKM" ColumnName="MaKM" />
           <ScalarProperty Name="TenKM" ColumnName="TenKM" />
@@ -87,7 +87,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Loais">
-      <EntityTypeMapping TypeName="DBGiayDepModel.Loai">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.Loai">
         <MappingFragment StoreEntitySet="Loai">
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
@@ -95,7 +95,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Maus">
-      <EntityTypeMapping TypeName="DBGiayDepModel.Mau">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.Mau">
         <MappingFragment StoreEntitySet="Mau">
           <ScalarProperty Name="MaMau" ColumnName="MaMau" />
           <ScalarProperty Name="TenMau" ColumnName="TenMau" />
@@ -103,7 +103,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NhaCungCaps">
-      <EntityTypeMapping TypeName="DBGiayDepModel.NhaCungCap">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.NhaCungCap">
         <MappingFragment StoreEntitySet="NhaCungCap">
           <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
@@ -114,7 +114,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NhanViens">
-      <EntityTypeMapping TypeName="DBGiayDepModel.NhanVien">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -128,7 +128,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SanPhams">
-      <EntityTypeMapping TypeName="DBGiayDepModel.SanPham">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="TenSP" ColumnName="TenSP" />
@@ -143,7 +143,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sizes">
-      <EntityTypeMapping TypeName="DBGiayDepModel.Size">
+      <EntityTypeMapping TypeName="DBGiayDepModel1.Size">
         <MappingFragment StoreEntitySet="Size">
           <ScalarProperty Name="MaSize" ColumnName="MaSize" />
           <ScalarProperty Name="Size1" ColumnName="Size" />

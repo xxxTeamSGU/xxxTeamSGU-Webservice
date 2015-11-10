@@ -19,6 +19,7 @@ namespace Service_GiayDep.Models
             : base("name=DBGiayDepEntities")
         {
             Configuration.ProxyCreationEnabled = false;
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -39,6 +40,5 @@ namespace Service_GiayDep.Models
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<Size> Sizes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

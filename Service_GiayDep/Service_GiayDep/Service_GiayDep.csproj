@@ -68,21 +68,43 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\DBGiayDep.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBGiayDep.edmx</DependentUpon>
+      <LastGenOutput>DBGiayDep.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBGiayDep.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBGiayDep.edmx</DependentUpon>
+      <LastGenOutput>DBGiayDep.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service_CTHDN.asmx" />
+    <Content Include="Service_HoaDonNhap.asmx" />
+    <Content Include="Service_Kho.asmx" />
     <Content Include="Service_KhachHang.asmx" />
+    <Content Include="Service_KhuyenMai.asmx" />
     <Content Include="Service_Loai.asmx" />
+    <Content Include="Service_Mau.asmx" />
     <Content Include="Service_NhaCungCap.asmx" />
     <Content Include="Service_NhanVien.asmx" />
     <Content Include="Service_SanPham.asmx" />
+    <Content Include="Service_Size.asmx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IService_CTHDN.cs" />
+    <Compile Include="Interface\IService_HoaDonNhap.cs" />
     <Compile Include="Interface\IService_KhachHang.cs" />
+    <Compile Include="Interface\IService_Kho.cs" />
+    <Compile Include="Interface\IService_KM.cs" />
     <Compile Include="Interface\IService_Loai.cs" />
+    <Compile Include="Interface\IService_Mau.cs" />
     <Compile Include="Interface\IService_NhaCungCap.cs" />
     <Compile Include="Interface\IService_NhanVien.cs" />
     <Compile Include="Interface\IService_SanPham.cs" />
+    <Compile Include="Interface\IServive_Size.cs" />
     <Compile Include="Models\CTDH.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
@@ -134,18 +156,31 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPham_Price.cs" />
     <Compile Include="Models\Size.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    <Compile Include="Service_CTHDN.asmx.cs">
+      <DependentUpon>Service_CTHDN.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_HoaDonNhap.asmx.cs">
+      <DependentUpon>Service_HoaDonNhap.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_Kho.asmx.cs">
+      <DependentUpon>Service_Kho.asmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service_KhachHang.asmx.cs">
       <DependentUpon>Service_KhachHang.asmx</DependentUpon>
     </Compile>
+    <Compile Include="Service_KhuyenMai.asmx.cs">
+      <DependentUpon>Service_KhuyenMai.asmx</DependentUpon>
+    </Compile>
     <Compile Include="Service_Loai.asmx.cs">
       <DependentUpon>Service_Loai.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_Mau.asmx.cs">
+      <DependentUpon>Service_Mau.asmx</DependentUpon>
     </Compile>
     <Compile Include="Service_NhaCungCap.asmx.cs">
       <DependentUpon>Service_NhaCungCap.asmx</DependentUpon>
@@ -155,6 +190,9 @@
     </Compile>
     <Compile Include="Service_SanPham.asmx.cs">
       <DependentUpon>Service_SanPham.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_Size.asmx.cs">
+      <DependentUpon>Service_Size.asmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -166,18 +204,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBGiayDep.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DBGiayDep.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBGiayDep.edmx</DependentUpon>
-      <LastGenOutput>DBGiayDep.Context.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\DBGiayDep.edmx.diagram">
       <DependentUpon>DBGiayDep.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\DBGiayDep.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBGiayDep.edmx</DependentUpon>
-      <LastGenOutput>DBGiayDep.cs</LastGenOutput>
     </Content>
     <None Include="nuspec.2010.7.xsd">
       <SubType>Designer</SubType>
