@@ -29,3 +29,13 @@ C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\bin\EntityFramework.Sq
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.dll
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll.config
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.pdb
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.dll
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.dll
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.xml
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\bin\EntityFramework.SqlServer.xml
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.dll
+C:\Users\Pham\Desktop\Project webservice\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb
