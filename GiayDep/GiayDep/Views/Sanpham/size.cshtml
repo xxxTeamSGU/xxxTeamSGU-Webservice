@@ -1,0 +1,15 @@
+﻿@using GiayDep.Service_Kho;
+@model List<LaySize>
+@{
+    foreach (var item in Model)
+    {
+
+
+        
+    <option value="@item._MaSize">
+       
+            @item._Size
+   </option>
+
+  }
+}

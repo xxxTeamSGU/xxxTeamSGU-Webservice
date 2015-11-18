@@ -1,0 +1,29 @@
+﻿@using GiayDep.Service_Kho;
+@model List<LayMau>
+        
+<ul class="mau">
+    @{
+        foreach (var item in Model)
+        {
+            if(item._MaMau== @item._MaMau){
+            <li class="mamau @item._MaMau" >
+                <a href="@Url.Action("Chitietsanpham", new { @masp = item._MaSP, @mamau = item._MaMau})" name="mau">@item._TenMau</a>
+            </li>
+            }
+    
+
+        }
+    }
+</ul>
+
+<style type="text/css">
+     ul.mau li.active a{
+        color: red;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        var $mau = $("#mau-hien-tai").attr("class");
+        $("li.mamau." + $mau).addClass("active");
+    });
+</script>

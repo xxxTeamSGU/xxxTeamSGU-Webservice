@@ -1,5 +1,5 @@
-﻿@using GiayDep.Service_SanPham;
-@model List<SanPham> 
+﻿@using GiayDep.Service_SanPham_Kho;
+@model List<SanPham_Price>
 
 @{
     foreach (var item in Model)
@@ -9,19 +9,18 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
 
-                        <a href="@Url.Action("Chitietsanpham", new { @masp= item.MaSP})">
-                            <img src="@Url.Content("~/images/home/"+ item.HinhAnh)" alt="" height="237" width="255" /></a>
-                            <h2>@item.GiaSP.000đ</h2>
-                            <p>@item.TenSP</p>
+                        <a href="@Url.Action("Chitietsanpham", new { @masp= item._MaSP , @mamau= item._MaMau})">
+                            <img src="@Url.Content("~/images/home/"+ item._HinhAnh)" alt="" height="237" width="255" /></a>
+                            <h2>@item._GiaSP.000đ</h2>
+                            <p>@item._TenSP</p>
                             @*<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>*@
-                        @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = item.MaSP, @strUrl = Request.Url.ToString() }))
-                        {
-                            //<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-                            <button type="submit" class="btn btn-fefault cart">
+                        @*@using (Html.BeginForm("Muangay", "Sanpham", new { @imasp = item._MaSP, @mamau= item._MaMau }))
+                        {*@
+                            
+                            @*<button type="submit" class="btn btn-fefault cart">*@
                                 <i class="fa fa-shopping-cart"></i>
-                                Thêm vào giỏ hàng
-                            </button>
-                        }
+                                <a href="@Url.Action("Muangay", new { @masp = item._MaSP, @mamau = item._MaMau })">Mua Ngay</a>@*</button>*@
+                        @*}*@
 </div>
                 </div>
                 <img src="images/home/sale.png" class="new" alt="">

@@ -6,18 +6,22 @@
         <MappingFragment StoreEntitySet="CTDH">
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
+          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CTHoaDonNhaps">
-      <EntityTypeMapping TypeName="DBGiayDepModel.CTHoaDonNhap">
-        <MappingFragment StoreEntitySet="CTHoaDonNhap">
+    <EntitySetMapping Name="CTHDNs">
+      <EntityTypeMapping TypeName="DBGiayDepModel.CTHDN">
+        <MappingFragment StoreEntitySet="CTHDN">
           <ScalarProperty Name="MaHDN" ColumnName="MaHDN" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
+          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -26,20 +30,20 @@
         <MappingFragment StoreEntitySet="DonHang">
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NgayMua" ColumnName="NgayMua" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="NVDuyet" ColumnName="NVDuyet" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="HoaDonNhaps">
-      <EntityTypeMapping TypeName="DBGiayDepModel.HoaDonNhap">
-        <MappingFragment StoreEntitySet="HoaDonNhap">
+    <EntitySetMapping Name="HDNhaps">
+      <EntityTypeMapping TypeName="DBGiayDepModel.HDNhap">
+        <MappingFragment StoreEntitySet="HDNhap">
           <ScalarProperty Name="MaHDN" ColumnName="MaHDN" />
           <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
         </MappingFragment>
@@ -50,12 +54,35 @@
         <MappingFragment StoreEntitySet="KhachHang">
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgayDangKi" ColumnName="NgayDangKi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoes">
+      <EntityTypeMapping TypeName="DBGiayDepModel.Kho">
+        <MappingFragment StoreEntitySet="Kho">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
+          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhuyenMais">
+      <EntityTypeMapping TypeName="DBGiayDepModel.KhuyenMai">
+        <MappingFragment StoreEntitySet="KhuyenMai">
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="TenKM" ColumnName="TenKM" />
+          <ScalarProperty Name="NgayBD" ColumnName="NgayBD" />
+          <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -70,9 +97,8 @@
     <EntitySetMapping Name="Maus">
       <EntityTypeMapping TypeName="DBGiayDepModel.Mau">
         <MappingFragment StoreEntitySet="Mau">
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="Size" ColumnName="Size" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
+          <ScalarProperty Name="TenMau" ColumnName="TenMau" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -82,7 +108,7 @@
           <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="SoTK" ColumnName="SoTK" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -93,10 +119,10 @@
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
-          <ScalarProperty Name="CMND" ColumnName="CMND" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
           <ScalarProperty Name="QuyenAdmin" ColumnName="QuyenAdmin" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -104,20 +130,34 @@
     <EntitySetMapping Name="SanPhams">
       <EntityTypeMapping TypeName="DBGiayDepModel.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MoTaCT" ColumnName="MoTaCT" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="TenSP" ColumnName="TenSP" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="ThuongHieu" ColumnName="ThuongHieu" />
-          <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
-          <ScalarProperty Name="HinhAnh1" ColumnName="HinhAnh1" />
-          <ScalarProperty Name="HinhAnh2" ColumnName="HinhAnh2" />
-          <ScalarProperty Name="HinhAnh3" ColumnName="HinhAnh3" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-          <ScalarProperty Name="KM" ColumnName="KM" />
-          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
-          <ScalarProperty Name="GiaKM" ColumnName="GiaKM" />
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sizes">
+      <EntityTypeMapping TypeName="DBGiayDepModel.Size">
+        <MappingFragment StoreEntitySet="Size">
+          <ScalarProperty Name="MaSize" ColumnName="MaSize" />
+          <ScalarProperty Name="Size1" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBGiayDepModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

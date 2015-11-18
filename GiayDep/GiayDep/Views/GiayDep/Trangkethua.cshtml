@@ -1,8 +1,13 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.scrollUp.min.js"></script>
+    <script src="~/js/price-range.js"></script>
+    <script src="~/js/jquery.prettyPhoto.js"></script>
+    <script src="~/js/main.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/css/font-awesome.min.css" rel="stylesheet">
@@ -11,6 +16,9 @@
     <link href="~/css/animate.css" rel="stylesheet">
     <link href="~/css/main.css" rel="stylesheet">
     <link href="~/css/responsive.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="~/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link href="~/Content/Site.css" rel="stylesheet" />
@@ -24,30 +32,23 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-
     <header id="header">
-        <!--header-->
+    <!--header-->
         @RenderPage("~/Views/GiayDep/header.cshtml");
-    </header><!--/header-->
- 
-    <section>
-        <div class="container">
-            @RenderSection("Noidungbenphai", false)
-            @RenderBody()
+    </header>
+    <!--/header-->
+    <div class="container">
+   <!--/Content-->
+        @RenderSection("Noidungbenphai", false)
+        @RenderBody()
 
-        </div>
-    </section>
+    </div>
+    <!--/Content-->
     <footer id="footer">
         <!--Footer-->
         @RenderPage("~/Views/GiayDep/footer.cshtml");
-    </footer><!--/Footer-->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/price-range.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
-
+    </footer>
+    <!--/Footer-->
 </body>
 
 </html>

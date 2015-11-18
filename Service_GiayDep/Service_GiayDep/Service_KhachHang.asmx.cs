@@ -20,6 +20,7 @@ namespace Service_GiayDep
     public class Service_KhachHang : IService_KhachHang
     {
 
+        DBGiayDepEntities db = new DBGiayDepEntities();
          [WebMethod]
         public List<KhachHang> LayTatCaKhachHang()
         {
@@ -61,13 +62,13 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public List<KhachHang> TimKiemKhachHang_GioiTinh(string HoTen, string SoDT, string Email, int GioiTinh)
+        public List<KhachHang> TimKiemKhachHang_GioiTinh(string HoTen, string SDT, string Email, string GioiTinh)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.KhachHangs.Where(c => c.HoTen.Contains(HoTen) && c.SoDT.Contains(SoDT) && c.Email.Contains(Email) && c.GioiTinh == GioiTinh).ToList();
+                    var list = db.KhachHangs.Where(c => c.HoTen.Contains(HoTen) && c.SDT.Contains(SDT) && c.Email.Contains(Email) && c.GioiTinh == GioiTinh).ToList();
                     return list;
                 }
             }
@@ -78,13 +79,13 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public List<KhachHang> TimKiemKhachHang(string HoTen, string SoDT, string Email)
+        public List<KhachHang> TimKiemKhachHang(string HoTen, string SDT, string Email)
         {
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.KhachHangs.Where(c => c.HoTen.Contains(HoTen) && c.SoDT.Contains(SoDT) && c.Email.Contains(Email)).ToList();
+                    var list = db.KhachHangs.Where(c => c.HoTen.Contains(HoTen) && c.SDT.Contains(SDT) && c.Email.Contains(Email)).ToList();
                     return list;
                 }
             }
@@ -94,5 +95,42 @@ namespace Service_GiayDep
                 return null;
             }
         }
+        [WebMethod]
+        public bool ThemKhachHang(string HoTen,DateTime NgaySinh,  string Email, string MatKhau,string SDT, string DiaChi, string GioiTinh ,DateTime NgayDangKi)
+        {
+            KhachHang kh = new KhachHang();
+            kh.HoTen = HoTen;
+            kh.NgaySinh = NgaySinh;
+            kh.Email = Email;
+            kh.MatKhau = MatKhau;
+            kh.SDT = SDT;
+            kh.DiaChi = DiaChi;
+            kh.GioiTinh = GioiTinh;
+            kh.NgayDangKi = NgayDangKi;
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    //Lưu add kh mới vào model
+                    db.KhachHangs.Add(kh);
+                    //Lưu vào CSDL
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+
+        }
+        [WebMethod]
+        public KhachHang Login(string email, string password)
+        {
+            KhachHang login = db.KhachHangs.SingleOrDefault(n=>n.Email == email && n.MatKhau==password);
+            return login;
+        }
+        
     }
 }

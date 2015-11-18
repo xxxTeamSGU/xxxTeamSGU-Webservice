@@ -5,5 +5,26 @@
     <Setting Name="GiayDep_Service_SanPham_Service_SanPham" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:61817/Service_SanPham.asmx</Value>
     </Setting>
+    <Setting Name="GiayDep_Service_Kho_Service_Kho" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61817/Service_Kho.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_SanPham_Kho_Service_SanPham_Kho" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61817/Service_SanPham_Kho.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_KhachHang_Service_KhachHang" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61817/Service_KhachHang.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_Mau_Service_Mau" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61817/Service_Mau.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_Size_Service_Size" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61817/Service_Size.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_DonHang_Service_DonHang" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61817/Service_DonHang.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_CTDH_Service_CTDH" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61817/Service_CTDH.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

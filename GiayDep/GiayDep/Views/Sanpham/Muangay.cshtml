@@ -1,0 +1,234 @@
+﻿@using GiayDep.Service_SanPham_Kho;
+@model List<SanPham_Price>
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
+
+}
+@section Noidungbenphai{
+    <h2>@ViewBag.tb</h2>
+
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="left-sidebar">
+                <h2>Danh mục</h2>
+                <div class="panel-group category-products" id="accordian">
+                    <!--category-productsr-->
+                    @Html.Partial("~/Views/Sanpham/DanhmucPartial.cshtml");
+                </div><!--/category-products-->
+                @* <div class="brands_products">
+                        <!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                               <a href="#" >Down tai lieu o day</a>
+                                <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
+                                <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
+                                <li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
+                                <li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
+                                <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+
+                    <div class="price-range">
+                        <!--price-range-->
+                        <h2>Price Range</h2>
+                        <div class="well text-center">
+                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                            <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+                        </div>
+                    </div><!--/price-range-->*@
+
+                <div class="shipping text-center">
+                    <!--shipping-->
+                    <img src="~/images/home/shipping.jpg" alt="" />
+                </div><!--/shipping-->
+
+            </div>
+        </div>
+
+        @{
+            foreach (var item in Model)
+            {
+
+                <div class="product-details">
+
+                    <!--product-details-->
+                    <div class="col-sm-5">
+
+                        <div class="view-product img-hover">
+
+                            <img src="@Url.Content("~/images/home/"+ item._HinhAnh)" />
+
+                        </div>
+                        <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                            <!-- Wrapper for slides -->
+                            
+
+                            <!-- Controls -->
+                            <a class="left item-control" href="#similar-product" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right item-control" href="#similar-product" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="product-information">
+
+                            <!--/product-information-->
+                            <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
+                            <h2>@item._TenSP</h2>
+                            <!--<p>Web ID: 1089772</p>-->
+                            <!--<img src="~/images/product-details/rating.png" alt="" />-->
+                            @*<span>
+                                <span style="color:red;">Giá :  @Model.GiaSP.000đ</span>
+                                <br />
+                                <span>*@
+
+                        <span>Thông tin khách hàng</span>
+                            @using (Html.BeginForm("DonHang", "giohang", new { @imasp = item._MaSP, @mamau = item._MaMau, @size = item._Size, @strUrl = Request.Url.ToString() }))
+                            {
+
+                                <span style="color:red;">Giá : @ViewBag.GiaBan.000đ</span>
+                                <br />
+
+                                <span>Size</span>
+                                <select style="width:100px; height:50px;" name="size">
+                                    @Html.Action("size", "Sanpham")
+                                </select>
+                                <br />
+                                <span>Màu</span>
+
+
+                                <div class="item-mau">@Html.Action("mau", "Sanpham")</div>
+                                <div>ban dang chon amu :@item._TenMau</div>
+
+                                @*@Html.Action("mau", "Sanpham")*@
+
+                                @*<select style="width:100px; height:50px;" id="mamau" onchange="myFunction()">
+
+
+                                                    @Html.Action("mau", "Sanpham")
+
+
+                                    </select>*@
+                                @*<script>
+                                        function myFunction() {
+                                            var m = document.getElementById("mamau").value;
+                                            document.getElementById("demo").innerHTML =m;
+                                        }
+                                    </script>*@
+
+
+                                <button type="submit" class="btn btn-fefault cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    Thanh toán
+                                </button>}
+
+                            
+                        </div><!--/product-information-->
+                    </div>
+                </div>}}<!--/product-details-->
+}
+
+
+<div class="recommended_items">
+    <!--recommended_items-->
+    <h2 class="title text-center">recommended items</h2>
+
+    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <img src="~/images/home/recommend1.jpg" alt="" />
+                                <h2>$56</h2>
+                                <p>Easy Polo Black Edition</p>
+                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <img src="~/images/home/recommend2.jpg" alt="" />
+                                <h2>$56</h2>
+                                <p>Easy Polo Black Edition</p>
+                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <img src="~/images/home/recommend3.jpg" alt="" />
+                                <h2>$56</h2>
+                                <p>Easy Polo Black Edition</p>
+                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <img src="~/images/home/recommend1.jpg" alt="" />
+                                <h2>$56</h2>
+                                <p>Easy Polo Black Edition</p>
+                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <img src="~/images/home/recommend2.jpg" alt="" />
+                                <h2>$56</h2>
+                                <p>Easy Polo Black Edition</p>
+                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <img src="~/images/home/recommend3.jpg" alt="" />
+                                <h2>$56</h2>
+                                <p>Easy Polo Black Edition</p>
+                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+</div><!--/recommended_items-->
+</div>
+
+
