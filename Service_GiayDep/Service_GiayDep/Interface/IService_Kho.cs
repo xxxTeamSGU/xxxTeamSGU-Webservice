@@ -10,8 +10,8 @@ namespace Service_GiayDep.Interface
     [ServiceContract]
     interface IService_Kho
     {
-       // [OperationContract]
-     //   List<Kho> LayTatCaKho();
+        [OperationContract]
+        List<Kho> LayTatCaKho();
         [OperationContract]
         List<SanPham_Price> LayKhoTheoSP(int MaSP);
        // [OperationContract]
@@ -24,5 +24,18 @@ namespace Service_GiayDep.Interface
         bool CheckKho(int MaSP, int Mau, int MaSize);
         [OperationContract]
         bool ThemKho(int MaHDN);
+        [OperationContract]
+        bool CapNhatGiaBanMoi(int MaSP, int MaMau, decimal GiaBan);
+        [OperationContract]
+        Kho LayKho(int masp);
+        [OperationContract]
+        List<LaySize> LaySize(int masp, int mamau);
+        [OperationContract]
+        List<LayMau> LayMau(int masp);
+        [OperationContract]
+        int LayGia(int MaSP, int MaMau);
+        [OperationContract]
+        List<LaySize> ChonMau(int MaSP, int MaMau);
+    
     }
 }

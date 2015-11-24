@@ -108,6 +108,42 @@ namespace Service_GiayDep
                 return false;
             }
         }
+        [WebMethod]
+        public bool CheckMau(string Mau)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var check = db.Maus.SingleOrDefault(p => p.TenMau.Equals(Mau));
+                    if (check != null)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
+        [WebMethod]
+        public Mau LayMauTheoMa(int MaMau)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    Mau tenmau = db.Maus.SingleOrDefault(n => n.MaMau == MaMau);
+                    return tenmau;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
 
     }
 }

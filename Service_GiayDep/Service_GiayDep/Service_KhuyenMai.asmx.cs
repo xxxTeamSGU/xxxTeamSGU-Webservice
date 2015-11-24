@@ -106,6 +106,24 @@ namespace Service_GiayDep
                 return false;
             }
         }
-
+        [WebMethod]
+        public bool CheckKhuyenMai(string TenKM)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var check = db.KhuyenMais.SingleOrDefault(p => p.TenKM.Equals(TenKM));
+                    if (check != null)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
     }
 }

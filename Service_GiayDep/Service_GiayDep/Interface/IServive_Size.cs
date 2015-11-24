@@ -19,5 +19,7 @@ namespace Service_GiayDep.Interface
         bool SuaSize(int MaSize, int Size);
         [OperationContract]
         bool XoaSize(int MaSize);
+        [OperationContract]
+        Size LaySizeTheoMa(int MaSize);
     }
 }

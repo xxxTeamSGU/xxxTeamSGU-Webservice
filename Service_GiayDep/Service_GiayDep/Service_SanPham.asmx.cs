@@ -117,15 +117,11 @@ namespace Service_GiayDep
             try
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
-                { 
-                    //Tìm MaSP muốn xóa
-                    var SpDelete = db.SanPhams.SingleOrDefault(p =>p.MaSP == MaSP);
-                    //Nếu có
-                    if(SpDelete!=null)
+                {
+                    var SpDelete = db.SanPhams.SingleOrDefault(p => p.MaSP == MaSP);
+                    if (SpDelete != null)
                     {
-                        //Thực hiện xóa sản phẩm
                         db.SanPhams.Remove(SpDelete);
-                        //lưu lại thay đổi
                         db.SaveChanges();
                         return true;
                     }
@@ -191,6 +187,60 @@ namespace Service_GiayDep
         {
             SanPham laymasp = db.SanPhams.SingleOrDefault(n => n.MaSP == imasp);
             return laymasp;
+        }
+        [WebMethod]
+        public bool CheckSanPham(string TenSP)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var check = db.SanPhams.SingleOrDefault(p => p.TenSP.Equals(TenSP));
+                    if (check != null)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
+        [WebMethod]
+        public SanPham LayMa(int masp)
+        {
+            SanPham list = db.SanPhams.SingleOrDefault(n => n.MaSP == masp);
+            return list;
+
+
+        }
+        [WebMethod]
+        public List<TH> ThuongHieuNam()
+        {
+            List<TH> list = db.SanPhams.Where(n => n.MaLoai == 1).Select(n => new TH
+            {
+                _ThuongHieu = n.ThuongHieu,
+            }).Distinct().ToList();
+            return list;
+        }
+        [WebMethod]
+        public List<TH> ThuongHieuNu()
+        {
+            List<TH> list = db.SanPhams.Where(n => n.MaLoai == 2).Select(n => new TH
+            {
+                _ThuongHieu = n.ThuongHieu,
+            }).Distinct().ToList();
+            return list;
+        }
+        [WebMethod]
+        public List<TH> ThuongHieuTreEm()
+        {
+            List<TH> list = db.SanPhams.Where(n => n.MaLoai == 3).Select(n => new TH
+            {
+                _ThuongHieu = n.ThuongHieu,
+            }).Distinct().ToList();
+            return list;
         }
     }
 }

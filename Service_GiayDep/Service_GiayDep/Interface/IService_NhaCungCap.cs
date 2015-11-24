@@ -20,5 +20,7 @@ namespace Service_GiayDep.Interface
         bool XoaNhaCungCap(int MaNCC);
         [OperationContract]
         List<NhaCungCap> TimKiemNhaCungCap(string x);
+        [OperationContract]
+        bool CheckNhaCungCap(string TenNCC);
     }
 }

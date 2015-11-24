@@ -24,5 +24,9 @@ namespace Service_GiayDep.Interface
         bool KiemTraNhanVien(string Email, string MatKhau);
         [OperationContract]
         NhanVien LayMotNhanVien(string Email, string MatKhau);
+        [OperationContract]
+        bool CheckEmail(string Email);
+        [OperationContract]
+        NhanVien LayNhanVienTheoMa(int MaNV);
     }
 }

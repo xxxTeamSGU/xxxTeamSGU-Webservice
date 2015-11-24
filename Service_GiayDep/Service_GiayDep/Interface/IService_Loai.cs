@@ -18,5 +18,7 @@ namespace Service_GiayDep.Interface
         bool SuaLoai(int MaLoai, string TenLoai);
         [OperationContract]
         bool XoaLoai(int MaLoai);
+        [OperationContract]
+        bool CheckLoai(string TenLoai);
     }
 }

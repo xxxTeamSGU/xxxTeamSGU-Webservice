@@ -105,6 +105,25 @@ namespace Service_GiayDep
                 return false;
             }
         }
+        [WebMethod]
+        public bool CheckLoai(string TenLoai)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var check = db.Loais.SingleOrDefault(p => p.TenLoai.Equals(TenLoai));
+                    if (check != null)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
 
     }
 }

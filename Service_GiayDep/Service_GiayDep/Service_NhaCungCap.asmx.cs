@@ -141,6 +141,24 @@ namespace Service_GiayDep
             }
         }
 
-
+        [WebMethod]
+        public bool CheckNhaCungCap(string NCC)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var check = db.NhaCungCaps.SingleOrDefault(p => p.TenNCC.Equals(NCC));
+                    if (check != null)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
     }
 }

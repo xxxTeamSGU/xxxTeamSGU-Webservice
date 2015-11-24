@@ -18,5 +18,9 @@ namespace Service_GiayDep.Interface
         bool SuaMau(int MaMau, string Mau);
         [OperationContract]
         bool XoaMau(int MaMau);
+        [OperationContract]
+        bool CheckMau(string Mau);
+        [OperationContract]
+        Mau LayMauTheoMa(int MaMau);
     }
 }

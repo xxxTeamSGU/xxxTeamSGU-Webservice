@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="servicegiaydep" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\huy\\Desktop\\TEst\\Service_GiayDep\\Service_GiayDep\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\huy\\Desktop\\TEst\\Service_GiayDep\\Service_GiayDep\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DBGiayDepEntities-Web.config Connection String" description="" value="metadata=res://*/Models.DBGiayDep.csdl|res://*/Models.DBGiayDep.ssdl|res://*/Models.DBGiayDep.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=lw0e5wccpn.database.windows.net;Initial Catalog=DBGiayDep;User ID=huynguyen;Password=Abc123456;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\huy\\Desktop\\TEst\\Service_GiayDep\\Service_GiayDep\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DBGiayDepEntities']/@connectionString" />
+  </parameter>
+</parameters>

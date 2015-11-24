@@ -19,7 +19,6 @@ namespace Service_GiayDep.Models
             : base("name=DBGiayDepEntities")
         {
             Configuration.ProxyCreationEnabled = false;
-
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

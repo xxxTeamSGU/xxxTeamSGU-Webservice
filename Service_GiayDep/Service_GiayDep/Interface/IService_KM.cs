@@ -18,5 +18,7 @@ namespace Service_GiayDep.Interface
         bool SuaKM(int MaKM, string TenKM,DateTime NgayBD,DateTime NgayKT);
         [OperationContract]
         bool XoaKM(int MaKM);
+        [OperationContract]
+        bool CheckKhuyenMai(string TenKM);
     }
 }

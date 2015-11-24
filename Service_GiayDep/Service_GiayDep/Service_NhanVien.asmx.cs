@@ -191,5 +191,44 @@ namespace Service_GiayDep
                 return null;
             }
         }
+        [WebMethod]
+        public bool CheckEmail(string Email)
+        {
+            try
+            {
+                using(DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var check = db.NhanViens.SingleOrDefault(p => p.Email.Equals(Email));
+                    if (check != null)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
+        [WebMethod]
+        public NhanVien LayNhanVienTheoMa(int MaNV)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var nhanvien = db.NhanViens.SingleOrDefault(c => c.MaNV == MaNV);
+                    if (nhanvien != null)
+                        return nhanvien;
+                    return null;
+
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
     }
 }

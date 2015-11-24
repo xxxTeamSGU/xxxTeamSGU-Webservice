@@ -110,5 +110,22 @@ namespace Service_GiayDep
                 return false;
             }
         }
+        [WebMethod]
+        public Size LaySizeTheoMa(int MaSize)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    Size tensize = db.Sizes.SingleOrDefault(n => n.MaSize == MaSize);
+                    return tensize;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
     }
 }

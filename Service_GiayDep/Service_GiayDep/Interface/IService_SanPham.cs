@@ -23,6 +23,13 @@ namespace Service_GiayDep.Interface
         bool XoaSanPham(int MaSP);
         [OperationContract]
         List<SanPham> TimKiemSanPham(string Tim);
+        SanPham LayMa(int masp);
+        [OperationContract]
+        List<TH> ThuongHieuNam();
+        [OperationContract]
+        List<TH> ThuongHieuNu();
+        [OperationContract]
+        List<TH> ThuongHieuTreEm();
         [OperationContract]
         List<SanPham> SanphammoiPartial();
         [OperationContract]
@@ -31,5 +38,7 @@ namespace Service_GiayDep.Interface
         SanPham Chitietsanpham(int masp);
         [OperationContract]
         SanPham LaySanPham(int imasp);
+        [OperationContract]
+        bool CheckSanPham(string TenSP);
     }
 }
