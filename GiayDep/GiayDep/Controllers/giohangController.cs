@@ -176,27 +176,27 @@ namespace GiayDep.Controllers
             }
 
             //Thêm đơn hàng
-            DonHang dhs = new DonHang();
             KhachHang kh = (KhachHang)Session["khachhang"];
-            List<giohang> gh = laygiohang();
-            var themdh = dh.ThemDH(dhs.MaDH, kh.MaKH, DateTime.Now,Tongtien(), TinhTrang, NVDuyet);
+            int themdh = dh.ThemDH( kh.MaKH, DateTime.Now,(decimal)Tongtien(),0,null);
+            
             ////Them chi tiet don hang
+            List<giohang> gh = laygiohang();
             foreach (var item in gh)
             {
-                CTDH ct = new CTDH();
-                 ct.MaDH = dhs.MaDH;
-                int MaSP = item.imasp;
-                int MaMau = item.imamau;
-                int MaSize = item.isize;
-                int SL = item.soluong;
-                Decimal DonGia = item.dongia;
-                var ctdhnew = ctdh.ThemCTHDH(MaDH, MaSP, MaMau, MaSize, SL, DonGia);
+                var ctdhnew = ctdh.ThemCTDH(themdh,item.imasp, item.imamau, item.isize, item.soluong, item.thanhtien);
             }
-
-            return RedirectToAction("Index", "Home");
-            
+            Session["giohang"]=null;
+            return RedirectToAction("ThongBaoDH", "giohang");
           //return View(gh);
       }
       #endregion
+#region Thông báo đơn hàng
+         public ActionResult ThongBaoDH()
+        {
+            ViewBag.tb = "Bạn đã đặt hàng thành công. Chúng tôi sẽ giao hàng trong thời gian sớm nhất 2-3 ngày làm việc.";
+            return View();
+        }
+#endregion 
+       
     }
 }

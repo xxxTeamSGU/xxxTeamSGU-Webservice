@@ -9,7 +9,7 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
                         
-                        <a href="@Url.Action("Chitietsanpham", new { @masp = item._MaSP })"><img src="@Url.Content("~/images/home/"+ item._HinhAnh)" alt="" height="237" width="255" /></a>
+                        <a href="@Url.Action("Chitietsanpham", new { @masp = item._MaSP })"><img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="" height="237" width="255" /></a>
                         <h2>@item._GiaSP.000đ</h2>
                         <p>@item._TenSP</p>
                 @using (Html.BeginForm("Muangay", "SanPham", new { @imasp = item._MaSP, @mamau= item._MaMau }))

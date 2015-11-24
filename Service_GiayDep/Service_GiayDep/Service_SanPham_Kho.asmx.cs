@@ -70,7 +70,7 @@ namespace Service_GiayDep
                         _TenMau = p.Mau.TenMau,
                         _Size = p.Size.Size1,
                         _GiaSP = (decimal)p.GiaBan,
-                        _HinhAnh = p.SanPham.HinhAnh
+                        _HinhAnh = p.SanPham.HinhAnh,
                     }).OrderBy(p => p._MaSP).ToList();
                     int index = 0;
                     while (index < list.Count - 1)

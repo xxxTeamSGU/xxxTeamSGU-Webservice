@@ -29,7 +29,7 @@ namespace GiayDep.Service_CTDH {
     [System.Web.Services.WebServiceBindingAttribute(Name="Service_CTDHSoap", Namespace="http://tempuri.org/")]
     public partial class Service_CTDH : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback ThemCTHDHOperationCompleted;
+        private System.Threading.SendOrPostCallback ThemCTDHOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -70,12 +70,12 @@ namespace GiayDep.Service_CTDH {
         }
         
         /// <remarks/>
-        public event ThemCTHDHCompletedEventHandler ThemCTHDHCompleted;
+        public event ThemCTDHCompletedEventHandler ThemCTDHCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemCTHDH", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ThemCTHDH(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia) {
-            object[] results = this.Invoke("ThemCTHDH", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemCTDH", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool ThemCTDH(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia) {
+            object[] results = this.Invoke("ThemCTDH", new object[] {
                         MaDH,
                         MaSP,
                         MaMau,
@@ -86,28 +86,28 @@ namespace GiayDep.Service_CTDH {
         }
         
         /// <remarks/>
-        public void ThemCTHDHAsync(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia) {
-            this.ThemCTHDHAsync(MaDH, MaSP, MaMau, MaSize, SoLuong, DonGia, null);
+        public void ThemCTDHAsync(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia) {
+            this.ThemCTDHAsync(MaDH, MaSP, MaMau, MaSize, SoLuong, DonGia, null);
         }
         
         /// <remarks/>
-        public void ThemCTHDHAsync(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia, object userState) {
-            if ((this.ThemCTHDHOperationCompleted == null)) {
-                this.ThemCTHDHOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThemCTHDHOperationCompleted);
+        public void ThemCTDHAsync(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia, object userState) {
+            if ((this.ThemCTDHOperationCompleted == null)) {
+                this.ThemCTDHOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThemCTDHOperationCompleted);
             }
-            this.InvokeAsync("ThemCTHDH", new object[] {
+            this.InvokeAsync("ThemCTDH", new object[] {
                         MaDH,
                         MaSP,
                         MaMau,
                         MaSize,
                         SoLuong,
-                        DonGia}, this.ThemCTHDHOperationCompleted, userState);
+                        DonGia}, this.ThemCTDHOperationCompleted, userState);
         }
         
-        private void OnThemCTHDHOperationCompleted(object arg) {
-            if ((this.ThemCTHDHCompleted != null)) {
+        private void OnThemCTDHOperationCompleted(object arg) {
+            if ((this.ThemCTDHCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ThemCTHDHCompleted(this, new ThemCTHDHCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.ThemCTDHCompleted(this, new ThemCTDHCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -132,17 +132,17 @@ namespace GiayDep.Service_CTDH {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
-    public delegate void ThemCTHDHCompletedEventHandler(object sender, ThemCTHDHCompletedEventArgs e);
+    public delegate void ThemCTDHCompletedEventHandler(object sender, ThemCTDHCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ThemCTHDHCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class ThemCTDHCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal ThemCTHDHCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal ThemCTDHCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

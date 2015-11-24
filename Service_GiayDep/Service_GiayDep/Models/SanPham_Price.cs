@@ -63,7 +63,7 @@
             set { HinhAnh = value; }
         }
 
-
+       
     }
 
 }

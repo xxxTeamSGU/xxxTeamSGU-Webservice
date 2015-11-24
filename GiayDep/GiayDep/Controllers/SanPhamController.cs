@@ -11,19 +11,20 @@ namespace GiayDep.Controllers
     {
         //
         // GET: /SanPham/
-        //Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
+        Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
         Service_Kho.Service_Kho k = new Service_Kho.Service_Kho();
         Service_SanPham_Kho.Service_SanPham_Kho spk = new Service_SanPham_Kho.Service_SanPham_Kho();
         public PartialViewResult SanphammoiPartial()
         {
-            var listsanphammoi = spk.SanphammoiPartial().Distinct().Take(1).ToList();
+            var listsanphammoi = spk.SanphammoiPartial().Distinct().Take(6).ToList();
             return PartialView(listsanphammoi);
         }
         public PartialViewResult SanphamkhuyenmaiPartial()
         {
-            var listkhuyenmai = spk.SanphamkhuyenmaiPartial().Distinct().ToList();
+            var listkhuyenmai = spk.SanphamkhuyenmaiPartial().Distinct().Take(6).ToList();
             return PartialView(listkhuyenmai);
         }
+        
         public ViewResult Chitietsanpham(int MaSP, int MaMau)
         {
             var chitiet = spk.LayKhoTheoSP(MaSP, MaMau).ToList();

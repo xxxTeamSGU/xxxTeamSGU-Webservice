@@ -21,7 +21,7 @@ namespace Service_GiayDep
     {
 
         [WebMethod]
-        public bool ThemCTHDH(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia)
+        public bool ThemCTDH(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia)
         {
             CTDH ctdh = new CTDH();
             ctdh.MaDH = MaDH;

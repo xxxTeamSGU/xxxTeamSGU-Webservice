@@ -74,29 +74,27 @@ namespace GiayDep.Service_DonHang {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemDH", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool ThemDH(int MaDH, int MaKH, System.DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet) {
+        public int ThemDH(int MaKH, System.DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet) {
             object[] results = this.Invoke("ThemDH", new object[] {
-                        MaDH,
                         MaKH,
                         NgayMua,
                         TongTien,
                         TinhTrang,
                         NVDuyet});
-            return ((bool)(results[0]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
-        public void ThemDHAsync(int MaDH, int MaKH, System.DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet) {
-            this.ThemDHAsync(MaDH, MaKH, NgayMua, TongTien, TinhTrang, NVDuyet, null);
+        public void ThemDHAsync(int MaKH, System.DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet) {
+            this.ThemDHAsync(MaKH, NgayMua, TongTien, TinhTrang, NVDuyet, null);
         }
         
         /// <remarks/>
-        public void ThemDHAsync(int MaDH, int MaKH, System.DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet, object userState) {
+        public void ThemDHAsync(int MaKH, System.DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet, object userState) {
             if ((this.ThemDHOperationCompleted == null)) {
                 this.ThemDHOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThemDHOperationCompleted);
             }
             this.InvokeAsync("ThemDH", new object[] {
-                        MaDH,
                         MaKH,
                         NgayMua,
                         TongTien,
@@ -148,10 +146,10 @@ namespace GiayDep.Service_DonHang {
         }
         
         /// <remarks/>
-        public bool Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
     }

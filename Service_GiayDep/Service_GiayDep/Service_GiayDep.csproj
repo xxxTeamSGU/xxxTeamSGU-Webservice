@@ -103,6 +103,7 @@
     <Compile Include="Models\LayMau.cs" />
     <Compile Include="Models\LaySize.cs" />
     <Compile Include="Models\SanPham_Price.cs" />
+    <Compile Include="Models\TH.cs" />
     <Compile Include="Service_CTDH.asmx.cs">
       <DependentUpon>Service_CTDH.asmx</DependentUpon>
     </Compile>

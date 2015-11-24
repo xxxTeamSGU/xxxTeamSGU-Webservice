@@ -6,6 +6,7 @@
     Layout = "~/Views/GiayDep/Trangkethua.cshtml";
     
 }
+
 @section Noidungbenphai{
     <h2>@ViewBag.tb</h2>
  
@@ -16,7 +17,7 @@
             <h2>Danh mục</h2>
             <div class="panel-group category-products" id="accordian">
                 <!--category-productsr-->
-                @Html.Partial("~/Views/Sanpham/DanhmucPartial.cshtml");
+                @Html.Action("DanhmucNam","DanhMuc");
             </div><!--/category-products-->
             @* <div class="brands_products">
                     <!--brands_products-->
@@ -60,8 +61,8 @@
                             <div class="col-sm-5">
 
                                 <div class="view-product img-hover">
-
-                                    <img src="@Url.Content("~/images/home/"+ item._HinhAnh)"  />
+               
+                                    <img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])"  />
                
                                 </div>
                                 <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -116,16 +117,18 @@
                                                 <span style="color:red;">Giá : @ViewBag.GiaBan.000đ</span>
                                                 <br />
                                     
-                                                   <span>Size</span>
+                                                   <span>Size : </span>
                                                 <select style="width:100px; height:50px;" name="size">
                                                     @Html.Action("size", "Sanpham")
                                                 </select>
                                                     <br />
-                                                    <span>Màu</span>
+                                                     
+                                                    <div class="item-mau">
+                                                        <span>Màu : </span> 
+                                                        <span>  @Html.Action("mau", "Sanpham")</span> 
 
-                                                        
-                                                    <div class="item-mau">@Html.Action("mau", "Sanpham")</div>
-                                                    <div id="mau-hien-tai" class="@item._MaMau"> Mau hien tai dang chon la @item._TenMau</div>
+</div>
+                                                    <div id="mau-hien-tai" class="@item._MaMau"></div>
 
                                                   @*@Html.Action("mau", "Sanpham")*@
 

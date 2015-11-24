@@ -19,7 +19,6 @@ C:\Users\DUYTRINH\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\Service_GiayDe
 C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
 C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.dll
 C:\Users\huy\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb
-C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll.config
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.pdb
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\bin\EntityFramework.dll
@@ -29,3 +28,4 @@ C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\bin\EntityFramework.Sq
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.dll
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.pdb
 C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\obj\Debug\Service_GiayDep.csprojResolveAssemblyReference.cache
+C:\Users\DUYTRINH\Desktop\Service_GiayDep\Service_GiayDep\bin\Service_GiayDep.dll.config

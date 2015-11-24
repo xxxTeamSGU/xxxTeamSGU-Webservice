@@ -236,7 +236,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Style.css" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -267,10 +266,13 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web References\Service_CTDH\Reference.map">
+    <Content Include="Views\giohang\ThongBaoDH.cshtml" />
+    <Content Include="Views\DanhMuc\DanhmucNu.cshtml" />
+    <Content Include="Views\DanhMuc\DanhmucTreEm.cshtml" />
+    <None Include="Web References\Service_CTDH\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\Service_CTDH\Service_CTDH.wsdl" />
     <None Include="Web References\Service_DonHang\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -281,10 +283,10 @@
     <Content Include="Web References\Service_KhachHang\KhachHang.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\Service_KhachHang\Reference.map">
+    <None Include="Web References\Service_KhachHang\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Views\User\Name.cshtml" />
     <Content Include="Views\giohang\DonHang.cshtml" />
     <Content Include="Views\User\Thongtinkhachhang.cshtml" />
@@ -311,10 +313,10 @@
     <Content Include="Web References\Service_Mau\Mau.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\Service_Mau\Reference.map">
+    <None Include="Web References\Service_Mau\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\Service_Mau\Service_Mau.wsdl" />
     <None Include="Web References\Service_SanPham\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -326,6 +328,9 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <None Include="Web References\Service_SanPham\Service_SanPham.disco" />
+    <Content Include="Web References\Service_SanPham\TH.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
     <None Include="Web References\Service_SanPham_Kho\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -334,10 +339,10 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <None Include="Web References\Service_SanPham_Kho\Service_SanPham_Kho.disco" />
-    <Content Include="Web References\Service_Size\Reference.map">
+    <None Include="Web References\Service_Size\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\Service_Size\Service_Size.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -362,7 +367,7 @@
     <Content Include="Views\GiayDep\Trangchu.cshtml" />
     <Content Include="Views\Sanpham\SanphammoiPartial.cshtml" />
     <Content Include="Views\Sanpham\SanphamkhuyenmaiPartial.cshtml" />
-    <Content Include="Views\Sanpham\DanhmucPartial.cshtml" />
+    <Content Include="Views\DanhMuc\DanhmucNam.cshtml" />
     <Content Include="Views\Sanpham\Chitietsanpham.cshtml" />
     <Content Include="Views\GiayDep\header.cshtml" />
     <Content Include="Views\GiayDep\footer.cshtml" />
@@ -372,7 +377,6 @@
     <Content Include="Views\giohang\giohang.cshtml" />
     <Content Include="Views\giohang\giohangpartial.cshtml" />
     <Content Include="Views\giohang\addslpartial.cshtml" />
-    <Content Include="Views\DanhMuc\DanhMucGiayNamPartial.cshtml" />
     <Content Include="Views\slider\sliderPartial.cshtml" />
     <Content Include="Views\GiayDep\Trangkethua.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />

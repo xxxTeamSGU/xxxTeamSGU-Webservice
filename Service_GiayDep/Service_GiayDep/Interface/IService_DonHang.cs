@@ -10,6 +10,6 @@ namespace Service_GiayDep.Interface
     public interface IService_DonHang
     {
         [OperationContract]
-        int ThemDH(int MaDH, int MaKH, DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet);
+        int ThemDH( int MaKH, DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet);
     }
 }

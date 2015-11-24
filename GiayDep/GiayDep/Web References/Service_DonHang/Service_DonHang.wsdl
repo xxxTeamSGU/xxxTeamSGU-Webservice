@@ -5,7 +5,6 @@
       <s:element name="ThemDH">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="MaDH" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="MaKH" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="NgayMua" type="s:dateTime" />
             <s:element minOccurs="1" maxOccurs="1" name="TongTien" type="s:decimal" />
@@ -17,7 +16,7 @@
       <s:element name="ThemDHResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ThemDHResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDHResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>

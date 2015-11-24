@@ -25,7 +25,12 @@ namespace Service_GiayDep.Interface
         List<SanPham> TimKiemSanPham(string Tim);
         [OperationContract]
         SanPham LayMa(int masp);
-
+        [OperationContract]
+        List<TH> ThuongHieuNam();
+        [OperationContract]
+        List<TH> ThuongHieuNu();
+        [OperationContract]
+        List<TH> ThuongHieuTreEm();
         //[OperationContract]
         //SanPham Chitietsanpham(int masp);
        

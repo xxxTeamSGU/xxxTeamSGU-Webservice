@@ -4,7 +4,14 @@
 }
 @if (khachhang != null)
 {
-        <li><a href="">Xin chào bạn: @khachhang.HoTen</a></li>
+                            <li class="dropdown">
+                                <a href="#">Xin chào bạn: @khachhang.HoTen<i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="/giohang/lichsu/">Lịch sử mua hàng</a></li>
+                                    <li><a href="//Userthongtin/">Thay đổi thông tin</a></li>
+                                </ul>
+                                </li>
+        @*<li><a href="">Xin chào bạn: @khachhang.HoTen</a></li>*@
         <li>@Html.ActionLink("Đăng xuất", "Logout", "User")</li>
 }
 else

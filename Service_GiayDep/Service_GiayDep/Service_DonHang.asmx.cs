@@ -21,10 +21,9 @@ namespace Service_GiayDep
     {
 
         [WebMethod]
-        public int ThemDH(int MaDH, int MaKH, DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet)
+        public int ThemDH(int MaKH, DateTime NgayMua, decimal TongTien, int TinhTrang, string NVDuyet)
         {
             DonHang dh = new DonHang();
-            dh.MaDH = MaDH;
             dh.MaKH = MaKH;
             dh.NgayMua = (DateTime)NgayMua;
             dh.TongTien = (decimal)TongTien;
@@ -36,7 +35,7 @@ namespace Service_GiayDep
                 {
                     db.DonHangs.Add(dh);
                     db.SaveChanges();
-                    return (int)MaDH;
+                    return dh.MaDH;
                 }
             }
             catch (Exception e)

@@ -41,6 +41,12 @@ namespace GiayDep.Service_SanPham {
         
         private System.Threading.SendOrPostCallback LayMaOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ThuongHieuNamOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ThuongHieuNuOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ThuongHieuTreEmOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -96,6 +102,15 @@ namespace GiayDep.Service_SanPham {
         
         /// <remarks/>
         public event LayMaCompletedEventHandler LayMaCompleted;
+        
+        /// <remarks/>
+        public event ThuongHieuNamCompletedEventHandler ThuongHieuNamCompleted;
+        
+        /// <remarks/>
+        public event ThuongHieuNuCompletedEventHandler ThuongHieuNuCompleted;
+        
+        /// <remarks/>
+        public event ThuongHieuTreEmCompletedEventHandler ThuongHieuTreEmCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LayTatCaSanPham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -296,6 +311,87 @@ namespace GiayDep.Service_SanPham {
             if ((this.LayMaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.LayMaCompleted(this, new LayMaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThuongHieuNam", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public TH[] ThuongHieuNam() {
+            object[] results = this.Invoke("ThuongHieuNam", new object[0]);
+            return ((TH[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ThuongHieuNamAsync() {
+            this.ThuongHieuNamAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ThuongHieuNamAsync(object userState) {
+            if ((this.ThuongHieuNamOperationCompleted == null)) {
+                this.ThuongHieuNamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThuongHieuNamOperationCompleted);
+            }
+            this.InvokeAsync("ThuongHieuNam", new object[0], this.ThuongHieuNamOperationCompleted, userState);
+        }
+        
+        private void OnThuongHieuNamOperationCompleted(object arg) {
+            if ((this.ThuongHieuNamCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ThuongHieuNamCompleted(this, new ThuongHieuNamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThuongHieuNu", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public TH[] ThuongHieuNu() {
+            object[] results = this.Invoke("ThuongHieuNu", new object[0]);
+            return ((TH[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ThuongHieuNuAsync() {
+            this.ThuongHieuNuAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ThuongHieuNuAsync(object userState) {
+            if ((this.ThuongHieuNuOperationCompleted == null)) {
+                this.ThuongHieuNuOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThuongHieuNuOperationCompleted);
+            }
+            this.InvokeAsync("ThuongHieuNu", new object[0], this.ThuongHieuNuOperationCompleted, userState);
+        }
+        
+        private void OnThuongHieuNuOperationCompleted(object arg) {
+            if ((this.ThuongHieuNuCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ThuongHieuNuCompleted(this, new ThuongHieuNuCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThuongHieuTreEm", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public TH[] ThuongHieuTreEm() {
+            object[] results = this.Invoke("ThuongHieuTreEm", new object[0]);
+            return ((TH[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ThuongHieuTreEmAsync() {
+            this.ThuongHieuTreEmAsync(null);
+        }
+        
+        /// <remarks/>
+        public void ThuongHieuTreEmAsync(object userState) {
+            if ((this.ThuongHieuTreEmOperationCompleted == null)) {
+                this.ThuongHieuTreEmOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThuongHieuTreEmOperationCompleted);
+            }
+            this.InvokeAsync("ThuongHieuTreEm", new object[0], this.ThuongHieuTreEmOperationCompleted, userState);
+        }
+        
+        private void OnThuongHieuTreEmOperationCompleted(object arg) {
+            if ((this.ThuongHieuTreEmCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ThuongHieuTreEmCompleted(this, new ThuongHieuTreEmCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -865,6 +961,27 @@ namespace GiayDep.Service_SanPham {
             }
             set {
                 this.donHangsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class TH {
+        
+        private string _ThuongHieuField;
+        
+        /// <remarks/>
+        public string _ThuongHieu {
+            get {
+                return this._ThuongHieuField;
+            }
+            set {
+                this._ThuongHieuField = value;
             }
         }
     }
@@ -1847,6 +1964,84 @@ namespace GiayDep.Service_SanPham {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((SanPham)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void ThuongHieuNamCompletedEventHandler(object sender, ThuongHieuNamCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ThuongHieuNamCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ThuongHieuNamCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TH[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TH[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void ThuongHieuNuCompletedEventHandler(object sender, ThuongHieuNuCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ThuongHieuNuCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ThuongHieuNuCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TH[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TH[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void ThuongHieuTreEmCompletedEventHandler(object sender, ThuongHieuTreEmCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ThuongHieuTreEmCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ThuongHieuTreEmCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TH[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TH[])(this.results[0]));
             }
         }
     }

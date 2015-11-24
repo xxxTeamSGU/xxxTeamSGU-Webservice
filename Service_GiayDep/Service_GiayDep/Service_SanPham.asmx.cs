@@ -194,6 +194,32 @@ namespace Service_GiayDep
 
 
         }
-        
+        [WebMethod]
+        public List<TH> ThuongHieuNam()
+        {
+            List<TH> list = db.SanPhams.Where(n=>n.MaLoai==1).Select(n => new TH
+            {
+                _ThuongHieu = n.ThuongHieu,
+            }).Distinct().ToList();
+            return list;
+        }
+        [WebMethod]
+        public List<TH> ThuongHieuNu()
+        {
+            List<TH> list = db.SanPhams.Where(n => n.MaLoai == 2).Select(n => new TH
+            {
+                _ThuongHieu = n.ThuongHieu,
+            }).Distinct().ToList();
+            return list;
+        }
+        [WebMethod]
+        public List<TH> ThuongHieuTreEm()
+        {
+            List<TH> list = db.SanPhams.Where(n => n.MaLoai == 3).Select(n => new TH
+            {
+                _ThuongHieu = n.ThuongHieu,
+            }).Distinct().ToList();
+            return list;
+        }
     }
 }

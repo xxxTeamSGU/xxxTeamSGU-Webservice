@@ -11,6 +11,6 @@ namespace Service_GiayDep.Interface
     public interface IService_CTDH
     {
         [OperationContract]
-        bool ThemCTHDH(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia);
+        bool ThemCTDH(int MaDH, int MaSP, int MaMau, int MaSize, int SoLuong, decimal DonGia);
     }
 }
