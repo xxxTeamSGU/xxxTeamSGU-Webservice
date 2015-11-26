@@ -177,13 +177,29 @@ namespace GiayDep.Controllers
 
             //Thêm đơn hàng
             KhachHang kh = (KhachHang)Session["khachhang"];
+<<<<<<< HEAD
             int themdh = dh.ThemDH( kh.MaKH, DateTime.Now,(decimal)Tongtien(),0,null);
             
+=======
+            List<giohang> gh = laygiohang();
+            //var themdh = dh.ThemDH(kh.MaKH, DateTime.Now,Tongtien(), 0, "");
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
             ////Them chi tiet don hang
             List<giohang> gh = laygiohang();
             foreach (var item in gh)
             {
+<<<<<<< HEAD
                 var ctdhnew = ctdh.ThemCTDH(themdh,item.imasp, item.imamau, item.isize, item.soluong, item.thanhtien);
+=======
+                CTDH ct = new CTDH();
+                 ct.MaDH = dhs.MaDH;
+                int MaSP = item.imasp;
+                int MaMau = item.imamau;
+                int MaSize = item.isize;
+                int SL = item.soluong;
+                Decimal DonGia = item.dongia;
+                //var ctdhnew = ctdh.ThemCTHDH(themdh, MaSP, MaMau, MaSize, SL, DonGia);
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
             }
             Session["giohang"]=null;
             return RedirectToAction("ThongBaoDH", "giohang");

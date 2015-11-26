@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +53,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -204,6 +207,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\Service_Loai\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\Service_Mau\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,11 +223,6 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\Service_SanPham_Kho\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\Service_Size\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -266,9 +269,12 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+<<<<<<< HEAD
     <Content Include="Views\giohang\ThongBaoDH.cshtml" />
     <Content Include="Views\DanhMuc\DanhmucNu.cshtml" />
     <Content Include="Views\DanhMuc\DanhmucTreEm.cshtml" />
+=======
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     <Content Include="Views\User\Name.cshtml" />
     <Content Include="Views\giohang\DonHang.cshtml" />
     <Content Include="Views\User\Thongtinkhachhang.cshtml" />
@@ -284,6 +290,10 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+<<<<<<< HEAD
+=======
+    <None Include="Web References\Service_CTDH\Service_CTDH.wsdl" />
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     <None Include="Web References\Service_DonHang\Service_DonHang.disco" />
     <Content Include="Web References\Service_KhachHang\KhachHang.datasource">
       <DependentUpon>Reference.map</DependentUpon>
@@ -297,6 +307,7 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\Service_Kho\LayMau.datasource">
+<<<<<<< HEAD
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\Service_Kho\LaySize.datasource">
@@ -313,7 +324,32 @@
     <None Include="Web References\Service_CTDH\Service_CTDH.wsdl" />
     <None Include="Web References\Service_DonHang\Service_DonHang.wsdl" />
     <None Include="Web References\Service_KhachHang\Service_KhachHang.wsdl" />
+=======
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\Service_Kho\LaySize.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\Service_Kho\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\Service_Kho\SanPham_Price.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Service_DonHang\Service_DonHang.wsdl" />
+    <None Include="Web References\Service_KhachHang\Service_KhachHang.wsdl" />
+    <None Include="Web References\Service_Kho\Service_Kho.disco" />
+    <Content Include="Web References\Service_Loai\Loai.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\Service_Loai\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     <None Include="Web References\Service_Kho\Service_Kho.wsdl" />
+    <None Include="Web References\Service_Loai\Service_Loai.disco" />
     <Content Include="Web References\Service_Mau\Mau.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -322,6 +358,10 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <None Include="Web References\Service_Mau\Service_Mau.disco" />
+<<<<<<< HEAD
+=======
+    <None Include="Web References\Service_Mau\Service_Mau.wsdl" />
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     <Content Include="Web References\Service_SanPham\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -329,7 +369,11 @@
     <Content Include="Web References\Service_SanPham\SanPham.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+<<<<<<< HEAD
     <None Include="Web References\Service_Mau\Service_Mau.wsdl" />
+=======
+    <None Include="Web References\Service_Loai\Service_Loai.wsdl" />
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     <None Include="Web References\Service_SanPham\Service_SanPham.disco" />
     <Content Include="Web References\Service_SanPham_Kho\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -339,9 +383,9 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <None Include="Web References\Service_SanPham_Kho\Service_SanPham_Kho.disco" />
+    <None Include="Web References\Service_SanPham_Kho\Service_SanPham_Kho.wsdl" />
     <Content Include="Web References\Service_Size\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <None Include="Web References\Service_SanPham_Kho\Service_SanPham_Kho.wsdl" />
     <None Include="Web References\Service_Size\Service_Size.disco" />
@@ -387,12 +431,16 @@
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
     <None Include="Web References\Service_SanPham\Service_SanPham.wsdl" />
     <Content Include="Web References\Service_SanPham\TH.datasource">
+<<<<<<< HEAD
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <None Include="Web References\Service_Size\Service_Size.wsdl" />
     <Content Include="Web References\Service_Size\Size.datasource">
+=======
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <None Include="Web References\Service_Size\Service_Size.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -455,6 +503,20 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_Kho_Service_Kho</CachedSettingsPropName>
     </WebReferenceUrl>
+<<<<<<< HEAD
+=======
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_Loai.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Service_Loai\</RelPath>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_Loai.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>GiayDep_Service_Loai_Service_Loai</CachedSettingsPropName>
+    </WebReferenceUrl>
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_Mau.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_Mau\</RelPath>
@@ -496,8 +558,10 @@
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>GiayDep_Service_Size_Service_Size</CachedSettingsPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
@@ -518,7 +582,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62358</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62045/</IISUrl>
+          <IISUrl>http://localhost:8080/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -528,6 +592,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -7,12 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-    [DataContract(IsReference=true)]
+    [DataContract(IsReference = true)]
     [KnownType(typeof(CTHDN))]
     [KnownType(typeof(CTDH))]
     [KnownType(typeof(Kho))]
@@ -24,9 +25,10 @@ namespace Service_GiayDep.Models
             this.CTHDNs = new List<CTHDN>();
             this.Khoes = new List<Kho>();
         }
-    
+
         public int MaSize { get; set; }
         public int Size1 { get; set; }
+
 
         public virtual List<CTDH> CTDHs { get; set; }
         public virtual List<CTHDN> CTHDNs { get; set; }

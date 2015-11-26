@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -15,13 +16,14 @@ namespace Service_GiayDep.Models
     [DataContract(IsReference = true)]
     [KnownType(typeof(DonHang))]
 
+
     public partial class KhachHang
     {
         public KhachHang()
         {
             this.DonHangs = new List<DonHang>();
         }
-    
+
         public int MaKH { get; set; }
         public string HoTen { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
@@ -31,7 +33,7 @@ namespace Service_GiayDep.Models
         public string DiaChi { get; set; }
         public string GioiTinh { get; set; }
         public Nullable<System.DateTime> NgayDangKi { get; set; }
-    
+
         public virtual List<DonHang> DonHangs { get; set; }
     }
 }

@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -15,15 +16,17 @@ namespace Service_GiayDep.Models
     [DataContract(IsReference = true)]
     [KnownType(typeof(SanPham))]
 
+
     public partial class Loai
     {
         public Loai()
         {
             this.SanPhams = new List<SanPham>();
         }
-    
+
         public int MaLoai { get; set; }
         public string TenLoai { get; set; }
+
 
         public virtual List<SanPham> SanPhams { get; set; }
     }

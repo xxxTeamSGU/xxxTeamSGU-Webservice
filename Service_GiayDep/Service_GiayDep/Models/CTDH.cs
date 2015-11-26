@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -21,7 +22,7 @@ namespace Service_GiayDep.Models
         public int MaMau { get; set; }
         public Nullable<int> SL { get; set; }
         public Nullable<decimal> DonGia { get; set; }
-    
+
         public virtual DonHang DonHang { get; set; }
         public virtual Mau Mau { get; set; }
         public virtual SanPham SanPham { get; set; }

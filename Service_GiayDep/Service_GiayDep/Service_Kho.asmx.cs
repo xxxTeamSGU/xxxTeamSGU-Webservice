@@ -49,7 +49,7 @@ namespace Service_GiayDep
             var laysize = db.Khoes.Where(n => n.MaSP == masp && n.Mau.MaMau==mamau ).Select(n => new LaySize
             {
                 _MaSize=n.Size.MaSize,
-                _Size = n.Size.Size1,
+                //_Size = n.Size.Size1,
             }).ToList();
            
             return laysize;
@@ -108,7 +108,7 @@ namespace Service_GiayDep
             var chonmau = db.Khoes.Where(n => n.MaSP == MaSP && n.MaMau==MaMau).Select(n => new LaySize
             {
                 _MaSize= n.Size.MaSize,
-                _Size = n.Size.Size1,
+               // _Size = n.Size.Size1,
             }).Distinct().ToList();
             return chonmau;
         }
