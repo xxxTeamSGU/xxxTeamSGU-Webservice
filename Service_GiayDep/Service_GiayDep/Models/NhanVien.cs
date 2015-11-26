@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -15,13 +16,14 @@ namespace Service_GiayDep.Models
     [DataContract(IsReference = true)]
     [KnownType(typeof(HDNhap))]
 
+
     public partial class NhanVien
     {
         public NhanVien()
         {
             this.HDNhaps = new List<HDNhap>();
         }
-    
+
         public int MaNV { get; set; }
         public string HoTen { get; set; }
         public string Email { get; set; }
@@ -30,6 +32,7 @@ namespace Service_GiayDep.Models
         public string SDT { get; set; }
         public string CMND { get; set; }
         public Nullable<int> QuyenAdmin { get; set; }
+
 
         public virtual List<HDNhap> HDNhaps { get; set; }
     }

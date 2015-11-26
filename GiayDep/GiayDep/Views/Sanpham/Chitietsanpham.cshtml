@@ -61,8 +61,8 @@
 
                                 <div class="view-product img-hover">
 
-                                    <img src="@Url.Content("~/images/home/"+ item._HinhAnh)"  />
-               
+                                    <img src="@Url.Content("~/images/home/"+ item._HinhAnh)" />
+
                                 </div>
                                 <div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -73,16 +73,7 @@
                                             <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
                                             <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
                                         </div>
-                                        <div class="item">
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                        </div>
-                                        <div class="item">
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt=""  height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                        </div>
+
 
                                     </div>
 
@@ -94,68 +85,121 @@
                                         <i class="fa fa-angle-right"></i>
                                     </a>
                                 </div>
+                                <!-- tp product -->
+                                <section class="col-lg-9 col-md-9 col-sm-9 m_xs_bottom_30">
+                                    <div class="clearfix m_bottom_30 t_xs_align_c">
+                                        <div class="photoframe type_2 shadow r_corners f_left f_sm_none d_xs_inline_b product_single_preview relative m_right_30 m_bottom_5 m_sm_bottom_20 m_xs_right_0 w_mxs_full">
+                                            <span class="hot_stripe"><img src="~/images/sale_product.png" alt=""></span>
+                                            <div class="relative d_inline_b m_bottom_10 qv_preview d_xs_block">
+                                                <img id="zoom_image" src="/images/t/preview_zoom_1.jpg" data-zoom-image="/images/t/preview_zoom_1.jpg" class="tr_all_hover" alt="">
+                                                <a href="/images/t/preview_zoom_1.jpg" class="d_block button_type_5 r_/images/t/preview_zoom_1.jpgcorners tr_all_hover box_s_none color_light p_hr_0">
+                                                    <i class="fa fa-expand"></i>
+                                                </a>
+                                            </div>
+                                            <!--carousel - thumbnail imahge here-->
+                                            <div class="relative qv_carousel_wrap">
+                                                <button class="button_type_11 bg_light_color_1 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_single_prev">
+                                                    <i class="fa fa-angle-left "></i>
+                                                </button>
+                                                <div class="qv_carousel_single d_inline_middle">
+                                                    <a href="#" data-image="/images/t/preview_zoom_1.jpg" data-zoom-image="/images/t/preview_zoom_1.jpg">
+                                                        <img src="/images/t/preview_zoom_1.jpg" alt="">
+                                                    </a>
 
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="product-information">
+                                                    <a href="#" data-image="/images/t/preview_zoom_2.jpg" data-zoom-image="/images/t/preview_zoom_2.jpg">
+                                                        <img src="/images/t/preview_zoom_2.jpg" alt="">
+                                                    </a>
 
-                                    <!--/product-information-->
-                                    <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
-                                    <h2>@item._TenSP</h2>
-                                    <!--<p>Web ID: 1089772</p>-->
-                                    <!--<img src="~/images/product-details/rating.png" alt="" />-->
-                                    @*<span>
-                                <span style="color:red;">Giá :  @Model.GiaSP.000đ</span>
-                                <br />
-                                <span>*@
-              
-                                 @*Gọi đến Action themgiohang trong giohangController với mã sp, mã màu và size*@
-                                @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = item._MaSP, @mamau = item._MaMau,@size =item._Size, @strUrl = Request.Url.ToString() }))
+                                                    <a href="#" data-image="/images/t/preview_zoom_3.jpg" data-zoom-image="/images/t/preview_zoom_3.jpg">
+                                                        <img src="/images/t/preview_zoom_3.jpg" alt="">
+                                                    </a>
+
+                                                    <a href="#" data-image="/images/t/preview_zoom_4.jpg" data-zoom-image="/images/t/preview_zoom_4.jpg">
+                                                        <img src="/images/t/preview_zoom_4.jpg" alt="">
+                                                    </a>
+
+                                                    <a href="#" data-image="/images/t/preview_zoom_5.jpg" data-zoom-image="/images/t/preview_zoom_5.jpg">
+                                                        <img src="/images/t/preview_zoom_5.jpg" alt="">
+                                                    </a>
+
+                                                    <a href="#" data-image="/images/t/preview_zoom_6.jpg" data-zoom-image="/images/t/preview_zoom_6.jpg">
+                                                        <img src="/images/t/preview_zoom_6.jpg" alt="">
+                                                    </a>
+
+                                                </div>
+                                                <button class="button_type_11 bg_light_color_1 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_single_next">
+                                                    <i class="fa fa-angle-right "></i>
+                                                </button>
+                                            </div>
+
+                                            <!-- end carousel - thumbnail imahge here-->
+                                        </div>
+                                    </div>
+                                        </section>
+                                
+                                        <!-- end tp product -->
+
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="product-information">
+
+                                            <!--/product-information-->
+                                            <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
+                                            <h2>@item._TenSP</h2>
+                                            <!--<p>Web ID: 1089772</p>-->
+                                            <!--<img src="~/images/product-details/rating.png" alt="" />-->
+                                            @*<span>
+                        <span style="color:red;">Giá :  @Model.GiaSP.000đ</span>
+                        <br />
+                        <span>*@
+
+                                            @*Gọi đến Action themgiohang trong giohangController với mã sp, mã màu và size*@
+                                            @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = item._MaSP, @mamau = item._MaMau,@size =item._Size, @strUrl = Request.Url.ToString() }))
                                                 {
-                                    
+
                                                 <span style="color:red;">Giá : @ViewBag.GiaBan.000đ</span>
                                                 <br />
-                                    
-                                                   <span>Size</span>
+
+                                                <span>Size</span>
                                                 <select style="width:100px; height:50px;" name="size">
                                                     @Html.Action("size", "Sanpham")
                                                 </select>
-                                                    <br />
-                                                    <span>Màu</span>
-
-                                                        
-                                                    <div class="item-mau">@Html.Action("mau", "Sanpham")</div>
-                                                    <div id="mau-hien-tai" class="@item._MaMau"> Mau hien tai dang chon la @item._TenMau</div>
-
-                                                  @*@Html.Action("mau", "Sanpham")*@
-
-                                                       @*<select style="width:100px; height:50px;" id="mamau" onchange="myFunction()">
+                                                <br />
+                                                <span>Màu</span>
 
 
-                                                        @Html.Action("mau", "Sanpham")
+                                                <div class="item-mau">@Html.Action("mau", "Sanpham")</div>
+                                                <div id="mau-hien-tai" class="@item._MaMau"> Mau hien tai dang chon la @item._TenMau</div>
+
+                                                @*@Html.Action("mau", "Sanpham")*@
+
+                                                @*<select style="width:100px; height:50px;" id="mamau" onchange="myFunction()">
 
 
-                                        </select>*@
-                                                       @*<script>
-                                                        function myFunction() {
-                                                            var m = document.getElementById("mamau").value;
-                                                            document.getElementById("demo").innerHTML =m;
-                                                        }
-                                                    </script>*@
-                                        
-                                           
+                                            @Html.Action("mau", "Sanpham")
+
+
+                            </select>*@
+                                                @*<script>
+                                function myFunction() {
+                                    var m = document.getElementById("mamau").value;
+                                    document.getElementById("demo").innerHTML =m;
+                                }
+                            </script>*@
+
+
                                                 <button type="submit" class="btn btn-fefault cart">
                                                     <i class="fa fa-shopping-cart"></i>
                                                     Thêm vào giỏ hàng
                                                 </button>}
 
-                        <p><b>Xuất xứ :</b> In Stock</p>
-                        <p><b>Sản phẩm :</b> New</p>
-                        <p><b>Cửa hàng :</b> E-SHOPPER</p>
-                        <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt="" /></a>
-                    </div><!--/product-information-->
-                    </div>
-</div>}}<!--/product-details-->
+                                            <p><b>Xuất xứ :</b> In Stock</p>
+                                            <p><b>Sản phẩm :</b> New</p>
+                                            <p><b>Cửa hàng :</b> E-SHOPPER</p>
+                                            <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                                        </div><!--/product-information-->
+                                    </div>
+                            </div>}}<!--/product-details-->
 }
 <div class="category-tab shop-details-tab">
     <!--category-tab-->

@@ -179,7 +179,7 @@ namespace GiayDep.Controllers
             DonHang dhs = new DonHang();
             KhachHang kh = (KhachHang)Session["khachhang"];
             List<giohang> gh = laygiohang();
-            var themdh = dh.ThemDH(dhs.MaDH, kh.MaKH, DateTime.Now,Tongtien(), TinhTrang, NVDuyet);
+            //var themdh = dh.ThemDH(kh.MaKH, DateTime.Now,Tongtien(), 0, "");
             ////Them chi tiet don hang
             foreach (var item in gh)
             {
@@ -190,7 +190,7 @@ namespace GiayDep.Controllers
                 int MaSize = item.isize;
                 int SL = item.soluong;
                 Decimal DonGia = item.dongia;
-                var ctdhnew = ctdh.ThemCTHDH(MaDH, MaSP, MaMau, MaSize, SL, DonGia);
+                //var ctdhnew = ctdh.ThemCTHDH(themdh, MaSP, MaMau, MaSize, SL, DonGia);
             }
 
             return RedirectToAction("Index", "Home");

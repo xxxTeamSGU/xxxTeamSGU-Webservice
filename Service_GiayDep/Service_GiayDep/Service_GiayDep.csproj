@@ -100,24 +100,10 @@
     <Compile Include="Interface\IService_SanPham.cs" />
     <Compile Include="Interface\IService_SanPham_Kho.cs" />
     <Compile Include="Interface\IServive_Size.cs" />
-    <Compile Include="Models\LayMau.cs" />
-    <Compile Include="Models\LaySize.cs" />
-    <Compile Include="Models\SanPham_Price.cs" />
-    <Compile Include="Service_CTDH.asmx.cs">
-      <DependentUpon>Service_CTDH.asmx</DependentUpon>
-    </Compile>
-    <Compile Include="Service_DonHang.asmx.cs">
-      <DependentUpon>Service_DonHang.asmx</DependentUpon>
-    </Compile>
-    <Compile Include="Service_HoaDonNhap.asmx.cs">
-      <DependentUpon>Service_HoaDonNhap.asmx</DependentUpon>
-    </Compile>
-    <Compile Include="Service_CTHDN.asmx.cs">
-      <DependentUpon>Service_CTHDN.asmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\CTDH.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CTHD.cs" />
     <Compile Include="Models\CTHDN.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
@@ -151,6 +137,8 @@
     <Compile Include="Models\KhuyenMai.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LayMau.cs" />
+    <Compile Include="Models\LaySize.cs" />
     <Compile Include="Models\Loai.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
@@ -166,11 +154,21 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPham_Price.cs" />
     <Compile Include="Models\Size.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    <Compile Include="Service_CTDH.asmx.cs">
+      <DependentUpon>Service_CTDH.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_DonHang.asmx.cs">
+      <DependentUpon>Service_DonHang.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_HoaDonNhap.asmx.cs">
+      <DependentUpon>Service_HoaDonNhap.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_CTHDN.asmx.cs">
+      <DependentUpon>Service_CTHDN.asmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service_KhachHang.asmx.cs">

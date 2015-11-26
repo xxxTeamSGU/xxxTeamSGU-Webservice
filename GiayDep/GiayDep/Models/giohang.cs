@@ -13,7 +13,7 @@ namespace GiayDep.Models
         Service_SanPham_Kho.Service_SanPham_Kho k = new Service_SanPham_Kho.Service_SanPham_Kho();
         Service_Kho.Service_Kho spk = new Service_Kho.Service_Kho();
         Service_Mau.Service_Mau mau = new Service_Mau.Service_Mau();
-        Service_Size.Service_Size s = new Service_Size.Service_Size();
+        //Service_Size.Service_Size s = new Service_Size.Service_Size();
         public int ID { get; set; }
         public int imasp{ get; set;}
         public int imamau { get; set; }
@@ -36,9 +36,9 @@ namespace GiayDep.Models
             var m = mau.LayMauTheoMa(MaMau);
             imamau = MaMau;
             itenmau = m.TenMau ;
-            var si = s.LaySizeTheoMa(size);
+            //var si = s.LaySizeTheoMa(size);
             isize = size;
-            itensize = si.Size1;
+            //itensize = si.Size1;
             SanPham sp = db.LayMa(MaSP);
             stensp = sp.TenSP;
            anhbia = sp.HinhAnh;

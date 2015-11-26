@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -15,17 +16,19 @@ namespace Service_GiayDep.Models
     [DataContract(IsReference = true)]
     [KnownType(typeof(SanPham))]
 
+
     public partial class KhuyenMai
     {
         public KhuyenMai()
         {
             this.SanPhams = new List<SanPham>();
         }
-    
+
         public int MaKM { get; set; }
         public string TenKM { get; set; }
         public Nullable<System.DateTime> NgayBD { get; set; }
         public Nullable<System.DateTime> NgayKT { get; set; }
+
 
         public virtual List<SanPham> SanPhams { get; set; }
     }

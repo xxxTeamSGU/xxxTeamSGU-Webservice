@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DBGiayDepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DBGiayDepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CTDH">
           <Key>
             <PropertyRef Name="MaDH" />
@@ -95,7 +95,7 @@
           <Key>
             <PropertyRef Name="MaLoai" />
           </Key>
-          <Property Name="MaLoai" Type="int" Nullable="false" />
+          <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenLoai" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Mau">
@@ -148,16 +148,6 @@
           </Key>
           <Property Name="MaSize" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Size" Type="int" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_CTDH_DonHang">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
@@ -365,7 +355,6 @@
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CTDH_DonHang" Association="Self.FK_CTDH_DonHang">
             <End Role="DonHang" EntitySet="DonHang" />
             <End Role="CTDH" EntitySet="CTDH" />
@@ -431,7 +420,8 @@
             <End Role="SanPham" EntitySet="SanPham" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBGiayDepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -543,7 +533,7 @@
           <Key>
             <PropertyRef Name="MaLoai" />
           </Key>
-          <Property Name="MaLoai" Type="Int32" Nullable="false" />
+          <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_Loai" FromRole="Loai" ToRole="SanPham" />
         </EntityType>
@@ -594,12 +584,12 @@
           <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MaKM" Type="Int32" />
           <Property Name="NgayDang" Type="DateTime" Precision="3" />
+          <Property Name="MoTaCT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_SanPham" FromRole="SanPham" ToRole="CTDH" />
           <NavigationProperty Name="CTHDNs" Relationship="Self.FK_CTHDN_SanPham" FromRole="SanPham" ToRole="CTHDN" />
           <NavigationProperty Name="Khoes" Relationship="Self.FK_Kho_SanPham" FromRole="SanPham" ToRole="Kho" />
           <NavigationProperty Name="KhuyenMai" Relationship="Self.FK_SanPham_KhuyenMai" FromRole="SanPham" ToRole="KhuyenMai" />
           <NavigationProperty Name="Loai" Relationship="Self.FK_SanPham_Loai" FromRole="SanPham" ToRole="Loai" />
-          <Property Name="MoTaCT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Size">
           <Key>
@@ -610,16 +600,6 @@
           <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_Size" FromRole="Size" ToRole="CTDH" />
           <NavigationProperty Name="CTHDNs" Relationship="Self.FK_CTHDN_Size" FromRole="Size" ToRole="CTHDN" />
           <NavigationProperty Name="Khoes" Relationship="Self.FK_Kho_Size" FromRole="Size" ToRole="Kho" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_CTDH_DonHang">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
@@ -827,7 +807,6 @@
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
           <EntitySet Name="Sizes" EntityType="Self.Size" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK_CTDH_DonHang" Association="Self.FK_CTDH_DonHang">
             <End Role="DonHang" EntitySet="DonHangs" />
             <End Role="CTDH" EntitySet="CTDHs" />
@@ -1028,7 +1007,6 @@
           <EntitySetMapping Name="SanPhams">
             <EntityTypeMapping TypeName="DBGiayDepModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
-                <ScalarProperty Name="MoTaCT" ColumnName="MoTaCT" />
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="TenSP" ColumnName="TenSP" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
@@ -1037,6 +1015,7 @@
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
                 <ScalarProperty Name="MaKM" ColumnName="MaKM" />
                 <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+                <ScalarProperty Name="MoTaCT" ColumnName="MoTaCT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1045,17 +1024,6 @@
               <MappingFragment StoreEntitySet="Size">
                 <ScalarProperty Name="MaSize" ColumnName="MaSize" />
                 <ScalarProperty Name="Size1" ColumnName="Size" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DBGiayDepModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -15,19 +16,21 @@ namespace Service_GiayDep.Models
     [DataContract(IsReference = true)]
     [KnownType(typeof(CTDH))]
 
+
     public partial class DonHang
     {
         public DonHang()
         {
             this.CTDHs = new List<CTDH>();
         }
-    
+
         public int MaDH { get; set; }
         public Nullable<int> MaKH { get; set; }
         public Nullable<System.DateTime> NgayMua { get; set; }
         public Nullable<decimal> TongTien { get; set; }
         public Nullable<int> TinhTrang { get; set; }
         public string NVDuyet { get; set; }
+
 
         public virtual List<CTDH> CTDHs { get; set; }
         public virtual KhachHang KhachHang { get; set; }

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
+
 
     [DataContract(IsReference = true)]
     public partial class Kho
@@ -28,6 +30,7 @@ namespace Service_GiayDep.Models
         public Nullable<decimal> GiaBan { get; set; }
         [DataMember]
         public Nullable<decimal> GiaNhap { get; set; }
+
 
         [DataMember]
         public virtual Mau Mau { get; set; }

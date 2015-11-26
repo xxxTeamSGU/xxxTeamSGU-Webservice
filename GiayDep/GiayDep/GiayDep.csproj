@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +53,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -204,6 +207,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\Service_Loai\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\Service_Mau\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,11 +223,6 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\Service_SanPham_Kho\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\Service_Size\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -267,17 +270,23 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\User\Name.cshtml" />
+    <Content Include="Views\giohang\DonHang.cshtml" />
+    <Content Include="Views\User\Thongtinkhachhang.cshtml" />
+    <Content Include="Views\Sanpham\Muangay.cshtml" />
+    <Content Include="Views\Sanpham\size.cshtml" />
+    <Content Include="Views\Sanpham\mau.cshtml" />
     <Content Include="Web References\Service_CTDH\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <None Include="Web References\Service_CTDH\Service_CTDH.wsdl" />
-    <None Include="Web References\Service_DonHang\Reference.map">
+    <None Include="Web References\Service_CTDH\Service_CTDH.disco" />
+    <Content Include="Web References\Service_DonHang\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
+    <None Include="Web References\Service_CTDH\Service_CTDH.wsdl" />
     <None Include="Web References\Service_DonHang\Service_DonHang.disco" />
-    <None Include="Web References\Service_CTDH\Service_CTDH.disco" />
     <Content Include="Web References\Service_KhachHang\KhachHang.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -285,29 +294,35 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\User\Name.cshtml" />
-    <Content Include="Views\giohang\DonHang.cshtml" />
-    <Content Include="Views\User\Thongtinkhachhang.cshtml" />
-    <Content Include="Views\Sanpham\Muangay.cshtml" />
-    <None Include="Web References\Service_DonHang\Service_DonHang.wsdl" />
     <None Include="Web References\Service_KhachHang\Service_KhachHang.disco" />
     <Content Include="Web References\Service_Kho\Kho.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\Service_Kho\LayMau.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\Service_Kho\LaySize.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Views\Sanpham\size.cshtml" />
-    <Content Include="Web References\Service_Kho\LayMau.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Views\Sanpham\mau.cshtml" />
-    <None Include="Web References\Service_KhachHang\Service_KhachHang.wsdl" />
-    <None Include="Web References\Service_Kho\Reference.map">
+    <Content Include="Web References\Service_Kho\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
+    <Content Include="Web References\Service_Kho\SanPham_Price.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\Service_DonHang\Service_DonHang.wsdl" />
+    <None Include="Web References\Service_KhachHang\Service_KhachHang.wsdl" />
+    <None Include="Web References\Service_Kho\Service_Kho.disco" />
+    <Content Include="Web References\Service_Loai\Loai.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\Service_Loai\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\Service_Kho\Service_Kho.wsdl" />
+    <None Include="Web References\Service_Loai\Service_Loai.disco" />
     <Content Include="Web References\Service_Mau\Mau.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -315,31 +330,33 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <None Include="Web References\Service_Mau\Service_Mau.disco" />
     <None Include="Web References\Service_Mau\Service_Mau.wsdl" />
-    <None Include="Web References\Service_SanPham\Reference.map">
+    <Content Include="Web References\Service_SanPham\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\Service_Kho\Service_Kho.disco" />
-    <None Include="Web References\Service_Mau\Service_Mau.disco" />
+    </Content>
     <Content Include="Web References\Service_SanPham\SanPham.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <None Include="Web References\Service_Loai\Service_Loai.wsdl" />
     <None Include="Web References\Service_SanPham\Service_SanPham.disco" />
-    <None Include="Web References\Service_SanPham_Kho\Reference.map">
+    <Content Include="Web References\Service_SanPham_Kho\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
     <Content Include="Web References\Service_SanPham_Kho\SanPham_Price.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <None Include="Web References\Service_SanPham_Kho\Service_SanPham_Kho.disco" />
+    <None Include="Web References\Service_SanPham_Kho\Service_SanPham_Kho.wsdl" />
     <Content Include="Web References\Service_Size\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <None Include="Web References\Service_Size\Service_Size.disco" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -377,11 +394,10 @@
     <Content Include="Views\GiayDep\Trangkethua.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
     <None Include="Web References\Service_SanPham\Service_SanPham.wsdl" />
-    <None Include="Web References\Service_SanPham_Kho\Service_SanPham_Kho.wsdl" />
-    <None Include="Web References\Service_Size\Service_Size.wsdl" />
-    <Content Include="Web References\Service_Size\Size.datasource">
+    <Content Include="Web References\Service_SanPham\TH.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <None Include="Web References\Service_Size\Service_Size.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -400,10 +416,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:61817/Service_CTDH.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_CTDH.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_CTDH\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_CTDH.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_CTDH.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -411,10 +427,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_CTDH_Service_CTDH</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:61817/Service_DonHang.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_DonHang.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_DonHang\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_DonHang.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_DonHang.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -422,10 +438,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_DonHang_Service_DonHang</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:61817/Service_KhachHang.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_KhachHang.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_KhachHang\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_KhachHang.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_KhachHang.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -433,10 +449,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_KhachHang_Service_KhachHang</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:61817/Service_Kho.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_Kho.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_Kho\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_Kho.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_Kho.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -444,10 +460,21 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_Kho_Service_Kho</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:61817/Service_Mau.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_Loai.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Service_Loai\</RelPath>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_Loai.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>GiayDep_Service_Loai_Service_Loai</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_Mau.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_Mau\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_Mau.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_Mau.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -455,10 +482,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_Mau_Service_Mau</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:61817/Service_SanPham.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_SanPham.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_SanPham\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_SanPham.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_SanPham.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -466,10 +493,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_SanPham_Service_SanPham</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:61817/Service_SanPham_Kho.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_SanPham_Kho.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_SanPham_Kho\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_SanPham_Kho.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_SanPham_Kho.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -477,16 +504,18 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>GiayDep_Service_SanPham_Kho_Service_SanPham_Kho</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:61817/Service_Size.asmx">
+    <WebReferenceUrl Include="http://servicegiaydep.azurewebsites.net/Service_Size.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\Service_Size\</RelPath>
-      <UpdateFromURL>http://localhost:61817/Service_Size.asmx</UpdateFromURL>
+      <UpdateFromURL>http://servicegiaydep.azurewebsites.net/Service_Size.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>GiayDep_Service_Size_Service_Size</CachedSettingsPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
@@ -507,7 +536,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62358</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62045/</IISUrl>
+          <IISUrl>http://localhost:8080/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -517,6 +546,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

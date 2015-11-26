@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -15,18 +16,20 @@ namespace Service_GiayDep.Models
     [DataContract(IsReference = true)]
     [KnownType(typeof(HDNhap))]
 
+
     public partial class NhaCungCap
     {
         public NhaCungCap()
         {
             this.HDNhaps = new List<HDNhap>();
         }
-    
+
         public int MaNCC { get; set; }
         public string TenNCC { get; set; }
         public string DiaChi { get; set; }
         public string SDT { get; set; }
         public string SoTK { get; set; }
+
 
         public virtual List<HDNhap> HDNhaps { get; set; }
     }

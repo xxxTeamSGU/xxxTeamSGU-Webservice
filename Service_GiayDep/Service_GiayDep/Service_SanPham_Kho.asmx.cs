@@ -33,7 +33,7 @@ namespace Service_GiayDep
                         _MaMau = p.Mau.MaMau,
                         _TenSP = p.SanPham.TenSP,
                         _TenMau = p.Mau.TenMau,
-                        _Size = p.Size.Size1,
+                       // _Size = p.Size.Size1,
                         _GiaSP = (decimal)p.GiaBan,
                         _HinhAnh = p.SanPham.HinhAnh
 
@@ -68,7 +68,7 @@ namespace Service_GiayDep
                         _MaSP = p.MaSP,
                         _TenSP = p.SanPham.TenSP,
                         _TenMau = p.Mau.TenMau,
-                        _Size = p.Size.Size1,
+                       // _Size = p.Size.Size1,
                         _GiaSP = (decimal)p.GiaBan,
                         _HinhAnh = p.SanPham.HinhAnh
                     }).OrderBy(p => p._MaSP).ToList();
@@ -101,7 +101,7 @@ namespace Service_GiayDep
                         _MaMau = p.Mau.MaMau,
                         _TenSP = p.SanPham.TenSP,
                         _TenMau = p.Mau.TenMau,
-                        _Size = p.Size.Size1,
+                        //_Size = p.Size.Size1,
                         _GiaSP = (decimal)p.GiaBan,
                         _HinhAnh = p.SanPham.HinhAnh
                         

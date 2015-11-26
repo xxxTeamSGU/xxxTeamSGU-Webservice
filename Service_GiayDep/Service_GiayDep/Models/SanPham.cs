@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace Service_GiayDep.Models
 {
     using System;
@@ -24,7 +25,7 @@ namespace Service_GiayDep.Models
             this.CTHDNs = new List<CTHDN>();
             this.Khoes = new List<Kho>();
         }
-    
+
         public int MaSP { get; set; }
         public string TenSP { get; set; }
         public Nullable<int> MaLoai { get; set; }
@@ -34,6 +35,7 @@ namespace Service_GiayDep.Models
         public Nullable<int> MaKM { get; set; }
         public Nullable<System.DateTime> NgayDang { get; set; }
         public string MoTaCT { get; set; }
+
 
         public virtual List<CTDH> CTDHs { get; set; }
         public virtual List<CTHDN> CTHDNs { get; set; }

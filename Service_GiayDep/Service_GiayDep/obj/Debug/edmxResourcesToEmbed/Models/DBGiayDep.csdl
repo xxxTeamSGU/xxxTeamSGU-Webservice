@@ -108,7 +108,7 @@
     <Key>
       <PropertyRef Name="MaLoai" />
     </Key>
-    <Property Name="MaLoai" Type="Int32" Nullable="false" />
+    <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_Loai" FromRole="Loai" ToRole="SanPham" />
   </EntityType>
@@ -159,12 +159,12 @@
     <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="MaKM" Type="Int32" />
     <Property Name="NgayDang" Type="DateTime" Precision="3" />
+    <Property Name="MoTaCT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_SanPham" FromRole="SanPham" ToRole="CTDH" />
     <NavigationProperty Name="CTHDNs" Relationship="Self.FK_CTHDN_SanPham" FromRole="SanPham" ToRole="CTHDN" />
     <NavigationProperty Name="Khoes" Relationship="Self.FK_Kho_SanPham" FromRole="SanPham" ToRole="Kho" />
     <NavigationProperty Name="KhuyenMai" Relationship="Self.FK_SanPham_KhuyenMai" FromRole="SanPham" ToRole="KhuyenMai" />
     <NavigationProperty Name="Loai" Relationship="Self.FK_SanPham_Loai" FromRole="SanPham" ToRole="Loai" />
-    <Property Name="MoTaCT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Size">
     <Key>
@@ -175,16 +175,6 @@
     <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_Size" FromRole="Size" ToRole="CTDH" />
     <NavigationProperty Name="CTHDNs" Relationship="Self.FK_CTHDN_Size" FromRole="Size" ToRole="CTHDN" />
     <NavigationProperty Name="Khoes" Relationship="Self.FK_Kho_Size" FromRole="Size" ToRole="Kho" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_CTDH_DonHang">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
@@ -392,7 +382,6 @@
     <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
     <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
     <EntitySet Name="Sizes" EntityType="Self.Size" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK_CTDH_DonHang" Association="Self.FK_CTDH_DonHang">
       <End Role="DonHang" EntitySet="DonHangs" />
       <End Role="CTDH" EntitySet="CTDHs" />
