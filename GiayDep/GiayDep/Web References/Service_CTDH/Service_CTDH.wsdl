@@ -61,10 +61,10 @@
   </wsdl:binding>
   <wsdl:service name="Service_CTDH">
     <wsdl:port name="Service_CTDHSoap" binding="tns:Service_CTDHSoap">
-      <soap:address location="http://localhost:61817/Service_CTDH.asmx" />
+      <soap:address location="http://servicegiaydep.azurewebsites.net/Service_CTDH.asmx" />
     </wsdl:port>
     <wsdl:port name="Service_CTDHSoap12" binding="tns:Service_CTDHSoap12">
-      <soap12:address location="http://localhost:61817/Service_CTDH.asmx" />
+      <soap12:address location="http://servicegiaydep.azurewebsites.net/Service_CTDH.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -157,7 +157,7 @@
       <s:complexType name="Size">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Size1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size1" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="CTDHs" type="tns:ArrayOfCTDH" />
           <s:element minOccurs="0" maxOccurs="1" name="CTHDNs" type="tns:ArrayOfCTHDN" />
           <s:element minOccurs="0" maxOccurs="1" name="Khoes" type="tns:ArrayOfKho" />
@@ -268,6 +268,68 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SanphammoiPartial">
+        <s:complexType />
+      </s:element>
+      <s:element name="SanphammoiPartialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SanphammoiPartialResult" type="tns:ArrayOfSanPham" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SanphamkhuyenmaiPartial">
+        <s:complexType />
+      </s:element>
+      <s:element name="SanphamkhuyenmaiPartialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SanphamkhuyenmaiPartialResult" type="tns:ArrayOfSanPham" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Chitietsanpham">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="masp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChitietsanphamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChitietsanphamResult" type="tns:SanPham" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LaySanPham">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="imasp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LaySanPhamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LaySanPhamResult" type="tns:SanPham" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSanPham">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenSP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSanPhamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckSanPhamResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="LayMa">
         <s:complexType>
           <s:sequence>
@@ -354,6 +416,36 @@
   <wsdl:message name="TimKiemSanPhamSoapOut">
     <wsdl:part name="parameters" element="tns:TimKiemSanPhamResponse" />
   </wsdl:message>
+  <wsdl:message name="SanphammoiPartialSoapIn">
+    <wsdl:part name="parameters" element="tns:SanphammoiPartial" />
+  </wsdl:message>
+  <wsdl:message name="SanphammoiPartialSoapOut">
+    <wsdl:part name="parameters" element="tns:SanphammoiPartialResponse" />
+  </wsdl:message>
+  <wsdl:message name="SanphamkhuyenmaiPartialSoapIn">
+    <wsdl:part name="parameters" element="tns:SanphamkhuyenmaiPartial" />
+  </wsdl:message>
+  <wsdl:message name="SanphamkhuyenmaiPartialSoapOut">
+    <wsdl:part name="parameters" element="tns:SanphamkhuyenmaiPartialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChitietsanphamSoapIn">
+    <wsdl:part name="parameters" element="tns:Chitietsanpham" />
+  </wsdl:message>
+  <wsdl:message name="ChitietsanphamSoapOut">
+    <wsdl:part name="parameters" element="tns:ChitietsanphamResponse" />
+  </wsdl:message>
+  <wsdl:message name="LaySanPhamSoapIn">
+    <wsdl:part name="parameters" element="tns:LaySanPham" />
+  </wsdl:message>
+  <wsdl:message name="LaySanPhamSoapOut">
+    <wsdl:part name="parameters" element="tns:LaySanPhamResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSanPhamSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSanPham" />
+  </wsdl:message>
+  <wsdl:message name="CheckSanPhamSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSanPhamResponse" />
+  </wsdl:message>
   <wsdl:message name="LayMaSoapIn">
     <wsdl:part name="parameters" element="tns:LayMa" />
   </wsdl:message>
@@ -398,6 +490,26 @@
     <wsdl:operation name="TimKiemSanPham">
       <wsdl:input message="tns:TimKiemSanPhamSoapIn" />
       <wsdl:output message="tns:TimKiemSanPhamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SanphammoiPartial">
+      <wsdl:input message="tns:SanphammoiPartialSoapIn" />
+      <wsdl:output message="tns:SanphammoiPartialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SanphamkhuyenmaiPartial">
+      <wsdl:input message="tns:SanphamkhuyenmaiPartialSoapIn" />
+      <wsdl:output message="tns:SanphamkhuyenmaiPartialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Chitietsanpham">
+      <wsdl:input message="tns:ChitietsanphamSoapIn" />
+      <wsdl:output message="tns:ChitietsanphamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LaySanPham">
+      <wsdl:input message="tns:LaySanPhamSoapIn" />
+      <wsdl:output message="tns:LaySanPhamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanPham">
+      <wsdl:input message="tns:CheckSanPhamSoapIn" />
+      <wsdl:output message="tns:CheckSanPhamSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="LayMa">
       <wsdl:input message="tns:LayMaSoapIn" />
@@ -456,6 +568,51 @@
     </wsdl:operation>
     <wsdl:operation name="TimKiemSanPham">
       <soap:operation soapAction="http://tempuri.org/TimKiemSanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SanphammoiPartial">
+      <soap:operation soapAction="http://tempuri.org/SanphammoiPartial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SanphamkhuyenmaiPartial">
+      <soap:operation soapAction="http://tempuri.org/SanphamkhuyenmaiPartial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chitietsanpham">
+      <soap:operation soapAction="http://tempuri.org/Chitietsanpham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LaySanPham">
+      <soap:operation soapAction="http://tempuri.org/LaySanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanPham">
+      <soap:operation soapAction="http://tempuri.org/CheckSanPham" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -547,6 +704,51 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SanphammoiPartial">
+      <soap12:operation soapAction="http://tempuri.org/SanphammoiPartial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SanphamkhuyenmaiPartial">
+      <soap12:operation soapAction="http://tempuri.org/SanphamkhuyenmaiPartial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Chitietsanpham">
+      <soap12:operation soapAction="http://tempuri.org/Chitietsanpham" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LaySanPham">
+      <soap12:operation soapAction="http://tempuri.org/LaySanPham" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanPham">
+      <soap12:operation soapAction="http://tempuri.org/CheckSanPham" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LayMa">
       <soap12:operation soapAction="http://tempuri.org/LayMa" style="document" />
       <wsdl:input>
@@ -586,10 +788,10 @@
   </wsdl:binding>
   <wsdl:service name="Service_SanPham">
     <wsdl:port name="Service_SanPhamSoap" binding="tns:Service_SanPhamSoap">
-      <soap:address location="http://localhost:61817/Service_SanPham.asmx" />
+      <soap:address location="http://servicegiaydep.azurewebsites.net/Service_SanPham.asmx" />
     </wsdl:port>
     <wsdl:port name="Service_SanPhamSoap12" binding="tns:Service_SanPhamSoap12">
-      <soap12:address location="http://localhost:61817/Service_SanPham.asmx" />
+      <soap12:address location="http://servicegiaydep.azurewebsites.net/Service_SanPham.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

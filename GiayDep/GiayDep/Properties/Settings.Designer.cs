@@ -26,7 +26,7 @@ namespace GiayDep.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_SanPham.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_SanPham.asmx")]
         public string GiayDep_Service_SanPham_Service_SanPham {
             get {
                 return ((string)(this["GiayDep_Service_SanPham_Service_SanPham"]));
@@ -35,58 +35,36 @@ namespace GiayDep.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_Kho.asmx")]
-        public string GiayDep_Service_Kho_Service_Kho {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_KhuyenMai.asmx")]
+        public string GiayDep_Service_KhuyenMai_Service_KhuyenMai {
             get {
-                return ((string)(this["GiayDep_Service_Kho_Service_Kho"]));
+                return ((string)(this["GiayDep_Service_KhuyenMai_Service_KhuyenMai"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_Loai.asmx")]
+        public string GiayDep_Service_Loai_Service_Loai {
+            get {
+                return ((string)(this["GiayDep_Service_Loai_Service_Loai"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_SanPham_Kho.asmx")]
-        public string GiayDep_Service_SanPham_Kho_Service_SanPham_Kho {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_CTDH.asmx")]
+        public string GiayDep_Service_CTDH_Service_CTDH {
             get {
-                return ((string)(this["GiayDep_Service_SanPham_Kho_Service_SanPham_Kho"]));
+                return ((string)(this["GiayDep_Service_CTDH_Service_CTDH"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_KhachHang.asmx")]
-        public string GiayDep_Service_KhachHang_Service_KhachHang {
-            get {
-                return ((string)(this["GiayDep_Service_KhachHang_Service_KhachHang"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_Mau.asmx")]
-        public string GiayDep_Service_Mau_Service_Mau {
-            get {
-                return ((string)(this["GiayDep_Service_Mau_Service_Mau"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_Size.asmx")]
-        public string GiayDep_Service_Size_Service_Size {
-            get {
-                return ((string)(this["GiayDep_Service_Size_Service_Size"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_DonHang.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_DonHang.asmx")]
         public string GiayDep_Service_DonHang_Service_DonHang {
             get {
                 return ((string)(this["GiayDep_Service_DonHang_Service_DonHang"]));
@@ -96,10 +74,50 @@ namespace GiayDep.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:61817/Service_CTDH.asmx")]
-        public string GiayDep_Service_CTDH_Service_CTDH {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_KhachHang.asmx")]
+        public string GiayDep_Service_KhachHang_Service_KhachHang {
             get {
-                return ((string)(this["GiayDep_Service_CTDH_Service_CTDH"]));
+                return ((string)(this["GiayDep_Service_KhachHang_Service_KhachHang"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_Kho.asmx")]
+        public string GiayDep_Service_Kho_Service_Kho {
+            get {
+                return ((string)(this["GiayDep_Service_Kho_Service_Kho"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_Mau.asmx")]
+        public string GiayDep_Service_Mau_Service_Mau {
+            get {
+                return ((string)(this["GiayDep_Service_Mau_Service_Mau"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_Size.asmx")]
+        public string GiayDep_Service_Size_Service_Size {
+            get {
+                return ((string)(this["GiayDep_Service_Size_Service_Size"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://servicegiaydep.azurewebsites.net/Service_SanPham_Kho.asmx")]
+        public string GiayDep_Service_SanPham_Kho_Service_SanPham_Kho {
+            get {
+                return ((string)(this["GiayDep_Service_SanPham_Kho_Service_SanPham_Kho"]));
             }
         }
     }

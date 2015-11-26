@@ -37,6 +37,8 @@ namespace GiayDep.Service_Mau {
         
         private System.Threading.SendOrPostCallback XoaMauOperationCompleted;
         
+        private System.Threading.SendOrPostCallback CheckMauOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LayMauTheoMaOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -88,6 +90,9 @@ namespace GiayDep.Service_Mau {
         
         /// <remarks/>
         public event XoaMauCompletedEventHandler XoaMauCompleted;
+        
+        /// <remarks/>
+        public event CheckMauCompletedEventHandler CheckMauCompleted;
         
         /// <remarks/>
         public event LayMauTheoMaCompletedEventHandler LayMauTheoMaCompleted;
@@ -205,6 +210,35 @@ namespace GiayDep.Service_Mau {
             if ((this.XoaMauCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.XoaMauCompleted(this, new XoaMauCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CheckMau", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool CheckMau(string Mau) {
+            object[] results = this.Invoke("CheckMau", new object[] {
+                        Mau});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CheckMauAsync(string Mau) {
+            this.CheckMauAsync(Mau, null);
+        }
+        
+        /// <remarks/>
+        public void CheckMauAsync(string Mau, object userState) {
+            if ((this.CheckMauOperationCompleted == null)) {
+                this.CheckMauOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckMauOperationCompleted);
+            }
+            this.InvokeAsync("CheckMau", new object[] {
+                        Mau}, this.CheckMauOperationCompleted, userState);
+        }
+        
+        private void OnCheckMauOperationCompleted(object arg) {
+            if ((this.CheckMauCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckMauCompleted(this, new CheckMauCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1383,7 +1417,7 @@ namespace GiayDep.Service_Mau {
         
         private int maSizeField;
         
-        private int size1Field;
+        private System.Nullable<int> size1Field;
         
         private CTDH[] cTDHsField;
         
@@ -1402,7 +1436,8 @@ namespace GiayDep.Service_Mau {
         }
         
         /// <remarks/>
-        public int Size1 {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Size1 {
             get {
                 return this.size1Field;
             }
@@ -1724,6 +1759,32 @@ namespace GiayDep.Service_Mau {
         private object[] results;
         
         internal XoaMauCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void CheckMauCompletedEventHandler(object sender, CheckMauCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CheckMauCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CheckMauCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

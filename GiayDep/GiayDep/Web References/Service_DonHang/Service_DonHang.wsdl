@@ -60,10 +60,10 @@
   </wsdl:binding>
   <wsdl:service name="Service_DonHang">
     <wsdl:port name="Service_DonHangSoap" binding="tns:Service_DonHangSoap">
-      <soap:address location="http://localhost:61817/Service_DonHang.asmx" />
+      <soap:address location="http://servicegiaydep.azurewebsites.net/Service_DonHang.asmx" />
     </wsdl:port>
     <wsdl:port name="Service_DonHangSoap12" binding="tns:Service_DonHangSoap12">
-      <soap12:address location="http://localhost:61817/Service_DonHang.asmx" />
+      <soap12:address location="http://servicegiaydep.azurewebsites.net/Service_DonHang.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

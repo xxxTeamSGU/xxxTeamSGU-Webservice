@@ -29,6 +29,14 @@ namespace GiayDep.Service_Size {
     [System.Web.Services.WebServiceBindingAttribute(Name="Service_SizeSoap", Namespace="http://tempuri.org/")]
     public partial class Service_Size : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback LayTatCaSizeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ThemSizeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SuaSizeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback XoaSizeOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LaySizeTheoMaOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -70,7 +78,135 @@ namespace GiayDep.Service_Size {
         }
         
         /// <remarks/>
+        public event LayTatCaSizeCompletedEventHandler LayTatCaSizeCompleted;
+        
+        /// <remarks/>
+        public event ThemSizeCompletedEventHandler ThemSizeCompleted;
+        
+        /// <remarks/>
+        public event SuaSizeCompletedEventHandler SuaSizeCompleted;
+        
+        /// <remarks/>
+        public event XoaSizeCompletedEventHandler XoaSizeCompleted;
+        
+        /// <remarks/>
         public event LaySizeTheoMaCompletedEventHandler LaySizeTheoMaCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LayTatCaSize", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Size[] LayTatCaSize() {
+            object[] results = this.Invoke("LayTatCaSize", new object[0]);
+            return ((Size[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void LayTatCaSizeAsync() {
+            this.LayTatCaSizeAsync(null);
+        }
+        
+        /// <remarks/>
+        public void LayTatCaSizeAsync(object userState) {
+            if ((this.LayTatCaSizeOperationCompleted == null)) {
+                this.LayTatCaSizeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLayTatCaSizeOperationCompleted);
+            }
+            this.InvokeAsync("LayTatCaSize", new object[0], this.LayTatCaSizeOperationCompleted, userState);
+        }
+        
+        private void OnLayTatCaSizeOperationCompleted(object arg) {
+            if ((this.LayTatCaSizeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.LayTatCaSizeCompleted(this, new LayTatCaSizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemSize", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool ThemSize(int TenSize) {
+            object[] results = this.Invoke("ThemSize", new object[] {
+                        TenSize});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ThemSizeAsync(int TenSize) {
+            this.ThemSizeAsync(TenSize, null);
+        }
+        
+        /// <remarks/>
+        public void ThemSizeAsync(int TenSize, object userState) {
+            if ((this.ThemSizeOperationCompleted == null)) {
+                this.ThemSizeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThemSizeOperationCompleted);
+            }
+            this.InvokeAsync("ThemSize", new object[] {
+                        TenSize}, this.ThemSizeOperationCompleted, userState);
+        }
+        
+        private void OnThemSizeOperationCompleted(object arg) {
+            if ((this.ThemSizeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ThemSizeCompleted(this, new ThemSizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SuaSize", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool SuaSize(int MaSize, int TenSize) {
+            object[] results = this.Invoke("SuaSize", new object[] {
+                        MaSize,
+                        TenSize});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SuaSizeAsync(int MaSize, int TenSize) {
+            this.SuaSizeAsync(MaSize, TenSize, null);
+        }
+        
+        /// <remarks/>
+        public void SuaSizeAsync(int MaSize, int TenSize, object userState) {
+            if ((this.SuaSizeOperationCompleted == null)) {
+                this.SuaSizeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSuaSizeOperationCompleted);
+            }
+            this.InvokeAsync("SuaSize", new object[] {
+                        MaSize,
+                        TenSize}, this.SuaSizeOperationCompleted, userState);
+        }
+        
+        private void OnSuaSizeOperationCompleted(object arg) {
+            if ((this.SuaSizeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SuaSizeCompleted(this, new SuaSizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/XoaSize", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool XoaSize(int MaSize) {
+            object[] results = this.Invoke("XoaSize", new object[] {
+                        MaSize});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void XoaSizeAsync(int MaSize) {
+            this.XoaSizeAsync(MaSize, null);
+        }
+        
+        /// <remarks/>
+        public void XoaSizeAsync(int MaSize, object userState) {
+            if ((this.XoaSizeOperationCompleted == null)) {
+                this.XoaSizeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnXoaSizeOperationCompleted);
+            }
+            this.InvokeAsync("XoaSize", new object[] {
+                        MaSize}, this.XoaSizeOperationCompleted, userState);
+        }
+        
+        private void OnXoaSizeOperationCompleted(object arg) {
+            if ((this.XoaSizeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.XoaSizeCompleted(this, new XoaSizeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LaySizeTheoMa", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -130,7 +266,7 @@ namespace GiayDep.Service_Size {
         
         private int maSizeField;
         
-        private int size1Field;
+        private System.Nullable<int> size1Field;
         
         private CTDH[] cTDHsField;
         
@@ -149,7 +285,8 @@ namespace GiayDep.Service_Size {
         }
         
         /// <remarks/>
-        public int Size1 {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Size1 {
             get {
                 return this.size1Field;
             }
@@ -1493,6 +1630,110 @@ namespace GiayDep.Service_Size {
             }
             set {
                 this.sanPhamsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void LayTatCaSizeCompletedEventHandler(object sender, LayTatCaSizeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LayTatCaSizeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal LayTatCaSizeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Size[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Size[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void ThemSizeCompletedEventHandler(object sender, ThemSizeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ThemSizeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ThemSizeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void SuaSizeCompletedEventHandler(object sender, SuaSizeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SuaSizeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SuaSizeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void XoaSizeCompletedEventHandler(object sender, XoaSizeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class XoaSizeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal XoaSizeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }

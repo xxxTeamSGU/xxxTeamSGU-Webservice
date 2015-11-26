@@ -157,7 +157,7 @@
       <s:complexType name="Size">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Size1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size1" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="CTDHs" type="tns:ArrayOfCTDH" />
           <s:element minOccurs="0" maxOccurs="1" name="CTHDNs" type="tns:ArrayOfCTHDN" />
           <s:element minOccurs="0" maxOccurs="1" name="Khoes" type="tns:ArrayOfKho" />
@@ -245,6 +245,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="CheckMau">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mau" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMauResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckMauResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="LayMauTheoMa">
         <s:complexType>
           <s:sequence>
@@ -285,6 +299,12 @@
   <wsdl:message name="XoaMauSoapOut">
     <wsdl:part name="parameters" element="tns:XoaMauResponse" />
   </wsdl:message>
+  <wsdl:message name="CheckMauSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMau" />
+  </wsdl:message>
+  <wsdl:message name="CheckMauSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMauResponse" />
+  </wsdl:message>
   <wsdl:message name="LayMauTheoMaSoapIn">
     <wsdl:part name="parameters" element="tns:LayMauTheoMa" />
   </wsdl:message>
@@ -307,6 +327,10 @@
     <wsdl:operation name="XoaMau">
       <wsdl:input message="tns:XoaMauSoapIn" />
       <wsdl:output message="tns:XoaMauSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMau">
+      <wsdl:input message="tns:CheckMauSoapIn" />
+      <wsdl:output message="tns:CheckMauSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="LayMauTheoMa">
       <wsdl:input message="tns:LayMauTheoMaSoapIn" />
@@ -344,6 +368,15 @@
     </wsdl:operation>
     <wsdl:operation name="XoaMau">
       <soap:operation soapAction="http://tempuri.org/XoaMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMau">
+      <soap:operation soapAction="http://tempuri.org/CheckMau" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -399,6 +432,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CheckMau">
+      <soap12:operation soapAction="http://tempuri.org/CheckMau" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LayMauTheoMa">
       <soap12:operation soapAction="http://tempuri.org/LayMauTheoMa" style="document" />
       <wsdl:input>
@@ -411,10 +453,10 @@
   </wsdl:binding>
   <wsdl:service name="Service_Mau">
     <wsdl:port name="Service_MauSoap" binding="tns:Service_MauSoap">
-      <soap:address location="http://localhost:61817/Service_Mau.asmx" />
+      <soap:address location="http://servicegiaydep.azurewebsites.net/Service_Mau.asmx" />
     </wsdl:port>
     <wsdl:port name="Service_MauSoap12" binding="tns:Service_MauSoap12">
-      <soap12:address location="http://localhost:61817/Service_Mau.asmx" />
+      <soap12:address location="http://servicegiaydep.azurewebsites.net/Service_Mau.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

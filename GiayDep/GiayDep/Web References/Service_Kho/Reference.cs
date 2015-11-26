@@ -29,6 +29,20 @@ namespace GiayDep.Service_Kho {
     [System.Web.Services.WebServiceBindingAttribute(Name="Service_KhoSoap", Namespace="http://tempuri.org/")]
     public partial class Service_Kho : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback LayKhoTheoSPOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NhapMoiOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CapNhatOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CheckKhoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ThemKhoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback LayTatCaKhoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CapNhatGiaBanMoiOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LayKhoOperationCompleted;
         
         private System.Threading.SendOrPostCallback LaySizeOperationCompleted;
@@ -78,6 +92,27 @@ namespace GiayDep.Service_Kho {
         }
         
         /// <remarks/>
+        public event LayKhoTheoSPCompletedEventHandler LayKhoTheoSPCompleted;
+        
+        /// <remarks/>
+        public event NhapMoiCompletedEventHandler NhapMoiCompleted;
+        
+        /// <remarks/>
+        public event CapNhatCompletedEventHandler CapNhatCompleted;
+        
+        /// <remarks/>
+        public event CheckKhoCompletedEventHandler CheckKhoCompleted;
+        
+        /// <remarks/>
+        public event ThemKhoCompletedEventHandler ThemKhoCompleted;
+        
+        /// <remarks/>
+        public event LayTatCaKhoCompletedEventHandler LayTatCaKhoCompleted;
+        
+        /// <remarks/>
+        public event CapNhatGiaBanMoiCompletedEventHandler CapNhatGiaBanMoiCompleted;
+        
+        /// <remarks/>
         public event LayKhoCompletedEventHandler LayKhoCompleted;
         
         /// <remarks/>
@@ -91,6 +126,231 @@ namespace GiayDep.Service_Kho {
         
         /// <remarks/>
         public event ChonMauCompletedEventHandler ChonMauCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LayKhoTheoSP", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public SanPham_Price[] LayKhoTheoSP(int MaSP) {
+            object[] results = this.Invoke("LayKhoTheoSP", new object[] {
+                        MaSP});
+            return ((SanPham_Price[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void LayKhoTheoSPAsync(int MaSP) {
+            this.LayKhoTheoSPAsync(MaSP, null);
+        }
+        
+        /// <remarks/>
+        public void LayKhoTheoSPAsync(int MaSP, object userState) {
+            if ((this.LayKhoTheoSPOperationCompleted == null)) {
+                this.LayKhoTheoSPOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLayKhoTheoSPOperationCompleted);
+            }
+            this.InvokeAsync("LayKhoTheoSP", new object[] {
+                        MaSP}, this.LayKhoTheoSPOperationCompleted, userState);
+        }
+        
+        private void OnLayKhoTheoSPOperationCompleted(object arg) {
+            if ((this.LayKhoTheoSPCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.LayKhoTheoSPCompleted(this, new LayKhoTheoSPCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NhapMoi", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool NhapMoi(int MaSP, int Mau, int MaSize, int Soluong, decimal GiaNhap) {
+            object[] results = this.Invoke("NhapMoi", new object[] {
+                        MaSP,
+                        Mau,
+                        MaSize,
+                        Soluong,
+                        GiaNhap});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NhapMoiAsync(int MaSP, int Mau, int MaSize, int Soluong, decimal GiaNhap) {
+            this.NhapMoiAsync(MaSP, Mau, MaSize, Soluong, GiaNhap, null);
+        }
+        
+        /// <remarks/>
+        public void NhapMoiAsync(int MaSP, int Mau, int MaSize, int Soluong, decimal GiaNhap, object userState) {
+            if ((this.NhapMoiOperationCompleted == null)) {
+                this.NhapMoiOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNhapMoiOperationCompleted);
+            }
+            this.InvokeAsync("NhapMoi", new object[] {
+                        MaSP,
+                        Mau,
+                        MaSize,
+                        Soluong,
+                        GiaNhap}, this.NhapMoiOperationCompleted, userState);
+        }
+        
+        private void OnNhapMoiOperationCompleted(object arg) {
+            if ((this.NhapMoiCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NhapMoiCompleted(this, new NhapMoiCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CapNhat", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool CapNhat(int MaSP, int Mau, int MaSize, int Soluong, decimal GiaNhap) {
+            object[] results = this.Invoke("CapNhat", new object[] {
+                        MaSP,
+                        Mau,
+                        MaSize,
+                        Soluong,
+                        GiaNhap});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CapNhatAsync(int MaSP, int Mau, int MaSize, int Soluong, decimal GiaNhap) {
+            this.CapNhatAsync(MaSP, Mau, MaSize, Soluong, GiaNhap, null);
+        }
+        
+        /// <remarks/>
+        public void CapNhatAsync(int MaSP, int Mau, int MaSize, int Soluong, decimal GiaNhap, object userState) {
+            if ((this.CapNhatOperationCompleted == null)) {
+                this.CapNhatOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCapNhatOperationCompleted);
+            }
+            this.InvokeAsync("CapNhat", new object[] {
+                        MaSP,
+                        Mau,
+                        MaSize,
+                        Soluong,
+                        GiaNhap}, this.CapNhatOperationCompleted, userState);
+        }
+        
+        private void OnCapNhatOperationCompleted(object arg) {
+            if ((this.CapNhatCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CapNhatCompleted(this, new CapNhatCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CheckKho", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool CheckKho(int MaSP, int Mau, int MaSize) {
+            object[] results = this.Invoke("CheckKho", new object[] {
+                        MaSP,
+                        Mau,
+                        MaSize});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CheckKhoAsync(int MaSP, int Mau, int MaSize) {
+            this.CheckKhoAsync(MaSP, Mau, MaSize, null);
+        }
+        
+        /// <remarks/>
+        public void CheckKhoAsync(int MaSP, int Mau, int MaSize, object userState) {
+            if ((this.CheckKhoOperationCompleted == null)) {
+                this.CheckKhoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckKhoOperationCompleted);
+            }
+            this.InvokeAsync("CheckKho", new object[] {
+                        MaSP,
+                        Mau,
+                        MaSize}, this.CheckKhoOperationCompleted, userState);
+        }
+        
+        private void OnCheckKhoOperationCompleted(object arg) {
+            if ((this.CheckKhoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckKhoCompleted(this, new CheckKhoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ThemKho", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool ThemKho(int MaHDN) {
+            object[] results = this.Invoke("ThemKho", new object[] {
+                        MaHDN});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ThemKhoAsync(int MaHDN) {
+            this.ThemKhoAsync(MaHDN, null);
+        }
+        
+        /// <remarks/>
+        public void ThemKhoAsync(int MaHDN, object userState) {
+            if ((this.ThemKhoOperationCompleted == null)) {
+                this.ThemKhoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnThemKhoOperationCompleted);
+            }
+            this.InvokeAsync("ThemKho", new object[] {
+                        MaHDN}, this.ThemKhoOperationCompleted, userState);
+        }
+        
+        private void OnThemKhoOperationCompleted(object arg) {
+            if ((this.ThemKhoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ThemKhoCompleted(this, new ThemKhoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LayTatCaKho", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Kho[] LayTatCaKho() {
+            object[] results = this.Invoke("LayTatCaKho", new object[0]);
+            return ((Kho[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void LayTatCaKhoAsync() {
+            this.LayTatCaKhoAsync(null);
+        }
+        
+        /// <remarks/>
+        public void LayTatCaKhoAsync(object userState) {
+            if ((this.LayTatCaKhoOperationCompleted == null)) {
+                this.LayTatCaKhoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLayTatCaKhoOperationCompleted);
+            }
+            this.InvokeAsync("LayTatCaKho", new object[0], this.LayTatCaKhoOperationCompleted, userState);
+        }
+        
+        private void OnLayTatCaKhoOperationCompleted(object arg) {
+            if ((this.LayTatCaKhoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.LayTatCaKhoCompleted(this, new LayTatCaKhoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CapNhatGiaBanMoi", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool CapNhatGiaBanMoi(int MaSP, int MaMau, decimal GiaBan) {
+            object[] results = this.Invoke("CapNhatGiaBanMoi", new object[] {
+                        MaSP,
+                        MaMau,
+                        GiaBan});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CapNhatGiaBanMoiAsync(int MaSP, int MaMau, decimal GiaBan) {
+            this.CapNhatGiaBanMoiAsync(MaSP, MaMau, GiaBan, null);
+        }
+        
+        /// <remarks/>
+        public void CapNhatGiaBanMoiAsync(int MaSP, int MaMau, decimal GiaBan, object userState) {
+            if ((this.CapNhatGiaBanMoiOperationCompleted == null)) {
+                this.CapNhatGiaBanMoiOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCapNhatGiaBanMoiOperationCompleted);
+            }
+            this.InvokeAsync("CapNhatGiaBanMoi", new object[] {
+                        MaSP,
+                        MaMau,
+                        GiaBan}, this.CapNhatGiaBanMoiOperationCompleted, userState);
+        }
+        
+        private void OnCapNhatGiaBanMoiOperationCompleted(object arg) {
+            if ((this.CapNhatGiaBanMoiCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CapNhatGiaBanMoiCompleted(this, new CapNhatGiaBanMoiCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LayKho", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -268,25 +528,251 @@ namespace GiayDep.Service_Kho {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Kho {
+    public partial class SanPham_Price {
+        
+        private int _MaSPField;
+        
+        private int _MaMauField;
+        
+        private string _TenSPField;
+        
+        private int _SizeField;
+        
+        private string _TenMauField;
+        
+        private decimal _GiaSPField;
+        
+        private string _HinhAnhField;
+        
+        /// <remarks/>
+        public int _MaSP {
+            get {
+                return this._MaSPField;
+            }
+            set {
+                this._MaSPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int _MaMau {
+            get {
+                return this._MaMauField;
+            }
+            set {
+                this._MaMauField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string _TenSP {
+            get {
+                return this._TenSPField;
+            }
+            set {
+                this._TenSPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int _Size {
+            get {
+                return this._SizeField;
+            }
+            set {
+                this._SizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string _TenMau {
+            get {
+                return this._TenMauField;
+            }
+            set {
+                this._TenMauField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal _GiaSP {
+            get {
+                return this._GiaSPField;
+            }
+            set {
+                this._GiaSPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string _HinhAnh {
+            get {
+                return this._HinhAnhField;
+            }
+            set {
+                this._HinhAnhField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class LayMau {
+        
+        private int _MaSPField;
+        
+        private int _MaMauField;
+        
+        private string _TenMauField;
+        
+        /// <remarks/>
+        public int _MaSP {
+            get {
+                return this._MaSPField;
+            }
+            set {
+                this._MaSPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int _MaMau {
+            get {
+                return this._MaMauField;
+            }
+            set {
+                this._MaMauField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string _TenMau {
+            get {
+                return this._TenMauField;
+            }
+            set {
+                this._TenMauField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class LaySize {
+        
+        private int _MaSizeField;
+        
+        private int _SizeField;
+        
+        /// <remarks/>
+        public int _MaSize {
+            get {
+                return this._MaSizeField;
+            }
+            set {
+                this._MaSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int _Size {
+            get {
+                return this._SizeField;
+            }
+            set {
+                this._SizeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Loai {
+        
+        private int maLoaiField;
+        
+        private string tenLoaiField;
+        
+        private SanPham[] sanPhamsField;
+        
+        /// <remarks/>
+        public int MaLoai {
+            get {
+                return this.maLoaiField;
+            }
+            set {
+                this.maLoaiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TenLoai {
+            get {
+                return this.tenLoaiField;
+            }
+            set {
+                this.tenLoaiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SanPham[] SanPhams {
+            get {
+                return this.sanPhamsField;
+            }
+            set {
+                this.sanPhamsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class SanPham {
         
         private int maSPField;
         
-        private int maMauField;
+        private string tenSPField;
         
-        private int maSizeField;
+        private System.Nullable<int> maLoaiField;
         
-        private System.Nullable<int> slField;
+        private string thuongHieuField;
         
-        private System.Nullable<decimal> giaBanField;
+        private string hinhAnhField;
         
-        private System.Nullable<decimal> giaNhapField;
+        private string moTaField;
         
-        private Mau mauField;
+        private System.Nullable<int> maKMField;
         
-        private SanPham sanPhamField;
+        private System.Nullable<System.DateTime> ngayDangField;
         
-        private Size sizeField;
+        private string moTaCTField;
+        
+        private CTDH[] cTDHsField;
+        
+        private CTHDN[] cTHDNsField;
+        
+        private Kho[] khoesField;
+        
+        private KhuyenMai khuyenMaiField;
+        
+        private Loai loaiField;
         
         /// <remarks/>
         public int MaSP {
@@ -299,124 +785,85 @@ namespace GiayDep.Service_Kho {
         }
         
         /// <remarks/>
-        public int MaMau {
+        public string TenSP {
             get {
-                return this.maMauField;
+                return this.tenSPField;
             }
             set {
-                this.maMauField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int MaSize {
-            get {
-                return this.maSizeField;
-            }
-            set {
-                this.maSizeField = value;
+                this.tenSPField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> SL {
+        public System.Nullable<int> MaLoai {
             get {
-                return this.slField;
+                return this.maLoaiField;
             }
             set {
-                this.slField = value;
+                this.maLoaiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ThuongHieu {
+            get {
+                return this.thuongHieuField;
+            }
+            set {
+                this.thuongHieuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string HinhAnh {
+            get {
+                return this.hinhAnhField;
+            }
+            set {
+                this.hinhAnhField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MoTa {
+            get {
+                return this.moTaField;
+            }
+            set {
+                this.moTaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<decimal> GiaBan {
+        public System.Nullable<int> MaKM {
             get {
-                return this.giaBanField;
+                return this.maKMField;
             }
             set {
-                this.giaBanField = value;
+                this.maKMField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<decimal> GiaNhap {
+        public System.Nullable<System.DateTime> NgayDang {
             get {
-                return this.giaNhapField;
+                return this.ngayDangField;
             }
             set {
-                this.giaNhapField = value;
+                this.ngayDangField = value;
             }
         }
         
         /// <remarks/>
-        public Mau Mau {
+        public string MoTaCT {
             get {
-                return this.mauField;
+                return this.moTaCTField;
             }
             set {
-                this.mauField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public SanPham SanPham {
-            get {
-                return this.sanPhamField;
-            }
-            set {
-                this.sanPhamField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Size Size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                this.sizeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Mau {
-        
-        private int maMauField;
-        
-        private string tenMauField;
-        
-        private CTDH[] cTDHsField;
-        
-        private CTHDN[] cTHDNsField;
-        
-        private Kho[] khoesField;
-        
-        /// <remarks/>
-        public int MaMau {
-            get {
-                return this.maMauField;
-            }
-            set {
-                this.maMauField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenMau {
-            get {
-                return this.tenMauField;
-            }
-            set {
-                this.tenMauField = value;
+                this.moTaCTField = value;
             }
         }
         
@@ -447,6 +894,26 @@ namespace GiayDep.Service_Kho {
             }
             set {
                 this.khoesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public KhuyenMai KhuyenMai {
+            get {
+                return this.khuyenMaiField;
+            }
+            set {
+                this.khuyenMaiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Loai Loai {
+            get {
+                return this.loaiField;
+            }
+            set {
+                this.loaiField = value;
             }
         }
     }
@@ -828,148 +1295,11 @@ namespace GiayDep.Service_Kho {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class LayMau {
+    public partial class Mau {
         
-        private int _MaSPField;
+        private int maMauField;
         
-        private int _MaMauField;
-        
-        private string _TenMauField;
-        
-        /// <remarks/>
-        public int _MaSP {
-            get {
-                return this._MaSPField;
-            }
-            set {
-                this._MaSPField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int _MaMau {
-            get {
-                return this._MaMauField;
-            }
-            set {
-                this._MaMauField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string _TenMau {
-            get {
-                return this._TenMauField;
-            }
-            set {
-                this._TenMauField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class LaySize {
-        
-        private int _MaSizeField;
-        
-        private int _SizeField;
-        
-        /// <remarks/>
-        public int _MaSize {
-            get {
-                return this._MaSizeField;
-            }
-            set {
-                this._MaSizeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int _Size {
-            get {
-                return this._SizeField;
-            }
-            set {
-                this._SizeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Loai {
-        
-        private int maLoaiField;
-        
-        private string tenLoaiField;
-        
-        private SanPham[] sanPhamsField;
-        
-        /// <remarks/>
-        public int MaLoai {
-            get {
-                return this.maLoaiField;
-            }
-            set {
-                this.maLoaiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TenLoai {
-            get {
-                return this.tenLoaiField;
-            }
-            set {
-                this.tenLoaiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public SanPham[] SanPhams {
-            get {
-                return this.sanPhamsField;
-            }
-            set {
-                this.sanPhamsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class SanPham {
-        
-        private int maSPField;
-        
-        private string tenSPField;
-        
-        private System.Nullable<int> maLoaiField;
-        
-        private string thuongHieuField;
-        
-        private string hinhAnhField;
-        
-        private string moTaField;
-        
-        private System.Nullable<int> maKMField;
-        
-        private System.Nullable<System.DateTime> ngayDangField;
-        
-        private string moTaCTField;
+        private string tenMauField;
         
         private CTDH[] cTDHsField;
         
@@ -977,100 +1307,23 @@ namespace GiayDep.Service_Kho {
         
         private Kho[] khoesField;
         
-        private KhuyenMai khuyenMaiField;
-        
-        private Loai loaiField;
-        
         /// <remarks/>
-        public int MaSP {
+        public int MaMau {
             get {
-                return this.maSPField;
+                return this.maMauField;
             }
             set {
-                this.maSPField = value;
+                this.maMauField = value;
             }
         }
         
         /// <remarks/>
-        public string TenSP {
+        public string TenMau {
             get {
-                return this.tenSPField;
+                return this.tenMauField;
             }
             set {
-                this.tenSPField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> MaLoai {
-            get {
-                return this.maLoaiField;
-            }
-            set {
-                this.maLoaiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ThuongHieu {
-            get {
-                return this.thuongHieuField;
-            }
-            set {
-                this.thuongHieuField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string HinhAnh {
-            get {
-                return this.hinhAnhField;
-            }
-            set {
-                this.hinhAnhField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string MoTa {
-            get {
-                return this.moTaField;
-            }
-            set {
-                this.moTaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> MaKM {
-            get {
-                return this.maKMField;
-            }
-            set {
-                this.maKMField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> NgayDang {
-            get {
-                return this.ngayDangField;
-            }
-            set {
-                this.ngayDangField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string MoTaCT {
-            get {
-                return this.moTaCTField;
-            }
-            set {
-                this.moTaCTField = value;
+                this.tenMauField = value;
             }
         }
         
@@ -1101,26 +1354,6 @@ namespace GiayDep.Service_Kho {
             }
             set {
                 this.khoesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public KhuyenMai KhuyenMai {
-            get {
-                return this.khuyenMaiField;
-            }
-            set {
-                this.khuyenMaiField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Loai Loai {
-            get {
-                return this.loaiField;
-            }
-            set {
-                this.loaiField = value;
             }
         }
     }
@@ -1587,7 +1820,7 @@ namespace GiayDep.Service_Kho {
         
         private int maSizeField;
         
-        private int size1Field;
+        private System.Nullable<int> size1Field;
         
         private CTDH[] cTDHsField;
         
@@ -1606,7 +1839,8 @@ namespace GiayDep.Service_Kho {
         }
         
         /// <remarks/>
-        public int Size1 {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Size1 {
             get {
                 return this.size1Field;
             }
@@ -1642,6 +1876,126 @@ namespace GiayDep.Service_Kho {
             }
             set {
                 this.khoesField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.79.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Kho {
+        
+        private int maSPField;
+        
+        private int maMauField;
+        
+        private int maSizeField;
+        
+        private System.Nullable<int> slField;
+        
+        private System.Nullable<decimal> giaBanField;
+        
+        private System.Nullable<decimal> giaNhapField;
+        
+        private Mau mauField;
+        
+        private SanPham sanPhamField;
+        
+        private Size sizeField;
+        
+        /// <remarks/>
+        public int MaSP {
+            get {
+                return this.maSPField;
+            }
+            set {
+                this.maSPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MaMau {
+            get {
+                return this.maMauField;
+            }
+            set {
+                this.maMauField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MaSize {
+            get {
+                return this.maSizeField;
+            }
+            set {
+                this.maSizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> SL {
+            get {
+                return this.slField;
+            }
+            set {
+                this.slField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<decimal> GiaBan {
+            get {
+                return this.giaBanField;
+            }
+            set {
+                this.giaBanField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<decimal> GiaNhap {
+            get {
+                return this.giaNhapField;
+            }
+            set {
+                this.giaNhapField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Mau Mau {
+            get {
+                return this.mauField;
+            }
+            set {
+                this.mauField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SanPham SanPham {
+            get {
+                return this.sanPhamField;
+            }
+            set {
+                this.sanPhamField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Size Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
             }
         }
     }
@@ -1713,6 +2067,188 @@ namespace GiayDep.Service_Kho {
             }
             set {
                 this.sanPhamsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void LayKhoTheoSPCompletedEventHandler(object sender, LayKhoTheoSPCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LayKhoTheoSPCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal LayKhoTheoSPCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public SanPham_Price[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((SanPham_Price[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void NhapMoiCompletedEventHandler(object sender, NhapMoiCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NhapMoiCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NhapMoiCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void CapNhatCompletedEventHandler(object sender, CapNhatCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CapNhatCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CapNhatCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void CheckKhoCompletedEventHandler(object sender, CheckKhoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CheckKhoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CheckKhoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void ThemKhoCompletedEventHandler(object sender, ThemKhoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ThemKhoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ThemKhoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void LayTatCaKhoCompletedEventHandler(object sender, LayTatCaKhoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LayTatCaKhoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal LayTatCaKhoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Kho[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Kho[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void CapNhatGiaBanMoiCompletedEventHandler(object sender, CapNhatGiaBanMoiCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CapNhatGiaBanMoiCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CapNhatGiaBanMoiCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
