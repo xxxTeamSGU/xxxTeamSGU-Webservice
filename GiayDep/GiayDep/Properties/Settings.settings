@@ -3,7 +3,59 @@
   <Profiles />
   <Settings>
     <Setting Name="GiayDep_Service_SanPham_Service_SanPham" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:61817/Service_SanPham.asmx</Value>
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_SanPham.asmx</Value>
+    </Setting>
+<<<<<<< HEAD
+    <Setting Name="GiayDep_Service_KhuyenMai_Service_KhuyenMai" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_KhuyenMai.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_Loai_Service_Loai" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Loai.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_CTDH_Service_CTDH" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_CTDH.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_DonHang_Service_DonHang" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_DonHang.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_KhachHang_Service_KhachHang" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_KhachHang.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_Kho_Service_Kho" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Kho.asmx</Value>
+=======
+    <Setting Name="GiayDep_Service_Loai_Service_Loai" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Loai.asmx</Value>
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
+    </Setting>
+    <Setting Name="GiayDep_Service_Mau_Service_Mau" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Mau.asmx</Value>
+    </Setting>
+<<<<<<< HEAD
+    <Setting Name="GiayDep_Service_Size_Service_Size" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Size.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_SanPham_Kho_Service_SanPham_Kho" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_SanPham_Kho.asmx</Value>
+=======
+    <Setting Name="GiayDep_Service_Kho_Service_Kho" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Kho.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_DonHang_Service_DonHang" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_DonHang.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_CTDH_Service_CTDH" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_CTDH.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_KhachHang_Service_KhachHang" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_KhachHang.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_SanPham_Kho_Service_SanPham_Kho" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_SanPham_Kho.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_Size_Service_Size" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Size.asmx</Value>
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     </Setting>
   </Settings>
 </SettingsFile>

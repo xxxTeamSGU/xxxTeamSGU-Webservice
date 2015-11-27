@@ -15,8 +15,12 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         bool XoaKhachHang(int MaKH);
         [OperationContract]
-        List<KhachHang> TimKiemKhachHang(string HoTen,string SoDT,string Email);
+        List<KhachHang> TimKiemKhachHang(string HoTen,string SDT,string Email);
         [OperationContract]
-        List<KhachHang> TimKiemKhachHang_GioiTinh(string HoTen, string SoDT, string Email, int GioiTinh);
+        List<KhachHang> TimKiemKhachHang_GioiTinh(string HoTen, string SDT, string Email, string GioiTinh);
+        [OperationContract]
+        bool ThemKhachHang(string HoTen, DateTime NgaySinh, string Email, string MatKhau, string SDT, string DiaChi, string GioiTinh, DateTime NgayDangKi);
+        [OperationContract]
+        KhachHang Login(string email, string password);
     }
 }

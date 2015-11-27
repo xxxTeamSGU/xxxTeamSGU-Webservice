@@ -38,15 +38,15 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool ThemNhanVien(string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin)
+        public bool ThemNhanVien(string HoTen, string Email, string MatKhau, string DiaChi, string SDT, string CMND, int QuyenAdmin)
         {
             NhanVien nv = new NhanVien();
             nv.HoTen = HoTen;
             nv.Email = Email;
-            nv.SoDT = SoDT;
-            nv.CMND = CMND;
-            nv.DiaChi = DiaChi;
             nv.MatKhau = MatKhau;
+            nv.DiaChi = DiaChi;
+            nv.SDT = SDT;
+            nv.CMND = CMND;
             nv.QuyenAdmin = QuyenAdmin;
             try
             {
@@ -64,7 +64,7 @@ namespace Service_GiayDep
             }
         }
         [WebMethod]
-        public bool SuaNhanVien(int MaNV, string HoTen, string Email, string SoDT, string CMND, string DiaChi, string MatKhau, int QuyenAdmin)
+        public bool SuaNhanVien(int MaNV, string HoTen, string Email, string MatKhau, string DiaChi, string SDT, string CMND, int QuyenAdmin)
         {
             try
             {
@@ -81,9 +81,9 @@ namespace Service_GiayDep
                         {
                             item.Email = Email;
                         }
-                        if (!SoDT.Equals(""))
+                        if (!SDT.Equals(""))
                         {
-                            item.SoDT = SoDT;
+                            item.SDT = SDT;
                         }
                         if (!CMND.Equals(""))
                         {
@@ -141,7 +141,7 @@ namespace Service_GiayDep
             {
                 using (DBGiayDepEntities db = new DBGiayDepEntities())
                 {
-                    var list = db.NhanViens.Where(c => c.HoTen.Contains(x) || c.Email.Contains(x) || c.SoDT.Contains(x) || c.CMND.Contains(x) || c.DiaChi.Contains(x)).ToList();
+                    var list = db.NhanViens.Where(c => c.HoTen.Contains(x) || c.Email.Contains(x) || c.SDT.Contains(x) || c.CMND.Contains(x) || c.DiaChi.Contains(x)).ToList();
                     return list;
                 }
             }

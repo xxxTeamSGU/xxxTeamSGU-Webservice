@@ -7,56 +7,96 @@
 }
 
 <section id="cart_items">
-		<div class="container">
-			<div class="breadcrumbs">
-				<ol class="breadcrumb">
-				  <li><a href="#">Trang chủ</a></li>
-				  <li class="active">Giỏ hàng</li>
-				</ol>
-			</div>
-			<div class="table-responsive cart_info">
-				<table class="table table-condensed">
-					<thead>
-                            <tr class="cart_menu">
-                               
-                                 <td class="image"><center>Sản phẩm</center></td>
-                                <td class="description"><center>Mô tả</center></td>
-                                <td class="price"><center>Giá</center></td>
-                                <td class="quantity"><center>Số lượng</center></td>
-                                <td class="total"><center>Tổng cộng</center></td>
-                                <td></td>
-                            </tr>
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="#">Trang chủ</a></li>
+                <li class="active">Giỏ hàng</li>
+            </ol>
+        </div>
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+
+                        <td>ID</td>
+                        <td class="image"><center>Sản phẩm</center></td>
+                        <td class="description"><center>Mô tả</center></td>
+                        <td class="price"><center>Giá</center></td>
+                        <td class="quantity"><center>Số lượng</center></td>
+                        <td class="total"><center>Tổng cộng</center></td>
+                        <td>Xem</td>
+                        <td>Cập nhật</td>
+                        <td>Xóa</td>
+                    </tr>
 
                 </thead>
-					@foreach (var item in Model){
-                        <tbody>
-						<tr>
-                            
-							<td class="cart_product"><center><a href=""><img src="@Url.Content("~/images/home/"+ item.anhbia)" alt="" width="110" height="110"></a></center></td>
-							<td class="cart_description"><h4><a href="">@item.stensp</a></h4></td>
-							<td class="cart_price"><p><center>@item.dongia.000đ</center></p></td>
+                @{
+                    
+                foreach (var item in Model)
+                {
+                    <tbody>
+                       
+                           
+                        <tr>
+                            <td># @item.imasp</td>
+                            <td class="cart_product"><a href=""><img src="@Url.Content("~/images/home/"+ item.anhbia)" alt="" width="110" height="110"></a> </td>
+                            <td class="cart_description"><h4><a href="">@item.stensp</a></h4>
+                                <br /> Màu :@item.itenmau
+                                <br /> Size : @item.itensize</td>
+                            <td class="cart_price"><p><center>@item.dongia.000đ</center></p></td>
+                              @*Goi toi action capnhatgiohang trong giohangController*@
+                            @using (Html.BeginForm("capnhatgiohang", "giohang", new { @imasp = item.imasp, @mamau = item.imamau, @size=item.isize}))
+                             {
                             <td class="cart_quantity" width="150">
                                 <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href=""> + </a>
-                                    <center><input class="cart_quantity_input" type="text" name="quantity" value="@item.soluong" autocomplete="off" size="2"></center>
-                                    <a class="cart_quantity_down" href=""> - </a>
+
+                                    @*<a class="cart_quantity_up" href=""> + </a>*@
+                                    <center><input class="cart_quantity_input" type="number" name="txtsoluong" value="@item.soluong" autocomplete="off" size="2"></center>
+                                    @*<a class="cart_quantity_down" href=""> - </a>*@
                                 </div>
                             </td>
-							<td class="cart_total"><p class="cart_total_price"><center>@item.thanhtien.000đ</center></p></td>
-							<td class="cart_delete"><a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a></td>
-                        </tr>
-					</tbody>}
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Cập nhật</td>
-                            <td>Thanh toán</td>
-                        </tr>
-                 
-				</table>
-			</div>
-		</div>
-	</section> <!--/#cart_items-->
+                            <td class="cart_total"><p class="cart_total_price"><center>@item.thanhtien.000đ</center></p></td>
+                            <td>
+                                <a href="@Url.Action("Chitietsanpham", "SanPham", new { @masp = item.imasp, @mamau =item.imasp })">Xem</a>
+                            </td>
+                             <td>
+                                  <center>
+                                     <button type="submit" class="btn btn-fefault cart">
+                                             <i class="glyphicon glyphicon-refresh"></i>
+                                     </button>
+                                  </center>
+                             </td>
+                             <td class="cart_delete">
+                                 <center><i class="fa fa-times"></i>
+                                 @*Gọi tới action xoagiohang trong giohangController*@
+                                     @Html.ActionLink("Xóa", "xoagiohang", new { @imasp = item.imasp, @mamau = item.imamau, @size= item.isize })
+                                 </center>
+                             </td>
+                            }
+                            
 
+                        </tr>
+                       
+                    </tbody>
+                }
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="/giohang/DonHang/">Xem chi tiết</a></td>
+                    <td>
+                        @using(Html.BeginForm("DatHang","giohang"))
+                        {
+                            <input type="submit" value="Đặt hàng" />
+                        }
+                    
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</section> <!--/#cart_items-->

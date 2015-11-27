@@ -1,7 +1,6 @@
-﻿@using GiayDep.Models;
-@using PagedList.Mvc;
+﻿@using PagedList.Mvc;
 @using PagedList;
-
+@using GiayDep.Service_SanPham;
 @model IPagedList<SanPham>
 
 @{
@@ -18,7 +17,7 @@
             <div class="productinfo text-center">
 
                 <a href="@Url.Action("Chitietsanpham", new { @masp = item.MaSP })"><img src="@Url.Content("~/images/home/"+ item.HinhAnh)" alt="" /></a>
-                <h2>@item.GiaSP.000đ</h2>
+                <h2>.000đ</h2>
                 <p>@item.TenSP</p>
                 @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = item.MaSP, @strUrl = Request.Url.ToString() }))
                 {

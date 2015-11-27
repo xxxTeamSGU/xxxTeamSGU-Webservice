@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://servicegiaydep.azurewebsites.net/Service_Loai.asmx?wsdl" filename="Service_Loai.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://servicegiaydep.azurewebsites.net/Service_Loai.asmx?disco" filename="Service_Loai.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

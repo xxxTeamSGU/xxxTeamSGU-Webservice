@@ -1,0 +1,17 @@
+﻿@using GiayDep.Service_KhachHang
+@{
+    var khachhang = Session["khachhang"] as KhachHang;
+}
+@if (khachhang != null)
+{
+    
+    <li><span>Họ tên:</span><span>Xin chào bạn: @khachhang.HoTen</span></li>
+    <li><span>Email: </span><span>@khachhang.Email</span></li>
+    <li><span>Địa chỉ: </span><span>@khachhang.DiaChi</span></li>
+    <li><span>SDT:</span><span>@khachhang.SDT</span></li>
+    <li><span>Ngày đăng kí: </span><span>@khachhang.NgayDangKi</span></li>
+}
+else
+{
+    @Html.Action("Login","User")
+}

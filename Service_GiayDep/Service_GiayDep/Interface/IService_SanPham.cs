@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Web;
 using Service_GiayDep.Models;
+using System.ServiceModel.Web;
 
 namespace Service_GiayDep.Interface
 {
@@ -13,22 +14,25 @@ namespace Service_GiayDep.Interface
         [OperationContract]
         List<SanPham> LayTatCaSanPham();
         [OperationContract]
-        bool ThemSanPham(string TenSP,int MaLoai,string ThuongHieu,decimal GiaSP,string HinhAnh,string HinhAnh1,
-            string HinhAnh2,string HinhAnh3, int SoLuong, string MoTa,int KM,string NgayCapNhat);
+        bool ThemSanPham(string TenSP, int MaLoai, string ThuongHieu,
+            string HinhAnh, string MoTa, int MaKM, DateTime NgayDang, string MoTaCT);
         [OperationContract]
-        bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu,decimal GiaSP, string HinhAnh, string HinhAnh1,
-            string HinhAnh2, string HinhAnh3, int SoLuong, string MoTa, int KM, string NgayCapNhat);
+        bool SuaSanPham(int MaSP, string TenSP, int MaLoai, string ThuongHieu,
+            string HinhAnh, string MoTa, int MaKM, DateTime NgayDang, string MoTaCT);
         [OperationContract]
         bool XoaSanPham(int MaSP);
         [OperationContract]
         List<SanPham> TimKiemSanPham(string Tim);
         [OperationContract]
-        List<SanPham> SanphammoiPartial();
+        SanPham LayMa(int masp);
         [OperationContract]
-        List<SanPham> SanphamkhuyenmaiPartial();
+        List<TH> ThuongHieuNam();
         [OperationContract]
-        SanPham Chitietsanpham(int masp);
+        List<TH> ThuongHieuNu();
         [OperationContract]
-        SanPham LaySanPham(int imasp);
+        List<TH> ThuongHieuTreEm();
+        //[OperationContract]
+        //SanPham Chitietsanpham(int masp);
+       
     }
 }

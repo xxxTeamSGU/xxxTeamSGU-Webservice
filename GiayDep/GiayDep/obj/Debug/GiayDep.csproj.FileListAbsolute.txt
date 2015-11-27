@@ -169,3 +169,120 @@ C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDe
 C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDep\obj\Debug\GiayDep.dll
 C:\Users\DuyTrinh\Desktop\GitHub-WebService\xxxTeamSGU-Webservice\GiayDep\GiayDep\obj\Debug\GiayDep.pdb
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\GiayDep.dll.config
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\GiayDep.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\GiayDep.pdb
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Antlr3.Runtime.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\EntityFramework.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\EntityFramework.SqlServer.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Newtonsoft.Json.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Owin.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\PagedList.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\PagedList.Mvc.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Helpers.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Mvc.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Optimization.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Razor.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.WebPages.Deployment.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.WebPages.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.WebPages.Razor.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\WebGrease.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\PagedList.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\PagedList.Mvc.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Helpers.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Mvc.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Optimization.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.Razor.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.WebPages.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.WebPages.Deployment.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\System.Web.WebPages.Razor.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Newtonsoft.Json.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Antlr3.Runtime.pdb
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\EntityFramework.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\EntityFramework.SqlServer.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\obj\Debug\GiayDep.dll
+C:\Users\DUYTRINH\Desktop\GiayDep\GiayDep\obj\Debug\GiayDep.pdb
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\GiayDep.dll.config
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\GiayDep.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\GiayDep.pdb
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Antlr3.Runtime.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\EntityFramework.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\EntityFramework.SqlServer.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Newtonsoft.Json.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Owin.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\PagedList.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\PagedList.Mvc.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Helpers.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Mvc.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Optimization.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Razor.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.WebPages.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.WebPages.Razor.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\WebGrease.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\PagedList.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\PagedList.Mvc.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Helpers.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Mvc.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Optimization.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.Razor.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.WebPages.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Newtonsoft.Json.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Antlr3.Runtime.pdb
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\EntityFramework.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\EntityFramework.SqlServer.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\obj\Debug\GiayDep.dll
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\obj\Debug\GiayDep.pdb
+C:\Users\Pham\Desktop\Project webservice\GiayDep\GiayDep\obj\Debug\GiayDep.csprojResolveAssemblyReference.cache

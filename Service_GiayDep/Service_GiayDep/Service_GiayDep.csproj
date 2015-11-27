@@ -39,12 +39,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -65,25 +68,62 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Service_CTDH.asmx" />
+    <Content Include="Service_DonHang.asmx" />
+    <Content Include="Service_HoaDonNhap.asmx" />
+    <Content Include="Service_CTHDN.asmx" />
     <Content Include="Service_KhachHang.asmx" />
+    <Content Include="Service_Kho.asmx" />
     <Content Include="Service_Loai.asmx" />
+    <Content Include="Service_Mau.asmx" />
     <Content Include="Service_NhaCungCap.asmx" />
     <Content Include="Service_NhanVien.asmx" />
     <Content Include="Service_SanPham.asmx" />
+    <Content Include="Service_SanPham_Kho.asmx" />
+    <Content Include="Service_Size.asmx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IService_CTDH.cs" />
+    <Compile Include="Interface\IService_CTHDN.cs" />
+    <Compile Include="Interface\IService_DonHang.cs" />
+    <Compile Include="Interface\IService_HoaDonNhap.cs" />
     <Compile Include="Interface\IService_KhachHang.cs" />
+    <Compile Include="Interface\IService_Kho.cs" />
+    <Compile Include="Interface\IService_KM.cs" />
     <Compile Include="Interface\IService_Loai.cs" />
+    <Compile Include="Interface\IService_Mau.cs" />
     <Compile Include="Interface\IService_NhaCungCap.cs" />
     <Compile Include="Interface\IService_NhanVien.cs" />
     <Compile Include="Interface\IService_SanPham.cs" />
+    <Compile Include="Interface\IService_SanPham_Kho.cs" />
+    <Compile Include="Interface\IServive_Size.cs" />
+<<<<<<< HEAD
+    <Compile Include="Models\LayMau.cs" />
+    <Compile Include="Models\LaySize.cs" />
+    <Compile Include="Models\SanPham_Price.cs" />
+    <Compile Include="Models\TH.cs" />
+    <Compile Include="Service_CTDH.asmx.cs">
+      <DependentUpon>Service_CTDH.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_DonHang.asmx.cs">
+      <DependentUpon>Service_DonHang.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_HoaDonNhap.asmx.cs">
+      <DependentUpon>Service_HoaDonNhap.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_CTHDN.asmx.cs">
+      <DependentUpon>Service_CTHDN.asmx</DependentUpon>
+    </Compile>
+=======
+>>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
     <Compile Include="Models\CTDH.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CTHoaDonNhap.cs">
+    <Compile Include="Models\CTHD.cs" />
+    <Compile Include="Models\CTHDN.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DBGiayDep.Context.cs">
@@ -104,12 +144,20 @@
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HoaDonNhap.cs">
+    <Compile Include="Models\HDNhap.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Kho.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhuyenMai.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LayMau.cs" />
+    <Compile Include="Models\LaySize.cs" />
     <Compile Include="Models\Loai.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
@@ -125,12 +173,34 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>DBGiayDep.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPham_Price.cs" />
+    <Compile Include="Models\Size.cs">
+      <DependentUpon>DBGiayDep.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service_CTDH.asmx.cs">
+      <DependentUpon>Service_CTDH.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_DonHang.asmx.cs">
+      <DependentUpon>Service_DonHang.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_HoaDonNhap.asmx.cs">
+      <DependentUpon>Service_HoaDonNhap.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_CTHDN.asmx.cs">
+      <DependentUpon>Service_CTHDN.asmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service_KhachHang.asmx.cs">
       <DependentUpon>Service_KhachHang.asmx</DependentUpon>
     </Compile>
+    <Compile Include="Service_Kho.asmx.cs">
+      <DependentUpon>Service_Kho.asmx</DependentUpon>
+    </Compile>
     <Compile Include="Service_Loai.asmx.cs">
       <DependentUpon>Service_Loai.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_Mau.asmx.cs">
+      <DependentUpon>Service_Mau.asmx</DependentUpon>
     </Compile>
     <Compile Include="Service_NhaCungCap.asmx.cs">
       <DependentUpon>Service_NhaCungCap.asmx</DependentUpon>
@@ -140,6 +210,12 @@
     </Compile>
     <Compile Include="Service_SanPham.asmx.cs">
       <DependentUpon>Service_SanPham.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_SanPham_Kho.asmx.cs">
+      <DependentUpon>Service_SanPham_Kho.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="Service_Size.asmx.cs">
+      <DependentUpon>Service_Size.asmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -164,7 +240,12 @@
       <DependentUpon>DBGiayDep.edmx</DependentUpon>
       <LastGenOutput>DBGiayDep.cs</LastGenOutput>
     </Content>
-    <Content Include="ClassDiagram1.cd" />
+    <None Include="nuspec.2010.7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="nuspec.2011.8.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
