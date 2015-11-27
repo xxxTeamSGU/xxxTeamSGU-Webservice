@@ -2,24 +2,25 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="LaySizeTheoMa">
+      <s:element name="LayTatCaSize">
+        <s:complexType />
+      </s:element>
+      <s:element name="LayTatCaSizeResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LayTatCaSizeResult" type="tns:ArrayOfSize" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="LaySizeTheoMaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="LaySizeTheoMaResult" type="tns:Size" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
+      <s:complexType name="ArrayOfSize">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Size" nillable="true" type="tns:Size" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="Size">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Size1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size1" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="CTDHs" type="tns:ArrayOfCTDH" />
           <s:element minOccurs="0" maxOccurs="1" name="CTHDNs" type="tns:ArrayOfCTHDN" />
           <s:element minOccurs="0" maxOccurs="1" name="Khoes" type="tns:ArrayOfKho" />
@@ -201,8 +202,89 @@
           <s:element minOccurs="0" maxOccurs="1" name="SanPhams" type="tns:ArrayOfSanPham" />
         </s:sequence>
       </s:complexType>
+      <s:element name="ThemSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TenSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemSizeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TenSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SuaSizeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaSizeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LaySizeTheoMa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LaySizeTheoMaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LaySizeTheoMaResult" type="tns:Size" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="LayTatCaSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:LayTatCaSize" />
+  </wsdl:message>
+  <wsdl:message name="LayTatCaSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:LayTatCaSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemSize" />
+  </wsdl:message>
+  <wsdl:message name="ThemSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuaSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:SuaSize" />
+  </wsdl:message>
+  <wsdl:message name="SuaSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:SuaSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaSize" />
+  </wsdl:message>
+  <wsdl:message name="XoaSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaSizeResponse" />
+  </wsdl:message>
   <wsdl:message name="LaySizeTheoMaSoapIn">
     <wsdl:part name="parameters" element="tns:LaySizeTheoMa" />
   </wsdl:message>
@@ -210,6 +292,22 @@
     <wsdl:part name="parameters" element="tns:LaySizeTheoMaResponse" />
   </wsdl:message>
   <wsdl:portType name="Service_SizeSoap">
+    <wsdl:operation name="LayTatCaSize">
+      <wsdl:input message="tns:LayTatCaSizeSoapIn" />
+      <wsdl:output message="tns:LayTatCaSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemSize">
+      <wsdl:input message="tns:ThemSizeSoapIn" />
+      <wsdl:output message="tns:ThemSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaSize">
+      <wsdl:input message="tns:SuaSizeSoapIn" />
+      <wsdl:output message="tns:SuaSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaSize">
+      <wsdl:input message="tns:XoaSizeSoapIn" />
+      <wsdl:output message="tns:XoaSizeSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="LaySizeTheoMa">
       <wsdl:input message="tns:LaySizeTheoMaSoapIn" />
       <wsdl:output message="tns:LaySizeTheoMaSoapOut" />
@@ -217,6 +315,42 @@
   </wsdl:portType>
   <wsdl:binding name="Service_SizeSoap" type="tns:Service_SizeSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaSize">
+      <soap:operation soapAction="http://tempuri.org/LayTatCaSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemSize">
+      <soap:operation soapAction="http://tempuri.org/ThemSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaSize">
+      <soap:operation soapAction="http://tempuri.org/SuaSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaSize">
+      <soap:operation soapAction="http://tempuri.org/XoaSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LaySizeTheoMa">
       <soap:operation soapAction="http://tempuri.org/LaySizeTheoMa" style="document" />
       <wsdl:input>
@@ -229,6 +363,42 @@
   </wsdl:binding>
   <wsdl:binding name="Service_SizeSoap12" type="tns:Service_SizeSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaSize">
+      <soap12:operation soapAction="http://tempuri.org/LayTatCaSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemSize">
+      <soap12:operation soapAction="http://tempuri.org/ThemSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaSize">
+      <soap12:operation soapAction="http://tempuri.org/SuaSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaSize">
+      <soap12:operation soapAction="http://tempuri.org/XoaSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LaySizeTheoMa">
       <soap12:operation soapAction="http://tempuri.org/LaySizeTheoMa" style="document" />
       <wsdl:input>
@@ -241,10 +411,10 @@
   </wsdl:binding>
   <wsdl:service name="Service_Size">
     <wsdl:port name="Service_SizeSoap" binding="tns:Service_SizeSoap">
-      <soap:address location="http://localhost:61817/Service_Size.asmx" />
+      <soap:address location="http://servicegiaydep.azurewebsites.net/Service_Size.asmx" />
     </wsdl:port>
     <wsdl:port name="Service_SizeSoap12" binding="tns:Service_SizeSoap12">
-      <soap12:address location="http://localhost:61817/Service_Size.asmx" />
+      <soap12:address location="http://servicegiaydep.azurewebsites.net/Service_Size.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

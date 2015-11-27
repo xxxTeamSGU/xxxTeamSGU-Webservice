@@ -175,7 +175,7 @@
       <s:complexType name="Size">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="MaSize" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Size1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size1" nillable="true" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="CTDHs" type="tns:ArrayOfCTDH" />
           <s:element minOccurs="0" maxOccurs="1" name="CTHDNs" type="tns:ArrayOfCTHDN" />
           <s:element minOccurs="0" maxOccurs="1" name="Khoes" type="tns:ArrayOfKho" />
@@ -465,10 +465,10 @@
   </wsdl:binding>
   <wsdl:service name="Service_KhachHang">
     <wsdl:port name="Service_KhachHangSoap" binding="tns:Service_KhachHangSoap">
-      <soap:address location="http://localhost:61817/Service_KhachHang.asmx" />
+      <soap:address location="http://servicegiaydep.azurewebsites.net/Service_KhachHang.asmx" />
     </wsdl:port>
     <wsdl:port name="Service_KhachHangSoap12" binding="tns:Service_KhachHangSoap12">
-      <soap12:address location="http://localhost:61817/Service_KhachHang.asmx" />
+      <soap12:address location="http://servicegiaydep.azurewebsites.net/Service_KhachHang.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

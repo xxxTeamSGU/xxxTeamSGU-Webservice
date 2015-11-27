@@ -1443,7 +1443,7 @@ namespace GiayDep.Service_KhachHang {
         
         private int maSizeField;
         
-        private int size1Field;
+        private System.Nullable<int> size1Field;
         
         private CTDH[] cTDHsField;
         
@@ -1462,7 +1462,8 @@ namespace GiayDep.Service_KhachHang {
         }
         
         /// <remarks/>
-        public int Size1 {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Size1 {
             get {
                 return this.size1Field;
             }

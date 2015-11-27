@@ -39,6 +39,16 @@ namespace GiayDep.Service_SanPham {
         
         private System.Threading.SendOrPostCallback TimKiemSanPhamOperationCompleted;
         
+        private System.Threading.SendOrPostCallback SanphammoiPartialOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SanphamkhuyenmaiPartialOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ChitietsanphamOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback LaySanPhamOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CheckSanPhamOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LayMaOperationCompleted;
         
         private System.Threading.SendOrPostCallback ThuongHieuNamOperationCompleted;
@@ -99,6 +109,21 @@ namespace GiayDep.Service_SanPham {
         
         /// <remarks/>
         public event TimKiemSanPhamCompletedEventHandler TimKiemSanPhamCompleted;
+        
+        /// <remarks/>
+        public event SanphammoiPartialCompletedEventHandler SanphammoiPartialCompleted;
+        
+        /// <remarks/>
+        public event SanphamkhuyenmaiPartialCompletedEventHandler SanphamkhuyenmaiPartialCompleted;
+        
+        /// <remarks/>
+        public event ChitietsanphamCompletedEventHandler ChitietsanphamCompleted;
+        
+        /// <remarks/>
+        public event LaySanPhamCompletedEventHandler LaySanPhamCompleted;
+        
+        /// <remarks/>
+        public event CheckSanPhamCompletedEventHandler CheckSanPhamCompleted;
         
         /// <remarks/>
         public event LayMaCompletedEventHandler LayMaCompleted;
@@ -282,6 +307,147 @@ namespace GiayDep.Service_SanPham {
             if ((this.TimKiemSanPhamCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.TimKiemSanPhamCompleted(this, new TimKiemSanPhamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SanphammoiPartial", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public SanPham[] SanphammoiPartial() {
+            object[] results = this.Invoke("SanphammoiPartial", new object[0]);
+            return ((SanPham[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SanphammoiPartialAsync() {
+            this.SanphammoiPartialAsync(null);
+        }
+        
+        /// <remarks/>
+        public void SanphammoiPartialAsync(object userState) {
+            if ((this.SanphammoiPartialOperationCompleted == null)) {
+                this.SanphammoiPartialOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSanphammoiPartialOperationCompleted);
+            }
+            this.InvokeAsync("SanphammoiPartial", new object[0], this.SanphammoiPartialOperationCompleted, userState);
+        }
+        
+        private void OnSanphammoiPartialOperationCompleted(object arg) {
+            if ((this.SanphammoiPartialCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SanphammoiPartialCompleted(this, new SanphammoiPartialCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SanphamkhuyenmaiPartial", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public SanPham[] SanphamkhuyenmaiPartial() {
+            object[] results = this.Invoke("SanphamkhuyenmaiPartial", new object[0]);
+            return ((SanPham[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SanphamkhuyenmaiPartialAsync() {
+            this.SanphamkhuyenmaiPartialAsync(null);
+        }
+        
+        /// <remarks/>
+        public void SanphamkhuyenmaiPartialAsync(object userState) {
+            if ((this.SanphamkhuyenmaiPartialOperationCompleted == null)) {
+                this.SanphamkhuyenmaiPartialOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSanphamkhuyenmaiPartialOperationCompleted);
+            }
+            this.InvokeAsync("SanphamkhuyenmaiPartial", new object[0], this.SanphamkhuyenmaiPartialOperationCompleted, userState);
+        }
+        
+        private void OnSanphamkhuyenmaiPartialOperationCompleted(object arg) {
+            if ((this.SanphamkhuyenmaiPartialCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SanphamkhuyenmaiPartialCompleted(this, new SanphamkhuyenmaiPartialCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Chitietsanpham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public SanPham Chitietsanpham(int masp) {
+            object[] results = this.Invoke("Chitietsanpham", new object[] {
+                        masp});
+            return ((SanPham)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ChitietsanphamAsync(int masp) {
+            this.ChitietsanphamAsync(masp, null);
+        }
+        
+        /// <remarks/>
+        public void ChitietsanphamAsync(int masp, object userState) {
+            if ((this.ChitietsanphamOperationCompleted == null)) {
+                this.ChitietsanphamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnChitietsanphamOperationCompleted);
+            }
+            this.InvokeAsync("Chitietsanpham", new object[] {
+                        masp}, this.ChitietsanphamOperationCompleted, userState);
+        }
+        
+        private void OnChitietsanphamOperationCompleted(object arg) {
+            if ((this.ChitietsanphamCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ChitietsanphamCompleted(this, new ChitietsanphamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LaySanPham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public SanPham LaySanPham(int imasp) {
+            object[] results = this.Invoke("LaySanPham", new object[] {
+                        imasp});
+            return ((SanPham)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void LaySanPhamAsync(int imasp) {
+            this.LaySanPhamAsync(imasp, null);
+        }
+        
+        /// <remarks/>
+        public void LaySanPhamAsync(int imasp, object userState) {
+            if ((this.LaySanPhamOperationCompleted == null)) {
+                this.LaySanPhamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLaySanPhamOperationCompleted);
+            }
+            this.InvokeAsync("LaySanPham", new object[] {
+                        imasp}, this.LaySanPhamOperationCompleted, userState);
+        }
+        
+        private void OnLaySanPhamOperationCompleted(object arg) {
+            if ((this.LaySanPhamCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.LaySanPhamCompleted(this, new LaySanPhamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CheckSanPham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool CheckSanPham(string TenSP) {
+            object[] results = this.Invoke("CheckSanPham", new object[] {
+                        TenSP});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CheckSanPhamAsync(string TenSP) {
+            this.CheckSanPhamAsync(TenSP, null);
+        }
+        
+        /// <remarks/>
+        public void CheckSanPhamAsync(string TenSP, object userState) {
+            if ((this.CheckSanPhamOperationCompleted == null)) {
+                this.CheckSanPhamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckSanPhamOperationCompleted);
+            }
+            this.InvokeAsync("CheckSanPham", new object[] {
+                        TenSP}, this.CheckSanPhamOperationCompleted, userState);
+        }
+        
+        private void OnCheckSanPhamOperationCompleted(object arg) {
+            if ((this.CheckSanPhamCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckSanPhamCompleted(this, new CheckSanPhamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1753,7 +1919,7 @@ namespace GiayDep.Service_SanPham {
         
         private int maSizeField;
         
-        private int size1Field;
+        private System.Nullable<int> size1Field;
         
         private CTDH[] cTDHsField;
         
@@ -1772,7 +1938,8 @@ namespace GiayDep.Service_SanPham {
         }
         
         /// <remarks/>
-        public int Size1 {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Size1 {
             get {
                 return this.size1Field;
             }
@@ -1938,6 +2105,136 @@ namespace GiayDep.Service_SanPham {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((SanPham[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void SanphammoiPartialCompletedEventHandler(object sender, SanphammoiPartialCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SanphammoiPartialCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SanphammoiPartialCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public SanPham[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((SanPham[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void SanphamkhuyenmaiPartialCompletedEventHandler(object sender, SanphamkhuyenmaiPartialCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SanphamkhuyenmaiPartialCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SanphamkhuyenmaiPartialCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public SanPham[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((SanPham[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void ChitietsanphamCompletedEventHandler(object sender, ChitietsanphamCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ChitietsanphamCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ChitietsanphamCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public SanPham Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((SanPham)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void LaySanPhamCompletedEventHandler(object sender, LaySanPhamCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LaySanPhamCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal LaySanPhamCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public SanPham Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((SanPham)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void CheckSanPhamCompletedEventHandler(object sender, CheckSanPhamCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CheckSanPhamCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CheckSanPhamCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }

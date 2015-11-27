@@ -38,7 +38,7 @@ namespace GiayDep.Models
             itenmau = m.TenMau ;
             var si = s.LaySizeTheoMa(size);
             isize = size;
-            itensize = si.Size1;
+            //itensize = si.Size1;
             SanPham sp = db.LayMa(MaSP);
             stensp = sp.TenSP;
            anhbia = sp.HinhAnh;

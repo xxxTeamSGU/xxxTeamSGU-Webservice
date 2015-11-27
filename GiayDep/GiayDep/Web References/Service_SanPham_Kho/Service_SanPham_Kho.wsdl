@@ -149,10 +149,10 @@
   </wsdl:binding>
   <wsdl:service name="Service_SanPham_Kho">
     <wsdl:port name="Service_SanPham_KhoSoap" binding="tns:Service_SanPham_KhoSoap">
-      <soap:address location="http://localhost:61817/Service_SanPham_Kho.asmx" />
+      <soap:address location="http://servicegiaydep.azurewebsites.net/Service_SanPham_Kho.asmx" />
     </wsdl:port>
     <wsdl:port name="Service_SanPham_KhoSoap12" binding="tns:Service_SanPham_KhoSoap12">
-      <soap12:address location="http://localhost:61817/Service_SanPham_Kho.asmx" />
+      <soap12:address location="http://servicegiaydep.azurewebsites.net/Service_SanPham_Kho.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
