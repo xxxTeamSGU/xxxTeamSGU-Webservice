@@ -59,5 +59,9 @@ namespace GiayDep.Controllers
             var giaban = k.LayGia(MaSP,MaMau);
             return giaban;
         }
+        public ActionResult images()
+        {
+            return View();
+        }
 	}
 }

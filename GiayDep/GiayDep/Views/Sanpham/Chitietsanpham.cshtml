@@ -55,49 +55,58 @@
     foreach (var item in Model)
     {
         
-                        <div class="product-details">
+                        <div class="product-details row">
 
                             <!--product-details-->
-                            <div class="col-sm-5">
+                            <div class="col-sm-7">
 
-                                <div class="view-product img-hover">
-               
-                                    <img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])"  />
-               
-                                </div>
-                                <div id="similar-product" class="carousel slide" data-ride="carousel">
-
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="100" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                        </div>
-                                        <div class="item">
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                        </div>
-                                        <div class="item">
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt=""  height="23" width="20"></a>
-                                            <a href=""><img src="@Url.Content("~/images/home/" + item._HinhAnh)" alt="" height="23" width="20"></a>
-                                        </div>
-
+                                <!-- tp product -->
+                                <section class="col-lg-9 col-md-9 col-sm-9 m_xs_bottom_30">
+                                    <div class="clearfix m_bottom_30 t_xs_align_c">
+                                        <div class="photoframe type_2 shadow r_corners f_left f_sm_none d_xs_inline_b product_single_preview relative m_right_30 m_bottom_5 m_sm_bottom_20 m_xs_right_0 w_mxs_full">
+                                            <span class="hot_stripe"><img src="~/images/t/sale_product.png" alt=""></span>
+                                            <div class="relative d_inline_b m_bottom_10 qv_preview d_xs_block">
+                                                <img id="zoom_image" src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" data-zoom-image="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" class="tr_all_hover" alt="">
+                                                <a href="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" class="d_block button_type_5 r_/@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])corners tr_all_hover box_s_none color_light p_hr_0">
+                                                    <i class="fa fa-expand"></i>
+                                                </a>
+                                            </div>
+                                            <!--carousel - thumbnail imahge here-->
+                                            <div class="relative qv_carousel_wrap">
+                                                <button class="button_type_11 bg_light_color_1 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_single_prev">
+                                                    <i class="fa fa-angle-left "></i>
+                                                </button>
+                                                <ul class="qv_carousel_single d_inline_middle">
+                                                    <a href="#" data-image="images/preview_zoom_1.jpg" data-zoom-image="images/preview_zoom_1.jpg">
+                                                        <img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="">
+                                                    </a>
+                                                    <a href="#" data-image="images/preview_zoom_1.jpg" data-zoom-image="images/preview_zoom_1.jpg">
+                                                        <img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="">
+                                                    </a>
+                                                    <a href="#" data-image="images/preview_zoom_1.jpg" data-zoom-image="images/preview_zoom_1.jpg">
+                                                        <img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="">
+                                                    </a>
+                                                    <a href="#" data-image="images/preview_zoom_1.jpg" data-zoom-image="images/preview_zoom_1.jpg">
+                                                        <img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="">
+                                                    </a>
+                                                    <a href="#" data-image="images/preview_zoom_1.jpg" data-zoom-image="images/preview_zoom_1.jpg">
+                                                        <img src="@Url.Content("~/images/home/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="">
+                                                    </a>
+                                                    </ul>
+                                                <button class="button_type_11 bg_light_color_1 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_single_next">
+                                                    <i class="fa fa-angle-right "></i>
+                                                </button>
+                                            </div>
+                                            <!-- end carousel - thumbnail imahge here-->
+                                        
+                                    
                                     </div>
+                                </section>
 
-                                    <!-- Controls -->
-                                    <a class="left item-control" href="#similar-product" data-slide="prev">
-                                        <i class="fa fa-angle-left"></i>
-                                    </a>
-                                    <a class="right item-control" href="#similar-product" data-slide="next">
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </div>
+                                <!-- end tp product -->
 
                             </div>
-                            <div class="col-sm-7">
+                            <div class="col-sm-5">
                                 <div class="product-information">
 
                                     <!--/product-information-->
