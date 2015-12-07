@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1bfe498-e5c1-4d43-af0e-dbb7def9ff25" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://huyservice.azurewebsites.net/Service_Loai.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_Loai.xsd" MetadataType="Schema" ID="8896d61f-30ee-484f-89d6-390777814c55" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Loai.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_Loai1.xsd" MetadataType="Schema" ID="96b71be6-7b9f-48fd-90d2-fcef26072519" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Loai.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service_Loai2.xsd" MetadataType="Schema" ID="365ce372-cc8c-4fb4-b9f8-8c4f4f43695b" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Loai.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_Loai.wsdl" MetadataType="Wsdl" ID="05e3fc6d-43cc-4efc-94e1-889ea527ac44" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Loai.svc?wsdl" />
+    <MetadataFile FileName="Service_Loai.disco" MetadataType="Disco" ID="faa101bc-d540-423e-bd8d-1b03debe1c8f" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Loai.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

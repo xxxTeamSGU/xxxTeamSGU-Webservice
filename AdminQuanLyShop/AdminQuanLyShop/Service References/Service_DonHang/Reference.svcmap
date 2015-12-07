@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="58195f60-92e8-4e74-affc-0ca3d21d3a90" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://huyservice.azurewebsites.net/Service_DonHang.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_DonHang.xsd" MetadataType="Schema" ID="badaa0bb-4966-4b8f-a96e-5b50a6288635" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_DonHang.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service_DonHang.wsdl" MetadataType="Wsdl" ID="91e4b352-e2ac-4bec-bdd5-23c693093a01" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_DonHang.svc?wsdl" />
+    <MetadataFile FileName="Service_DonHang1.xsd" MetadataType="Schema" ID="8cdd8b37-3793-495d-b281-27d678921673" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_DonHang.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_DonHang.disco" MetadataType="Disco" ID="74c08c54-960d-4314-a104-ccc5ddcc1ea9" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_DonHang.svc?disco" />
+    <MetadataFile FileName="Service_DonHang2.xsd" MetadataType="Schema" ID="72c4c120-51d0-478d-a2f1-e0b6addac181" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_DonHang.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4f68baf9-0c61-4fac-bbf1-c1098221a72f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_HoaDonNhap.xsd" MetadataType="Schema" ID="6991cfeb-6709-43d1-a46a-d1a16393e4b0" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_HoaDonNhap.disco" MetadataType="Disco" ID="98b1752f-63ef-4bab-928d-ab41984e020f" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?disco" />
+    <MetadataFile FileName="Service_HoaDonNhap1.xsd" MetadataType="Schema" ID="e9e91139-86a5-4e1a-b886-27fbde92a7f6" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_HoaDonNhap2.xsd" MetadataType="Schema" ID="0eb517e5-2059-494d-97f1-5ecfc60a6525" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service_HoaDonNhap.wsdl" MetadataType="Wsdl" ID="019567f6-f01d-4373-8a74-2dcf93824aa7" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

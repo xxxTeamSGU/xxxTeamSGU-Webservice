@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="742974bc-1ccc-4509-8516-7d512210afa0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://huyservice.azurewebsites.net/Service_CTDH.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_CTDH.xsd" MetadataType="Schema" ID="7094d5ce-0b9d-4dc1-8416-150cddd4a1e7" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_CTDH.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_CTDH1.xsd" MetadataType="Schema" ID="18dff413-751d-4921-a1cf-8a06dee1d061" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_CTDH.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_CTDH2.xsd" MetadataType="Schema" ID="5c3cde1f-cf9e-4410-b568-d8965d61d2a8" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_CTDH.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service_CTDH.wsdl" MetadataType="Wsdl" ID="e9782c8c-b426-406f-9f46-202be4f13a99" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_CTDH.svc?wsdl" />
+    <MetadataFile FileName="Service_CTDH.disco" MetadataType="Disco" ID="a0638711-d89c-44ad-b9eb-64d6608e19bc" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_CTDH.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

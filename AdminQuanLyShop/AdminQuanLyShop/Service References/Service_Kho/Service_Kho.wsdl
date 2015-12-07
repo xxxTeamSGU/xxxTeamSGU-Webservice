@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_Kho" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService_Kho_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_Kho.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_Kho.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_Kho.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_Kho_LayTatCaKho_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaKho" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayTatCaKho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaKhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayKhoTheoSP_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayKhoTheoSP" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayKhoTheoSP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayKhoTheoSPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_NhapMoi_InputMessage">
+    <wsdl:part name="parameters" element="tns:NhapMoi" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_NhapMoi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NhapMoiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CapNhat_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhat" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CapNhat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CapNhatBanHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatBanHang" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CapNhatBanHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatBanHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CheckKho_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckKho" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CheckKho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckKhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CheckSoLuong_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSoLuong" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CheckSoLuong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSoLuongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_ThemKho_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemKho" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_ThemKho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemKhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_XuatKho_InputMessage">
+    <wsdl:part name="parameters" element="tns:XuatKho" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_XuatKho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XuatKhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CapNhatGiaBanMoi_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatGiaBanMoi" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_CapNhatGiaBanMoi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatGiaBanMoiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayKho_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayKho" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayKho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayKhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LaySize_InputMessage">
+    <wsdl:part name="parameters" element="tns:LaySize" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LaySize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LaySizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayMau_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayMau" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayMau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayMauResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayGia_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayGia" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_LayGia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayGiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_ChonMau_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChonMau" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_ChonMau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChonMauResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService_Kho">
+    <wsdl:operation name="LayTatCaKho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LayTatCaKho" message="tns:IService_Kho_LayTatCaKho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LayTatCaKhoResponse" message="tns:IService_Kho_LayTatCaKho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayKhoTheoSP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LayKhoTheoSP" message="tns:IService_Kho_LayKhoTheoSP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LayKhoTheoSPResponse" message="tns:IService_Kho_LayKhoTheoSP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NhapMoi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/NhapMoi" message="tns:IService_Kho_NhapMoi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/NhapMoiResponse" message="tns:IService_Kho_NhapMoi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/CapNhat" message="tns:IService_Kho_CapNhat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/CapNhatResponse" message="tns:IService_Kho_CapNhat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatBanHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/CapNhatBanHang" message="tns:IService_Kho_CapNhatBanHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/CapNhatBanHangResponse" message="tns:IService_Kho_CapNhatBanHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckKho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/CheckKho" message="tns:IService_Kho_CheckKho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/CheckKhoResponse" message="tns:IService_Kho_CheckKho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoLuong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/CheckSoLuong" message="tns:IService_Kho_CheckSoLuong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/CheckSoLuongResponse" message="tns:IService_Kho_CheckSoLuong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemKho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/ThemKho" message="tns:IService_Kho_ThemKho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/ThemKhoResponse" message="tns:IService_Kho_ThemKho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XuatKho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/XuatKho" message="tns:IService_Kho_XuatKho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/XuatKhoResponse" message="tns:IService_Kho_XuatKho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatGiaBanMoi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/CapNhatGiaBanMoi" message="tns:IService_Kho_CapNhatGiaBanMoi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/CapNhatGiaBanMoiResponse" message="tns:IService_Kho_CapNhatGiaBanMoi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayKho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LayKho" message="tns:IService_Kho_LayKho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LayKhoResponse" message="tns:IService_Kho_LayKho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LaySize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LaySize" message="tns:IService_Kho_LaySize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LaySizeResponse" message="tns:IService_Kho_LaySize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayMau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LayMau" message="tns:IService_Kho_LayMau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LayMauResponse" message="tns:IService_Kho_LayMau_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayGia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LayGia" message="tns:IService_Kho_LayGia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LayGiaResponse" message="tns:IService_Kho_LayGia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChonMau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/ChonMau" message="tns:IService_Kho_ChonMau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/ChonMauResponse" message="tns:IService_Kho_ChonMau_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService_Kho" type="tns:IService_Kho">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayTatCaKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayKhoTheoSP">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayKhoTheoSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NhapMoi">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/NhapMoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhat">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CapNhat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatBanHang">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CapNhatBanHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CheckKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoLuong">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CheckSoLuong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/ThemKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XuatKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/XuatKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatGiaBanMoi">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CapNhatGiaBanMoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LaySize">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LaySize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayGia">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayGia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChonMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/ChonMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService_Kho" type="tns:IService_Kho">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService_Kho_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayTatCaKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayKhoTheoSP">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayKhoTheoSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NhapMoi">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/NhapMoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhat">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CapNhat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatBanHang">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CapNhatBanHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CheckKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoLuong">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CheckSoLuong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/ThemKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XuatKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/XuatKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatGiaBanMoi">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/CapNhatGiaBanMoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LaySize">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LaySize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayGia">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/LayGia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChonMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/ChonMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_Kho">
+    <wsdl:port name="BasicHttpBinding_IService_Kho" binding="tns:BasicHttpBinding_IService_Kho">
+      <soap:address location="http://huyservice.azurewebsites.net/Service_Kho.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService_Kho" binding="tns:BasicHttpsBinding_IService_Kho">
+      <soap:address location="https://huyservice.azurewebsites.net/Service_Kho.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_NhaCungCap" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService_NhaCungCap_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_NhaCungCap_LayTatCaNhaCungCap_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaNhaCungCap" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_LayTatCaNhaCungCap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaNhaCungCapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_ThemNhaCungCap_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemNhaCungCap" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_ThemNhaCungCap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemNhaCungCapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_SuaNhaCungCap_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaNhaCungCap" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_SuaNhaCungCap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaNhaCungCapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_XoaNhaCungCap_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaNhaCungCap" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_XoaNhaCungCap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaNhaCungCapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_TimKiemNhaCungCap_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimKiemNhaCungCap" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_TimKiemNhaCungCap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimKiemNhaCungCapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_CheckNhaCungCap_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckNhaCungCap" />
+  </wsdl:message>
+  <wsdl:message name="IService_NhaCungCap_CheckNhaCungCap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckNhaCungCapResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService_NhaCungCap">
+    <wsdl:operation name="LayTatCaNhaCungCap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_NhaCungCap/LayTatCaNhaCungCap" message="tns:IService_NhaCungCap_LayTatCaNhaCungCap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_NhaCungCap/LayTatCaNhaCungCapResponse" message="tns:IService_NhaCungCap_LayTatCaNhaCungCap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemNhaCungCap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_NhaCungCap/ThemNhaCungCap" message="tns:IService_NhaCungCap_ThemNhaCungCap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_NhaCungCap/ThemNhaCungCapResponse" message="tns:IService_NhaCungCap_ThemNhaCungCap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaNhaCungCap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_NhaCungCap/SuaNhaCungCap" message="tns:IService_NhaCungCap_SuaNhaCungCap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_NhaCungCap/SuaNhaCungCapResponse" message="tns:IService_NhaCungCap_SuaNhaCungCap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaNhaCungCap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_NhaCungCap/XoaNhaCungCap" message="tns:IService_NhaCungCap_XoaNhaCungCap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_NhaCungCap/XoaNhaCungCapResponse" message="tns:IService_NhaCungCap_XoaNhaCungCap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimKiemNhaCungCap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_NhaCungCap/TimKiemNhaCungCap" message="tns:IService_NhaCungCap_TimKiemNhaCungCap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_NhaCungCap/TimKiemNhaCungCapResponse" message="tns:IService_NhaCungCap_TimKiemNhaCungCap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNhaCungCap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_NhaCungCap/CheckNhaCungCap" message="tns:IService_NhaCungCap_CheckNhaCungCap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_NhaCungCap/CheckNhaCungCapResponse" message="tns:IService_NhaCungCap_CheckNhaCungCap_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService_NhaCungCap" type="tns:IService_NhaCungCap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/LayTatCaNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/ThemNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/SuaNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/XoaNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimKiemNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/TimKiemNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/CheckNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService_NhaCungCap" type="tns:IService_NhaCungCap">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService_NhaCungCap_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/LayTatCaNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/ThemNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/SuaNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/XoaNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimKiemNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/TimKiemNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNhaCungCap">
+      <soap:operation soapAction="http://tempuri.org/IService_NhaCungCap/CheckNhaCungCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_NhaCungCap">
+    <wsdl:port name="BasicHttpBinding_IService_NhaCungCap" binding="tns:BasicHttpBinding_IService_NhaCungCap">
+      <soap:address location="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService_NhaCungCap" binding="tns:BasicHttpsBinding_IService_NhaCungCap">
+      <soap:address location="https://huyservice.azurewebsites.net/Service_NhaCungCap.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

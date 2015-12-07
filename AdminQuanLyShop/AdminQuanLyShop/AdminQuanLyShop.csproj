@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FBB968E6-3683-4F73-9B2D-B71EF1D44799}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdminQuanLyShop</RootNamespace>
+    <AssemblyName>AdminQuanLyShop</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.6.1.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataTAble.cs" />
+    <Compile Include="FrmCTHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTHDN.Designer.cs">
+      <DependentUpon>FrmCTHDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDangNhap.Designer.cs">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDoiThongTinNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDoiThongTinNhanVien.Designer.cs">
+      <DependentUpon>FrmDoiThongTinNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHoaDonNhap.Designer.cs">
+      <DependentUpon>FrmHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHoaDonXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHoaDonXuat.Designer.cs">
+      <DependentUpon>FrmHoaDonXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKhachHang.Designer.cs">
+      <DependentUpon>FrmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKho.Designer.cs">
+      <DependentUpon>FrmKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKhuyenMai.Designer.cs">
+      <DependentUpon>FrmKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoai.Designer.cs">
+      <DependentUpon>FrmLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMau.Designer.cs">
+      <DependentUpon>FrmMau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhaCungCap.Designer.cs">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLySanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLySanPham.Designer.cs">
+      <DependentUpon>FrmQuanLySanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSize.Designer.cs">
+      <DependentUpon>FrmSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Service_CTDH\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_CTHDN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_DonHang\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_HoaDonNhap\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_KhachHang\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_Kho\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_KhuyenMai\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_Loai\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_Mau\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_NhaCungCap\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_NhanVien\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_SanPham\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_SanPham_Kho\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Service_Size\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmCTHDN.resx">
+      <DependentUpon>FrmCTHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDangNhap.resx">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDoiThongTinNhanVien.resx">
+      <DependentUpon>FrmDoiThongTinNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHoaDonNhap.resx">
+      <DependentUpon>FrmHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHoaDonXuat.resx">
+      <DependentUpon>FrmHoaDonXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKhachHang.resx">
+      <DependentUpon>FrmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKho.resx">
+      <DependentUpon>FrmKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKhuyenMai.resx">
+      <DependentUpon>FrmKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoai.resx">
+      <DependentUpon>FrmLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMau.resx">
+      <DependentUpon>FrmMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhaCungCap.resx">
+      <DependentUpon>FrmNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLySanPham.resx">
+      <DependentUpon>FrmQuanLySanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSize.resx">
+      <DependentUpon>FrmSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\Service_CTDH\AdminQuanLyShop.Service_CTDH.CTHDXuat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_CTDH\AdminQuanLyShop.Service_CTDH.SanPham_Price.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_CTDH\Service_CTDH.wsdl" />
+    <None Include="Service References\Service_CTDH\Service_CTDH.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_CTDH\Service_CTDH1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_CTDH\Service_CTDH2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_CTHDN\AdminQuanLyShop.Service_CTHDN.HoaDon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_CTHDN\Service_CTHDN.wsdl" />
+    <None Include="Service References\Service_CTHDN\Service_CTHDN.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_CTHDN\Service_CTHDN1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_CTHDN\Service_CTHDN2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_DonHang\AdminQuanLyShop.Service_DonHang.DonHang.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_DonHang\AdminQuanLyShop.Service_DonHang.HoaDonXuat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_DonHang\Service_DonHang.wsdl" />
+    <None Include="Service References\Service_DonHang\Service_DonHang.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_DonHang\Service_DonHang1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_DonHang\Service_DonHang2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_HoaDonNhap\AdminQuanLyShop.Service_HoaDonNhap.HoaDonNhap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_HoaDonNhap\Service_HoaDonNhap.wsdl" />
+    <None Include="Service References\Service_HoaDonNhap\Service_HoaDonNhap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_HoaDonNhap\Service_HoaDonNhap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_HoaDonNhap\Service_HoaDonNhap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_KhachHang\AdminQuanLyShop.Service_KhachHang.KhachHang.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_KhachHang\Service_KhachHang.wsdl" />
+    <None Include="Service References\Service_KhachHang\Service_KhachHang.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_KhachHang\Service_KhachHang1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_KhachHang\Service_KhachHang2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Kho\AdminQuanLyShop.Service_Kho.Kho.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Kho\AdminQuanLyShop.Service_Kho.Kho_SP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Kho\AdminQuanLyShop.Service_Kho.LayMau.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Kho\AdminQuanLyShop.Service_Kho.LaySize.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Kho\AdminQuanLyShop.Service_Kho.SanPham_Price.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Kho\Service_Kho.wsdl" />
+    <None Include="Service References\Service_Kho\Service_Kho.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Kho\Service_Kho1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Kho\Service_Kho2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_KhuyenMai\AdminQuanLyShop.Service_KhuyenMai.KhuyenMai.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_KhuyenMai\Service_KhuyenMai.wsdl" />
+    <None Include="Service References\Service_KhuyenMai\Service_KhuyenMai.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_KhuyenMai\Service_KhuyenMai1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_KhuyenMai\Service_KhuyenMai2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Loai\AdminQuanLyShop.Service_Loai.Loai.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Loai\Service_Loai.wsdl" />
+    <None Include="Service References\Service_Loai\Service_Loai.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Loai\Service_Loai1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Loai\Service_Loai2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Mau\AdminQuanLyShop.Service_Mau.Mau.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Mau\Service_Mau.wsdl" />
+    <None Include="Service References\Service_Mau\Service_Mau.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Mau\Service_Mau1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Mau\Service_Mau2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_NhaCungCap\AdminQuanLyShop.Service_NhaCungCap.NhaCungCap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_NhaCungCap\Service_NhaCungCap.wsdl" />
+    <None Include="Service References\Service_NhaCungCap\Service_NhaCungCap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_NhaCungCap\Service_NhaCungCap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_NhaCungCap\Service_NhaCungCap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_NhanVien\AdminQuanLyShop.Service_NhanVien.NhanVien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_NhanVien\Service_NhanVien.wsdl" />
+    <None Include="Service References\Service_NhanVien\Service_NhanVien.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_NhanVien\Service_NhanVien1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_NhanVien\Service_NhanVien2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_SanPham\AdminQuanLyShop.Service_SanPham.SanPham.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_SanPham\AdminQuanLyShop.Service_SanPham.TH.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_SanPham\Service1.wsdl" />
+    <None Include="Service References\Service_SanPham\Service_SanPham.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_SanPham\Service_SanPham1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_SanPham\Service_SanPham2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_SanPham_Kho\AdminQuanLyShop.Service_SanPham_Kho.Kho.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_SanPham_Kho\AdminQuanLyShop.Service_SanPham_Kho.SanPham_Price.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_SanPham_Kho\Service_SanPham_Kho.wsdl" />
+    <None Include="Service References\Service_SanPham_Kho\Service_SanPham_Kho.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_SanPham_Kho\Service_SanPham_Kho1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_SanPham_Kho\Service_SanPham_Kho2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Size\AdminQuanLyShop.Service_Size.Size.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service_Size\Service_Size.wsdl" />
+    <None Include="Service References\Service_Size\Service_Size.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Size\Service_Size1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service_Size\Service_Size2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Service_CTDH\" />
+    <WCFMetadataStorage Include="Service References\Service_CTHDN\" />
+    <WCFMetadataStorage Include="Service References\Service_DonHang\" />
+    <WCFMetadataStorage Include="Service References\Service_HoaDonNhap\" />
+    <WCFMetadataStorage Include="Service References\Service_KhachHang\" />
+    <WCFMetadataStorage Include="Service References\Service_Kho\" />
+    <WCFMetadataStorage Include="Service References\Service_KhuyenMai\" />
+    <WCFMetadataStorage Include="Service References\Service_Loai\" />
+    <WCFMetadataStorage Include="Service References\Service_Mau\" />
+    <WCFMetadataStorage Include="Service References\Service_NhaCungCap\" />
+    <WCFMetadataStorage Include="Service References\Service_NhanVien\" />
+    <WCFMetadataStorage Include="Service References\Service_SanPham\" />
+    <WCFMetadataStorage Include="Service References\Service_SanPham_Kho\" />
+    <WCFMetadataStorage Include="Service References\Service_Size\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham\Service_SanPham.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhachHang\Service_KhachHang.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhachHang\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhachHang\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhachHang\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhanVien\Service_NhanVien.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhanVien\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhanVien\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhanVien\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhaCungCap\Service_NhaCungCap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhaCungCap\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhaCungCap\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_NhaCungCap\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Loai\Service_Loai.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Loai\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Loai\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Loai\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Mau\Service_Mau.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Mau\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Mau\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Mau\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Size\Service_Size.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Size\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Size\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Size\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTDH\Service_CTDH.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTDH\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTDH\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTDH\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTHDN\Service_CTHDN.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTHDN\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTHDN\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_CTHDN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_DonHang\Service_DonHang.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_DonHang\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_DonHang\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_DonHang\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_HoaDonNhap\Service_HoaDonNhap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_HoaDonNhap\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_HoaDonNhap\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_HoaDonNhap\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Kho\Service_Kho.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Kho\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Kho\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_Kho\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham_Kho\Service_SanPham_Kho.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham_Kho\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham_Kho\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_SanPham_Kho\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhuyenMai\Service_KhuyenMai.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhuyenMai\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhuyenMai\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Service_KhuyenMai\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

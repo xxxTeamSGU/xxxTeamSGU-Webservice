@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_CTDH.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="ThemCTDH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaDH" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+        <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
+        <xs:element minOccurs="0" name="DonGia" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemCTDHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemCTDHResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LsCTDH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaDH" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LsCTDHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LsCTDHResult" nillable="true" type="q1:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayCTHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayCTHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayCTHDNResult" nillable="true" type="q2:ArrayOfCTHDXuat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaCTDH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaDH" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaCTDHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XoaCTDHResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

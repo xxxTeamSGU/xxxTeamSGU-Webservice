@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="00e2af4a-e42b-4c50-bc0f-6b3e6e4401dc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_NhaCungCap.xsd" MetadataType="Schema" ID="cc55803d-2b1a-46d0-bbcf-452c85c4c5f6" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_NhaCungCap.disco" MetadataType="Disco" ID="279f765f-517a-4928-a75b-945bbcdb7676" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?disco" />
+    <MetadataFile FileName="Service_NhaCungCap.wsdl" MetadataType="Wsdl" ID="c7e877a0-ea5d-4ad3-acbf-083b4aa0c3b3" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?wsdl" />
+    <MetadataFile FileName="Service_NhaCungCap1.xsd" MetadataType="Schema" ID="30c8c4c6-e3ea-4ab4-83ae-c3d84e3a47ca" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_NhaCungCap2.xsd" MetadataType="Schema" ID="cf103840-ee99-4486-9691-1b0faa1e6c09" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

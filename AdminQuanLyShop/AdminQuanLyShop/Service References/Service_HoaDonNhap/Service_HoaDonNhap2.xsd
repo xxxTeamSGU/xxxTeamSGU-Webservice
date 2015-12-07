@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="LayTatCaHoaDon">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaHoaDonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayTatCaHoaDonResult" nillable="true" type="q1:ArrayOfHoaDonNhap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaNCC" type="xs:int" />
+        <xs:element minOccurs="0" name="MaNV" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayLap" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
+        <xs:element minOccurs="0" name="TinhTrang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemHDNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+        <xs:element minOccurs="0" name="MaNCC" type="xs:int" />
+        <xs:element minOccurs="0" name="MaNV" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayLap" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
+        <xs:element minOccurs="0" name="TinhTrang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuaHDNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XoaHDNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayMotHoaDon">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayMotHoaDonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LayMotHoaDonResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuyetHD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuyetHDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DuyetHDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemHDNVaTraVeMaDHN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaNCC" type="xs:int" />
+        <xs:element minOccurs="0" name="MaNV" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayLap" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
+        <xs:element minOccurs="0" name="TinhTrang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemHDNVaTraVeMaDHNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemHDNVaTraVeMaDHNResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
