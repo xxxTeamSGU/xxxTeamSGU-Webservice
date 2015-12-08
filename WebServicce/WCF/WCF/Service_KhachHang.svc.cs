@@ -127,6 +127,88 @@ namespace WCF
             KhachHang login = db.KhachHangs.SingleOrDefault(n => n.Email == email && n.MatKhau == password);
             return login;
         }
-        
+        [WebMethod]
+        public bool CheckEmail(string Email)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var check = db.KhachHangs.SingleOrDefault(p => p.Email.Equals(Email));
+                    if (check != null)
+                        return true;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
+        [WebMethod]
+        public bool SuaKhachHang(int MaKH, string HoTen, DateTime NgaySinh, string Email,  string SDT, string DiaChi)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var item = db.KhachHangs.Single(p => p.MaKH == MaKH);
+                    if (item != null)
+                    {
+                        if (!HoTen.Equals(""))
+                        {
+                            item.HoTen = HoTen;
+                        }
+                        if (!NgaySinh.Equals(""))
+                        {
+                            item.NgaySinh = NgaySinh;
+                        }
+                        if (!Email.Equals(""))
+                        {
+                            item.Email = Email;
+                        }
+                      
+                        if (!SDT.Equals(""))
+                        {
+                            item.SDT = SDT;
+                        }
+                        if (!DiaChi.Equals(""))
+                        {
+                            item.DiaChi = DiaChi;
+                        }
+
+
+                        db.SaveChanges();
+                        return true;
+                    }
+                    return false;
+                }
+
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return false;
+            }
+        }
+        [WebMethod]
+        public KhachHang LayKhachHang(int MaKH)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    KhachHang list = db.KhachHangs.SingleOrDefault(p => p.MaKH == MaKH);
+                    return list;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
+
     }
 }

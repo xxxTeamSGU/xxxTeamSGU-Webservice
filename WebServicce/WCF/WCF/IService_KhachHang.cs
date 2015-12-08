@@ -24,5 +24,11 @@ namespace WCF
         bool ThemKhachHang(string HoTen, DateTime NgaySinh, string Email, string MatKhau, string SDT, string DiaChi, string GioiTinh);
         [OperationContract]
         KhachHang Login(string email, string password);
+        [OperationContract]
+        bool CheckEmail(string Email);
+        [OperationContract]
+        bool SuaKhachHang(int MaKH, string HoTen, DateTime NgaySinh, string Email, string SDT, string DiaChi);
+        [OperationContract]
+        KhachHang LayKhachHang(int MaKH);
     }
 }
