@@ -42,14 +42,23 @@ namespace AdminQuanLyShop
         {
             if (!txtTenLoai.Text.Equals(""))
             {
-                bool x = svl.ThemLoai(txtTenLoai.Text);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm loại", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Nhập loại thành công");
-                    load();
+                    bool x = svl.ThemLoai(txtTenLoai.Text);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Nhập loại thành công");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Thêm không thành công");
                 }
-                else
-                    MessageBox.Show("Thêm không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+               
             }
             else
                 MessageBox.Show("Chưa nhập tên loại");
@@ -59,14 +68,23 @@ namespace AdminQuanLyShop
         {
             if (!txtTenLoai.Text.Equals("") && !txtMaLoai.Text.Equals(""))
             {
-                bool x = svl.SuaLoai(int.Parse(txtMaLoai.Text),txtTenLoai.Text);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa loại", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("sửa loại thành công");
-                    load();
+                    bool x = svl.SuaLoai(int.Parse(txtMaLoai.Text), txtTenLoai.Text);
+                    if (x == true)
+                    {
+                        MessageBox.Show("sửa loại thành công");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("sửa loại không thành công");
                 }
-                else
-                    MessageBox.Show("sửa loại không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+             
             }
             else
                 MessageBox.Show("Chưa nhập tên loại");
@@ -76,15 +94,24 @@ namespace AdminQuanLyShop
         {
             if (!txtMaLoai.Text.Equals(""))
             {
-                int MaLoai = int.Parse(txtMaLoai.Text);
-                bool x = svl.XoaLoai(MaLoai);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa loại", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa loại");
-                    load();
+                    int MaLoai = int.Parse(txtMaLoai.Text);
+                    bool x = svl.XoaLoai(MaLoai);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Đã xóa loại");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Không xóa được");
                 }
-                else
-                    MessageBox.Show("Không xóa được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+               
 
             }
             else

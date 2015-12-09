@@ -291,8 +291,37 @@ namespace WCF
                         _GiaBan = (decimal)p.GiaBan,
                         _GiaNhap = (decimal)p.GiaNhap,
 
-                    }).ToList();
+                    }).Take(200).ToList();
                     return list;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
+        [WebMethod]
+        public List<Kho_SP> TimKho(string x)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var list = db.Khoes.Select(p => new Kho_SP
+                    {
+                        _MaSP = p.MaSP,
+                        _TenSP = p.SanPham.TenSP,
+                        _MaMau = p.MaMau,
+                        _Mau = p.Mau.TenMau,
+                        _MaSize = p.MaSize,
+                        _Size = p.Size.Size1,
+                        _SoLuong = (int)p.SL,
+                        _GiaBan = (decimal)p.GiaBan,
+                        _GiaNhap = (decimal)p.GiaNhap,
+
+                    }).ToList();
+                    return list.Where(p => p._TenSP.Contains(x) || p._Mau.Contains(x)).ToList();
                 }
             }
             catch (Exception e)

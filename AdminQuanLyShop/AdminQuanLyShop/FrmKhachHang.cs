@@ -114,16 +114,25 @@ namespace AdminQuanLyShop
         {
             if (!txtMaKH.Text.Equals(""))
             {
-                int MaKM = int.Parse(txtMaKH.Text);
-                bool x = svkh.XoaKhachHang(MaKM);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa khách hàng này", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa khách hàng");
-                    _DSKH = svkh.LayTatCaKhachHang().ToList();
-                    load();
+                    int MaKM = int.Parse(txtMaKH.Text);
+                    bool x = svkh.XoaKhachHang(MaKM);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Đã xóa khách hàng");
+                        _DSKH = svkh.LayTatCaKhachHang().ToList();
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Không xóa được");
                 }
-                else
-                    MessageBox.Show("Không xóa được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+              
 
             }
             else

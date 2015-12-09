@@ -43,14 +43,23 @@ namespace AdminQuanLyShop
         {
             if (!txtTenMau.Text.Equals(""))
             {
-                bool x = svm.ThemMau(txtTenMau.Text);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm màu", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Nhập màu thành công");
-                    load();
+                    bool x = svm.ThemMau(txtTenMau.Text);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Nhập màu thành công");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Thêm không thành công");
                 }
-                else
-                    MessageBox.Show("Thêm không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+              
             }
             else
                 MessageBox.Show("Chưa nhập tên màu");
@@ -60,14 +69,23 @@ namespace AdminQuanLyShop
         {
             if (!txtTenMau.Text.Equals("") && !txtMaMau.Text.Equals(""))
             {
-                bool x = svm.SuaMau(int.Parse(txtMaMau.Text), txtTenMau.Text);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa màu", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("sửa màu thành công");
-                    load();
+                    bool x = svm.SuaMau(int.Parse(txtMaMau.Text), txtTenMau.Text);
+                    if (x == true)
+                    {
+                        MessageBox.Show("sửa màu thành công");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("sửa màu không thành công");
                 }
-                else
-                    MessageBox.Show("sửa màu không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+             
             }
             else
                 MessageBox.Show("Chưa nhập tên màu");
@@ -77,15 +95,24 @@ namespace AdminQuanLyShop
         {
             if (!txtMaMau.Text.Equals(""))
             {
-                int MaMau = int.Parse(txtMaMau.Text);
-                bool x = svm.XoaMau(MaMau);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa sản phẩm", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa màu");
-                    load();
+                    int MaMau = int.Parse(txtMaMau.Text);
+                    bool x = svm.XoaMau(MaMau);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Đã xóa màu");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Không xóa được");
                 }
-                else
-                    MessageBox.Show("Không xóa được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+             
 
             }
             else

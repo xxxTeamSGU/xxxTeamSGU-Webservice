@@ -108,14 +108,25 @@ namespace AdminQuanLyShop
                 int ad = 0;
                     if (cbAdmin.Checked == true)
                         ad = 1;
-                bool x = svnv.ThemNhanVien(txtTenNV.Text, txtEmail.Text, "12345678",txtDiaChi.Text,txtSoDT.Text,txtCMND.Text,ad);
-                if (x == true)
-                {
-                    MessageBox.Show("Nhập nhân viên thành công");
-                    load();
-                }
-                else
-                    MessageBox.Show("Thêm không thành công");
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm nhân viên ", "Thông báo", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        bool x = svnv.ThemNhanVien(txtTenNV.Text, txtEmail.Text, "12345678", txtDiaChi.Text, txtSoDT.Text, txtCMND.Text, ad);
+                        if (x == true)
+                        {
+                            MessageBox.Show("Nhập nhân viên thành công");
+                            nhanvien = svnv.LayTatCaNhaNhanVien().ToList();
+                            load();
+                        }
+                        else
+                            MessageBox.Show("Thêm không thành công");
+
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+               
             }
             else
                 MessageBox.Show("Chưa nhập tên nhân viên và email");
@@ -125,15 +136,26 @@ namespace AdminQuanLyShop
         {
             if (!txtMaNV.Text.Equals(""))
             {
-                int MaNV = int.Parse(txtMaNV.Text);
-                bool x = svnv.XoaNhanVien(MaNV);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa nhân viên", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa nhân viên");
-                    load();
+                    int MaNV = int.Parse(txtMaNV.Text);
+                    bool x = svnv.XoaNhanVien(MaNV);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Đã xóa nhân viên");
+                        nhanvien = svnv.LayTatCaNhaNhanVien().ToList();
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Không xóa được");
+
                 }
-                else
-                    MessageBox.Show("Không xóa được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+             
 
             }
             else
@@ -211,6 +233,7 @@ namespace AdminQuanLyShop
 
         private void btTim_Click(object sender, EventArgs e)
         {
+            nhanvien = svnv.LayTatCaNhaNhanVien().ToList();
             if (!txtTim.Text.Equals(""))
             {
                 string x = txtTim.Text.ToString();

@@ -24,14 +24,24 @@ namespace AdminQuanLyShop
         {
             if (!txtTenNCC.Text.Equals(""))
             {
-                bool x = svncc.ThemNhaCungCap(txtTenNCC.Text,txtDiaChi.Text,txtSDT.Text,txtSoTK.Text);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm nhà cung cấp", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Nhập nhà cung cấp thành công");
-                    load();
+                    bool x = svncc.ThemNhaCungCap(txtTenNCC.Text, txtDiaChi.Text, txtSDT.Text, txtSoTK.Text);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Nhập nhà cung cấp thành công");
+                        ncc = svncc.LayTatCaNhaCungCap().ToList();
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Thêm không thành công");
                 }
-                else
-                    MessageBox.Show("Thêm không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            
             }
             else
                 MessageBox.Show("Chưa nhập tên nhà cung cấp");
@@ -40,6 +50,7 @@ namespace AdminQuanLyShop
 
         private void btLoad_Click(object sender, EventArgs e)
         {
+            ncc = svncc.LayTatCaNhaCungCap().ToList();
             load();
         }
         private void load()
@@ -77,15 +88,25 @@ namespace AdminQuanLyShop
         {
             if (!txtTenNCC.Text.Equals("") && !txtMaNCC.Text.Equals(""))
             {
-                bool x = svncc.SuaNhaCungCap(int.Parse(txtMaNCC.Text), txtTenNCC.Text,txtDiaChi.Text,txtSDT.Text,txtSoTK.Text);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa nhà cung cấp", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("sửa nhà cung cấp thành công");
-                    ncc = svncc.LayTatCaNhaCungCap().ToList();
-                    load();
+
+                    bool x = svncc.SuaNhaCungCap(int.Parse(txtMaNCC.Text), txtTenNCC.Text, txtDiaChi.Text, txtSDT.Text, txtSoTK.Text);
+                    if (x == true)
+                    {
+                        MessageBox.Show("sửa nhà cung cấp thành công");
+                        ncc = svncc.LayTatCaNhaCungCap().ToList();
+                        load();
+                    }
+                    else
+                        MessageBox.Show("sửa nhà cung cấp không thành công");
                 }
-                else
-                    MessageBox.Show("sửa nhà cung cấp không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+              
             }
             else
                 MessageBox.Show("Chưa nhập mã và tên nhà cung cấp cần sửa");
@@ -95,15 +116,25 @@ namespace AdminQuanLyShop
         {
             if (!txtMaNCC.Text.Equals(""))
             {
-                int MaNCC = int.Parse(txtMaNCC.Text);
-                bool x = svncc.XoaNhaCungCap(MaNCC);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa nhà cung cấp", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa nhà cung cấp");
-                    load();
+                    int MaNCC = int.Parse(txtMaNCC.Text);
+                    bool x = svncc.XoaNhaCungCap(MaNCC);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Đã xóa nhà cung cấp");
+                        ncc = svncc.LayTatCaNhaCungCap().ToList();
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Không xóa được");
                 }
-                else
-                    MessageBox.Show("Không xóa được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+             
 
             }
             else

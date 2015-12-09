@@ -180,6 +180,12 @@ namespace AdminQuanLyShop.Service_HoaDonNhap {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDon", ReplyAction="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDonResponse")]
         System.Threading.Tasks.Task<AdminQuanLyShop.Service_HoaDonNhap.HoaDonNhap[]> LayTatCaHoaDonAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_HoaDonNhap/TimHoaDon", ReplyAction="http://tempuri.org/IService_HoaDonNhap/TimHoaDonResponse")]
+        AdminQuanLyShop.Service_HoaDonNhap.HoaDonNhap[] TimHoaDon(string x);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_HoaDonNhap/TimHoaDon", ReplyAction="http://tempuri.org/IService_HoaDonNhap/TimHoaDonResponse")]
+        System.Threading.Tasks.Task<AdminQuanLyShop.Service_HoaDonNhap.HoaDonNhap[]> TimHoaDonAsync(string x);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_HoaDonNhap/ThemHDN", ReplyAction="http://tempuri.org/IService_HoaDonNhap/ThemHDNResponse")]
         bool ThemHDN(int MaNCC, int MaNV, string NgayLap, decimal TongTien, int TinhTrang);
         
@@ -250,6 +256,14 @@ namespace AdminQuanLyShop.Service_HoaDonNhap {
         
         public System.Threading.Tasks.Task<AdminQuanLyShop.Service_HoaDonNhap.HoaDonNhap[]> LayTatCaHoaDonAsync() {
             return base.Channel.LayTatCaHoaDonAsync();
+        }
+        
+        public AdminQuanLyShop.Service_HoaDonNhap.HoaDonNhap[] TimHoaDon(string x) {
+            return base.Channel.TimHoaDon(x);
+        }
+        
+        public System.Threading.Tasks.Task<AdminQuanLyShop.Service_HoaDonNhap.HoaDonNhap[]> TimHoaDonAsync(string x) {
+            return base.Channel.TimHoaDonAsync(x);
         }
         
         public bool ThemHDN(int MaNCC, int MaNV, string NgayLap, decimal TongTien, int TinhTrang) {

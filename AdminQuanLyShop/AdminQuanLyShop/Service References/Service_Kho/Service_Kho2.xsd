@@ -13,6 +13,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TimKho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="TimKhoResult" nillable="true" type="q2:ArrayOfKho_SP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="LayKhoTheoSP">
     <xs:complexType>
       <xs:sequence>
@@ -23,7 +37,7 @@
   <xs:element name="LayKhoTheoSPResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayKhoTheoSPResult" nillable="true" type="q2:ArrayOfSanPham_Price" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayKhoTheoSPResult" nillable="true" type="q3:ArrayOfSanPham_Price" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -168,7 +182,7 @@
   <xs:element name="LayKhoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayKhoResult" nillable="true" type="q3:Kho" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayKhoResult" nillable="true" type="q4:Kho" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -183,7 +197,7 @@
   <xs:element name="LaySizeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LaySizeResult" nillable="true" type="q4:ArrayOfLaySize" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LaySizeResult" nillable="true" type="q5:ArrayOfLaySize" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -197,7 +211,7 @@
   <xs:element name="LayMauResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayMauResult" nillable="true" type="q5:ArrayOfLayMau" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayMauResult" nillable="true" type="q6:ArrayOfLayMau" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -227,7 +241,7 @@
   <xs:element name="ChonMauResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="ChonMauResult" nillable="true" type="q6:ArrayOfLaySize" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="ChonMauResult" nillable="true" type="q7:ArrayOfLaySize" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -14,6 +14,9 @@ namespace WCF
     {
         [OperationContract]
         List<Kho_SP> LayTatCaKho();
+
+        [OperationContract]
+        List<Kho_SP> TimKho(string x);
         [OperationContract]
         List<SanPham_Price> LayKhoTheoSP(int MaSP);
         [OperationContract]

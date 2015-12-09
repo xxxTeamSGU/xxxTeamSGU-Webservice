@@ -44,15 +44,24 @@ namespace AdminQuanLyShop
         {
             if (!txtTenSize.Text.Equals(""))
             {
-              
-                bool x = svs.ThemSize(int.Parse(txtTenSize.Text));
-                if (x == true)
+
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm size", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Nhập size thành công");
-                    load();
+                    bool x = svs.ThemSize(int.Parse(txtTenSize.Text));
+                    if (x == true)
+                    {
+                        MessageBox.Show("Nhập size thành công");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Thêm không thành công");
                 }
-                else
-                    MessageBox.Show("Thêm không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+              
             }
             else
                 MessageBox.Show("Chưa nhập tên size");

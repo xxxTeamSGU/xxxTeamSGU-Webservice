@@ -97,16 +97,25 @@ namespace AdminQuanLyShop
         {
             if (!txtTenKM.Text.Equals(""))
             {
-                DateTime Ngaybd = DateTime.Parse(dtBatDau.Value.ToString("yyyy-MM-dd"));
-                DateTime Ngaykt = DateTime.Parse(dtKetThuc.Value.ToString("yyyy-MM-dd"));
-                bool x = svkm.ThemKM(txtTenKM.Text,Ngaybd,Ngaykt);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm khuyến mãi", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Nhập khuyến mãi thành công");
-                    load();
+                    DateTime Ngaybd = DateTime.Parse(dtBatDau.Value.ToString("yyyy-MM-dd"));
+                    DateTime Ngaykt = DateTime.Parse(dtKetThuc.Value.ToString("yyyy-MM-dd"));
+                    bool x = svkm.ThemKM(txtTenKM.Text, Ngaybd, Ngaykt);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Nhập khuyến mãi thành công");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Thêm không thành công");
                 }
-                else
-                    MessageBox.Show("Thêm không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+             
             }
             else
                 MessageBox.Show("Chưa nhập loại khuyến mãi");
@@ -116,16 +125,25 @@ namespace AdminQuanLyShop
         {
             if (!txtTenKM.Text.Equals("") && !txtMaKM.Text.Equals(""))
             {
-                DateTime Ngaybd = DateTime.Parse(dtBatDau.Value.ToString("yyyy-MM-dd"));
-                DateTime Ngaykt = DateTime.Parse(dtKetThuc.Value.ToString("yyyy-MM-dd"));
-                bool x = svkm.SuaKM(int.Parse(txtMaKM.Text), txtTenKM.Text,Ngaybd,Ngaykt);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa thông tin khuyến mãi", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("sửa khuyến mãi thành công");
-                    load();
+                    DateTime Ngaybd = DateTime.Parse(dtBatDau.Value.ToString("yyyy-MM-dd"));
+                    DateTime Ngaykt = DateTime.Parse(dtKetThuc.Value.ToString("yyyy-MM-dd"));
+                    bool x = svkm.SuaKM(int.Parse(txtMaKM.Text), txtTenKM.Text, Ngaybd, Ngaykt);
+                    if (x == true)
+                    {
+                        MessageBox.Show("sửa khuyến mãi thành công");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("sửa sỉze không thành công");
                 }
-                else
-                    MessageBox.Show("sửa sỉze không thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            
             }
             else
                 MessageBox.Show("Chưa nhập tên khuyến mãi");
@@ -135,16 +153,25 @@ namespace AdminQuanLyShop
         {
             if (!txtMaKM.Text.Equals(""))
             {
-                int MaKM = int.Parse(txtMaKM.Text);
-                bool x = svkm.XoaKM(MaKM);
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa khuyến mãi này", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa khuyến mãi");
-                    load();
-                }
-                else
-                    MessageBox.Show("Không xóa được");
+                    int MaKM = int.Parse(txtMaKM.Text);
+                    bool x = svkm.XoaKM(MaKM);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Đã xóa khuyến mãi");
+                        load();
+                    }
+                    else
+                        MessageBox.Show("Không xóa được");
 
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+             
             }
             else
                 MessageBox.Show("Chưa có mã khuyến mãi cần xóa");

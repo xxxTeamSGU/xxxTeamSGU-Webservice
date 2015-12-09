@@ -15,6 +15,8 @@ namespace WCF
         [OperationContract]
         List<HoaDonNhap> LayTatCaHoaDon();
         [OperationContract]
+        List<HoaDonNhap> TimHoaDon(string x);
+        [OperationContract]
         bool ThemHDN(int MaNCC, int MaNV, string NgayLap, decimal TongTien, int TinhTrang);
         [OperationContract]
         bool SuaHDN(int MaHDN, int MaNCC, int MaNV, string NgayLap, decimal TongTien, int TinhTrang);

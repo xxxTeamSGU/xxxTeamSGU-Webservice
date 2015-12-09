@@ -112,6 +112,32 @@ namespace WCF
                 return null;
             }
         }
+        [WebMethod]
+        public List<HoaDonXuat> TimDonHang(string x)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var list = db.DonHangs.Select(p => new HoaDonXuat
+                    {
+                        _MaHDN = p.MaDH,
+                        _MaKH = (int)p.MaKH,
+                        _KhachHang = p.KhachHang.HoTen,
+                        _NhanVien = p.NVDuyet,
+                        _NgayLap = (DateTime)p.NgayMua,
+                        _TinhTrang = (int)p.TinhTrang,
+                        _TongTien = (int)p.TongTien
+                    }).OrderBy(p => p._NgayLap).ToList();
+                    return list.Where(p => p._KhachHang.Contains(x)).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
 
         [WebMethod]
         public bool DuyetHD(int MaHD, string NhanVien)

@@ -45,6 +45,34 @@ namespace WCF
             }
         }   
         [WebMethod]
+        public List<HoaDonNhap> TimHoaDon(string x)
+        {
+            try
+            {
+                using (DBGiayDepEntities db = new DBGiayDepEntities())
+                {
+                    var list = db.HDNhaps.Select(p => new HoaDonNhap
+                    {
+                        _MaHDN = p.MaHDN,
+                        _MaNCC = (int)p.MaNCC,
+                        _NCC = p.NhaCungCap.TenNCC,
+                        _MaNV = (int)p.MaNV,
+                        _NhanVien = p.NhanVien.HoTen,
+                        _NgayLap = (DateTime)p.NgayNhap,
+                        _TinhTrang = (int)p.TinhTrang,
+                        _TongTien = (int)p.TongTien
+
+                    }).ToList();
+                    return list.Where(p => p._NCC.Contains(x) || p._NhanVien.Contains(x)).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+                return null;
+            }
+        }
+        [WebMethod]
         public int LayMotHoaDon()
         {
             int x = 0;

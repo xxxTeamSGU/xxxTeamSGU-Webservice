@@ -21,6 +21,8 @@ namespace WCF
         [OperationContract]
         List<HoaDonXuat> LayTatCaDonHang();
         [OperationContract]
+        List<HoaDonXuat> TimDonHang(string x);
+        [OperationContract]
         bool DuyetHD(int MaHDN,string NhanVien);
     }
 }

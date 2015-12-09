@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.btTimKiem = new System.Windows.Forms.Button();
             this.btTaiDonHang = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Lavender;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.txtTim);
             this.panel3.Controls.Add(this.btTimKiem);
             this.panel3.Controls.Add(this.btTaiDonHang);
             this.panel3.Location = new System.Drawing.Point(684, 63);
@@ -73,13 +73,13 @@
             this.panel3.Size = new System.Drawing.Size(500, 44);
             this.panel3.TabIndex = 31;
             // 
-            // textBox4
+            // txtTim
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(130, 10);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(236, 26);
-            this.textBox4.TabIndex = 28;
+            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.Location = new System.Drawing.Point(130, 10);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(236, 26);
+            this.txtTim.TabIndex = 28;
             // 
             // btTimKiem
             // 
@@ -92,6 +92,7 @@
             this.btTimKiem.TabIndex = 12;
             this.btTimKiem.Text = "Tìm kiếm";
             this.btTimKiem.UseVisualStyleBackColor = false;
+            this.btTimKiem.Click += new System.EventHandler(this.btTimKiem_Click);
             // 
             // btTaiDonHang
             // 
@@ -375,7 +376,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Button btTimKiem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dtgHoaDonNhap;

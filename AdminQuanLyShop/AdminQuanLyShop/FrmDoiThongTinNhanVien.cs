@@ -118,10 +118,21 @@ namespace AdminQuanLyShop
             if (!txtSoDT.Text.Equals(""))
                 nhanvien.SDT = txtSoDT.Text;
             if (!txtDiaChi.Text.Equals(""))
-                nhanvien.DiaChi = txtCMND.Text;
+                nhanvien.DiaChi = txtDiaChi.Text;
 
-            if(svnv.SuaNhanVien(int.Parse(nhanvien.MaNV.ToString()),"Nguyễn Duy Huy",nhanvien.Email,nhanvien.MatKhau,nhanvien.DiaChi,nhanvien.SDT,nhanvien.CMND,int.Parse(nhanvien.QuyenAdmin.ToString())))
-                MessageBox.Show("Bạn đã sửa thông tin thành công");
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa thông tin", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (svnv.SuaNhanVien(int.Parse(nhanvien.MaNV.ToString()), nhanvien.HoTen, nhanvien.Email, nhanvien.MatKhau, nhanvien.DiaChi, nhanvien.SDT, nhanvien.CMND, int.Parse(nhanvien.QuyenAdmin.ToString())))
+                    MessageBox.Show("Bạn đã sửa thông tin thành công");
+                else
+                    MessageBox.Show("Không sửa được , vui lòng kiểm tra lại");  
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            
 
             
         }

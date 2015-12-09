@@ -56,6 +56,12 @@
   <wsdl:message name="IService_DonHang_LayTatCaDonHang_OutputMessage">
     <wsdl:part name="parameters" element="tns:LayTatCaDonHangResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_DonHang_TimDonHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimDonHang" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_TimDonHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimDonHangResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_DonHang_DuyetHD_InputMessage">
     <wsdl:part name="parameters" element="tns:DuyetHD" />
   </wsdl:message>
@@ -78,6 +84,10 @@
     <wsdl:operation name="LayTatCaDonHang">
       <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/LayTatCaDonHang" message="tns:IService_DonHang_LayTatCaDonHang_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/LayTatCaDonHangResponse" message="tns:IService_DonHang_LayTatCaDonHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimDonHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/TimDonHang" message="tns:IService_DonHang_TimDonHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/TimDonHangResponse" message="tns:IService_DonHang_TimDonHang_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DuyetHD">
       <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/DuyetHD" message="tns:IService_DonHang_DuyetHD_InputMessage" />
@@ -115,6 +125,15 @@
     </wsdl:operation>
     <wsdl:operation name="LayTatCaDonHang">
       <soap:operation soapAction="http://tempuri.org/IService_DonHang/LayTatCaDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimDonHang">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/TimDonHang" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -164,6 +183,15 @@
     </wsdl:operation>
     <wsdl:operation name="LayTatCaDonHang">
       <soap:operation soapAction="http://tempuri.org/IService_DonHang/LayTatCaDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimDonHang">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/TimDonHang" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

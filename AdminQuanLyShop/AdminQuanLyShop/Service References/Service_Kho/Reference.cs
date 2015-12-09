@@ -2772,6 +2772,12 @@ namespace AdminQuanLyShop.Service_Kho {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_Kho/LayTatCaKho", ReplyAction="http://tempuri.org/IService_Kho/LayTatCaKhoResponse")]
         System.Threading.Tasks.Task<AdminQuanLyShop.Service_Kho.Kho_SP[]> LayTatCaKhoAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_Kho/TimKho", ReplyAction="http://tempuri.org/IService_Kho/TimKhoResponse")]
+        AdminQuanLyShop.Service_Kho.Kho_SP[] TimKho(string x);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_Kho/TimKho", ReplyAction="http://tempuri.org/IService_Kho/TimKhoResponse")]
+        System.Threading.Tasks.Task<AdminQuanLyShop.Service_Kho.Kho_SP[]> TimKhoAsync(string x);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_Kho/LayKhoTheoSP", ReplyAction="http://tempuri.org/IService_Kho/LayKhoTheoSPResponse")]
         AdminQuanLyShop.Service_Kho.SanPham_Price[] LayKhoTheoSP(int MaSP);
         
@@ -2890,6 +2896,14 @@ namespace AdminQuanLyShop.Service_Kho {
         
         public System.Threading.Tasks.Task<AdminQuanLyShop.Service_Kho.Kho_SP[]> LayTatCaKhoAsync() {
             return base.Channel.LayTatCaKhoAsync();
+        }
+        
+        public AdminQuanLyShop.Service_Kho.Kho_SP[] TimKho(string x) {
+            return base.Channel.TimKho(x);
+        }
+        
+        public System.Threading.Tasks.Task<AdminQuanLyShop.Service_Kho.Kho_SP[]> TimKhoAsync(string x) {
+            return base.Channel.TimKhoAsync(x);
         }
         
         public AdminQuanLyShop.Service_Kho.SanPham_Price[] LayKhoTheoSP(int MaSP) {

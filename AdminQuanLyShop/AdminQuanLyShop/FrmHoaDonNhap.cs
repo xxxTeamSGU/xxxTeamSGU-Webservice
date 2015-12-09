@@ -22,7 +22,8 @@ namespace AdminQuanLyShop
         Service_NhaCungCapClient svncc = new Service_NhaCungCapClient();
         Service_CTHDNClient svcthdn = new Service_CTHDNClient();
         Service_KhoClient svkho = new Service_KhoClient();
-      //  List<CTHDN> list = new List<CTHDN>();
+        private List<Service_HoaDonNhap.HoaDonNhap> listhtimkiem = new List<Service_HoaDonNhap.HoaDonNhap>();
+        //  List<CTHDN> list = new List<CTHDN>();
         public delegate void SendMessage(string Message);
         public SendMessage Sender;    
           //Hàm có nhiệm vụ lấy tham số truyền vào
@@ -172,17 +173,26 @@ namespace AdminQuanLyShop
         {
             if (!txtMaHD.Text.Equals(""))
             {
-                bool check = true;
-                check = svkho.ThemKho(int.Parse(txtMaHD.Text));
-                if (check == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn duyệt hóa đơn này", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã duyệt thành công hóa đơn");
-                    btDuyet.Text = "Đã duyệt";
-                    btDuyet.Enabled = false;
-                    LoadHDN();
+                    bool check = true;
+                    check = svkho.ThemKho(int.Parse(txtMaHD.Text));
+                    if (check == true)
+                    {
+                        MessageBox.Show("Đã duyệt thành công hóa đơn");
+                        btDuyet.Text = "Đã duyệt";
+                        btDuyet.Enabled = false;
+                        LoadHDN();
+                    }
+                    else
+                        MessageBox.Show("Không duyệt thành công");
                 }
-                else
-                    MessageBox.Show("Không duyệt thành công");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            
             }
             else
                 MessageBox.Show("Không có mã hóa đơn cần duyệt");
@@ -199,17 +209,52 @@ namespace AdminQuanLyShop
         {
             if (!txtMaHD.Text.Equals(""))
             {
-                if (svhdn.XoaHDN(int.Parse(txtMaHD.Text.ToString())))
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa đơn hàng này", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa thành công");
-                    LoadHDN();
+                    if (svhdn.XoaHDN(int.Parse(txtMaHD.Text.ToString())))
+                    {
+                        MessageBox.Show("Đã xóa thành công");
+                        LoadHDN();
 
+                    }
+                    else
+                        MessageBox.Show("Không xóa được");
                 }
-                else
-                    MessageBox.Show("Không xóa được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+               
             }
             else
                 MessageBox.Show("Chọn hóa đơn cần xóa");
+        }
+
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            if(!txtTim.Text.Equals(""))
+            {
+                listhtimkiem = svhdn.TimHoaDon(txtTim.Text.ToString()).ToList();
+                if (listhtimkiem != null)
+                {
+                    dtgHoaDonNhap.DataSource = listhtimkiem;
+                    this.dtgHoaDonNhap.Columns[0].HeaderText = "Mã hóa đơn";
+                    this.dtgHoaDonNhap.Columns[0].DisplayIndex = 0;
+                    this.dtgHoaDonNhap.Columns[3].HeaderText = "Nhà cung cấp";
+                    this.dtgHoaDonNhap.Columns[3].DisplayIndex = 1;
+                    this.dtgHoaDonNhap.Columns[4].HeaderText = "Ngày lập";
+                    this.dtgHoaDonNhap.Columns[4].DisplayIndex = 3;
+                    this.dtgHoaDonNhap.Columns[5].HeaderText = "Nhân viên";
+                    this.dtgHoaDonNhap.Columns[5].DisplayIndex = 2;
+                    this.dtgHoaDonNhap.Columns[6].HeaderText = "Tình trạng";
+                    this.dtgHoaDonNhap.Columns[6].DisplayIndex = 5;
+                    this.dtgHoaDonNhap.Columns[7].HeaderText = "Tổng tiền";
+                    this.dtgHoaDonNhap.Columns[7].DisplayIndex = 4;
+                    this.dtgHoaDonNhap.Columns[1].Visible = false;
+                    this.dtgHoaDonNhap.Columns[2].Visible = false;
+                }
+            }
         }
     }
 }

@@ -18,8 +18,10 @@ namespace AdminQuanLyShop
         Service_DonHang.Service_DonHangClient svdh = new Service_DonHang.Service_DonHangClient();
         Service_CTDH.Service_CTDHClient svctdh = new Service_CTDH.Service_CTDHClient();
         Service_NhanVienClient svnv = new Service_NhanVienClient();
+        Service_Kho.Service_KhoClient svkho = new Service_Kho.Service_KhoClient();
         private List<Service_KhachHang.KhachHang> listkhachhang = new List<Service_KhachHang.KhachHang>();
         private List<Service_DonHang.HoaDonXuat> listhdxuat = new List<Service_DonHang.HoaDonXuat>();
+        private List<Service_DonHang.HoaDonXuat> listhdxuattimkiem = new List<Service_DonHang.HoaDonXuat>();
         NhanVien nv = new NhanVien();
         public delegate void SendMessage(string Message);
         public SendMessage Sender;  
@@ -137,8 +139,51 @@ namespace AdminQuanLyShop
 
         private void btDuyet_Click(object sender, EventArgs e)
         {
+            if (!txtMaHD.Text.Equals(""))
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn duyệt hóa đơn này", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (svkho.XuatKho(int.Parse(txtMaHD.Text.ToString()), mess))
+                    {
+                        MessageBox.Show("Đã duyệt thành công");
+                        listhdxuat = svdh.LayTatCaDonHang().ToList();
+                        loadDH();
 
+                    }
+                    else
+                        MessageBox.Show("Không duyệt đươc, kiểm tra sản phẩm trong kho");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
         }
 
+        private void btTimKiem_Click(object sender, EventArgs e)
+        {
+            if(!txtTim.Text.Equals(""))
+            {
+                listhdxuattimkiem = svdh.TimDonHang(txtTim.Text.ToString()).ToList();
+                if (listhdxuattimkiem != null)
+                {
+                    dtgHoaDonXuat.DataSource = listhdxuattimkiem;
+                    this.dtgHoaDonXuat.Columns[1].HeaderText = "Mã hóa đơn";
+                    this.dtgHoaDonXuat.Columns[1].DisplayIndex = 0;
+                    this.dtgHoaDonXuat.Columns[0].HeaderText = "Khách hàng";
+                    this.dtgHoaDonXuat.Columns[0].DisplayIndex = 1;
+                    this.dtgHoaDonXuat.Columns[3].HeaderText = "Ngày lập";
+                    this.dtgHoaDonXuat.Columns[3].DisplayIndex = 2;
+                    this.dtgHoaDonXuat.Columns[5].HeaderText = "Tình trạng";
+                    this.dtgHoaDonXuat.Columns[5].DisplayIndex = 3;
+                    this.dtgHoaDonXuat.Columns[6].HeaderText = "Tổng tiền";
+                    this.dtgHoaDonXuat.Columns[6].DisplayIndex = 4;
+                    this.dtgHoaDonXuat.Columns[4].HeaderText = "Nhân viên";
+                    this.dtgHoaDonXuat.Columns[4].DisplayIndex = 5;
+                    this.dtgHoaDonXuat.Columns[2].Visible = false;
+                }
+            }
+        }
     }
 }

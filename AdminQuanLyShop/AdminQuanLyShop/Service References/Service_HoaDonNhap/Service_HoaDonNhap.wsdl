@@ -38,6 +38,12 @@
   <wsdl:message name="IService_HoaDonNhap_LayTatCaHoaDon_OutputMessage">
     <wsdl:part name="parameters" element="tns:LayTatCaHoaDonResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_TimHoaDon_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimHoaDon" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_TimHoaDon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimHoaDonResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_HoaDonNhap_ThemHDN_InputMessage">
     <wsdl:part name="parameters" element="tns:ThemHDN" />
   </wsdl:message>
@@ -79,6 +85,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDon" message="tns:IService_HoaDonNhap_LayTatCaHoaDon_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDonResponse" message="tns:IService_HoaDonNhap_LayTatCaHoaDon_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="TimHoaDon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/TimHoaDon" message="tns:IService_HoaDonNhap_TimHoaDon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/TimHoaDonResponse" message="tns:IService_HoaDonNhap_TimHoaDon_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ThemHDN">
       <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/ThemHDN" message="tns:IService_HoaDonNhap_ThemHDN_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/ThemHDNResponse" message="tns:IService_HoaDonNhap_ThemHDN_OutputMessage" />
@@ -108,6 +118,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LayTatCaHoaDon">
       <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/TimHoaDon" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -175,6 +194,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LayTatCaHoaDon">
       <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/TimHoaDon" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

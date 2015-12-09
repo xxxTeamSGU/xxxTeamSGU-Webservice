@@ -48,7 +48,7 @@ namespace AdminQuanLyShop
             cbKM.DisplayMember = "TenKM";
             cbKM.ValueMember = "MaKM";
 
-            string [] Thuonghieu  = {"Nike", "Addidas", "Puma","Reebok","Converse","New Balance","Fila","K-Swiss","ASICS","Li-Ning"};
+            string [] Thuonghieu  = {"Nike", "Adidas", "Puma","Reebook","Converse","New Balance","Fila","K-Swiss","ASICS","Li-Ning","Kappa"};
             cbThuongHieu.DataSource = Thuonghieu;
         }
         public void showanh(string ten)
@@ -107,7 +107,8 @@ namespace AdminQuanLyShop
             txbMasp.Text = dtgSanPham.CurrentRow.Cells[5].Value.ToString();
             txbTenSP.Text =  dtgSanPham.CurrentRow.Cells[9].Value.ToString();
             cbLoai.SelectedValue =  int.Parse(dtgSanPham.CurrentRow.Cells[4].Value.ToString());
-            cbThuongHieu.SelectedItem = dtgSanPham.CurrentRow.Cells[11].Value.ToString();
+              cbThuongHieu.SelectedItem = dtgSanPham.CurrentRow.Cells[10].Value.ToString();
+           // txbLoc.Text = dtgSanPham.CurrentRow.Cells[11].Value.ToString();
             cbKM.SelectedValue = int.Parse(dtgSanPham.CurrentRow.Cells[3].Value.ToString());
 
             string day = dtgSanPham.CurrentRow.Cells[8].Value.ToString();
@@ -239,18 +240,28 @@ namespace AdminQuanLyShop
                 string Mota = txbMoTa.Text.ToString();
                 string CTMT = rtxbChiTiet.Text.ToString();
                 string HinhAnh = TenAnh;
-                bool x = svsp.ThemSanPham(Tensp, loaisp, Thuonghieu, HinhAnh, Mota, KM, Ngayday, CTMT);
-                if (x == true)
+
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm sản phẩm không", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Thêm sp thành công");
-                    LoadSP();
-                    Nhapmoi();
+                    bool x = svsp.ThemSanPham(Tensp, loaisp, Thuonghieu, HinhAnh, Mota, KM, Ngayday, CTMT);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Thêm sp thành công");
+                        LoadSP();
+                        Nhapmoi();
+                    }
+                    else
+                        MessageBox.Show("Không thêm được");
                 }
-                else
-                    MessageBox.Show("Không thêm được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+              
 
             }
-            else
+                else
                 MessageBox.Show("Bạn chưa nhập tên sp");
             
         }
@@ -339,16 +350,26 @@ namespace AdminQuanLyShop
                 string Mota = txbMoTa.Text.ToString();
                 string CTMT = rtxbChiTiet.Text.ToString();
                 string HinhAnh = TenAnh;
-                
-                bool x = svsp.SuaSanPham(MaSP,Tensp, loaisp, Thuonghieu, HinhAnh, Mota, KM, Ngayday, CTMT);
-                if (x == true)
+
+
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa sản phẩm này", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Sửa sp thành công");
-                    LoadSP();
-                    Nhapmoi();
+                    bool x = svsp.SuaSanPham(MaSP, Tensp, loaisp, Thuonghieu, HinhAnh, Mota, KM, Ngayday, CTMT);
+                    if (x == true)
+                    {
+                        MessageBox.Show("Sửa sp thành công");
+                        LoadSP();
+                        Nhapmoi();
+                    }
+                    else
+                        MessageBox.Show("Không sửa được");
                 }
-                else
-                    MessageBox.Show("Không sửa được");
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+              
 
             }
             else
@@ -359,19 +380,28 @@ namespace AdminQuanLyShop
         {
             if (!String.IsNullOrEmpty(Convert.ToString(txbMasp.Text)))
             {
-                bool x = svsp.XoaSanPham(int.Parse(txbMasp.Text.ToString()));
-                if (x == true)
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm size", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa sản phẩm thành công");
-                    LoadSP();
-                    Nhapmoi();
+                    bool x = svsp.XoaSanPham(int.Parse(txbMasp.Text.ToString()));
+                    if (x == true)
+                    {
+                        MessageBox.Show("Xóa sản phẩm thành công");
+                        LoadSP();
+                        Nhapmoi();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa sản phẩm không thành công");
+                        LoadSP();
+                        Nhapmoi();
+                    }
                 }
-                else
+                else if (dialogResult == DialogResult.No)
                 {
-                     MessageBox.Show("Xóa sản phẩm không    thành công");
-                     LoadSP();
-                     Nhapmoi();
+                    return;
                 }
+             
             }
             else
                 MessageBox.Show("Nhập mã sản phẩm cần xóa");
@@ -450,6 +480,19 @@ namespace AdminQuanLyShop
         {
             FrmKhuyenMai fr = new FrmKhuyenMai();
             fr.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn thoát", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
         }
 
       

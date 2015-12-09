@@ -38,6 +38,12 @@
   <wsdl:message name="IService_Kho_LayTatCaKho_OutputMessage">
     <wsdl:part name="parameters" element="tns:LayTatCaKhoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Kho_TimKho_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimKho" />
+  </wsdl:message>
+  <wsdl:message name="IService_Kho_TimKho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimKhoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Kho_LayKhoTheoSP_InputMessage">
     <wsdl:part name="parameters" element="tns:LayKhoTheoSP" />
   </wsdl:message>
@@ -127,6 +133,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LayTatCaKho" message="tns:IService_Kho_LayTatCaKho_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LayTatCaKhoResponse" message="tns:IService_Kho_LayTatCaKho_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="TimKho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/TimKho" message="tns:IService_Kho_TimKho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/TimKhoResponse" message="tns:IService_Kho_TimKho_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="LayKhoTheoSP">
       <wsdl:input wsaw:Action="http://tempuri.org/IService_Kho/LayKhoTheoSP" message="tns:IService_Kho_LayKhoTheoSP_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService_Kho/LayKhoTheoSPResponse" message="tns:IService_Kho_LayKhoTheoSP_OutputMessage" />
@@ -188,6 +198,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LayTatCaKho">
       <soap:operation soapAction="http://tempuri.org/IService_Kho/LayTatCaKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/TimKho" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -327,6 +346,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LayTatCaKho">
       <soap:operation soapAction="http://tempuri.org/IService_Kho/LayTatCaKho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimKho">
+      <soap:operation soapAction="http://tempuri.org/IService_Kho/TimKho" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

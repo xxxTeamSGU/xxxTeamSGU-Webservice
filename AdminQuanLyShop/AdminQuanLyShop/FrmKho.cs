@@ -76,6 +76,7 @@ namespace AdminQuanLyShop
         private void FrmKho_Load(object sender, EventArgs e)
         {
             listkhosp = svkho.LayTatCaKho().ToList();
+          
         }
 
         private bool CheckNumber(string input)
@@ -90,7 +91,7 @@ namespace AdminQuanLyShop
                 if (CheckNumber(txtTim.Text.ToString()))
                 {
                     int x = int.Parse(txtTim.Text.ToString());
-                    dtKho.DataSource = listkhosp.Where(p => p._MaSP == x).ToList();
+                    dtKho.DataSource = svkho.TimKho(txtTim.Text.ToString());
                     this.dtKho.Columns[8].HeaderText = "Tên sản phẩm";
                     this.dtKho.Columns[8].ReadOnly = true;
                     this.dtKho.Columns[8].Width = 200;
@@ -170,20 +171,30 @@ namespace AdminQuanLyShop
 
         private void btCapNhatGia_Click(object sender, EventArgs e)
         {
-            if (!txtTenSP.Text.Equals("") && !txtGiaSP.Text.Equals("") && !txtMau.Text.Equals(""))
+
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật giá sản phẩm", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                if (svkho.CapNhatGiaBanMoi(MaSp_Hientai, MaMau_HienTai, decimal.Parse(txtGiaSP.Text.ToString())))
+                if (!txtTenSP.Text.Equals("") && !txtGiaSP.Text.Equals("") && !txtMau.Text.Equals(""))
                 {
-                    MessageBox.Show("Cập nhật giá bán thành công");
-                    listkhosp = svkho.LayTatCaKho().ToList();
-                    loadkho();
+                    if (svkho.CapNhatGiaBanMoi(MaSp_Hientai, MaMau_HienTai, decimal.Parse(txtGiaSP.Text.ToString())))
+                    {
+                        MessageBox.Show("Cập nhật giá bán thành công");
+                        listkhosp = svkho.LayTatCaKho().ToList();
+                        loadkho();
+                    }
+                    else
+                        MessageBox.Show("Không cập nhật được giá");
+
                 }
                 else
-                    MessageBox.Show("Không cập nhật được giá");
-                  
+                    MessageBox.Show("Bạn chưa nhập đủ thông tin");
             }
-            else
-                MessageBox.Show("Bạn chưa nhập đủ thông tin");
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+         
         }
     }
 }
