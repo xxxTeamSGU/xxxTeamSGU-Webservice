@@ -13,11 +13,11 @@ namespace GiayDep.Controllers
     {
         //
         // GET: /giohang/
-        Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
-        Service_SanPham_Kho.Service_SanPham_Kho k = new Service_SanPham_Kho.Service_SanPham_Kho();
-        Service_DonHang.Service_DonHang dh = new Service_DonHang.Service_DonHang();
-        Service_KhachHang.Service_KhachHang khachhang = new Service_KhachHang.Service_KhachHang();
-        Service_CTDH.Service_CTDH ctdh = new Service_CTDH.Service_CTDH();
+        Service_SanPham.Service_SanPhamClient db = new Service_SanPham.Service_SanPhamClient();
+        Service_SanPham_Kho.Service_SanPham_KhoClient k = new Service_SanPham_Kho.Service_SanPham_KhoClient();
+        Service_DonHang.Service_DonHangClient dh = new Service_DonHang.Service_DonHangClient();
+        Service_KhachHang.Service_KhachHangClient khachhang = new Service_KhachHang.Service_KhachHangClient();
+        Service_CTDH.Service_CTDHClient ctdh = new Service_CTDH.Service_CTDHClient();
 
         #region Giỏ Hàng
         //Lấy giỏ hàng
@@ -140,79 +140,85 @@ namespace GiayDep.Controllers
           ViewBag.Tongtien = Tongtien();
           return PartialView();
       }
-      public ActionResult addslpartial(int imasp, int mamau, string strUrl)
-      {
-          var sp = k.LayKhoTheoSP(imasp, mamau);
-          List<giohang> listgiohang = laygiohang();
-          //ktra tồn tại trong giỏ hàng chưa
-          giohang gh = listgiohang.Find(n => n.imasp == imasp);
-          ViewBag.addsl = gh.soluong++;
-          return View();
-      }
+      //public ActionResult addslpartial(int imasp, int mamau, string strUrl)
+      //{
+      //    var sp = k.LayKhoTheoSP(imasp, mamau);
+      //    List<giohang> listgiohang = laygiohang();
+      //    //ktra tồn tại trong giỏ hàng chưa
+      //    giohang gh = listgiohang.Find(n => n.imasp == imasp);
+      //    ViewBag.addsl = gh.soluong++;
+      //    return View();
+      //}
+        #endregion
+      #region Đơn hàng
       public ActionResult DonHang()
       {
+          if (Session["khachhang"] == null || Session["khachhang"] == "")
+          {
+              return RedirectToAction("Login", "User");
+          }
           if (Session["giohang"] == null)
           {
               return RedirectToAction("Index", "Home");
           }
           List<giohang> listgiohang = laygiohang();
           ViewBag.Tongtien = Tongtien();
-          return View(listgiohang);
+          var pp = Session["giohang"] as List<giohang>;
+          return View(pp);
       }
-#endregion
+        #endregion
         //Xây đựng chức năng đặt hàng
-      #region Đặt Hàng 
+        #region Đặt Hàng 
         [HttpPost]
       public ActionResult DatHang()
       {
             //kiểm tra người dùng có hay không
-            if(Session["khachhang"] == null || Session["khachhang"] == "" )
-            {
-                return RedirectToAction("Login", "User");
-            }
+            //if(Session["khachhang"] == null || Session["khachhang"] == "" )
+            //{
+            //    return RedirectToAction("Login", "User");
+            //}
             if(Session["giohang"]==null)
             {
                 return RedirectToAction("Index", "Home");
             }
 
             //Thêm đơn hàng
-            KhachHang kh = (KhachHang)Session["khachhang"];
-<<<<<<< HEAD
+            GiayDep.Service_KhachHang.KhachHang kh = (GiayDep.Service_KhachHang.KhachHang)Session["khachhang"];
             int themdh = dh.ThemDH( kh.MaKH, DateTime.Now,(decimal)Tongtien(),0,null);
             
-=======
-            List<giohang> gh = laygiohang();
-            //var themdh = dh.ThemDH(kh.MaKH, DateTime.Now,Tongtien(), 0, "");
->>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
             ////Them chi tiet don hang
             List<giohang> gh = laygiohang();
             foreach (var item in gh)
             {
-<<<<<<< HEAD
                 var ctdhnew = ctdh.ThemCTDH(themdh,item.imasp, item.imamau, item.isize, item.soluong, item.thanhtien);
-=======
-                CTDH ct = new CTDH();
-                 ct.MaDH = dhs.MaDH;
-                int MaSP = item.imasp;
-                int MaMau = item.imamau;
-                int MaSize = item.isize;
-                int SL = item.soluong;
-                Decimal DonGia = item.dongia;
-                //var ctdhnew = ctdh.ThemCTHDH(themdh, MaSP, MaMau, MaSize, SL, DonGia);
->>>>>>> 9822464af995b42a352e1bf4d61e16976567c800
             }
             Session["giohang"]=null;
             return RedirectToAction("ThongBaoDH", "giohang");
           //return View(gh);
       }
       #endregion
-#region Thông báo đơn hàng
+        #region Thông báo đơn hàng
          public ActionResult ThongBaoDH()
         {
             ViewBag.tb = "Bạn đã đặt hàng thành công. Chúng tôi sẽ giao hàng trong thời gian sớm nhất 2-3 ngày làm việc.";
             return View();
         }
-#endregion 
-       
+        #endregion 
+
+         public ActionResult ThanhToan()
+         {
+             if (Session["khachhang"] == null || Session["khachhang"] == "")
+             {
+                 return RedirectToAction("Login", "User");
+             }
+             if (Session["giohang"] == null)
+             {
+                 return RedirectToAction("Index", "Home");
+             }
+             List<giohang> listgiohang = laygiohang();
+             ViewBag.Tongtien = Tongtien();
+             var pp = Session["giohang"] as List<giohang>;
+             return View(pp);
+         }
     }
 }

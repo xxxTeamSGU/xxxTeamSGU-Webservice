@@ -20,7 +20,7 @@
 	19. Retina ready
 -------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,700,500,300italic);
-@import "styleswitcher.css";
+
 
 /* -----------------------------------
 
@@ -86,7 +86,7 @@ html,body{
 
 ------------------------------------- */
 
-body{
+/*body{
 	font:300 14px/21px 'Roboto', 'sans-serif';
 	color:#696e6e;
 	background:#232830;
@@ -94,7 +94,7 @@ body{
 	overflow-x: hidden;
 	-webkit-backface-visibility:hidden;
 	background-attachment:fixed;
-}
+}*/
 .boxed_layout{
 	width:1220px;
 	margin:0 auto;
@@ -422,45 +422,6 @@ mark{
 	background: #e74c3c;
 	color:#fff;
 }
-::selection{
-	background: #e74c3c;
-	color:#fff;
-}
-::-moz-selection{
-	background: #e74c3c;
-	color:#fff;	
-}
-::-o-selection {
-	background: #e74c3c;
-	color:#fff;	
-}
-::-ms-selection {
-	background: #e74c3c;
-	color:#fff;
-}
-::-webkit-input-placeholder{
-	color:#696e6e;
-}
-::-moz-placeholder{
-   color:#696e6e;
-   opacity:1;
-}
-:-ms-input-placeholder {  
-   color:#696e6e;
-}
-::-webkit-scrollbar{
-	width:10px;
-	background:#323a45;
-}
-::-webkit-scrollbar-thumb{
-	-webkit-border-radius:4px;
-	border-radius:4px;
-}
-.clearfix:after{
-	content:"";
-	display:block;
-	clear:both;
-}
 
 /* -----------------------------------
 
@@ -503,10 +464,10 @@ label[class*="required"]:after,.vertical_list_type_7 li:before,.first_letter_1 >
 .tp-leftarrow:hover,.tp-rightarrow:hover{
 	background: #d55a4e
 }
-::-webkit-scrollbar-thumb{
+/*::-webkit-scrollbar-thumb{
 	background:#e74c3c;	
 }
-
+*/
 /* -----------------------------------
 
 	4. Typography
@@ -715,10 +676,10 @@ blockquote:after{
 	-webkit-border-radius:4px 4px 0 0;
 	-moz-border-radius:4px 4px 0 0;
 	border-radius:4px 4px 0 0;
-}
+}/*
 .menu_wrap,#footer{
 	background:#323a45;
-}
+}*/
 .menu_wrap.type_2:not(.sticky) .main_menu > li:first-child > a{
 	-webkit-border-top-left-radius:4px;
 	-moz-border-top-left-radius:4px;
@@ -1767,8 +1728,8 @@ blockquote:after{
 }
 .count{
 	position:absolute;
-	width:18px;
-	height:18px;
+	/*width:18px;*/
+	/*height:18px;*/
 	line-height: 18px;
 	color:#fff;
 	font-size:.8em;
@@ -4162,3 +4123,105 @@ only screen and (min-resolution: 144 dpi){
 		background-size:22px 22px;		
 	}
 }
+
+/*tinhpham customized 8thdec*/
+/*order*/
+.content.tp-order h1.tp-order-h1 {
+    margin: 15px 0;
+}
+h2, h3, h4{
+	padding: 9px 0;
+}
+p {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+.nav-tabs>li {
+    border-top: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+	border-left: 1px solid #f1f1f1;
+	margin-bottom: -2px;
+
+}
+.nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+    background-color: rgba(90, 88, 86, 0.68);
+}
+.nav-tabs {
+    /*border-bottom: 1px solid rgb(142, 141, 139);*/
+    }
+    .nav-tabs li a {
+    	color:rgba(0, 0, 0, 0.9);
+    }
+.tab-content .tab-pan{
+    	/*border: 1px solid rgb(142, 141, 139);*/
+    }
+    .tab-content>.active {
+    display: block;
+    border: 1px solid rgb(217, 237, 247);
+    padding: 15px 10px;
+    overflow: hidden;
+}
+.tp-content-tab.col-md-4 {
+    padding: 10px;
+    margin: 1%;
+    width: 31%;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.tp-content-tab.col-md-4 h4 {
+    font-weight: bold;
+}
+.tp-input-hide input:not([type="submit"]){
+    background: #F9F9F9;
+    border: 2px solid #F9F9F9;
+    padding: 0!important;
+}
+/*cart*/
+.cart_info .quantity{
+	background: #AEAEAE;
+	border: none;
+}
+ .cart_info td.id-cart{
+    width: 5%!important;
+}
+.tp-del-cart
+{
+	position: relative;
+}
+.tp-del-cart i
+{
+	    position: absolute;
+    right: 5px;
+    top: -4px;
+}
+
+
+.cart_delete a {
+  background:transparent;
+  color: #FFFFFF;
+  padding: 10px 0px;
+  font-size: 16px;
+  color: transparent;
+  position: relative;
+  z-index: 99;
+}
+
+img.tp-cart-color{
+	margin-left: 3px;
+}
+.cart_price {
+	color: 19px;
+	color: red;
+}
+.cart_total_price{
+	color: 20px;
+	color: red;
+	line-height: 27px;
+	font-weight: bold;
+}
+input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    padding: 10px 17px;
+    background: #f90;
+    }

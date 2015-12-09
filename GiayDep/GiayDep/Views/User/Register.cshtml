@@ -4,7 +4,7 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/GiayDep/Trangkethua.cshtml";
 }
-<section id="form">
+
     <!--form-->
     <div class="container">
             <div class="row">
@@ -26,6 +26,7 @@
                 <div class="col-sm-1">
                     <h2 class="or">OR</h2>
                 </div>*@
+                <div class="col-sm-2"></div>
                 <div class="col-sm-5">
                     <div class="signup-form">
                         <!--sign up form-->
@@ -36,76 +37,88 @@
 
                             <div class="form-horizontal">
                                 <hr />
-                                @Html.ValidationSummary(false)
+                                @*@Html.ValidationSummary(false)*@
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.HoTen, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
+                                    @Html.LabelFor(model => model.HoTen, "Họ tên", new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
                                         @Html.EditorFor(model => model.HoTen)
                                         @Html.ValidationMessageFor(model => model.HoTen)
+                                        <span id="loiHoTen" style="color:red;"></span>
                                     </div>
                                 </div>
 
+                                
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.NgaySinh, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.NgaySinh)
-                                        @Html.ValidationMessageFor(model => model.NgaySinh)
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
+                                    @Html.LabelFor(model => model.Email, "Email", new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
                                         @Html.EditorFor(model => model.Email)
                                         @Html.ValidationMessageFor(model => model.Email)
+                                        <span id="loiEmail" style="color:red;"></span>
+                                        <span style="color:red;"> @ViewBag.emailfalse</span>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.MatKhau, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.MatKhau)
+                                    @Html.LabelFor(model => model.MatKhau,"Mật khẩu ", new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.PasswordFor(model => model.MatKhau)
                                         @Html.ValidationMessageFor(model => model.MatKhau)
+                                        <span id="loiMatKhau" style="color:red;"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.NgaySinh, "Ngày sinh", new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.EditorFor(model => model.NgaySinh)
+                                        @Html.ValidationMessageFor(model => model.NgaySinh)
+                                        <span id="loiNgaySinh" style="color:red;"></span>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.SDT, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
+                                    @Html.LabelFor(model => model.SDT,"Số điện thoại", new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
                                         @Html.EditorFor(model => model.SDT)
                                         @Html.ValidationMessageFor(model => model.SDT)
+                                        <span id="loiSDT" style="color:red;"></span>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.DiaChi, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
+                                    @Html.LabelFor(model => model.DiaChi,"Địa chỉ", new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
                                         @Html.EditorFor(model => model.DiaChi)
                                         @Html.ValidationMessageFor(model => model.DiaChi)
+                                        <span id="loiDiaChi" style="color:red;"></span>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    @Html.LabelFor(model => model.GioiTinh, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.GioiTinh)
-                                        @Html.ValidationMessageFor(model => model.GioiTinh)
+                                    @Html.LabelFor(model => model.GioiTinh,"Giới tính", new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="pdsa-radiobutton btn btn-primary active">
+                                                    <span class="glyphicon glyphicon-record"></span>
+                                                    @Html.RadioButtonFor(model => model.GioiTinh, "Nam",
+                                                new { id = "Nam" }) Nam
+                                                </label>
+                                                <label class="pdsa-radiobutton btn btn-primary">
+                                                    <span class="glyphicon glyphicon-unchecked"></span>
+                                                    @Html.RadioButtonFor(model => model.GioiTinh, "Nữ",
+                                                  new { id = "Nữ" }) Nữ
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.NgayDangKi, new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        @Html.EditorFor(model => model.NgayDangKi)
-                                        @Html.ValidationMessageFor(model => model.NgayDangKi)
-                                    </div>
-                                </div>
-
+                        
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-4">
 
-                                        <input type="submit" value="Đăng kí" class="btn btn-default" style="background:orange; text-align:center;" />
+                                        <input id="btnsubmit" type="submit" value="Đăng kí" class="btn btn-default" style="background:orange; text-align:center;" />
                                     </div>
                                 </div>
                             </div>
@@ -115,6 +128,69 @@
                 </div>
             </div>
     </div>
-</section><!--/form-->
+<script type="text/javascript">
+
+    $('#btnsubmit').click(function ()
+    {
+        var loi = 0;
+
+        if($('#HoTen').val() == "")
+        {
+            $('#loiHoTen').text("(*)Bạn chưa nhập họ tên");
+            loi++;
+        } else {
+            $('#loiHoTen').text("");
+        }
+        if($('#Email').val() == "")
+        {
+            $('#loiEmail').text("(*)Bạn chưa nhập vào email");
+            loi++;
+        } else {
+            $('#loiEmail').text("");
+        }
+        if ($('#MatKhau').val() == "") {
+            $('#loiMatKhau').text("(*)Bạn chưa nhập vào mật khẩu");
+            loi++;
+        } else {
+            $('#loiMatKhau').text("");
+        }
+        if ($('#NgaySinh').val() == "") {
+            $('#loiNgaySinh').text("(*)Bạn chưa nhập vào ngày sinh");
+            loi++;
+        }
+        else {
+            $('#loiNgaySinh').text("");
+        }
+        if ($('#SDT').val() == "") {
+            $('#loiSDT').text("(*)Bạn chưa nhập vào ngày sinh");
+            loi++;
+        }
+        else {
+            $('#loiSDT').text("");
+        }
+        if ($('#DiaChi').val() == "") {
+            $('#loiDiaChi').text("(*)Bạn chưa nhập vào ngày sinh");
+            loi++;
+        }
+        else {
+            $('#loiDiaChi').text("");
+        }
+        if(loi==0)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    );
+
+   
+</script>
+<style>
+    .pdsa-radiobutton.btn.btn-primary.active {
+        color: blue;
+        border-color: #dfdfdf;
+    }
+</style>
 
 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GiayDep.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace GiayDep.Controllers
 {
@@ -11,14 +13,17 @@ namespace GiayDep.Controllers
     {
         //
         // GET: /SanPham/
-        Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
-        Service_Kho.Service_Kho k = new Service_Kho.Service_Kho();
-        Service_SanPham_Kho.Service_SanPham_Kho spk = new Service_SanPham_Kho.Service_SanPham_Kho();
+        Service_SanPham.Service_SanPhamClient db = new Service_SanPham.Service_SanPhamClient();
+        Service_Kho.Service_KhoClient k = new Service_Kho.Service_KhoClient();
+        Service_SanPham_Kho.Service_SanPham_KhoClient spk = new Service_SanPham_Kho.Service_SanPham_KhoClient();
         public PartialViewResult SanphammoiPartial()
         {
             var listsanphammoi = spk.SanphammoiPartial().Distinct().Take(6).ToList();
             return PartialView(listsanphammoi);
+
         }
+       
+
         public PartialViewResult SanphamkhuyenmaiPartial()
         {
             var listkhuyenmai = spk.SanphamkhuyenmaiPartial().Distinct().Take(6).ToList();
@@ -58,6 +63,10 @@ namespace GiayDep.Controllers
         {
             var giaban = k.LayGia(MaSP,MaMau);
             return giaban;
+        }
+        public ActionResult images()
+        {
+            return View();
         }
 	}
 }

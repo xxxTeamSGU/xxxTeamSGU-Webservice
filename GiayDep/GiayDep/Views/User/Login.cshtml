@@ -1,29 +1,43 @@
-﻿
+﻿@using GiayDep.Service_KhachHang;
+@model KhachHang
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/GiayDep/Trangkethua.cshtml";
 }
-<h1>@ViewBag.Thongbao</h1>
 
-    <!--form-->
+@{
+    var khachhang = Session["khachhang"] as KhachHang;
+ 
+}
+@if (khachhang!=null)
+{
+    <h1>
+        @ViewBag.Thongbao</h1>
+<!--form-->
+}
+else
+{
+
+
     <div class="container">
         <div class="row">
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2"></div>
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form">
                     <!--login form-->
-                   <h3>Đăng nhập</h3>
-                    @using (Html.BeginForm())
+                    <center><h3>Đăng nhập</h3></center>
+                <br />
+                    @using (Html.BeginForm("Login", "User", new { @strUrl = Request.Url.ToString() }))
                     {
                             <input type="email" placeholder="Nhập vào Email" name="email" />
                             <input type="password" placeholder="Nhập vào mật khẩu" name="password" />
-                        
-                        <button type="submit" class="btn btn-default">Đăng nhập</button>
+
+                         <center><button type="submit" class="btn btn-default">Đăng nhập</button></center>
                     }
                     <br />
                     
-                    <a href="/User/Register"><i class="fa fa-lock btn btn-default"></i> Đăng kí</a>&nbsp;&nbsp;
-                    <a href="#"><i class=" fa fa-facebook btn-social btn-facebook"></i> Facebook</a>
+                    <a href="/User/Register" class="btn btn-default"><i class="fa fa-lock btn btn-default"></i> Đăng kí</a>&nbsp;&nbsp;
+                    @*//<a href="#"><i class=" fa fa-facebook btn-social btn-facebook"></i> Facebook</a>*@
 
                 </div><!--/login form-->
             </div>
@@ -38,3 +52,5 @@
         </div>
     </div>
 </div>
+
+}

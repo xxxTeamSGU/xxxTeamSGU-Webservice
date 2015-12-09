@@ -12,12 +12,18 @@ namespace GiayDep.Controllers
 {
     public class HomeController : Controller
     {
-        Service_SanPham.Service_SanPham db = new Service_SanPham.Service_SanPham();
+        Service_SanPham.Service_SanPhamClient db = new Service_SanPham.Service_SanPhamClient();
         public ActionResult Index()
         {
             return View();
         }
+        public ActionResult sp()
+        {
+            return View();
+        }
+
     
       
     }
+    
 }

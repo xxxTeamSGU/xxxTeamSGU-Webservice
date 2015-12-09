@@ -1,25 +1,22 @@
 ﻿@using GiayDep.Service_SanPham;
 @using GiayDep.Models;
 @model List<giohang>
-@{
-    ViewBag.Title = "giohang";
-    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
-}
+
 
 <section id="cart_items">
     <div class="container">
-        <div class="breadcrumbs">
+        @*<div class="breadcrumbs">
             <ol class="breadcrumb">
                 <li><a href="#">Trang chủ</a></li>
                 <li class="active">Giỏ hàng</li>
             </ol>
-        </div>
+        </div>*@
         <div class="table-responsive cart_info">
             <table class="table table-condensed">
                 <thead>
                     <tr class="cart_menu">
 
-                        <td>ID</td>
+                        <td class="id-cart">ID</td>
                         <td class="image"><center>Sản phẩm</center></td>
                         <td class="description"><center>Mô tả</center></td>
                         <td class="price"><center>Giá</center></td>
@@ -39,26 +36,27 @@
                        
                            
                         <tr>
-                            <td># @item.imasp</td>
-                            <td class="cart_product"><a href=""><img src="@Url.Content("~/images/home/"+ item.anhbia)" alt="" width="110" height="110"></a> </td>
+                            <td class="id-cart"># @item.imasp</td>
+                            <td class="cart_product" style="width:200px;"><a href=""><img src="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item.anhbia.Split(new Char[] { ' ' })[0])" alt="" width="110" height="110"></a> </td>
                             <td class="cart_description"><h4><a href="">@item.stensp</a></h4>
-                                <br /> Màu :@item.itenmau
+                                <br /> Màu :<img style="background-color:@item.itenmau" width="25" height="30" class="tp-cart-color" />
+                            <br />
                                 <br /> Size : @item.itensize</td>
-                            <td class="cart_price"><p><center>@item.dongia.000đ</center></p></td>
+                            <td class="cart_price"><p><center><b>@item.dongia.000đ</b></center></p></td>
                               @*Goi toi action capnhatgiohang trong giohangController*@
-                            @using (Html.BeginForm("capnhatgiohang", "giohang", new { @imasp = item.imasp, @mamau = item.imamau, @size=item.isize}))
-                             {
-                            <td class="cart_quantity" width="150">
-                                <div class="cart_quantity_button">
+                            @using (Html.BeginForm("capnhatgiohang", "giohang", new { @imasp = item.imasp, @mamau = item.imamau, @size = item.isize }))
+                            {
+                                <td class="cart_quantity" style="width:20px;">
+                                    <div class="cart_quantity_button">
 
-                                    @*<a class="cart_quantity_up" href=""> + </a>*@
-                                    <center><input class="cart_quantity_input" type="number" name="txtsoluong" value="@item.soluong" autocomplete="off" size="2"></center>
-                                    @*<a class="cart_quantity_down" href=""> - </a>*@
-                                </div>
-                            </td>
-                            <td class="cart_total"><p class="cart_total_price"><center>@item.thanhtien.000đ</center></p></td>
+                                        @*<a class="cart_quantity_up" href=""> + </a>*@
+                                        <center><input class="cart_quantity_input" type="number" name="txtsoluong" value="@item.soluong" autocomplete="off" size="2"></center>
+                                        @*<a class="cart_quantity_down" href=""> - </a>*@
+                                    </div>
+                                </td>
+                            <td class="cart_total"><p class="cart_total_price">@item.thanhtien.000đ</p></td>
                             <td>
-                                <a href="@Url.Action("Chitietsanpham", "SanPham", new { @masp = item.imasp, @mamau =item.imasp })">Xem</a>
+                                <a href="@Url.Action("Chitietsanpham", "SanPham", new { @masp = item.imasp, @mamau =item.imamau })">Xem</a>
                             </td>
                              <td>
                                   <center>
@@ -68,10 +66,13 @@
                                   </center>
                              </td>
                              <td class="cart_delete">
-                                 <center><i class="fa fa-times"></i>
+                                 <div class="tp-del-cart">
+                                     @Html.ActionLink("Xóa", "xoagiohang", new { @imasp = item.imasp, @mamau = item.imamau, @size = item.isize })
+                                 <i class="fa fa-trash-o  fa-2x"></i>
                                  @*Gọi tới action xoagiohang trong giohangController*@
-                                     @Html.ActionLink("Xóa", "xoagiohang", new { @imasp = item.imasp, @mamau = item.imamau, @size= item.isize })
-                                 </center>
+
+                             </div>
+                                 
                              </td>
                             }
                             
@@ -86,9 +87,9 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><a href="/giohang/DonHang/">Xem chi tiết</a></td>
+                    <td><a href="/Home/Index/">Tiếp tục mua hàng</a></td>
                     <td>
-                        @using(Html.BeginForm("DatHang","giohang"))
+                        @using(Html.BeginForm("DonHang","giohang"))
                         {
                             <input type="submit" value="Đặt hàng" />
                         }
