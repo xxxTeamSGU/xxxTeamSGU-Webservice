@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_HoaDonNhap" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService_HoaDonNhap_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_HoaDonNhap_LayTatCaHoaDon_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaHoaDon" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_LayTatCaHoaDon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaHoaDonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_TimHoaDon_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimHoaDon" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_TimHoaDon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimHoaDonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_ThemHDN_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemHDN" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_ThemHDN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemHDNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_SuaHDN_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaHDN" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_SuaHDN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaHDNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_XoaHDN_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaHDN" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_XoaHDN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaHDNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_LayMotHoaDon_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayMotHoaDon" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_LayMotHoaDon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayMotHoaDonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_DuyetHD_InputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetHD" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_DuyetHD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetHDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_ThemHDNVaTraVeMaDHN_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemHDNVaTraVeMaDHN" />
+  </wsdl:message>
+  <wsdl:message name="IService_HoaDonNhap_ThemHDNVaTraVeMaDHN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemHDNVaTraVeMaDHNResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService_HoaDonNhap">
+    <wsdl:operation name="LayTatCaHoaDon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDon" message="tns:IService_HoaDonNhap_LayTatCaHoaDon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDonResponse" message="tns:IService_HoaDonNhap_LayTatCaHoaDon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimHoaDon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/TimHoaDon" message="tns:IService_HoaDonNhap_TimHoaDon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/TimHoaDonResponse" message="tns:IService_HoaDonNhap_TimHoaDon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemHDN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/ThemHDN" message="tns:IService_HoaDonNhap_ThemHDN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/ThemHDNResponse" message="tns:IService_HoaDonNhap_ThemHDN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaHDN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/SuaHDN" message="tns:IService_HoaDonNhap_SuaHDN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/SuaHDNResponse" message="tns:IService_HoaDonNhap_SuaHDN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaHDN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/XoaHDN" message="tns:IService_HoaDonNhap_XoaHDN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/XoaHDNResponse" message="tns:IService_HoaDonNhap_XoaHDN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayMotHoaDon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/LayMotHoaDon" message="tns:IService_HoaDonNhap_LayMotHoaDon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/LayMotHoaDonResponse" message="tns:IService_HoaDonNhap_LayMotHoaDon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DuyetHD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/DuyetHD" message="tns:IService_HoaDonNhap_DuyetHD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/DuyetHDResponse" message="tns:IService_HoaDonNhap_DuyetHD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemHDNVaTraVeMaDHN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_HoaDonNhap/ThemHDNVaTraVeMaDHN" message="tns:IService_HoaDonNhap_ThemHDNVaTraVeMaDHN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_HoaDonNhap/ThemHDNVaTraVeMaDHNResponse" message="tns:IService_HoaDonNhap_ThemHDNVaTraVeMaDHN_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService_HoaDonNhap" type="tns:IService_HoaDonNhap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/TimHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemHDN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/ThemHDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaHDN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/SuaHDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaHDN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/XoaHDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMotHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/LayMotHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuyetHD">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/DuyetHD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemHDNVaTraVeMaDHN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/ThemHDNVaTraVeMaDHN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService_HoaDonNhap" type="tns:IService_HoaDonNhap">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService_HoaDonNhap_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/LayTatCaHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/TimHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemHDN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/ThemHDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaHDN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/SuaHDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaHDN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/XoaHDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMotHoaDon">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/LayMotHoaDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuyetHD">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/DuyetHD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemHDNVaTraVeMaDHN">
+      <soap:operation soapAction="http://tempuri.org/IService_HoaDonNhap/ThemHDNVaTraVeMaDHN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_HoaDonNhap">
+    <wsdl:port name="BasicHttpBinding_IService_HoaDonNhap" binding="tns:BasicHttpBinding_IService_HoaDonNhap">
+      <soap:address location="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService_HoaDonNhap" binding="tns:BasicHttpsBinding_IService_HoaDonNhap">
+      <soap:address location="https://huyservice.azurewebsites.net/Service_HoaDonNhap.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

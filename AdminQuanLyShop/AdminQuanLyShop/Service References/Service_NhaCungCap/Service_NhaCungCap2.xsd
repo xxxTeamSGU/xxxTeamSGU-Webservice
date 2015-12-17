@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_NhaCungCap.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="LayTatCaNhaCungCap">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaNhaCungCapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayTatCaNhaCungCapResult" nillable="true" type="q1:ArrayOfNhaCungCap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemNhaCungCap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenNCC" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DiaChi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SoDT" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SoTK" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemNhaCungCapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemNhaCungCapResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaNhaCungCap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaNCC" type="xs:int" />
+        <xs:element minOccurs="0" name="TenNCC" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DiaChi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SoDT" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SoTK" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaNhaCungCapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuaNhaCungCapResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaNhaCungCap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaNCC" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaNhaCungCapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XoaNhaCungCapResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKiemNhaCungCap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKiemNhaCungCapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="TimKiemNhaCungCapResult" nillable="true" type="q2:ArrayOfNhaCungCap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckNhaCungCap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenNCC" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckNhaCungCapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckNhaCungCapResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

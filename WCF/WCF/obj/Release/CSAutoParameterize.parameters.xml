@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DBGiayDepEntities-Web.config Connection String" description="DBGiayDepEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.DBGiayDep.csdl|res:&#xD;&#xA;    //*/Models.DBGiayDep.ssdl|res://*/Models.DBGiayDep.msl;&#xD;&#xA;    provider=System.Data.SqlClient;&#xD;&#xA;    provider connection string=&quot;&#xD;&#xA;    data source=ukke21nznr.database.windows.net;&#xD;&#xA;    initial catalog=DBGiayDep;&#xD;&#xA;    user id=buiduytrinh;&#xD;&#xA;    password=Abc123456;&#xD;&#xA;    MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\DUYTRINH\\Desktop\\WCF\ using\ SERVER\\WCF\\WCF\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DBGiayDepEntities']/@connectionString" />
+  </parameter>
+</parameters>

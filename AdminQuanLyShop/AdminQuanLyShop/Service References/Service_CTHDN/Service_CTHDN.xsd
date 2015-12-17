@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_CTHDN.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="LayCTHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayCTHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayCTHDNResult" nillable="true" type="q1:ArrayOfHoaDon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemCTHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+        <xs:element minOccurs="0" name="MauSize" type="xs:int" />
+        <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
+        <xs:element minOccurs="0" name="DonGia" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemCTHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemCTHDNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaCTHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+        <xs:element minOccurs="0" name="MauSize" type="xs:int" />
+        <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
+        <xs:element minOccurs="0" name="DonGia" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaCTHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuaCTHDNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaCTHDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaCTHDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XoaCTHDNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

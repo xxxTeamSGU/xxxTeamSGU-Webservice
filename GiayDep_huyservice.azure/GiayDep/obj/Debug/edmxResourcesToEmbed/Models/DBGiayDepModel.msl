@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBGiayDepModelStoreContainer" CdmEntityContainer="DBGiayDepEntities">
+    <EntitySetMapping Name="sanphams">
+      <EntityTypeMapping TypeName="DBGiayDepModel.sanpham">
+        <MappingFragment StoreEntitySet="sanpham">
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="loaisp" ColumnName="loaisp" />
+          <ScalarProperty Name="motasp" ColumnName="motasp" />
+          <ScalarProperty Name="giasp" ColumnName="giasp" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khachhangs">
+      <EntityTypeMapping TypeName="DBGiayDepModel.khachhang">
+        <MappingFragment StoreEntitySet="khachhang">
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

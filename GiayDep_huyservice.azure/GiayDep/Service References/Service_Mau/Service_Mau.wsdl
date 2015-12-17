@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_Mau" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService_Mau_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://huyservice.azurewebsites.net/Service_Mau.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://huyservice.azurewebsites.net/Service_Mau.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://huyservice.azurewebsites.net/Service_Mau.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_Mau_LayTatCaMau_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaMau" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_LayTatCaMau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaMauResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_ThemMau_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemMau" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_ThemMau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemMauResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_SuaMau_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaMau" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_SuaMau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaMauResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_XoaMau_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaMau" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_XoaMau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaMauResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_LayMauTheoMa_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayMauTheoMa" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mau_LayMauTheoMa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayMauTheoMaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService_Mau">
+    <wsdl:operation name="LayTatCaMau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Mau/LayTatCaMau" message="tns:IService_Mau_LayTatCaMau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Mau/LayTatCaMauResponse" message="tns:IService_Mau_LayTatCaMau_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemMau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Mau/ThemMau" message="tns:IService_Mau_ThemMau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Mau/ThemMauResponse" message="tns:IService_Mau_ThemMau_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaMau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Mau/SuaMau" message="tns:IService_Mau_SuaMau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Mau/SuaMauResponse" message="tns:IService_Mau_SuaMau_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaMau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Mau/XoaMau" message="tns:IService_Mau_XoaMau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Mau/XoaMauResponse" message="tns:IService_Mau_XoaMau_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayMauTheoMa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_Mau/LayMauTheoMa" message="tns:IService_Mau_LayMauTheoMa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_Mau/LayMauTheoMaResponse" message="tns:IService_Mau_LayMauTheoMa_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService_Mau" type="tns:IService_Mau">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/LayTatCaMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/ThemMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/SuaMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/XoaMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMauTheoMa">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/LayMauTheoMa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService_Mau" type="tns:IService_Mau">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService_Mau_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayTatCaMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/LayTatCaMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/ThemMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/SuaMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaMau">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/XoaMau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMauTheoMa">
+      <soap:operation soapAction="http://tempuri.org/IService_Mau/LayMauTheoMa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_Mau">
+    <wsdl:port name="BasicHttpBinding_IService_Mau" binding="tns:BasicHttpBinding_IService_Mau">
+      <soap:address location="http://huyservice.azurewebsites.net/Service_Mau.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService_Mau" binding="tns:BasicHttpsBinding_IService_Mau">
+      <soap:address location="https://huyservice.azurewebsites.net/Service_Mau.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GiayDep.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GiayDep_Service_KhuyenMai_Service_KhuyenMai" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_KhuyenMai.asmx</Value>
+    </Setting>
+    <Setting Name="GiayDep_Service_Loai_Service_Loai" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://servicegiaydep.azurewebsites.net/Service_Loai.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_DonHang" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService_DonHang_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_DonHang.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_DonHang.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://huyservice.azurewebsites.net/Service_DonHang.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_DonHang_ThemDH_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThemDH" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_ThemDH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThemDHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_LichSuDH_InputMessage">
+    <wsdl:part name="parameters" element="tns:LichSuDH" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_LichSuDH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LichSuDHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_SuaDH_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuaDH" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_SuaDH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuaDHResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_LayTatCaDonHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaDonHang" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_LayTatCaDonHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LayTatCaDonHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_TimDonHang_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimDonHang" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_TimDonHang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimDonHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_DuyetHD_InputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetHD" />
+  </wsdl:message>
+  <wsdl:message name="IService_DonHang_DuyetHD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DuyetHDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService_DonHang">
+    <wsdl:operation name="ThemDH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/ThemDH" message="tns:IService_DonHang_ThemDH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/ThemDHResponse" message="tns:IService_DonHang_ThemDH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LichSuDH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/LichSuDH" message="tns:IService_DonHang_LichSuDH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/LichSuDHResponse" message="tns:IService_DonHang_LichSuDH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaDH">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/SuaDH" message="tns:IService_DonHang_SuaDH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/SuaDHResponse" message="tns:IService_DonHang_SuaDH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LayTatCaDonHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/LayTatCaDonHang" message="tns:IService_DonHang_LayTatCaDonHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/LayTatCaDonHangResponse" message="tns:IService_DonHang_LayTatCaDonHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimDonHang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/TimDonHang" message="tns:IService_DonHang_TimDonHang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/TimDonHangResponse" message="tns:IService_DonHang_TimDonHang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DuyetHD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_DonHang/DuyetHD" message="tns:IService_DonHang_DuyetHD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_DonHang/DuyetHDResponse" message="tns:IService_DonHang_DuyetHD_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService_DonHang" type="tns:IService_DonHang">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ThemDH">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/ThemDH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LichSuDH">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/LichSuDH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaDH">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/SuaDH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayTatCaDonHang">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/LayTatCaDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimDonHang">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/TimDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuyetHD">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/DuyetHD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService_DonHang" type="tns:IService_DonHang">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService_DonHang_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ThemDH">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/ThemDH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LichSuDH">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/LichSuDH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaDH">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/SuaDH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayTatCaDonHang">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/LayTatCaDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimDonHang">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/TimDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuyetHD">
+      <soap:operation soapAction="http://tempuri.org/IService_DonHang/DuyetHD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_DonHang">
+    <wsdl:port name="BasicHttpBinding_IService_DonHang" binding="tns:BasicHttpBinding_IService_DonHang">
+      <soap:address location="http://huyservice.azurewebsites.net/Service_DonHang.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService_DonHang" binding="tns:BasicHttpsBinding_IService_DonHang">
+      <soap:address location="https://huyservice.azurewebsites.net/Service_DonHang.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

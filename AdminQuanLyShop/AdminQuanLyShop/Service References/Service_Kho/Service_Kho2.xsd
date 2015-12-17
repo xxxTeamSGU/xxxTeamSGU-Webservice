@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_Kho.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="LayTatCaKho">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaKhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayTatCaKhoResult" nillable="true" type="q1:ArrayOfKho_SP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="TimKhoResult" nillable="true" type="q2:ArrayOfKho_SP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayKhoTheoSP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayKhoTheoSPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayKhoTheoSPResult" nillable="true" type="q3:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NhapMoi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="Mau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+        <xs:element minOccurs="0" name="Soluong" type="xs:int" />
+        <xs:element minOccurs="0" name="Gianhap" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NhapMoiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NhapMoiResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="Mau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+        <xs:element minOccurs="0" name="Soluong" type="xs:int" />
+        <xs:element minOccurs="0" name="GiaNhap" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CapNhatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatBanHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="Mau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+        <xs:element minOccurs="0" name="Soluong" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatBanHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CapNhatBanHangResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckKho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="Mau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckKhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckKhoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSoLuong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="Mau" type="xs:int" />
+        <xs:element minOccurs="0" name="MaSize" type="xs:int" />
+        <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSoLuongResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckSoLuongResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemKho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemKhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemKhoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XuatKho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHD" type="xs:int" />
+        <xs:element minOccurs="0" name="NhanVien" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XuatKhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XuatKhoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatGiaBanMoi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+        <xs:element minOccurs="0" name="GiaBan" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatGiaBanMoiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CapNhatGiaBanMoiResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayKho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayKhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayKhoResult" nillable="true" type="q4:Kho" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LaySize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masp" type="xs:int" />
+        <xs:element minOccurs="0" name="mamau" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LaySizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LaySizeResult" nillable="true" type="q5:ArrayOfLaySize" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayMau">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayMauResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayMauResult" nillable="true" type="q6:ArrayOfLayMau" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayGia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayGiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LayGiaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChonMau">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChonMauResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="ChonMauResult" nillable="true" type="q7:ArrayOfLaySize" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

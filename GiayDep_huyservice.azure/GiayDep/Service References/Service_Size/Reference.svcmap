@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2bba3b82-8451-4d57-ac50-958137f6d4a9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://huyservice.azurewebsites.net/Service_Size.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_Size.xsd" MetadataType="Schema" ID="d97f21e6-624f-4484-a97a-98095177328e" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Size.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_Size1.xsd" MetadataType="Schema" ID="1119cd80-1c77-4e98-bebc-e16f2fed3746" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Size.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_Size.wsdl" MetadataType="Wsdl" ID="7085c1fb-01df-4995-a0cd-f4630475df39" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Size.svc?wsdl" />
+    <MetadataFile FileName="Service_Size.disco" MetadataType="Disco" ID="b567fbdc-1744-434e-b5fa-fad098561a64" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Size.svc?disco" />
+    <MetadataFile FileName="Service_Size2.xsd" MetadataType="Schema" ID="a5ccaa7d-455e-42a7-a6ad-0b9c66d0c95c" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Size.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

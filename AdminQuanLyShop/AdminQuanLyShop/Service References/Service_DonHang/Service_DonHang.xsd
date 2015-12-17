@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_DonHang.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="ThemDH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaKH" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayMua" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
+        <xs:element minOccurs="0" name="TinhTrang" type="xs:int" />
+        <xs:element minOccurs="0" name="NVDuyet" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemDHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemDHResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LichSuDH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaKH" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LichSuDHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LichSuDHResult" nillable="true" type="q1:ArrayOfDonHang" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaDH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaDH" type="xs:int" />
+        <xs:element minOccurs="0" name="TinhTrang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaDHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuaDHResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaDonHang">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaDonHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayTatCaDonHangResult" nillable="true" type="q2:ArrayOfHoaDonXuat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimDonHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimDonHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="TimDonHangResult" nillable="true" type="q3:ArrayOfHoaDonXuat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuyetHD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaHDN" type="xs:int" />
+        <xs:element minOccurs="0" name="NhanVien" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DuyetHDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DuyetHDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

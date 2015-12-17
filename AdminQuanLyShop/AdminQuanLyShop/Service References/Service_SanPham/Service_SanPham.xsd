@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_SanPham.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="LayTatCaSanPham">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayTatCaSanPhamResult" nillable="true" type="q1:ArrayOfSanPham" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemSanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenSP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MaLoai" type="xs:int" />
+        <xs:element minOccurs="0" name="ThuongHieu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="HinhAnh" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MoTa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MaKM" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayDang" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="MoTaCT" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThemSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThemSanPhamResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaSanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="TenSP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MaLoai" type="xs:int" />
+        <xs:element minOccurs="0" name="ThuongHieu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="HinhAnh" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MoTa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MaKM" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayDang" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="MoTaCT" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuaSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuaSanPhamResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaSanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="XoaSanPhamResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKiemSanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Tim" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKiemSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="TimKiemSanPhamResult" nillable="true" type="q2:ArrayOfSanPham" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayMa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayMaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayMaResult" nillable="true" type="q3:SanPham" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThuongHieuNam">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThuongHieuNamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="ThuongHieuNamResult" nillable="true" type="q4:ArrayOfTH" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThuongHieuNu">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThuongHieuNuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="ThuongHieuNuResult" nillable="true" type="q5:ArrayOfTH" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThuongHieuTreEm">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThuongHieuTreEmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="ThuongHieuTreEmResult" nillable="true" type="q6:ArrayOfTH" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphammoiPartial">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphammoiPartialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="SanphammoiPartialResult" nillable="true" type="q7:ArrayOfSanPham" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphamkhuyenmaiPartial">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphamkhuyenmaiPartialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="SanphamkhuyenmaiPartialResult" nillable="true" type="q8:ArrayOfSanPham" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Chitietsanpham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChitietsanphamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="ChitietsanphamResult" nillable="true" type="q9:SanPham" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LaySanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imasp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LaySanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LaySanPhamResult" nillable="true" type="q10:SanPham" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenSP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckSanPhamResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

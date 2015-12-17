@@ -1,0 +1,411 @@
+﻿
+@using GiayDep.Service_SanPham_Kho;
+@model List<SanPham_Price>
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
+    
+}
+
+@section Noidungbenphai{
+    <h2>@ViewBag.tb</h2>
+
+@{
+    foreach (var item in Model)
+    {
+        
+                        <div class="product-details row">
+
+                            <!--product-details-->
+                            <div class="col-sm-7">
+
+                                <!-- tp product -->
+                                <section class="col-lg-9 col-md-9 col-sm-9 m_xs_bottom_30">
+                                    <div class="clearfix m_bottom_30 t_xs_align_c">
+                                        <div class="photoframe type_2 shadow r_corners f_left f_sm_none d_xs_inline_b product_single_preview relative m_right_30 m_bottom_5 m_sm_bottom_20 m_xs_right_0 w_mxs_full">
+                                            <span class="hot_stripe"><img src="~/images/t/sale_product.png" alt=""></span>
+                                            <div class="relative d_inline_b m_bottom_10 qv_preview d_xs_block">
+                                                <img id="zoom_image" src="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" data-zoom-image="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" class="tr_all_hover" alt="">
+                                                <a href="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" class="d_block button_type_5 r_/@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[0])corners tr_all_hover box_s_none color_light p_hr_0">
+                                                    <i class="fa fa-expand"></i>
+                                                </a>
+                                            </div>
+                                            <!--carousel - thumbnail imahge here-->
+                                            <div class="relative qv_carousel_wrap">
+                                                <button class="button_type_11 bg_light_color_1 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_single_prev">
+                                                    <i class="fa fa-angle-left "></i>
+                                                </button>
+                                                <p class="qv_carousel_single d_inline_middle">
+
+                                                    <a href="#" data-image="https://huyimages.blob.core.windows.net/sanpham/@item._HinhAnh.Split(new Char[] { ' ' })[0]" data-zoom-image="https://huyimages.blob.core.windows.net/sanpham/@item._HinhAnh.Split(new Char[] { ' ' })[0]">
+                                                        <img src="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="">
+                                                    </a>
+                                                    <a href="#" data-image="https://huyimages.blob.core.windows.net/sanpham/@item._HinhAnh.Split(new Char[] { ' ' })[1]" data-zoom-image="https://huyimages.blob.core.windows.net/sanpham/@item._HinhAnh.Split(new Char[] { ' ' })[1]">
+                                                        <img src="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[1])" alt="">
+                                                    </a>
+                                                    <a href="#" data-image="https://huyimages.blob.core.windows.net/sanpham/@item._HinhAnh.Split(new Char[] { ' ' })[2]" data-zoom-image="https://huyimages.blob.core.windows.net/sanpham/@item._HinhAnh.Split(new Char[] { ' ' })[2]">
+                                                        <img src="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[2])" alt="">
+                                                    </a>
+                                                   
+                                                    </p>
+                                                <button class="button_type_11 bg_light_color_1 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_single_next">
+                                                    <i class="fa fa-angle-right "></i>
+                                                </button>
+                                            </div>
+                                            <!-- end carousel - thumbnail imahge here-->
+                                        
+                                    
+                                    </div>
+                                        </div>
+                                </section>
+
+                                <!-- end tp product -->
+
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="product-information">
+
+                                    <!--/product-information-->
+                                    <img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
+                                    <h2>@item._TenSP</h2>
+                                    <!--<p>Web ID: 1089772</p>-->
+                                    <!--<img src="~/images/product-details/rating.png" alt="" />-->
+                                    @*<span>
+                                <span style="color:red;">Giá :  @Model.GiaSP.000đ</span>
+                                <br />
+                                <span>*@
+              
+                                 @*Gọi đến Action themgiohang trong giohangController với mã sp, mã màu và size*@
+                                @using (Html.BeginForm("themgiohang", "giohang", new { @imasp = item._MaSP, @mamau = item._MaMau,@size =item._Size, @strUrl = Request.Url.ToString() }))
+                                                {
+                                    
+                                                <span style="color:red;">Giá : @ViewBag.GiaBan.000đ</span>
+                                                <br />
+                                    
+                                                   <span>Size : </span>
+                                                <select style="width:100px; height:50px;" name="size">
+                                                    @Html.Action("size", "Sanpham")
+                                                </select>
+                                                    <br />
+                                                     
+                                                    <div class="item-mau">
+                                                        <span>Màu : </span> 
+                                                        <span>  @Html.Action("mau", "Sanpham")</span> 
+
+</div>
+                                                    <div id="mau-hien-tai" class="@item._MaMau"></div>
+
+                                                  @*@Html.Action("mau", "Sanpham")*@
+
+                                                       @*<select style="width:100px; height:50px;" id="mamau" onchange="myFunction()">
+
+
+                                                        @Html.Action("mau", "Sanpham")
+
+
+                                        </select>*@
+                                                       @*<script>
+                                                        function myFunction() {
+                                                            var m = document.getElementById("mamau").value;
+                                                            document.getElementById("demo").innerHTML =m;
+                                                        }
+                                                    </script>*@
+                                        
+                                           
+                                                <button  type="submit" class="btn btn-fefault cart">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    Thêm vào giỏ hàng
+                                                </button>}
+
+                        <p><b>Xuất xứ :</b> In Stock</p>
+                        <p><b>Sản phẩm :</b> New</p>
+                        <p><b>Cửa hàng :</b> E-SHOPPER</p>
+                        <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                    </div><!--/product-information-->
+                    </div>
+</div>}}<!--/product-details-->
+}
+<div class="category-tab shop-details-tab">
+    <!--category-tab-->
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs">
+            <li><a href="#details" data-toggle="tab">Details</a></li>
+            <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
+            <li><a href="#tag" data-toggle="tab">Tag</a></li>
+            <li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane fade" id="details">
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery1.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery2.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery3.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery4.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="companyprofile">
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery1.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery3.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery2.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery4.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="tag">
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery1.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery2.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery3.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="https://huyimages.blob.core.windows.net/sanpham/gallery4.jpg" alt="" />
+                            <h2>$56</h2>
+                            <p>Easy Polo Black Edition</p>
+                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade active in" id="reviews">
+            <div class="col-sm-12">
+                <ul>
+                    <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
+                    <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
+                    <li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p><b>Write Your Review</b></p>
+
+                    <form action="#">
+                        <span>
+                            <input type="text" placeholder="Your Name" />
+                            <input type="email" placeholder="Email Address" />
+                        </span>
+                        <textarea name=""></textarea>
+                        <b>Rating: </b> <img src="~/images/product-details/rating.png" alt="" />
+                        <button type="button" class="btn btn-default pull-right">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div><!--/category-tab-->
+
+    <div class="recommended_items">
+        <!--recommended_items-->
+        <h2 class="title text-center">recommended items</h2>
+
+        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="https://huyimages.blob.core.windows.net/sanpham/recommend1.jpg" alt="" />
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="https://huyimages.blob.core.windows.net/sanpham/recommend2.jpg" alt="" />
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="https://huyimages.blob.core.windows.net/sanpham/recommend3.jpg" alt="" />
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="https://huyimages.blob.core.windows.net/sanpham/recommend1.jpg" alt="" />
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="https://huyimages.blob.core.windows.net/sanpham/recommend2.jpg" alt="" />
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="https://huyimages.blob.core.windows.net/sanpham/recommend3.jpg" alt="" />
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div><!--/recommended_items-->
+
+

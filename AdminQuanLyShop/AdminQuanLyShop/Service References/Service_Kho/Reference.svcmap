@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2be2d62a-7822-4cc5-a3f1-ff52ce60effe" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://huyservice.azurewebsites.net/Service_Kho.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_Kho.xsd" MetadataType="Schema" ID="c53b6cbb-db1c-490a-972e-8266a5bbd66c" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Kho.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_Kho.disco" MetadataType="Disco" ID="e401e341-80ff-4ead-8dbf-99861a6e6450" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Kho.svc?disco" />
+    <MetadataFile FileName="Service_Kho.wsdl" MetadataType="Wsdl" ID="23942f42-a216-4072-a689-2a7767a7ba76" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Kho.svc?wsdl" />
+    <MetadataFile FileName="Service_Kho1.xsd" MetadataType="Schema" ID="23ad4eef-80b0-40b6-afa9-babf7df9fa93" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Kho.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_Kho2.xsd" MetadataType="Schema" ID="74bb20cf-facf-4c5d-8a1c-880d748ba75f" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_Kho.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="894d4346-221b-4ef5-940c-bbd530d6630e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://huyservice.azurewebsites.net/Service_KhuyenMai.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_KhuyenMai.xsd" MetadataType="Schema" ID="20417e10-d238-4639-99ef-143d16342715" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_KhuyenMai.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service_KhuyenMai.wsdl" MetadataType="Wsdl" ID="e7c6ea88-140d-410e-bbaf-7721618beece" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_KhuyenMai.svc?wsdl" />
+    <MetadataFile FileName="Service_KhuyenMai.disco" MetadataType="Disco" ID="d9edde65-dfed-4bbc-86a3-99316bef20db" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_KhuyenMai.svc?disco" />
+    <MetadataFile FileName="Service_KhuyenMai1.xsd" MetadataType="Schema" ID="602134a7-824d-4461-9dfc-ed8477060b83" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_KhuyenMai.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_KhuyenMai2.xsd" MetadataType="Schema" ID="4bf58824-4ad6-4f7e-9bbf-fdb78a339652" SourceId="1" SourceUrl="http://huyservice.azurewebsites.net/Service_KhuyenMai.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

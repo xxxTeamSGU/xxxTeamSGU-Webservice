@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://huyservice.azurewebsites.net/Service_HoaDonNhap.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfHoaDonNhap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HoaDonNhap" nillable="true" type="tns:HoaDonNhap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHoaDonNhap" nillable="true" type="tns:ArrayOfHoaDonNhap" />
+  <xs:complexType name="HoaDonNhap">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_MaHDN" type="xs:int" />
+      <xs:element minOccurs="0" name="_MaNCC" type="xs:int" />
+      <xs:element minOccurs="0" name="_MaNV" type="xs:int" />
+      <xs:element minOccurs="0" name="_NCC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_NgayLap" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="_NhanVien" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_TinhTrang" type="xs:int" />
+      <xs:element minOccurs="0" name="_TongTien" type="xs:decimal" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="HoaDonNhap" nillable="true" type="tns:HoaDonNhap" />
+</xs:schema>

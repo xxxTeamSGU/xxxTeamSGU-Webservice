@@ -1,0 +1,280 @@
+﻿@using GiayDep.Service_SanPham;
+@using GiayDep.Models;
+
+@model List<giohang>
+
+
+<section>
+
+
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <!-- detail Item -->
+                <div class="col-lg-12">
+                    <h1 class="tp-order-h1">Chi tiết đơn hàng </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tp-order-h2">Đơn hàng</h2>
+
+                    <div class="span7">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4>Chi tiết đơn hàng</h4>
+                            </div>
+                            <form action="@System.Configuration.ConfigurationManager.AppSettings["urlSubmitPayment"]">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="upload" value="1" />
+                                <input type="hidden" name="return" value="@System.Configuration.ConfigurationManager.AppSettings["urlReturn"]" />
+                                <input type="hidden" name="business" value="@System.Configuration.ConfigurationManager.AppSettings["accountBusiness"]" />
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th data-field="state" data-radio="true">ID</th>
+                                            <th data-field="id" data-align="right">Sản phẩm</th>
+                                            <th data-field="id" data-align="right">Màu</th>
+                                            <th data-field="id" data-align="right">Size</th>
+                                            <th data-field="name" data-align="center">Số lượng</th>
+                                            <th data-field="price" data-align="left">Giá</th>
+                                            <th data-field="price" data-align="left">Tổng cộng</th>
+                                        </tr>
+                                    </thead>
+                                     
+                                    <tbody>
+                                 @{var i = 0;}
+                                        @foreach (var item in Model)
+                                        {
+                                           
+                                             i += 1;
+                                                <tr>
+                                                    <td><input name="@Url.Content("item_number_"+(i))" value="#@item.imasp" readonly /></td>
+                                                    <td><input name="@Url.Content("item_name_"+(i))" value="@item.stensp" readonly /></td>
+                                                    <td><img style="background-color:@item.itenmau" width="25" height="30" /></td>
+                                                    <td>@item.itensize</td>
+                                                    <td><input name="@Url.Content("quantity_"+(i))" value="@item.soluong" readonly /> </td>
+                                                    <td><input name="@Url.Content("amount_"+(i))" value="@item.dongia" readonly /></td>
+                                                    <td> @item.thanhtien.000đ</td>
+                                                </tr>
+                                              @*<tr>
+                                                <td>#@item.imasp</td>
+                                                <td>@item.stensp</td>
+                                                <td><img style="background-color:@item.itenmau" width="25" height="30" /></td>
+                                                <td>@item.itensize</td>
+                                                <td>@item.soluong</td>
+                                                <td>@item.dongia.000đ</td>
+                                                <td>
+                                                    @item.thanhtien.000đ
+                                                </td>
+
+                                            </tr>*@
+                                            
+                                        }
+                                        <!-- calculator -->
+                                        <tr class="tr-cal">
+                                            <td colspan="4"></td>
+
+                                            <td>Tổng cộng</td>
+                                            <td>
+                                                <b>@ViewBag.Tongtien.000đ</b>
+                                            </td>
+
+                                        </tr>
+                                        <tr class="tr-cal">
+                                            <td colspan="4"></td>
+                                            <td>Phí giao hàng</td>
+                                            <td>
+                                                <a>MIỄN PHÍ</a>
+                                            </td>
+
+                                        </tr>
+                                        <tr class="tr-cal">
+                                            <td colspan="4"></td>
+                                            <td>Hình thức thanh toán</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <div class="col-md-9">
+                                                        <div class="form-group">
+                                                            <div class="btn-group" data-toggle="buttons">
+                                                                <label class="pdsa-radiobutton btn btn-primary active">
+
+                                                                    <span class="glyphicon glyphicon-unchecked"></span>
+                                                                    @Html.RadioButton("Tiền mặt",
+                                                             new { id = "Tiền mặt" }) Tiền mặt
+                                                                </label>
+                                                                <label class="pdsa-radiobutton btn btn-primary">
+                                                                    <span class="glyphicon glyphicon-unchecked"></span>
+                                                                    @Html.RadioButton("Ngân hàng",
+                                                           new { id = "Ngân hàng" }) Ngân hàng
+                                                                </label>
+                                                                <label> <span><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit-logo-large.png" class="iconpp" /></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="tr-cal">
+                                            <td colspan="4"></td>
+                                            <td>Tổng cộng đơn hàng</td>
+                                            <td>
+                                                <b>@ViewBag.Tongtien.000đ</b>
+                                            </td>
+
+                                        </tr>
+
+                                        <!-- end calculator -->
+
+
+                                    </tbody>
+
+                                </table>
+                                <div>
+                                    <center>
+                                        @using (Html.BeginForm("DatHang", "giohang"))
+                                        {
+                                            <input type="submit" class="btn btn-default" value="Đặt hàng" />
+                                        }
+                                    </center>
+                                </div>
+                            </form>
+                            <br />
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end detal Items -->
+            <!- detail customer-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tp-order-h2">Thông tin khách hàng</h2>
+
+                    <!-- begin panel -->
+                    <div class="span7">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4>Thông tin khách hàng</h4>
+                            </div>
+
+                            <div class="panel-body">
+                                
+                                <ul>@Html.Action("Thongtinkhachhang","User")
+                                    
+                                </ul>
+                                <!--  <p>
+                                     Email : you@example.com <br><br>
+                                     Mobile : +92123456789 <br> <br>
+                                     Twitter  : <a href="https://twitter.com/tahirtaous"></a> | SitePoint : <a href="http://www.sitepoint.com/author/ttaous/">http://www.sitepoint.com/author/ttaous/</a>
+                                 </p> -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+
+            </div>
+            @*<!- end detail Customer-->
+            <!-- detail Shiping and checkout -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tp-order-h2">Checkout and Shiping</h2>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- begin panel -->
+                            <div class="span7">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h4>Checkout Information</h4>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><span>Name:</span><span>Tinh Pham</span></li>
+                                            <li><span>Email: </span><span>tinhphamsgu@gmail.com</span></li>
+                                            <li><span>Address: </span><span>1 Dong Khoi Street, District 1, HCM city</span></li>
+                                            <li><span>Phone:</span><span>01667798340</span></li>
+                                            <li><span>Payment Mothod </span><span>Bank transfer</span></li>
+                                        </ul>
+                                        <!--  <p>
+                                             Email : you@example.com <br><br>
+                                             Mobile : +92123456789 <br> <br>
+                                             Twitter  : <a href="https://twitter.com/tahirtaous"></a> | SitePoint : <a href="http://www.sitepoint.com/author/ttaous/">http://www.sitepoint.com/author/ttaous/</a>
+                                         </p> -->
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end panel -->
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!-- begin panel -->
+                            <div class="span7">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h4>Shiping Information</h4>
+                                    </div>
+
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><span>Name:</span><span>Tinh Pham</span></li>
+                                            <li><span>Email: </span><span>tinhphamsgu@gmail.com</span></li>
+                                            <li><span>Address: </span><span>1 Dong Khoi Street, District 1, HCM city</span></li>
+                                            <li><span>Phone:</span><span>01667798340</span></li>
+
+                                        </ul>
+                                        <!-- <p>
+                                            Email : you@example.com <br><br>
+                                            Mobile : +92123456789 <br> <br>
+                                            Twitter  : <a href="https://twitter.com/tahirtaous"></a> | SitePoint : <a href="http://www.sitepoint.com/author/ttaous/">http://www.sitepoint.com/author/ttaous/</a>
+                                        </p> -->
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end panel -->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>*@
+            <!-- end detail cutomer -->
+
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+function myFunction() {
+var x="sas";
+    document.getElementById("demo").innerHTML =x;
+}
+</script>
+
+<style>
+    .pdsa-radiobutton.btn.btn-primary.active {
+        color: blue;
+        border-color: #dfdfdf;
+    }
+img.iconpp
+    {
+      margin-top:10px;
+      margin-left:100px;
+      width:50%;
+     height:50%;
+    }
+</style>
