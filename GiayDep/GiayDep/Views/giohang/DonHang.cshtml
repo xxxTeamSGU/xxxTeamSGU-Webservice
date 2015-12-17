@@ -1,4 +1,4 @@
-﻿    @using GiayDep.Service_SanPham;
+﻿@using GiayDep.Service_SanPham;
 @using GiayDep.Models;
 
 @model List<giohang>
@@ -7,7 +7,7 @@
 <section>
 
 
-    <div class="content tp-order">
+    <div class="content">
         <div class="container">
 
             <div class="row">
@@ -42,39 +42,39 @@
                                             <th data-field="price" data-align="left">Tổng cộng</th>
                                         </tr>
                                     </thead>
-
+                                     
                                     <tbody>
-                                        @{var i = 0;}
+                                 @{var i = 0;}
                                         @foreach (var item in Model)
                                         {
-
-                                            i += 1;
-                                            <tr class="tp-input-hide">
-                                                <td><input name="@Url.Content("item_number_"+(i))" value="#@item.imasp" readonly /></td>
-                                                <td><input name="@Url.Content("item_name_"+(i))" value="@item.stensp" readonly /></td>
+                                           
+                                             i += 1;
+                                                <tr>
+                                                    <td><input name="@Url.Content("item_number_"+(i))" value="#@item.imasp" readonly /></td>
+                                                    <td><input name="@Url.Content("item_name_"+(i))" value="@item.stensp" readonly /></td>
+                                                    <td><img style="background-color:@item.itenmau" width="25" height="30" /></td>
+                                                    <td>@item.itensize</td>
+                                                    <td><input name="@Url.Content("quantity_"+(i))" value="@item.soluong" readonly /> </td>
+                                                    <td><input name="@Url.Content("amount_"+(i))" value="@item.dongia" readonly /></td>
+                                                    <td> @item.thanhtien.000đ</td>
+                                                </tr>
+                                              @*<tr>
+                                                <td>#@item.imasp</td>
+                                                <td>@item.stensp</td>
                                                 <td><img style="background-color:@item.itenmau" width="25" height="30" /></td>
                                                 <td>@item.itensize</td>
-                                                <td><input name="@Url.Content("quantity_"+(i))" value="@item.soluong" readonly /> </td>
-                                                <td><input name="@Url.Content("amount_"+(i))" value="@item.dongia" readonly /></td>
-                                                <td> @item.thanhtien.000đ</td>
-                                            </tr>
-                                            @*<tr>
-                    <td>#@item.imasp</td>
-                    <td>@item.stensp</td>
-                    <td><img style="background-color:@item.itenmau" width="25" height="30" /></td>
-                    <td>@item.itensize</td>
-                    <td>@item.soluong</td>
-                    <td>@item.dongia.000đ</td>
-                    <td>
-                        @item.thanhtien.000đ
-                    </td>
+                                                <td>@item.soluong</td>
+                                                <td>@item.dongia.000đ</td>
+                                                <td>
+                                                    @item.thanhtien.000đ
+                                                </td>
 
-                </tr>*@
-
+                                            </tr>*@
+                                            
                                         }
                                         <!-- calculator -->
                                         <tr class="tr-cal">
-                                            <td colspan="5"></td>
+                                            <td colspan="4"></td>
 
                                             <td>Tổng cộng</td>
                                             <td>
@@ -88,109 +88,67 @@
                                             <td>
                                                 <a>MIỄN PHÍ</a>
                                             </td>
-                                            <td></td>
+
                                         </tr>
-                                        <tr>
-                                            <td colspan="5"></td>
+                                        <tr class="tr-cal">
+                                            <td colspan="4"></td>
+                                            <td>Hình thức thanh toán</td>
+                                            <td>
+                                                <div class="form-group">
+                                                    <div class="col-md-9">
+                                                        <div class="form-group">
+                                                            <div class="btn-group" data-toggle="buttons">
+                                                                <label class="pdsa-radiobutton btn btn-primary active">
+
+                                                                    <span class="glyphicon glyphicon-unchecked"></span>
+                                                                    @Html.RadioButton("Tiền mặt",
+                                                             new { id = "Tiền mặt" }) Tiền mặt
+                                                                </label>
+                                                                <label class="pdsa-radiobutton btn btn-primary">
+                                                                    <span class="glyphicon glyphicon-unchecked"></span>
+                                                                    @Html.RadioButton("Ngân hàng",
+                                                           new { id = "Ngân hàng" }) Ngân hàng
+                                                                </label>
+                                                                <label> <span><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit-logo-large.png" class="iconpp" /></span></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="tr-cal">
+                                            <td colspan="4"></td>
                                             <td>Tổng cộng đơn hàng</td>
-                                            <td colspan="2">
+                                            <td>
                                                 <b>@ViewBag.Tongtien.000đ</b>
                                             </td>
 
                                         </tr>
-                                        <tr class="tr-cal">
-
-                      
-                                        </tr>
 
                                         <!-- end calculator -->
+
+
                                     </tbody>
 
-                        </table>
-                        <div>
+                                </table>
+                                <div>
+                                    <center>
+                                        @using (Html.BeginForm("DatHang", "giohang"))
+                                        {
+                                            <input type="submit" class="btn btn-default" value="Đặt hàng" />
+                                        }
+                                    </center>
+                                </div>
+                            </form>
+                            <br />
                             
-                        </div>
-                       
-                        
 
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-           
-            
-            <td colspan="5">
-                <h2>
-                    Chọn Hình thức thanh toán
-                </h2>
-                <div id="content">
-                    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                        <li class="active"><a href="#paypal" data-toggle="tab">Paypal</a></li>
-                        <li><a href="#nganhang" data-toggle="tab">Ngân hàng</a></li>
-                        <li><a href="#tienmat" data-toggle="tab">Tiên mặt</a></li>
-
-                    </ul>
-
-                    <div id="my-tab-content" class="tab-content">
-                        <div class="tab-pane active" id="paypal">
-                            <h3>Thanh toán bằng Paypal</h3>
-                            <p>Quý khách vui lòng bấm [Thanh toán] để thanh toán ngay bằng Paypal </p>
-                            <p>
-                                <br />
-
-                                <input type="submit" class="btn btn-primary" value="Thanh toán" />
-                            </p>
-                            </p>
-                        </div>
-                        </form>
-                        <div class="tab-pane " id="nganhang">
-                            <h3>Thanh toán bằng chuyển khoản ngân hàng</h3>
-                            <div class="tp-content-tab col-md-4">
-                                <h4>Ngân hàng BIDV</h4>
-                                <p>- Chi nhánh TP HCM</p>
-                                <p>- STK: 384738979827834</p>
-                                <p>- Chủ tài khoản: Phạm Văn Tình</p>
-                            </div>
-                            <div class="tp-content-tab col-md-4">
-                                <h4>Ngân hàng ACB</h4>
-                                <p>- Chi nhánh TP HCM</p>
-                                <p>- STK: 384738979827834</p>
-                                <p>- Chủ tài khoản: Phạm Văn Tình</p>
-                            </div>
-                            <div class="tp-content-tab col-md-4">
-                                <h4>Ngân hàng VietComBank</h4>
-                                <p>- Chi nhánh TP HCM</p>
-                                <p>- STK: 384738979827834</p>
-                                <p>- Chủ tài khoản: Phạm Văn Tình</p>
-                            </div>
-                        </div>
-
-                        
-                        <div class="tab-pane" id="tienmat">
-                            <h3>Thanh toán khi giao hàng</h3>
-                            <p>Bạn đã chọn phương thức Thanh toán khi giao hàng vui lòng bấm đặt hàng bên dưới</p>
-                            <p>
-                                @using (Html.BeginForm("DatHang", "giohang"))
-                                {
-                                    <input type="submit" class="btn btn-primary " value="Đặt hàng" />
-                                }
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-
-                <script type="text/javascript">
-                    jQuery(document).ready(function ($) {
-                        $('#tabs').tab();
-                    });
-                </script>
-
-
-
             <!-- end detal Items -->
             <!- detail customer-->
             <div class="row">
@@ -201,7 +159,7 @@
                     <div class="span7">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                <h2>Thông tin khách hàng</h2>
+                                <h4>Thông tin khách hàng</h4>
                             </div>
 
                             <div class="panel-body">
@@ -318,6 +276,5 @@ img.iconpp
       margin-left:100px;
       width:50%;
      height:50%;
-     
     }
 </style>

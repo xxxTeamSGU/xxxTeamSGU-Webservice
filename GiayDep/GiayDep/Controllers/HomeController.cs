@@ -17,13 +17,7 @@ namespace GiayDep.Controllers
         {
             return View();
         }
-        public ActionResult sp()
-        {
-            return View();
-        }
-
     
       
     }
-    
 }

@@ -140,15 +140,15 @@ namespace GiayDep.Controllers
           ViewBag.Tongtien = Tongtien();
           return PartialView();
       }
-      //public ActionResult addslpartial(int imasp, int mamau, string strUrl)
-      //{
-      //    var sp = k.LayKhoTheoSP(imasp, mamau);
-      //    List<giohang> listgiohang = laygiohang();
-      //    //ktra tồn tại trong giỏ hàng chưa
-      //    giohang gh = listgiohang.Find(n => n.imasp == imasp);
-      //    ViewBag.addsl = gh.soluong++;
-      //    return View();
-      //}
+      public ActionResult addslpartial(int imasp, int mamau, string strUrl)
+      {
+          var sp = k.LayKhoTheoSP(imasp, mamau);
+          List<giohang> listgiohang = laygiohang();
+          //ktra tồn tại trong giỏ hàng chưa
+          giohang gh = listgiohang.Find(n => n.imasp == imasp);
+          ViewBag.addsl = gh.soluong++;
+          return View();
+      }
         #endregion
       #region Đơn hàng
       public ActionResult DonHang()
@@ -173,10 +173,10 @@ namespace GiayDep.Controllers
       public ActionResult DatHang()
       {
             //kiểm tra người dùng có hay không
-            //if(Session["khachhang"] == null || Session["khachhang"] == "" )
-            //{
-            //    return RedirectToAction("Login", "User");
-            //}
+            if(Session["khachhang"] == null || Session["khachhang"] == "" )
+            {
+                return RedirectToAction("Login", "User");
+            }
             if(Session["giohang"]==null)
             {
                 return RedirectToAction("Index", "Home");
@@ -205,20 +205,6 @@ namespace GiayDep.Controllers
         }
         #endregion 
 
-         public ActionResult ThanhToan()
-         {
-             if (Session["khachhang"] == null || Session["khachhang"] == "")
-             {
-                 return RedirectToAction("Login", "User");
-             }
-             if (Session["giohang"] == null)
-             {
-                 return RedirectToAction("Index", "Home");
-             }
-             List<giohang> listgiohang = laygiohang();
-             ViewBag.Tongtien = Tongtien();
-             var pp = Session["giohang"] as List<giohang>;
-             return View(pp);
-         }
+      
     }
 }

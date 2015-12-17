@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="giaydepthoitrang" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\DUYTRINH\\Desktop\\New\ folder\\GiayDep_huyservice\.azure\\GiayDep\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\DUYTRINH\\Desktop\\New\ folder\\GiayDep_huyservice\.azure\\GiayDep\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

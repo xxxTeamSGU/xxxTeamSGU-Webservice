@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="35190d6f-ab1f-4d33-b38a-3d63b1629c26" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://huyservice.azurewebsites.net/Service_SanPham_Kho.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_SanPham_Kho.disco" MetadataType="Disco" ID="5d82f58e-3097-45c7-a154-e5968761d0e6" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_SanPham_Kho.svc?disco" />
+    <MetadataFile FileName="Service_SanPham_Kho.xsd" MetadataType="Schema" ID="20e7aca2-b6f1-4f57-ac5b-373f634b5750" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_SanPham_Kho.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_SanPham_Kho1.xsd" MetadataType="Schema" ID="99e9d60b-f22f-4b02-95b6-679fe024a3cd" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_SanPham_Kho.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_SanPham_Kho.wsdl" MetadataType="Wsdl" ID="0c8da519-22e6-492b-b256-73ae90a3af75" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_SanPham_Kho.svc?wsdl" />
+    <MetadataFile FileName="Service_SanPham_Kho2.xsd" MetadataType="Schema" ID="5dfafc1b-2659-4437-9c61-8e05ef6a919d" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_SanPham_Kho.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

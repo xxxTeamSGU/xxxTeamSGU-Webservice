@@ -1,0 +1,59 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@using GiayDep.Service_SanPham_Kho;
+@model PagedList.IPagedList<SanPham_Price>
+
+@{
+    ViewBag.Title = "KetQuaTimKiem";
+    Layout = "~/Views/GiayDep/Trangkethua.cshtml";
+}
+
+@if( @ViewBag.tb > 0)
+    {
+       <h3>Đã tìm thấy @ViewBag.tb sản phẩm "@ViewBag.sTukhoa"</h3>
+     
+<div><br /></div>
+<div class="col-sm-9 padding-right">
+    <div class="features_items">
+        @{
+            foreach (var item in Model)
+            {
+
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+
+                                <a href="@Url.Action("Chitietsanpham","SanPham", new { @masp= item._MaSP , @mamau= item._MaMau})">
+                                    <img src="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item._HinhAnh.Split(new Char[] { ' ' })[0])" alt="" height="237" width="255" />
+                                </a>
+                                <h2>@item._GiaSP.000đ</h2>
+                                <p>@item._TenSP</p>
+                                @*<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>*@
+                                @*@using (Html.BeginForm("Muangay", "Sanpham", new { @imasp = item._MaSP, @mamau= item._MaMau }))
+                                    {*@
+
+                                @*<button type="submit" class="btn btn-fefault cart">*@
+                               
+                                @*}*@
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            }
+
+        }
+        <div style="clear:both"></div>
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+        <div>
+            @Html.PagedListPager(Model, page => Url.Action("KetQuaTimKiem", new { page = page, @sTuKhoa = ViewBag.sTuKhoa }))
+        </div>
+        </div>
+    </div>
+    }
+else
+{
+    <h3>Không tìm thấy sản phẩm "@ViewBag.sTukhoa" nào.</h3>
+} 
+ 

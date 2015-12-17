@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://huyservice.azurewebsites.net/Service_SanPham_Kho.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" />
+  <xs:element name="LayKhoTheoSP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaSP" type="xs:int" />
+        <xs:element minOccurs="0" name="MaMau" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayKhoTheoSPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayKhoTheoSPResult" nillable="true" type="q1:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphammoiPartial">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphammoiPartialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="SanphammoiPartialResult" nillable="true" type="q2:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphamkhuyenmaiPartial">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanphamkhuyenmaiPartialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="SanphamkhuyenmaiPartialResult" nillable="true" type="q3:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCa">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayTatCaResult" nillable="true" type="q4:ArrayOfKho" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhMuc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="th" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maloai" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhMucResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="DanhMucResult" nillable="true" type="q5:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKiemSanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Tim" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimKiemSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="TimKiemSanPhamResult" nillable="true" type="q6:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaSP">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LayTatCaSPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="LayTatCaSPResult" nillable="true" type="q7:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimSanPham">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenSP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimSanPhamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Service_GiayDep.Models" minOccurs="0" name="TimSanPhamResult" nillable="true" type="q8:ArrayOfSanPham_Price" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

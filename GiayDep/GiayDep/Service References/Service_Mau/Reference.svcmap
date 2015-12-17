@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ebe92f59-e551-48f3-9c87-1b0f1884fb15" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://huyservice.azurewebsites.net/Service_Mau.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service_Mau.disco" MetadataType="Disco" ID="6788c9d0-ee70-49fa-823a-82698961c297" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Mau.svc?disco" />
+    <MetadataFile FileName="Service_Mau.xsd" MetadataType="Schema" ID="8c408984-fe73-4213-8a90-f8391922adce" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Mau.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service_Mau.wsdl" MetadataType="Wsdl" ID="a8ecf84b-279a-4e2d-9563-7c7db9f7533d" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Mau.svc?wsdl" />
+    <MetadataFile FileName="Service_Mau1.xsd" MetadataType="Schema" ID="819fc14f-dfc9-44b0-bb6d-45ef4fbb6a26" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Mau.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service_Mau2.xsd" MetadataType="Schema" ID="b3c740a1-d5a1-4425-8461-cdcd67131c4e" SourceId="1" SourceUrl="https://huyservice.azurewebsites.net/Service_Mau.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,24 +1,11 @@
-﻿@using GiayDep.Service_KhachHang;
-@model KhachHang
+﻿
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/GiayDep/Trangkethua.cshtml";
 }
+<h1>@ViewBag.Thongbao</h1>
 
-@{
-    var khachhang = Session["khachhang"] as KhachHang;
- 
-}
-@if (khachhang!=null)
-{
-    <h1>
-        @ViewBag.Thongbao</h1>
-<!--form-->
-}
-else
-{
-
-
+    <!--form-->
     <div class="container">
         <div class="row">
             <div class="col-sm-2"></div>
@@ -52,5 +39,3 @@ else
         </div>
     </div>
 </div>
-
-}

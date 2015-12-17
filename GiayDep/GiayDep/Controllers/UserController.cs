@@ -58,15 +58,9 @@ namespace GiayDep.Controllers
             var khachhang = kh.Login(s_email,s_password);
             if (khachhang != null)
             {
-                if (Session["giohang"] == null)
-                {
-                    ViewBag.Thongbao = "Chúc mừng bạn đã đăng nhập thành công !";
-                    Session["khachhang"] = khachhang;
-                    return View();
-                }
+                ViewBag.Thongbao = "Chúc mừng bạn đã đăng nhập thành công !";
                 Session["khachhang"] = khachhang;
-                return RedirectToAction("giohang", "giohang");
-
+                return Redirect(strUrl);
 
             }
             ViewBag.Thongbao = "Email hoặc mật khẩu không đúng !";

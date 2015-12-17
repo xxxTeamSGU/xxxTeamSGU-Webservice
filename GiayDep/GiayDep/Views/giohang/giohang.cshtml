@@ -16,7 +16,7 @@
                 <thead>
                     <tr class="cart_menu">
 
-                        <td class="id-cart">ID</td>
+                        <td>ID</td>
                         <td class="image"><center>Sản phẩm</center></td>
                         <td class="description"><center>Mô tả</center></td>
                         <td class="price"><center>Giá</center></td>
@@ -36,10 +36,10 @@
                        
                            
                         <tr>
-                            <td class="id-cart"># @item.imasp</td>
+                            <td># @item.imasp</td>
                             <td class="cart_product" style="width:200px;"><a href=""><img src="@Url.Content("https://huyimages.blob.core.windows.net/sanpham/" + item.anhbia.Split(new Char[] { ' ' })[0])" alt="" width="110" height="110"></a> </td>
                             <td class="cart_description"><h4><a href="">@item.stensp</a></h4>
-                                <br /> Màu :<img style="background-color:@item.itenmau" width="25" height="30" class="tp-cart-color" />
+                                <br /> Màu :<img style="background-color:@item.itenmau" width="25" height="30" />
                             <br />
                                 <br /> Size : @item.itensize</td>
                             <td class="cart_price"><p><center><b>@item.dongia.000đ</b></center></p></td>
@@ -54,7 +54,7 @@
                                         @*<a class="cart_quantity_down" href=""> - </a>*@
                                     </div>
                                 </td>
-                            <td class="cart_total"><p class="cart_total_price">@item.thanhtien.000đ</p></td>
+                            <td class="cart_total"><p class="cart_total_price"><center><b>@item.thanhtien.000đ</b></center></p></td>
                             <td>
                                 <a href="@Url.Action("Chitietsanpham", "SanPham", new { @masp = item.imasp, @mamau =item.imamau })">Xem</a>
                             </td>
@@ -66,13 +66,10 @@
                                   </center>
                              </td>
                              <td class="cart_delete">
-                                 <div class="tp-del-cart">
-                                     @Html.ActionLink("Xóa", "xoagiohang", new { @imasp = item.imasp, @mamau = item.imamau, @size = item.isize })
-                                 <i class="fa fa-trash-o  fa-2x"></i>
+                                 <center><i class="fa fa-times"></i>
                                  @*Gọi tới action xoagiohang trong giohangController*@
-
-                             </div>
-                                 
+                                     @Html.ActionLink("Xóa", "xoagiohang", new { @imasp = item.imasp, @mamau = item.imamau, @size= item.isize })
+                                 </center>
                              </td>
                             }
                             

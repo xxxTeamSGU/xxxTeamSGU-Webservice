@@ -1,0 +1,98 @@
+﻿@using GiayDep.Service_DonHang;
+@using GiayDep.Models;
+@model List<DonHang>
+
+
+<section>
+
+
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <!-- detail Item -->
+                <div class="col-lg-12">
+                    <h1 class="tp-order-h1">Lịch sử mua hàng</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    
+
+                    <div class="span7">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4>Lịch sử mua hàng</h4>
+                            </div>
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-radio="true">Mã đơn hàng</th>
+                                        <th data-field="id" data-align="right">Ngày mua</th>
+                                        <th data-field="id" data-align="right">Tổng tiền</th>
+                                        <th data-field="id" data-align="right">Tình trạng</th>
+                                        <th data-field="id" data-align="right"></th>
+                                        <th data-field="id" data-align="right"></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>#@item.MaDH</td>
+                                            <td>@item.NgayMua</td>
+                                            <td>@item.TongTien.000đ</td>
+                                            
+                                            @if (@item.TinhTrang == 0)
+                                            {
+                                                <td>Đang xử lý</td>
+                                              <td><a href="@Url.Action("huydh", new { @MaDH= item.MaDH , @TinhTrang= item.TinhTrang})" onclick="return confirm('Bạn muốn hủy đơn hàng này không?')">Hủy đơn hàng</a></td>
+                                                 <td><a href="@Url.Action("Chitietdonhang", new { @MaDH= item.MaDH })">Xem chi tiết</a></td>
+                                            }
+                                            @if(@item.TinhTrang == 1)
+                                            {
+                                                <td>Đã giao hàng</td>
+                                                <td>Hoàn tất đơn hàng</td>
+                                                  <td><a href="@Url.Action("Chitietdonhang", new { @MaDH= item.MaDH })">Xem chi tiết</a></td>
+                                            }
+                                            @if (@item.TinhTrang == 2)
+                                            {
+                                                <td>Đơn hàng hủy</td>
+                                                <td><a href="@Url.Action("Chitietdonhang", new { @MaDH= item.MaDH })">Xem chi tiết</a></td>
+                                            }
+                                            @if (@item.TinhTrang == 3)
+                                            {
+                                                <td>Đã hủy</td>
+                                                <td>Đã hủy</td>
+                                                <td>Đã hủy</td>
+
+                                            }
+                                            
+                                        </tr>
+                                    }
+                                    <!-- calculator -->
+
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- end detail cutomer -->
+
+
+        </div>
+
+    </div>
+
+</section>
+<script type="text/javascript">
+    bootbox.confirm("Are you sure?", function(result) {
+        Example.show("Confirm result: "+result);
+    }); 
+</script>
